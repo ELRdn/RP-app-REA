@@ -19,7 +19,7 @@
 
 | 項目 | 観測値 | 根拠 |
 |---|---|---|
-| Web | `https://www.synclubaichat.com`（ja/en/ko/zh） | HTML `lang=ja`, i18n |
+| Web | `https://www.synclubaichat.com`（Web観測はja。アプリはja/en/ko/zh） | HTML `lang=ja`, i18n |
 | ゲートウェイ | **APISIX 3.8.0**、`X-RateLimit-Limit: 100` / 60秒 | レスポンスヘッダ |
 | フレームワーク | **Nuxt 3 / Vue 3**（`X-Powered-By: Nuxt`, `__nuxt`, `data-v-*`） | ヘッダ / DOM |
 | UIライブラリ | **Element Plus**（`el-dialog`, `el-input`, `el-checkbox`, `--el-*`） | CSS変数 / クラス |
@@ -290,5 +290,6 @@ Zetaが「物語の寄り道」に課金するのに対し、SynClubは**生成�
 - コンポーネント：`data/components.json`
 - ルート：`data/routes.json`
 - REA：`evidence/rea/README.md`
+
 
 

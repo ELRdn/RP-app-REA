@@ -152,7 +152,7 @@
     {
       "area": "Localization",
       "zeta": "ja / ko / en。i18nはメッセージ辞書（ko/ja/en）をバンドル。UIのaria-labelは英語のまま。",
-      "synclub": "ja / en / ko / zh。Nuxt i18n。日本語が主で、法務・ストア向けに英語。",
+      "synclub": "アプリは ja / en / ko / zh。Webで観測したのは ja。Nuxt i18n。",
       "confidence": "observed"
     },
     {
@@ -169,4 +169,5 @@
     }
   ]
 }
+
 

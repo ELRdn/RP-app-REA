@@ -28,7 +28,7 @@
     ]
   },
   "synclub": {
-    "locales": ["ja", "en", "ko", "zh"],
+    "locales": { "webObserved": ["ja"], "appStore": ["ja", "en", "ko", "zh"] },
     "observed": [
       { "path": "/", "screen": "Creator studio (chat-style composer, 4 creation modes, agent highlight)" },
       { "path": "/landing-page", "screen": "Marketing landing (browser edition)" },
@@ -62,3 +62,4 @@
     ]
   }
 }
+
