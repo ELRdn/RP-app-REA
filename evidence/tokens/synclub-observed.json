@@ -1,0 +1,619 @@
+{
+  "app": "synclub",
+  "screens_analyzed": 43,
+  "screens": [
+    {
+      "file": "synclub_s01_landing_top.json",
+      "url": "https://www.synclubaichat.com/landing-page",
+      "title": "AIクリエイター創作アシスタント｜SynClub"
+    },
+    {
+      "file": "synclub_s02_landing_features.json",
+      "url": "https://www.synclubaichat.com/landing-page",
+      "title": "AIクリエイター創作アシスタント｜SynClub"
+    },
+    {
+      "file": "synclub_s03_landing_creator.json",
+      "url": "https://www.synclubaichat.com/landing-page",
+      "title": "AIクリエイター創作アシスタント｜SynClub"
+    },
+    {
+      "file": "synclub_s04_landing_full.json",
+      "url": "https://www.synclubaichat.com/landing-page",
+      "title": "AIクリエイター創作アシスタント｜SynClub"
+    },
+    {
+      "file": "synclub_s05_chat_list.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s06_chat_list_full.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s07_chat_list_scrolled.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s08_feed_new.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s10_discover_comic.json",
+      "url": "https://www.synclubaichat.com/discover/comic",
+      "title": "人気漫画まとめ｜SynClub（シンクラブ）"
+    },
+    {
+      "file": "synclub_s11_discover_game.json",
+      "url": "https://www.synclubaichat.com/discover/game",
+      "title": "ゲーム情報まとめ｜SynClub（シンクラブ）"
+    },
+    {
+      "file": "synclub_s12_discover_daily.json",
+      "url": "https://www.synclubaichat.com/discover/daily",
+      "title": "日常投稿まとめ｜SynClub（シンクラブ）"
+    },
+    {
+      "file": "synclub_s13_discover_dynamic.json",
+      "url": "https://www.synclubaichat.com/discover/dynamic",
+      "title": "ショットビデオまとめ｜SynClub（シンクラブ）"
+    },
+    {
+      "file": "synclub_s14_discover_detail.json",
+      "url": "https://www.synclubaichat.com/discover/comic/326444",
+      "title": "人気漫画ー『「2026ハロウィン」』発表｜SynClub（シンクラブ）"
+    },
+    {
+      "file": "synclub_s15_discover_detail_full.json",
+      "url": "https://www.synclubaichat.com/discover/comic/326444",
+      "title": "人気漫画ー『「2026ハロウィン」』発表｜SynClub（シンクラブ）"
+    },
+    {
+      "file": "synclub_s16_creator_guide.json",
+      "url": "https://www.synclubaichat.com/creator-guide",
+      "title": "SynClubご利用ガイド｜機能とコミュニティルール"
+    },
+    {
+      "file": "synclub_s17_faq.json",
+      "url": "https://www.synclubaichat.com/FAQ",
+      "title": "よくある質問｜SynClub（シンクラブ）"
+    },
+    {
+      "file": "synclub_s18_company_info.json",
+      "url": "https://www.synclubaichat.com/company-info",
+      "title": "運営会社情報｜SynClub（シンクラブ）"
+    },
+    {
+      "file": "synclub_s19_blog.json",
+      "url": "https://www.synclubaichat.com/blog",
+      "title": "Synclub 公式ブログ｜AIキャラクター・ノベル体験ガイド"
+    },
+    {
+      "file": "synclub_s21_character_gate.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s22_subscription.json",
+      "url": "https://www.synclubaichat.com/",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s23_404.json",
+      "url": "https://www.synclubaichat.com/this-route-does-not-exist",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s24_creator_home.json",
+      "url": "https://www.synclubaichat.com/",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s25_creator_home_scroll.json",
+      "url": "https://www.synclubaichat.com/",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s26_image_creator_entry.json",
+      "url": "https://www.synclubaichat.com/imageCreator/entry",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s27_voice_entry.json",
+      "url": "https://www.synclubaichat.com/voice/entry",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s28_feed_top.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s29_feed_scroll_1000.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s29_feed_scroll_1500.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s29_feed_scroll_500.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s30_feed_category.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s31_feed_new.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s32_app_gate.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s33_feed_category_isekai.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s34_feed_category_story.json",
+      "url": "https://www.synclubaichat.com/chat-list",
+      "title": "AIキャラクターとチャット・音声通話｜SynClub"
+    },
+    {
+      "file": "synclub_s35_desktop_creator_home.json",
+      "url": "https://www.synclubaichat.com/",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s36_desktop_image_creator.json",
+      "url": "https://www.synclubaichat.com/imageCreator/entry",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s37_desktop_voice_entry.json",
+      "url": "https://www.synclubaichat.com/voice/entry",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s38_desktop_landing.json",
+      "url": "https://www.synclubaichat.com/landing-page",
+      "title": "AIクリエイター創作アシスタント｜SynClub"
+    },
+    {
+      "file": "synclub_s39_login.json",
+      "url": "https://www.synclubaichat.com/login",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s40_shared_chat.json",
+      "url": "https://wap.synclubaichat.com/static/wapplus/sc-chat-sharing-v2.html?d=MTUzNjQyOTgyNQ==#/",
+      "title": "Synclub"
+    },
+    {
+      "file": "synclub_s41_intro_next.json",
+      "url": "https://www.synclubaichat.com/intro-next",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s42_product.json",
+      "url": "https://www.synclubaichat.com/product",
+      "title": "SynClub(シンクラブ)｜AIキャラクター作成＆チャット"
+    },
+    {
+      "file": "synclub_s43_blog_scroll.json",
+      "url": "https://www.synclubaichat.com/blog",
+      "title": "Synclub 公式ブログ｜AIキャラクター・ノベル体験ガイド"
+    }
+  ],
+  "colors": [
+    {
+      "value": "fg rgb(0, 0, 0)",
+      "count": 7490
+    },
+    {
+      "value": "fg rgb(255, 255, 255)",
+      "count": 5267
+    },
+    {
+      "value": "fg rgba(17, 17, 17, 0.5)",
+      "count": 1701
+    },
+    {
+      "value": "fg rgb(17, 17, 17)",
+      "count": 1255
+    },
+    {
+      "value": "fg rgb(0, 0, 238)",
+      "count": 692
+    },
+    {
+      "value": "bg rgba(255, 255, 255, 0.1)",
+      "count": 505
+    },
+    {
+      "value": "bg rgb(255, 255, 255)",
+      "count": 367
+    },
+    {
+      "value": "bg rgb(232, 233, 234)",
+      "count": 339
+    },
+    {
+      "value": "bg rgba(0, 0, 0, 0.06)",
+      "count": 308
+    },
+    {
+      "value": "fg rgb(51, 51, 51)",
+      "count": 192
+    },
+    {
+      "value": "fg rgba(51, 51, 51, 0.7)",
+      "count": 120
+    },
+    {
+      "value": "bg rgb(244, 245, 246)",
+      "count": 85
+    },
+    {
+      "value": "bg rgba(255, 255, 255, 0.5)",
+      "count": 81
+    },
+    {
+      "value": "fg rgb(255, 120, 112)",
+      "count": 60
+    },
+    {
+      "value": "fg rgba(0, 0, 0, 0.5)",
+      "count": 60
+    },
+    {
+      "value": "fg rgb(153, 153, 153)",
+      "count": 60
+    },
+    {
+      "value": "fg rgba(51, 51, 51, 0.8)",
+      "count": 52
+    },
+    {
+      "value": "bd rgb(255, 255, 255)",
+      "count": 40
+    },
+    {
+      "value": "bg rgb(51, 51, 51)",
+      "count": 38
+    },
+    {
+      "value": "fg rgb(88, 88, 88)",
+      "count": 36
+    },
+    {
+      "value": "bg rgba(0, 0, 0, 0.1)",
+      "count": 28
+    },
+    {
+      "value": "fg rgba(17, 17, 17, 0.698)",
+      "count": 24
+    },
+    {
+      "value": "bg rgb(255, 120, 112)",
+      "count": 23
+    },
+    {
+      "value": "bd rgba(0, 0, 0, 0.1)",
+      "count": 20
+    },
+    {
+      "value": "fg rgba(0, 0, 0, 0.07)",
+      "count": 16
+    },
+    {
+      "value": "bg rgb(246, 247, 248)",
+      "count": 16
+    },
+    {
+      "value": "bg rgba(0, 0, 0, 0.05)",
+      "count": 12
+    },
+    {
+      "value": "bg rgb(245, 245, 245)",
+      "count": 12
+    },
+    {
+      "value": "fg rgba(17, 17, 17, 0.7)",
+      "count": 10
+    },
+    {
+      "value": "bg rgba(0, 0, 0, 0.5)",
+      "count": 5
+    },
+    {
+      "value": "bd rgba(0, 0, 0, 0)",
+      "count": 5
+    },
+    {
+      "value": "fg rgba(51, 51, 51, 0.5)",
+      "count": 4
+    },
+    {
+      "value": "bg rgb(255, 222, 121)",
+      "count": 4
+    },
+    {
+      "value": "bd rgba(51, 51, 51, 0.4) rgb(0, 0, 0) rgb(0, 0, 0)",
+      "count": 4
+    },
+    {
+      "value": "fg rgb(192, 196, 204)",
+      "count": 4
+    },
+    {
+      "value": "bg rgb(248, 222, 221)",
+      "count": 3
+    },
+    {
+      "value": "bg rgba(255, 255, 255, 0.95)",
+      "count": 2
+    },
+    {
+      "value": "bg rgba(0, 0, 0, 0.3)",
+      "count": 2
+    },
+    {
+      "value": "bg rgb(17, 17, 17)",
+      "count": 2
+    },
+    {
+      "value": "fg rgb(255, 113, 112)",
+      "count": 1
+    }
+  ],
+  "fonts": [
+    {
+      "value": "Poppins | 15.0725px | 400 | normal | normal",
+      "count": 5569
+    },
+    {
+      "value": "Poppins|15.0725px|400|normal",
+      "count": 2797
+    },
+    {
+      "value": "Poppins|28.2609px|400|28.2609px",
+      "count": 1880
+    },
+    {
+      "value": "Poppins | 28.2609px | 400 | 28.2609px | normal",
+      "count": 1328
+    },
+    {
+      "value": "Poppins | 16px | 400 | normal | normal",
+      "count": 706
+    },
+    {
+      "value": "Poppins-Medium|13.1884px|500|13.1884px",
+      "count": 340
+    },
+    {
+      "value": "Poppins|28.2609px|400|normal",
+      "count": 328
+    },
+    {
+      "value": "Poppins|26.3768px|400|normal",
+      "count": 290
+    },
+    {
+      "value": "Poppins-Medium|16.9565px|400|18.8406px",
+      "count": 279
+    },
+    {
+      "value": "Poppins-Regular | 13.1884px | 400 | normal | normal",
+      "count": 242
+    },
+    {
+      "value": "Poppins-Medium | 13.1884px | 500 | 13.1884px | normal",
+      "count": 240
+    },
+    {
+      "value": "Poppins-Medium | 16.9565px | 400 | 18.8406px | normal",
+      "count": 226
+    },
+    {
+      "value": "Poppins-Regular | 13.1884px | 400 | 16.9565px | normal",
+      "count": 216
+    },
+    {
+      "value": "Poppins|15.0725px|400|20.7246px",
+      "count": 188
+    },
+    {
+      "value": "Poppins-Bold|20.7246px|600|24.8696px",
+      "count": 180
+    },
+    {
+      "value": "Poppins | 28.2609px | 400 | normal | normal",
+      "count": 164
+    },
+    {
+      "value": "Poppins | 26.3768px | 400 | normal | normal",
+      "count": 145
+    },
+    {
+      "value": "Poppins | 15.0725px | 400 | 20.7246px | normal",
+      "count": 133
+    },
+    {
+      "value": "Poppins-Regular | 15.0725px | 400 | 20.7246px | normal",
+      "count": 131
+    },
+    {
+      "value": "Poppins-Bold | 20.7246px | 600 | 24.8696px | normal",
+      "count": 128
+    }
+  ],
+  "sizes": [
+    {
+      "value": "15.1",
+      "count": 6070
+    },
+    {
+      "value": "28.3",
+      "count": 1492
+    },
+    {
+      "value": "13.2",
+      "count": 826
+    },
+    {
+      "value": "16",
+      "count": 722
+    },
+    {
+      "value": "17",
+      "count": 315
+    },
+    {
+      "value": "11.3",
+      "count": 188
+    },
+    {
+      "value": "18.8",
+      "count": 180
+    },
+    {
+      "value": "26.4",
+      "count": 145
+    },
+    {
+      "value": "13",
+      "count": 132
+    },
+    {
+      "value": "20.7",
+      "count": 128
+    },
+    {
+      "value": "14",
+      "count": 124
+    },
+    {
+      "value": "15",
+      "count": 34
+    },
+    {
+      "value": "18",
+      "count": 24
+    },
+    {
+      "value": "22",
+      "count": 20
+    },
+    {
+      "value": "32",
+      "count": 16
+    },
+    {
+      "value": "48",
+      "count": 16
+    },
+    {
+      "value": "28",
+      "count": 12
+    },
+    {
+      "value": "52",
+      "count": 12
+    },
+    {
+      "value": "24",
+      "count": 8
+    },
+    {
+      "value": "26",
+      "count": 4
+    }
+  ],
+  "radii": [
+    {
+      "value": "56.5217px",
+      "count": 519
+    },
+    {
+      "value": "9.42029px",
+      "count": 370
+    },
+    {
+      "value": "50%",
+      "count": 360
+    },
+    {
+      "value": "18.8406px",
+      "count": 315
+    },
+    {
+      "value": "7.53623px",
+      "count": 247
+    },
+    {
+      "value": "16px",
+      "count": 40
+    },
+    {
+      "value": "14.1304px",
+      "count": 24
+    },
+    {
+      "value": "47.1014px",
+      "count": 14
+    },
+    {
+      "value": "5.65217px",
+      "count": 14
+    },
+    {
+      "value": "28.2609px",
+      "count": 9
+    },
+    {
+      "value": "60px",
+      "count": 4
+    },
+    {
+      "value": "24px",
+      "count": 4
+    },
+    {
+      "value": "4.71014px",
+      "count": 4
+    },
+    {
+      "value": "94.2029px",
+      "count": 3
+    }
+  ],
+  "shadows": [
+    {
+      "value": "rgba(0, 0, 0, 0.08) 2px 2px 2px 0px",
+      "count": 4
+    },
+    {
+      "value": "rgba(0, 0, 0, 0.03) 0px -5px 20px 0px",
+      "count": 2
+    },
+    {
+      "value": "rgba(0, 0, 0, 0.05) 0px 2.82609px 4.71014px 0px",
+      "count": 1
+    }
+  ]
+}

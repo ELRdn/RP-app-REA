@@ -1,0 +1,64 @@
+{
+  "method": "Live navigation (no auth), production HTML/JS inspection, and shipped bundle route tables. 'observed' = rendered without login; 'gated' = redirects or shows an auth/app gate; 'bundle' = present in shipped JS but not exercised.",
+  "zeta": {
+    "locales": ["ja", "ko", "en"],
+    "webShell": "/[locale]",
+    "observed": [
+      { "path": "/ja", "screen": "Home feed", "tabs": ["?tab=home", "?tab=ranking", "?tab=pixai"] },
+      { "path": "/ja/search", "screen": "Search (empty + results)" },
+      { "path": "/ja/discover", "screen": "Discover / editorial feed" },
+      { "path": "/ja/rooms", "screen": "Talk list (empty when logged out)" },
+      { "path": "/ja/rooms/{roomId}", "screen": "Chat room (guest rooms are ephemeral)" },
+      { "path": "/ja/creator-center", "screen": "Creator center (login wall); tabs: plots / sourcebooks / feed" },
+      { "path": "/ja/plots/{plotId}/profile", "screen": "Plot detail (public, SSR)" },
+      { "path": "/ja/plots/assistant", "screen": "AI plot assistant wizard (intermittently gated)" },
+      { "path": "/ja/announcements/{id}", "screen": "Announcement article" },
+      { "path": "/ja/veritas", "screen": "Brand collaboration event page" },
+      { "path": "/ja/trick-or-treat", "screen": "Halloween event (stepped)" }
+    ],
+    "gated": [
+      { "path": "/ja/plots/create", "behavior": "redirects to /ja?nudge=DEFAULT&redirect=..." },
+      { "path": "/ja/settings", "behavior": "redirects to home with nudge (auth required)" },
+      { "path": "/ja/notifications", "behavior": "404 (no web route)" }
+    ],
+    "bundleOnly": [
+      "/auth/line", "/auth/google", "/auth/apple", "/auth/kakao", "/auth/brandpay",
+      "/auth/sso", "/auth/get-token", "/auth/authorize", "/plots/create", "/plots/assistant",
+      "/creator-center", "/discover", "/rooms"
+    ]
+  },
+  "synclub": {
+    "locales": ["ja", "en", "ko", "zh"],
+    "observed": [
+      { "path": "/", "screen": "Creator studio (chat-style composer, 4 creation modes, agent highlight)" },
+      { "path": "/landing-page", "screen": "Marketing landing (browser edition)" },
+      { "path": "/chat-list", "screen": "Character discovery feed" },
+      { "path": "/discover/comic", "screen": "Discover: comic" },
+      { "path": "/discover/game", "screen": "Discover: game" },
+      { "path": "/discover/daily", "screen": "Discover: daily" },
+      { "path": "/discover/dynamic", "screen": "Discover: motion" },
+      { "path": "/discover/{type}/{id}", "screen": "Discover post detail (SEO/OG landing)" },
+      { "path": "/creator-guide", "screen": "Creator guide / community rules" },
+      { "path": "/FAQ", "screen": "FAQ" },
+      { "path": "/company-info", "screen": "Company information" },
+      { "path": "/blog", "screen": "Blog index" },
+      { "path": "/product", "screen": "Image generation product page" },
+      { "path": "/imageCreator/entry", "screen": "Image creator entry (desktop layout, overflows at 390px)" },
+      { "path": "/voice/entry", "screen": "Voice lab entry (desktop layout, overflows at 390px)" },
+      { "path": "/intro-next", "screen": "Anime-short feature manual (long-form onboarding)" },
+      { "path": "/login", "screen": "Account deletion instructions (store compliance page)" },
+      { "path": "/shared-chat", "screen": "Shared conversation on wap.synclubaichat.com (public share viewer)" }
+    ],
+    "gated": [
+      { "path": "/chat", "behavior": "redirects to / when logged out" },
+      { "path": "/subscription", "behavior": "redirects to / when logged out" },
+      { "path": "/agent/{id}", "behavior": "robots-disallowed; character chat is app-only" },
+      { "path": "/imageCreator/*", "behavior": "public entry renders; creation requires login" },
+      { "path": "/voice/factory/*", "behavior": "public entry renders; creation requires login" }
+    ],
+    "bundleOnly": [
+      "/payment-success", "/payment-error", "/intro-next", "/drama", "/drama-next",
+      "/copywriting", "/cpp", "/discord", "/product", "/voice/factory", "/imageCreator"
+    ]
+  }
+}

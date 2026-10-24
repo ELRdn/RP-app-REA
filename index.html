@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RP-app-REA — Zeta / SynClub UI teardown</title>
+<style>
+  :root{
+    --bg:#0b0b0d; --panel:#131316; --panel-2:#18181c; --line:rgba(255,255,255,.09);
+    --text:#f4f4f5; --muted:#a1a1aa; --dim:#71717a;
+    --zeta:#7c67ff; --zeta-2:#6728ff; --syn:#ff7870; --syn-2:#ff3459;
+    --radius:16px; --max:1440px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  header.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:
+    radial-gradient(900px 420px at 12% -10%, rgba(103,40,255,.28), transparent 60%),
+    radial-gradient(800px 380px at 92% 0%, rgba(255,120,112,.20), transparent 60%),
+    #0b0b0d;}
+  .hero-inner{padding:72px 0 46px}
+  .kicker{display:flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .kicker b{color:var(--text);font-weight:600}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--zeta);box-shadow:0 0 0 4px rgba(124,103,255,.15)}
+  h1{font-size:clamp(38px,6vw,76px);line-height:.98;letter-spacing:-.045em;margin:22px 0 18px;font-weight:800}
+  h1 .g{background:linear-gradient(92deg,#fff 0%,#cfc6ff 42%,#ffb9b4 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{max-width:820px;color:#d4d4d8;font-size:17px;line-height:1.75}
+  .lede a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.35)}
+  .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:38px 0 0}
+  .stat{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .stat b{display:block;font-size:28px;letter-spacing:-.03em}
+  .stat span{font-size:12px;color:var(--muted)}
+  .findings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 0}
+  .finding{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+  .finding h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:600}
+  .finding p{margin:0;font-size:14px;line-height:1.65;color:#e4e4e7}
+  .finding.z{border-color:rgba(124,103,255,.32)}
+  .finding.s{border-color:rgba(255,120,112,.28)}
+  .toolbar{position:sticky;top:0;z-index:20;background:rgba(11,11,13,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .toolbar-inner{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px 0}
+  .seg{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px}
+  .seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:7px 14px;border-radius:999px;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:#fff;color:#09090b;font-weight:600}
+  .seg button:hover{color:#fff}
+  .seg button[aria-pressed="true"]:hover{color:#09090b}
+  .search{flex:1;min-width:220px;position:relative}
+  .search input{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:11px 16px 11px 38px;color:#fff;font:inherit;font-size:13px;outline:none}
+  .search input:focus{border-color:rgba(124,103,255,.6);box-shadow:0 0 0 4px rgba(124,103,255,.10)}
+  .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.5}
+  .count{font-size:12px;color:var(--dim);white-space:nowrap;margin-left:auto}
+  .grid{columns:4 280px;column-gap:22px;padding:30px 0 72px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,border-color .25s ease;break-inside:avoid;margin:0 0 22px}
+  .card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.22)}
+  .card[hidden]{display:none!important}
+  .thumb{padding:0;border:0;background:#0f0f12;cursor:zoom-in;position:relative;display:block;width:100%;overflow:hidden}
+  .thumb img{width:100%;height:auto;object-fit:contain;display:block;transition:transform .5s ease}
+  .card:hover .thumb img{transform:scale(1.02)}
+  .badge{position:absolute;top:10px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px;backdrop-filter:blur(8px);font-weight:600}
+  .badge.zeta{left:10px;background:rgba(103,40,255,.82);color:#fff}
+  .badge.synclub{left:10px;background:rgba(255,120,112,.90);color:#1b0b0a}
+  .badge.plat{right:10px;background:rgba(0,0,0,.55);color:#e4e4e7;border:1px solid rgba(255,255,255,.15)}
+  .card-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
+  .card-body h3{font-size:14px;margin:0;letter-spacing:-.01em;line-height:1.4}
+  .card-body p{margin:0;color:var(--muted);font-size:12px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:8px}
+  .tags span{font-size:10px;color:var(--dim);border:1px solid var(--line);padding:2px 6px;border-radius:5px}
+  .empty{grid-column:1/-1;text-align:center;color:var(--dim);padding:70px 0}
+  dialog{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);width:100%;color:var(--text)}
+  dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(6px)}
+  .modal{background:#111114;border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .modal-head .t{font-size:12px;color:var(--muted)}
+  .modal-close{border:0;background:rgba(255,255,255,.08);color:#fff;width:32px;height:32px;border-radius:999px;cursor:pointer;font-size:16px}
+  .modal img{display:block;max-width:100%;max-height:72vh;margin:0 auto;background:#000}
+  .meta{padding:16px 18px 18px;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+  .meta h2{margin:0 0 6px;font-size:18px;letter-spacing:-.02em}
+  .meta p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+  .meta dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px;color:var(--dim);align-content:start}
+  .meta dt{color:#52525b}
+  .meta dd{margin:0;word-break:break-all}
+  footer{border-top:1px solid var(--line);padding:34px 0 56px;color:var(--dim);font-size:12px;line-height:1.8}
+  footer a{text-decoration:underline;text-underline-offset:2px}
+  @media(max-width:1180px){.grid{columns:3 240px}}
+  @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}.findings{grid-template-columns:1fr}.grid{columns:2 200px}.meta{grid-template-columns:1fr}}
+  @media(max-width:560px){.wrap{padding:0 16px}.hero-inner{padding:48px 0 34px}.grid{columns:1}.count{width:100%;margin-left:0}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="kicker"><span class="dot"></span><b>RP-app-REA</b><span>UI reverse engineering</span><span>2026-10-25</span></div>
+    <h1><span class="g">Zeta × SynClub</span><br>UI teardown &amp; design system</h1>
+    <p class="lede">日本向けAIロールプレイ/キャラクターチャット2製品のUIを、REA（Reverse Engineering Anything）の手法で分解した記録。公開Webビルドの静的解析、モバイルビューポートでの実画面キャプチャ、App Store素材、実機スクリーンショットを突き合わせ、画面構造・デザイントークン・実装スタック・課金導線・戦略差を整理した。<a href="docs/01-zeta-teardown.md">Zeta編</a> / <a href="docs/02-synclub-teardown.md">SynClub編</a> / <a href="docs/03-comparison.md">比較</a> / <a href="docs/04-design-system.md">デザインシステム</a> / <a href="docs/05-implementation.md">実装</a> / <a href="docs/06-rebuild-blueprint.md">再構築案</a>.</p>
+    <div class="stats">
+      <div class="stat"><b>93</b><span>captured screens</span></div>
+      <div class="stat"><b>2</b><span>products</span></div>
+      <div class="stat"><b>3</b><span>surfaces (Web / iOS / Store)</span></div>
+      <div class="stat"><b>10.5 MB</b><span>JS analyzed by REA</span></div>
+    </div>
+    <div class="findings">
+      <div class="finding z"><h2>Zeta — 物語を売る</h2><p>プロット（物語）単位の設計。1プロットに最大10キャラ、設定集、イントロ、スタイル、トークプロフィール。Webでも440px固定シェルでゲストチャットまで完結し、ピース従量課金と広告除去でマネタイズする。</p></div>
+      <div class="finding s"><h2>SynClub — 創作基盤を売る</h2><p>キャラ発見はライトで巨大的なカテゴリグリッド。Webは「ブラウザ版」として動画・漫画・画像・音声のクリエイタースタジオに進化し、チャットはQRでアプリへ送る。コイン＋サブスクの課金UIを大量に同梱。</p></div>
+      <div class="finding"><h2>共通する勝ち筋</h2><p>どちらも「キャラとの会話」単体ではなく、記憶・関係性・画像/音声・創作・共有を重ねて滞在時間を作る。UIの差は、Zetaが没入型ダーク、SynClubが編集型ライトに振り切っている点。</p></div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap toolbar-inner">
+    <div class="seg" id="appSeg" role="group" aria-label="アプリ">
+      <button data-app="all" aria-pressed="true">All</button>
+      <button data-app="zeta" aria-pressed="false">Zeta</button>
+      <button data-app="synclub" aria-pressed="false">SynClub</button>
+    </div>
+    <div class="seg" id="platSeg" role="group" aria-label="サーフェス">
+      <button data-platform="all" aria-pressed="true">All</button>
+      <button data-platform="web" aria-pressed="false">Web</button>
+      <button data-platform="mobile" aria-pressed="false">iOS</button>
+      <button data-platform="appstore" aria-pressed="false">Store</button>
+    </div>
+    <label class="search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="画面名・タグで検索（例: chat, 課金, 404）" autocomplete="off">
+    </label>
+    <div class="count" id="count"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="grid" id="grid">
+  <article class="card" data-app="zeta" data-platform="web" data-search="アプリ誘導インタースティシャル 初回ロード後に出る全画面モーダル。「アプリで今すぐチャット！」ctaと閉じるボタン。web版の主要kpiがアプリ遷移であることを示す。 overlay acquisition" data-index="0" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="アプリ誘導インタースティシャル を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z01_app_download_modal.png" alt="アプリ誘導インタースティシャル" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>アプリ誘導インタースティシャル</h3>
+      <p>初回ロード後に出る全画面モーダル。「アプリで今すぐチャット！」CTAと閉じるボタン。Web版の主要KPIがアプリ遷移であることを示す。</p>
+      <div class="tags"><span>#overlay</span><span>#acquisition</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="ホーム（フィード） 上部セグメントナビ、バナーカルーセル、2カラムのプロットカード、下部タブバー。画面幅は440px固定のアプリシェル。 home feed navigation" data-index="1" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="ホーム（フィード） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z02_home.png" alt="ホーム（フィード）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ホーム（フィード）</h3>
+      <p>上部セグメントナビ、バナーカルーセル、2カラムのプロットカード、下部タブバー。画面幅は440px固定のアプリシェル。</p>
+      <div class="tags"><span>#home</span><span>#feed</span><span>#navigation</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="ホーム（スクロール全体） スクロールコンテナ全体。カードのランキング番号、チャット数バッジ、タグ、作者名まで確認できる。 home feed" data-index="2" style="--ar:0.5760709010339734">
+    <button class="thumb" type="button" aria-label="ホーム（スクロール全体） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z03_home_full.png" alt="ホーム（スクロール全体）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ホーム（スクロール全体）</h3>
+      <p>スクロールコンテナ全体。カードのランキング番号、チャット数バッジ、タグ、作者名まで確認できる。</p>
+      <div class="tags"><span>#home</span><span>#feed</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="ランキング トレンド/ベスト/新作/グローバルとジャンルチップ。2カラムカードに順位バッジ。 ranking discovery" data-index="3" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="ランキング を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z05_ranking.png" alt="ランキング" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ランキング</h3>
+      <p>トレンド/ベスト/新作/グローバルとジャンルチップ。2カラムカードに順位バッジ。</p>
+      <div class="tags"><span>#ranking</span><span>#discovery</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="pixaiコラボタブ 画像生成ai「pixai」とのコラボ面。限定プロットと生成導線。 collab event" data-index="4" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="PixAIコラボタブ を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z07_pixai_collab.png" alt="PixAIコラボタブ" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>PixAIコラボタブ</h3>
+      <p>画像生成AI「PixAI」とのコラボ面。限定プロットと生成導線。</p>
+      <div class="tags"><span>#collab</span><span>#event</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="検索（初期状態） 検索フィールド、トレンド/おすすめタグのピル。ハロウィン仕様のオレンジ枠チップが見える。 search" data-index="5" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="検索（初期状態） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z08_search_empty.png" alt="検索（初期状態）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>検索（初期状態）</h3>
+      <p>検索フィールド、トレンド/おすすめタグのピル。ハロウィン仕様のオレンジ枠チップが見える。</p>
+      <div class="tags"><span>#search</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="検索結果（執事） キーワード「執事」の結果。カード＋タグ＋件数。検索はプロット名・タグ・本文を横断。 search results" data-index="6" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="検索結果（執事） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z09_search_results.png" alt="検索結果（執事）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>検索結果（執事）</h3>
+      <p>キーワード「執事」の結果。カード＋タグ＋件数。検索はプロット名・タグ・本文を横断。</p>
+      <div class="tags"><span>#search</span><span>#results</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="プロット詳細（ヒーロー） フルブリード画像＋グラデーション、タイトル、サブタイトル、タグ、メタ情報ピル、作者行、固定cta「トークを始める」。 profile detail hero" data-index="7" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="プロット詳細（ヒーロー） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z11_plot_profile_top.png" alt="プロット詳細（ヒーロー）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>プロット詳細（ヒーロー）</h3>
+      <p>フルブリード画像＋グラデーション、タイトル、サブタイトル、タグ、メタ情報ピル、作者行、固定CTA「トークを始める」。</p>
+      <div class="tags"><span>#profile</span><span>#detail</span><span>#hero</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="プロット詳細（スクロール） ヒーロー直下の紹介セクションとクリエイター応援cta。 profile intro" data-index="8" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="プロット詳細（スクロール） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z13_plot_profile_scroll.png" alt="プロット詳細（スクロール）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>プロット詳細（スクロール）</h3>
+      <p>ヒーロー直下の紹介セクションとクリエイター応援CTA。</p>
+      <div class="tags"><span>#profile</span><span>#intro</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="紹介セクションと作者 作者プロフィール、特別応援cta（紫のアウトライン）、「紹介」本文。長文テキストは16px/1.5で可読性重視。 profile intro creator" data-index="9" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="紹介セクションと作者 を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z28_plot_scroll_600.png" alt="紹介セクションと作者" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>紹介セクションと作者</h3>
+      <p>作者プロフィール、特別応援CTA（紫のアウトライン）、「紹介」本文。長文テキストは16px/1.5で可読性重視。</p>
+      <div class="tags"><span>#profile</span><span>#intro</span><span>#creator</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="プロット（キャラクター定義） 「プロット」セクション。キャラクターごとのカード（名前・年齢・外見・性格）が縦に並ぶ。 profile characters" data-index="10" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="プロット（キャラクター定義） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z28_plot_scroll_1200.png" alt="プロット（キャラクター定義）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>プロット（キャラクター定義）</h3>
+      <p>「プロット」セクション。キャラクターごとのカード（名前・年齢・外見・性格）が縦に並ぶ。</p>
+      <div class="tags"><span>#profile</span><span>#characters</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="イントロ 物語の導入文。チャット開始時にこの文章がナレーションとして流れる。 profile intro" data-index="11" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="イントロ を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z28_plot_scroll_1800.png" alt="イントロ" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>イントロ</h3>
+      <p>物語の導入文。チャット開始時にこの文章がナレーションとして流れる。</p>
+      <div class="tags"><span>#profile</span><span>#intro</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="クリエイターコメントと関連プロット 更新日・リリース日、クリエイターコメント、条件付きの関連プロットグリッド。 profile related" data-index="12" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="クリエイターコメントと関連プロット を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z28_plot_scroll_2400.png" alt="クリエイターコメントと関連プロット" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>クリエイターコメントと関連プロット</h3>
+      <p>更新日・リリース日、クリエイターコメント、条件付きの関連プロットグリッド。</p>
+      <div class="tags"><span>#profile</span><span>#related</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="別プロットの詳細（コメント導線） メタピルの「コメント 34」からコメントセクションへ。プロットごとにメタ情報の構成が変わる。 profile comments" data-index="13" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="別プロットの詳細（コメント導線） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z37_comments_sheet.png" alt="別プロットの詳細（コメント導線）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>別プロットの詳細（コメント導線）</h3>
+      <p>メタピルの「コメント 34」からコメントセクションへ。プロットごとにメタ情報の構成が変わる。</p>
+      <div class="tags"><span>#profile</span><span>#comments</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="プロット本文（プロンプト形式） 【描写方針】【絶対原則】など、aiへのシステムプロンプトをそのまま作者が編集・公開している。 profile prompt authoring" data-index="14" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="プロット本文（プロンプト形式） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z40_profile_scroll_3600.png" alt="プロット本文（プロンプト形式）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>プロット本文（プロンプト形式）</h3>
+      <p>【描写方針】【絶対原則】など、AIへのシステムプロンプトをそのまま作者が編集・公開している。</p>
+      <div class="tags"><span>#profile</span><span>#prompt</span><span>#authoring</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="関連プロット 「〜が気に入ったなら？！」のレコメンド。2カラム。 profile recommendation" data-index="15" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="関連プロット を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z40_profile_scroll_4200.png" alt="関連プロット" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>関連プロット</h3>
+      <p>「〜が気に入ったなら？！」のレコメンド。2カラム。</p>
+      <div class="tags"><span>#profile</span><span>#recommendation</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="チャット初回（広告あり） ゲストでもチャット可能。上部に外部広告バナー、その下にヘッダーと物語。 chat ads" data-index="16" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="チャット初回（広告あり） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z14_talk_gate.png" alt="チャット初回（広告あり）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>チャット初回（広告あり）</h3>
+      <p>ゲストでもチャット可能。上部に外部広告バナー、その下にヘッダーと物語。</p>
+      <div class="tags"><span>#chat</span><span>#ads</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="チャットルーム ナレーション、キャラクターの台詞、ユーザーの吹き出し、入力バー。紫グラデーションのユーザーバブルが特徴。 chat" data-index="17" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="チャットルーム を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z31_chat_room.png" alt="チャットルーム" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>チャットルーム</h3>
+      <p>ナレーション、キャラクターの台詞、ユーザーの吹き出し、入力バー。紫グラデーションのユーザーバブルが特徴。</p>
+      <div class="tags"><span>#chat</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="ai応答 送信後のai返信。キャラ名ラベル、zetaウォーターマーク、再生成アイコン。 chat ai" data-index="18" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="AI応答 を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z33_chat_reply.png" alt="AI応答" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>AI応答</h3>
+      <p>送信後のAI返信。キャラ名ラベル、zetaウォーターマーク、再生成アイコン。</p>
+      <div class="tags"><span>#chat</span><span>#ai</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="入力中 テキストエリアに日本語入力。送信ボタンは紫の円形。 chat input" data-index="19" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="入力中 を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z32_chat_composing.png" alt="入力中" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>入力中</h3>
+      <p>テキストエリアに日本語入力。送信ボタンは紫の円形。</p>
+      <div class="tags"><span>#chat</span><span>#input</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="アスタリスク（アクション） 入力欄左の「*」ボタン。行動・心情の挿入補助。 chat composer" data-index="20" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="アスタリスク（アクション） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z35_chat_asterisk.png" alt="アスタリスク（アクション）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>アスタリスク（アクション）</h3>
+      <p>入力欄左の「*」ボタン。行動・心情の挿入補助。</p>
+      <div class="tags"><span>#chat</span><span>#composer</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="ログインシート line/google/appleの3択＋「アプリで続ける」。ボトムシート型。 auth login" data-index="21" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="ログインシート を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z15_login.png" alt="ログインシート" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ログインシート</h3>
+      <p>LINE/Google/Appleの3択＋「アプリで続ける」。ボトムシート型。</p>
+      <div class="tags"><span>#auth</span><span>#login</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="クリエイターセンター（ログイン壁） プロット/設定集/フィードの3タブ。未ログイン時はロゴと社会的ログイン、ハロウィン装飾。 creator auth-wall" data-index="22" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="クリエイターセンター（ログイン壁） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z23_creator_center.png" alt="クリエイターセンター（ログイン壁）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>クリエイターセンター（ログイン壁）</h3>
+      <p>プロット/設定集/フィードの3タブ。未ログイン時はロゴと社会的ログイン、ハロウィン装飾。</p>
+      <div class="tags"><span>#creator</span><span>#auth-wall</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="クリエイターセンター：設定集タブ 設定集（sourcebook）タブ。ログイン壁は共通。 creator sourcebook" data-index="23" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="クリエイターセンター：設定集タブ を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z24_creator_settings.png" alt="クリエイターセンター：設定集タブ" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>クリエイターセンター：設定集タブ</h3>
+      <p>設定集（Sourcebook）タブ。ログイン壁は共通。</p>
+      <div class="tags"><span>#creator</span><span>#sourcebook</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="クリエイターセンター：フィードタブ フィードタブ。 creator feed" data-index="24" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="クリエイターセンター：フィードタブ を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z25_creator_feed.png" alt="クリエイターセンター：フィードタブ" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>クリエイターセンター：フィードタブ</h3>
+      <p>フィードタブ。</p>
+      <div class="tags"><span>#creator</span><span>#feed</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="トーク一覧（空・未ログイン） 検索と設定ギア、保存セクション、降順ソート、空状態。紫のツールチップが吹き出し設定を案内。 talk empty-state" data-index="25" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="トーク一覧（空・未ログイン） を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z26_talk_list_empty.png" alt="トーク一覧（空・未ログイン）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>トーク一覧（空・未ログイン）</h3>
+      <p>検索と設定ギア、保存セクション、降順ソート、空状態。紫のツールチップが吹き出し設定を案内。</p>
+      <div class="tags"><span>#talk</span><span>#empty-state</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="発見タブ ハロウィン特集とプロットフィード。ホームとは別の編集面。 discover" data-index="26" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="発見タブ を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z21_discover.png" alt="発見タブ" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>発見タブ</h3>
+      <p>ハロウィン特集とプロットフィード。ホームとは別の編集面。</p>
+      <div class="tags"><span>#discover</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="お知らせ詳細 web決済導入の告知。テキスト中心の記事レイアウト。 announcement monetization" data-index="27" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="お知らせ詳細 を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z16_announcement.png" alt="お知らせ詳細" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>お知らせ詳細</h3>
+      <p>Web決済導入の告知。テキスト中心の記事レイアウト。</p>
+      <div class="tags"><span>#announcement</span><span>#monetization</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="イベントページ veritas ブランドコラボの没入型ランディング。ダークで金のアクセント。 event brand" data-index="28" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="イベントページ Veritas を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z17_event_veritas.png" alt="イベントページ Veritas" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>イベントページ Veritas</h3>
+      <p>ブランドコラボの没入型ランディング。ダークで金のアクセント。</p>
+      <div class="tags"><span>#event</span><span>#brand</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="イベントページ halloween ハロウィン特設。ステップ制のインタラクティブ演出。 event seasonal" data-index="29" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="イベントページ Halloween を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z19_event_halloween.png" alt="イベントページ Halloween" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>イベントページ Halloween</h3>
+      <p>ハロウィン特設。ステップ制のインタラクティブ演出。</p>
+      <div class="tags"><span>#event</span><span>#seasonal</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="aiプロットアシスタント ジャンル選択から始まるウィザード。プログレスステッパーとマスコット。 ai authoring wizard" data-index="30" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="AIプロットアシスタント を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z38_plot_assistant_gate.png" alt="AIプロットアシスタント" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>AIプロットアシスタント</h3>
+      <p>ジャンル選択から始まるウィザード。プログレスステッパーとマスコット。</p>
+      <div class="tags"><span>#ai</span><span>#authoring</span><span>#wizard</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="404 紫のアウトラインアイコン、日本語コピー、グレーの確認ボタン。 404" data-index="31" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="404 を拡大">
+      <img src="evidence/screenshots/zeta/web/zeta_z20_404.png" alt="404" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>404</h3>
+      <p>紫のアウトラインアイコン、日本語コピー、グレーの確認ボタン。</p>
+      <div class="tags"><span>#404</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="ランディング（ヒーロー） ピンクのベタ面、極太の日本語ディスプレイ、黄色のプロモバー、黒ピルcta、3dマスコット。 landing hero" data-index="32" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="ランディング（ヒーロー） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s01_landing_top.png" alt="ランディング（ヒーロー）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ランディング（ヒーロー）</h3>
+      <p>ピンクのベタ面、極太の日本語ディスプレイ、黄色のプロモバー、黒ピルCTA、3Dマスコット。</p>
+      <div class="tags"><span>#landing</span><span>#hero</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="ランディング（機能） 「クリエイターのためのオールインワン創作アシスタント」。動画・画像・音声のマルチモーダル訴求。 landing features" data-index="33" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="ランディング（機能） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s02_landing_features.png" alt="ランディング（機能）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ランディング（機能）</h3>
+      <p>「クリエイターのためのオールインワン創作アシスタント」。動画・画像・音声のマルチモーダル訴求。</p>
+      <div class="tags"><span>#landing</span><span>#features</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="ランディング（制作フロー） 01〜04の制作フロー、料金比較、縦長のスクロール演出。 landing creator" data-index="34" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="ランディング（制作フロー） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s03_landing_creator.png" alt="ランディング（制作フロー）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ランディング（制作フロー）</h3>
+      <p>01〜04の制作フロー、料金比較、縦長のスクロール演出。</p>
+      <div class="tags"><span>#landing</span><span>#creator</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="ランディング（全体） フルページ。マーキー、色面の切り替え、大きなタイポグラフィ。 landing full" data-index="35" style="--ar:0.04178720668595307">
+    <button class="thumb" type="button" aria-label="ランディング（全体） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s04_landing_full.png" alt="ランディング（全体）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ランディング（全体）</h3>
+      <p>フルページ。マーキー、色面の切り替え、大きなタイポグラフィ。</p>
+      <div class="tags"><span>#landing</span><span>#full</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="キャラクター発見（フィード） 巨大な2カラムのカテゴリ文字グリッド、画像カード、半透明タグ、説明カード。説明文は公開用にブラー処理。 feed discovery" data-index="36" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="キャラクター発見（フィード） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s05_chat_list.png" alt="キャラクター発見（フィード）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>キャラクター発見（フィード）</h3>
+      <p>巨大な2カラムのカテゴリ文字グリッド、画像カード、半透明タグ、説明カード。説明文は公開用にブラー処理。</p>
+      <div class="tags"><span>#feed</span><span>#discovery</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="フィード（スクロール） カードの積み方とリズム。説明文は公開用にブラー処理。 feed" data-index="37" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="フィード（スクロール） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s07_chat_list_scrolled.png" alt="フィード（スクロール）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>フィード（スクロール）</h3>
+      <p>カードの積み方とリズム。説明文は公開用にブラー処理。</p>
+      <div class="tags"><span>#feed</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="カテゴリ切替時のアプリ誘導 カテゴリをタップするとqr付きの全画面モーダル。「フルサービスはアプリで」というハードゲート。背後の説明文はブラー処理。 gate conversion" data-index="38" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="カテゴリ切替時のアプリ誘導 を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s30_feed_category.png" alt="カテゴリ切替時のアプリ誘導" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>カテゴリ切替時のアプリ誘導</h3>
+      <p>カテゴリをタップするとQR付きの全画面モーダル。「フルサービスはアプリで」というハードゲート。背後の説明文はブラー処理。</p>
+      <div class="tags"><span>#gate</span><span>#conversion</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="発見：漫画 sns型の投稿フィード。手描き風のタブ下線、いいね/コメント、埋め込み作品カード。 discover comic" data-index="39" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="発見：漫画 を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s10_discover_comic.png" alt="発見：漫画" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>発見：漫画</h3>
+      <p>SNS型の投稿フィード。手描き風のタブ下線、いいね/コメント、埋め込み作品カード。</p>
+      <div class="tags"><span>#discover</span><span>#comic</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="発見：ゲーム aiゲームの投稿一覧。 discover game" data-index="40" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="発見：ゲーム を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s11_discover_game.png" alt="発見：ゲーム" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>発見：ゲーム</h3>
+      <p>AIゲームの投稿一覧。</p>
+      <div class="tags"><span>#discover</span><span>#game</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="発見：日常 日常投稿のフィード。 discover daily" data-index="41" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="発見：日常 を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s12_discover_daily.png" alt="発見：日常" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>発見：日常</h3>
+      <p>日常投稿のフィード。</p>
+      <div class="tags"><span>#discover</span><span>#daily</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="発見：モーション ショット動画のフィード。 discover dynamic" data-index="42" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="発見：モーション を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s13_discover_dynamic.png" alt="発見：モーション" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>発見：モーション</h3>
+      <p>ショット動画のフィード。</p>
+      <div class="tags"><span>#discover</span><span>#dynamic</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="発見の詳細 作者、本文、作品カード、qrダウンロードcta。seo/共有の受け皿。 discover detail" data-index="43" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="発見の詳細 を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s14_discover_detail.png" alt="発見の詳細" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>発見の詳細</h3>
+      <p>作者、本文、作品カード、QRダウンロードCTA。SEO/共有の受け皿。</p>
+      <div class="tags"><span>#discover</span><span>#detail</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="クリエイターガイド 機能ガイドとコミュニティルール。コーラルの見出しと手描き下線。 docs guide" data-index="44" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="クリエイターガイド を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s16_creator_guide.png" alt="クリエイターガイド" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>クリエイターガイド</h3>
+      <p>機能ガイドとコミュニティルール。コーラルの見出しと手描き下線。</p>
+      <div class="tags"><span>#docs</span><span>#guide</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="faq アコーディオン。コーラルの見出し、黒本文、余白多め。 docs faq" data-index="45" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="FAQ を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s17_faq.png" alt="FAQ" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>FAQ</h3>
+      <p>アコーディオン。コーラルの見出し、黒本文、余白多め。</p>
+      <div class="tags"><span>#docs</span><span>#faq</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="運営会社情報 hiclub株式会社の情報。法務・信頼性のページ。 docs legal" data-index="46" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="運営会社情報 を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s18_company_info.png" alt="運営会社情報" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>運営会社情報</h3>
+      <p>HiClub株式会社の情報。法務・信頼性のページ。</p>
+      <div class="tags"><span>#docs</span><span>#legal</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="ブログ 記事一覧。 docs blog" data-index="47" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="ブログ を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s19_blog.png" alt="ブログ" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ブログ</h3>
+      <p>記事一覧。</p>
+      <div class="tags"><span>#docs</span><span>#blog</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="クリエイタースタジオ（モバイル） チャット型コンポーザー、モデル選択、動画/解説マンガ動画/画像生成/ミニ動画の4機能。 creator studio" data-index="48" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="クリエイタースタジオ（モバイル） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s24_creator_home.png" alt="クリエイタースタジオ（モバイル）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>クリエイタースタジオ（モバイル）</h3>
+      <p>チャット型コンポーザー、モデル選択、動画/解説マンガ動画/画像生成/ミニ動画の4機能。</p>
+      <div class="tags"><span>#creator</span><span>#studio</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="スタジオ（スクロール） エージェントハイライト、コミュニティの創造、ユーザーのおすすめ。 creator feed" data-index="49" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="スタジオ（スクロール） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s25_creator_home_scroll.png" alt="スタジオ（スクロール）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>スタジオ（スクロール）</h3>
+      <p>エージェントハイライト、コミュニティの創造、ユーザーのおすすめ。</p>
+      <div class="tags"><span>#creator</span><span>#feed</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="画像生成エントリ（モバイル崩れ） デスクトップ前提のレイアウトが390pxで横にはみ出し、見出しが切れている。レスポンシブ不整合の証拠。 bug responsive creator" data-index="50" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="画像生成エントリ（モバイル崩れ） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s26_image_creator_entry.png" alt="画像生成エントリ（モバイル崩れ）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>画像生成エントリ（モバイル崩れ）</h3>
+      <p>デスクトップ前提のレイアウトが390pxで横にはみ出し、見出しが切れている。レスポンシブ不整合の証拠。</p>
+      <div class="tags"><span>#bug</span><span>#responsive</span><span>#creator</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="ボイスラボ入口（モバイル崩れ） 同じく横方向のオーバーフロー。クリエイター系ページはモバイル非対応。 bug responsive voice" data-index="51" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="ボイスラボ入口（モバイル崩れ） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s27_voice_entry.png" alt="ボイスラボ入口（モバイル崩れ）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>ボイスラボ入口（モバイル崩れ）</h3>
+      <p>同じく横方向のオーバーフロー。クリエイター系ページはモバイル非対応。</p>
+      <div class="tags"><span>#bug</span><span>#responsive</span><span>#voice</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="アプリ誘導ゲート 「親愛なるユーザー 🧩」qrコード付きモーダル。閉じる×あり。 gate" data-index="52" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="アプリ誘導ゲート を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s32_app_gate.png" alt="アプリ誘導ゲート" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>アプリ誘導ゲート</h3>
+      <p>「親愛なるユーザー 🧩」QRコード付きモーダル。閉じる×あり。</p>
+      <div class="tags"><span>#gate</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="アカウント削除ページ 赤い大見出しのコンプライアンス画面。ログイン導線ではなく、ストア審査用の削除手順。 legal account" data-index="53" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="アカウント削除ページ を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s39_login.png" alt="アカウント削除ページ" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>アカウント削除ページ</h3>
+      <p>赤い大見出しのコンプライアンス画面。ログイン導線ではなく、ストア審査用の削除手順。</p>
+      <div class="tags"><span>#legal</span><span>#account</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="共有チャット（本文レダクト） 共有urlのチャット。フルブリード背景、黒の設定バブル、コーラルの音声バブル、下部コンポーザー。本文は公開用にモザイク処理。 chat share redacted" data-index="54" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="共有チャット（本文レダクト） を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s40_shared_chat_redacted.png" alt="共有チャット（本文レダクト）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>共有チャット（本文レダクト）</h3>
+      <p>共有URLのチャット。フルブリード背景、黒の設定バブル、コーラルの音声バブル、下部コンポーザー。本文は公開用にモザイク処理。</p>
+      <div class="tags"><span>#chat</span><span>#share</span><span>#redacted</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="アニショート機能説明書 監督/シナリオ/デザイナー/絵コンテの4役割、01アクセス方法〜の長尺オンボーディング。 onboarding docs anime" data-index="55" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="アニショート機能説明書 を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s41_intro_next.png" alt="アニショート機能説明書" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>アニショート機能説明書</h3>
+      <p>監督/シナリオ/デザイナー/絵コンテの4役割、01アクセス方法〜の長尺オンボーディング。</p>
+      <div class="tags"><span>#onboarding</span><span>#docs</span><span>#anime</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="画像生成プロダクトページ 作品例、コピー、黒ピル「今すぐ作成」。 product image" data-index="56" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="画像生成プロダクトページ を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s42_product.png" alt="画像生成プロダクトページ" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>画像生成プロダクトページ</h3>
+      <p>作品例、コピー、黒ピル「今すぐ作成」。</p>
+      <div class="tags"><span>#product</span><span>#image</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="404 キャラクター画像のモザイクで「404」を描く。ブランドらしい遊び。 404" data-index="57" style="--ar:0.46208530805687204">
+    <button class="thumb" type="button" aria-label="404 を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s23_404.png" alt="404" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>404</h3>
+      <p>キャラクター画像のモザイクで「404」を描く。ブランドらしい遊び。</p>
+      <div class="tags"><span>#404</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="デスクトップ：スタジオ 左アイコンレール、黒い告知バー、中央コンポーザー、モデルバッジ（gemini 3.1 pro）、4機能、作品ギャラリー。 desktop creator" data-index="58" style="--ar:1.6">
+    <button class="thumb" type="button" aria-label="デスクトップ：スタジオ を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s35_desktop_creator_home.png" alt="デスクトップ：スタジオ" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>デスクトップ：スタジオ</h3>
+      <p>左アイコンレール、黒い告知バー、中央コンポーザー、モデルバッジ（Gemini 3.1 Pro）、4機能、作品ギャラリー。</p>
+      <div class="tags"><span>#desktop</span><span>#creator</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="デスクトップ：画像生成 通常画像/aiキャラ画像/nano bananaの3カード。 desktop image" data-index="59" style="--ar:1.6">
+    <button class="thumb" type="button" aria-label="デスクトップ：画像生成 を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s36_desktop_image_creator.png" alt="デスクトップ：画像生成" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>デスクトップ：画像生成</h3>
+      <p>通常画像/AIキャラ画像/Nano Bananaの3カード。</p>
+      <div class="tags"><span>#desktop</span><span>#image</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="デスクトップ：ボイス ボイスラボ/テキスト読み上げの2カード。 desktop voice" data-index="60" style="--ar:1.6">
+    <button class="thumb" type="button" aria-label="デスクトップ：ボイス を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s37_desktop_voice_entry.png" alt="デスクトップ：ボイス" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>デスクトップ：ボイス</h3>
+      <p>ボイスラボ/テキスト読み上げの2カード。</p>
+      <div class="tags"><span>#desktop</span><span>#voice</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="デスクトップ：ランディング 横に広いヒーローと機能セクション。 desktop landing" data-index="61" style="--ar:1.6">
+    <button class="thumb" type="button" aria-label="デスクトップ：ランディング を拡大">
+      <img src="evidence/screenshots/synclub/web/synclub_s38_desktop_landing.png" alt="デスクトップ：ランディング" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>デスクトップ：ランディング</h3>
+      <p>横に広いヒーローと機能セクション。</p>
+      <div class="tags"><span>#desktop</span><span>#landing</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="デスクトップ：キャラクター発見 左サイドバー（発見/チャット）、マイキャラ、作成cta、4カラムグリッド。モバイルと情報密度がまったく違う。 desktop feed" data-index="62" style="--ar:1.4222222222222223">
+    <button class="thumb" type="button" aria-label="デスクトップ：キャラクター発見 を拡大">
+      <img src="evidence/screenshots/synclub/web/desktop_synclub_light_feed.png" alt="デスクトップ：キャラクター発見" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>デスクトップ：キャラクター発見</h3>
+      <p>左サイドバー（発見/チャット）、マイキャラ、作成CTA、4カラムグリッド。モバイルと情報密度がまったく違う。</p>
+      <div class="tags"><span>#desktop</span><span>#feed</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="デスクトップ：ダーク設定 prefers-color-scheme: dark でも配色は変わらない。ライトテーマ固定。 desktop theming" data-index="63" style="--ar:1.4222222222222223">
+    <button class="thumb" type="button" aria-label="デスクトップ：ダーク設定 を拡大">
+      <img src="evidence/screenshots/synclub/web/desktop_synclub_dark_feed.png" alt="デスクトップ：ダーク設定" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>デスクトップ：ダーク設定</h3>
+      <p>prefers-color-scheme: dark でも配色は変わらない。ライトテーマ固定。</p>
+      <div class="tags"><span>#desktop</span><span>#theming</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="web" data-search="デスクトップ：ランディング（再掲） デスクトップ幅でのランディング。 desktop landing" data-index="64" style="--ar:1.4222222222222223">
+    <button class="thumb" type="button" aria-label="デスクトップ：ランディング（再掲） を拡大">
+      <img src="evidence/screenshots/synclub/web/desktop_synclub_light_landing.png" alt="デスクトップ：ランディング（再掲）" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>デスクトップ：ランディング（再掲）</h3>
+      <p>デスクトップ幅でのランディング。</p>
+      <div class="tags"><span>#desktop</span><span>#landing</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="web" data-search="デスクトップ：zetaホーム 1280pxでも中央440pxのモバイルシェルのまま。左右は黒。デスクトップ最適化をしない戦略。 desktop layout" data-index="65" style="--ar:1.4222222222222223">
+    <button class="thumb" type="button" aria-label="デスクトップ：Zetaホーム を拡大">
+      <img src="evidence/screenshots/zeta/web/desktop_zeta_dark_feed.png" alt="デスクトップ：Zetaホーム" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">Web</span>
+    </button>
+    <div class="card-body">
+      <h3>デスクトップ：Zetaホーム</h3>
+      <p>1280pxでも中央440pxのモバイルシェルのまま。左右は黒。デスクトップ最適化をしない戦略。</p>
+      <div class="tags"><span>#desktop</span><span>#layout</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="mobile" data-search="発見タブ（実機） オススメ/キャラクター/ノベル/漫画の上部タブ、ビジュアル演出フィルタ、2カラムカード、下部ナビ。 feed ios" data-index="66" style="--ar:0.44559051057246">
+    <button class="thumb" type="button" aria-label="発見タブ（実機） を拡大">
+      <img src="evidence/screenshots/zeta/mobile/Screenshot_20261021-212048.png" alt="発見タブ（実機）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">iOS (device)</span>
+    </button>
+    <div class="card-body">
+      <h3>発見タブ（実機）</h3>
+      <p>オススメ/キャラクター/ノベル/漫画の上部タブ、ビジュアル演出フィルタ、2カラムカード、下部ナビ。</p>
+      <div class="tags"><span>#feed</span><span>#ios</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="mobile" data-search="設定（実機） 通知トグル、ブロックリスト、フィードバック、画面表示、地域と言語、プライバシー、利用規約、アカウント、キャッシュ、バージョン、ログアウト。 settings ios" data-index="67" style="--ar:0.44559051057246">
+    <button class="thumb" type="button" aria-label="設定（実機） を拡大">
+      <img src="evidence/screenshots/zeta/mobile/Screenshot_20261021-212206.png" alt="設定（実機）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">iOS (device)</span>
+    </button>
+    <div class="card-body">
+      <h3>設定（実機）</h3>
+      <p>通知トグル、ブロックリスト、フィードバック、画面表示、地域と言語、プライバシー、利用規約、アカウント、キャッシュ、バージョン、ログアウト。</p>
+      <div class="tags"><span>#settings</span><span>#ios</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="mobile" data-search="漫画タブ（実機） 公式のおすすめ漫画、ユーザーのおすすめ、注目のクリエイター。 comics ios" data-index="68" style="--ar:0.44559051057246">
+    <button class="thumb" type="button" aria-label="漫画タブ（実機） を拡大">
+      <img src="evidence/screenshots/zeta/mobile/Screenshot_20261021-212547.png" alt="漫画タブ（実機）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">iOS (device)</span>
+    </button>
+    <div class="card-body">
+      <h3>漫画タブ（実機）</h3>
+      <p>公式のおすすめ漫画、ユーザーのおすすめ、注目のクリエイター。</p>
+      <div class="tags"><span>#comics</span><span>#ios</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="mobile" data-search="プロット詳細（実機） ヒーロー、タイトル、タグ、メタピル、作者、固定cta、フローティングの「今すぐチェック」。 profile ios" data-index="69" style="--ar:0.44559051057246">
+    <button class="thumb" type="button" aria-label="プロット詳細（実機） を拡大">
+      <img src="evidence/screenshots/zeta/mobile/Screenshot_20261022-190158.png" alt="プロット詳細（実機）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">iOS (device)</span>
+    </button>
+    <div class="card-body">
+      <h3>プロット詳細（実機）</h3>
+      <p>ヒーロー、タイトル、タグ、メタピル、作者、固定CTA、フローティングの「今すぐチェック」。</p>
+      <div class="tags"><span>#profile</span><span>#ios</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="mobile" data-search="プロット詳細：紹介（実機） 「紹介」セクションとキャラクターカード。 profile ios" data-index="70" style="--ar:0.44559051057246">
+    <button class="thumb" type="button" aria-label="プロット詳細：紹介（実機） を拡大">
+      <img src="evidence/screenshots/zeta/mobile/Screenshot_20261022-190202.png" alt="プロット詳細：紹介（実機）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">iOS (device)</span>
+    </button>
+    <div class="card-body">
+      <h3>プロット詳細：紹介（実機）</h3>
+      <p>「紹介」セクションとキャラクターカード。</p>
+      <div class="tags"><span>#profile</span><span>#ios</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="mobile" data-search="イントロ（実機） 物語の導入。改行とルビ的な演出、日付、本文。 intro ios" data-index="71" style="--ar:0.44559051057246">
+    <button class="thumb" type="button" aria-label="イントロ（実機） を拡大">
+      <img src="evidence/screenshots/zeta/mobile/Screenshot_20261022-190751.png" alt="イントロ（実機）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">iOS (device)</span>
+    </button>
+    <div class="card-body">
+      <h3>イントロ（実機）</h3>
+      <p>物語の導入。改行とルビ的な演出、日付、本文。</p>
+      <div class="tags"><span>#intro</span><span>#ios</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="mobile" data-search="コメント（実機） コメント一覧、いいね、返信、関連プロット。 comments ios" data-index="72" style="--ar:0.44559051057246">
+    <button class="thumb" type="button" aria-label="コメント（実機） を拡大">
+      <img src="evidence/screenshots/zeta/mobile/Screenshot_20261022-190756.png" alt="コメント（実機）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">iOS (device)</span>
+    </button>
+    <div class="card-body">
+      <h3>コメント（実機）</h3>
+      <p>コメント一覧、いいね、返信、関連プロット。</p>
+      <div class="tags"><span>#comments</span><span>#ios</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="mobile" data-search="トークプロフィール選択（実機） ユーザーが演じるペルソナを選ぶボトムシート。既存プロフィール、追加、選択。 persona ios" data-index="73" style="--ar:0.44559051057246">
+    <button class="thumb" type="button" aria-label="トークプロフィール選択（実機） を拡大">
+      <img src="evidence/screenshots/zeta/mobile/Screenshot_20261022-213644.png" alt="トークプロフィール選択（実機）" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">iOS (device)</span>
+    </button>
+    <div class="card-body">
+      <h3>トークプロフィール選択（実機）</h3>
+      <p>ユーザーが演じるペルソナを選ぶボトムシート。既存プロフィール、追加、選択。</p>
+      <div class="tags"><span>#persona</span><span>#ios</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #1：キービジュアル 「日本のno.1 aiチャット」。130万dl・100万キャラクター。 marketing" data-index="74" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #1：キービジュアル を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_1.jpg" alt="ストア #1：キービジュアル" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #1：キービジュアル</h3>
+      <p>「日本のNo.1 AIチャット」。130万DL・100万キャラクター。</p>
+      <div class="tags"><span>#marketing</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #2：スマート返信 「なんて話そう…もう悩まない」。返信候補の提案。 marketing reply" data-index="75" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #2：スマート返信 を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_10.jpg" alt="ストア #2：スマート返信" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #2：スマート返信</h3>
+      <p>「なんて話そう…もう悩まない」。返信候補の提案。</p>
+      <div class="tags"><span>#marketing</span><span>#reply</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #3：実績 「1億5千万時間」の累計会話時間。 marketing" data-index="76" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #3：実績 を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_2.jpg" alt="ストア #3：実績" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #3：実績</h3>
+      <p>「1億5千万時間」の累計会話時間。</p>
+      <div class="tags"><span>#marketing</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #4：ホーム画面 実機モック。ホーム/ランキング/ベスト/製作のタブ、検索、通知。 marketing home" data-index="77" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #4：ホーム画面 を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_3.jpg" alt="ストア #4：ホーム画面" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #4：ホーム画面</h3>
+      <p>実機モック。ホーム/ランキング/ベスト/製作のタブ、検索、通知。</p>
+      <div class="tags"><span>#marketing</span><span>#home</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #5：フィード 「推しが多すぎる！好みを選び放題」。カテゴリとカード。 marketing feed" data-index="78" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #5：フィード を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_4.jpg" alt="ストア #5：フィード" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #5：フィード</h3>
+      <p>「推しが多すぎる！好みを選び放題」。カテゴリとカード。</p>
+      <div class="tags"><span>#marketing</span><span>#feed</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #6：夜通しチャット 「無我夢中で、夜通しチャット」。会話の没入感。 marketing chat" data-index="79" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #6：夜通しチャット を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_5.jpg" alt="ストア #6：夜通しチャット" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #6：夜通しチャット</h3>
+      <p>「無我夢中で、夜通しチャット」。会話の没入感。</p>
+      <div class="tags"><span>#marketing</span><span>#chat</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #7：画像生成 「15秒で想像が現実に」。会話からスナップショット生成。 marketing image" data-index="80" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #7：画像生成 を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_6.jpg" alt="ストア #7：画像生成" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #7：画像生成</h3>
+      <p>「15秒で想像が現実に」。会話からスナップショット生成。</p>
+      <div class="tags"><span>#marketing</span><span>#image</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #8：音声通話 「片想いはもうおしまい！」先に声をかけてくれるキャラ。 marketing voice" data-index="81" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #8：音声通話 を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_7.jpg" alt="ストア #8：音声通話" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #8：音声通話</h3>
+      <p>「片想いはもうおしまい！」先に声をかけてくれるキャラ。</p>
+      <div class="tags"><span>#marketing</span><span>#voice</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #9：物語 「夢のような物語にダイブ」。ノベル/ストーリーモード。 marketing novel" data-index="82" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #9：物語 を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_8.jpg" alt="ストア #9：物語" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #9：物語</h3>
+      <p>「夢のような物語にダイブ」。ノベル/ストーリーモード。</p>
+      <div class="tags"><span>#marketing</span><span>#novel</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="zeta" data-platform="appstore" data-search="ストア #10：誕生日 「誕生日まで覚えてくれる！」トーク一覧と関係性。 marketing memory" data-index="83" style="--ar:0.5632183908045977">
+    <button class="thumb" type="button" aria-label="ストア #10：誕生日 を拡大">
+      <img src="evidence/screenshots/appstore/zeta/zeta_9.jpg" alt="ストア #10：誕生日" loading="lazy" decoding="async">
+      <span class="badge zeta">Zeta</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #10：誕生日</h3>
+      <p>「誕生日まで覚えてくれる！」トーク一覧と関係性。</p>
+      <div class="tags"><span>#marketing</span><span>#memory</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #1：キービジュアル 「やさしく寄り添う aiキャラチャット・ノベル」「ユーザー満足度 no.1」。 marketing" data-index="84" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #1：キービジュアル を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_1.jpg" alt="ストア #1：キービジュアル" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #1：キービジュアル</h3>
+      <p>「やさしく寄り添う AIキャラチャット・ノベル」「ユーザー満足度 No.1」。</p>
+      <div class="tags"><span>#marketing</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #2：ノベルモード 「より濃密になったノベルモードの体験」。地の文と会話が混在。 marketing novel" data-index="85" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #2：ノベルモード を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_2.jpg" alt="ストア #2：ノベルモード" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #2：ノベルモード</h3>
+      <p>「より濃密になったノベルモードの体験」。地の文と会話が混在。</p>
+      <div class="tags"><span>#marketing</span><span>#novel</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #3：ノベルメーカー 「新機能『ノベルメーカー』あなたの手で、妄想を形に」。ストーリー/カスタマイズ/オープニング。 marketing creator" data-index="86" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #3：ノベルメーカー を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_3.jpg" alt="ストア #3：ノベルメーカー" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #3：ノベルメーカー</h3>
+      <p>「新機能『ノベルメーカー』あなたの手で、妄想を形に」。ストーリー/カスタマイズ/オープニング。</p>
+      <div class="tags"><span>#marketing</span><span>#creator</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #4：感情表現 「感情に合わせてキャラの表情が変化」。4表情のバリエーション。 marketing expression" data-index="87" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #4：感情表現 を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_4.jpg" alt="ストア #4：感情表現" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #4：感情表現</h3>
+      <p>「感情に合わせてキャラの表情が変化」。4表情のバリエーション。</p>
+      <div class="tags"><span>#marketing</span><span>#expression</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #5：シーン背景 「シーンに沿って背景が切り替わる」。海岸/教室/住宅街/桜並木。 marketing scene" data-index="88" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #5：シーン背景 を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_5.jpg" alt="ストア #5：シーン背景" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #5：シーン背景</h3>
+      <p>「シーンに沿って背景が切り替わる」。海岸/教室/住宅街/桜並木。</p>
+      <div class="tags"><span>#marketing</span><span>#scene</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #6：ボイス 「声質を思いのまま 全てを自分好みに」。1000+ボイス、年齢・話速・声質。 marketing voice" data-index="89" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #6：ボイス を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_6.jpg" alt="ストア #6：ボイス" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #6：ボイス</h3>
+      <p>「声質を思いのまま 全てを自分好みに」。1000+ボイス、年齢・話速・声質。</p>
+      <div class="tags"><span>#marketing</span><span>#voice</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #7：漫画メモリー 「思い出の会話を世界に一つだけの漫画」。会話から漫画を生成。 marketing comic" data-index="90" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #7：漫画メモリー を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_7.jpg" alt="ストア #7：漫画メモリー" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #7：漫画メモリー</h3>
+      <p>「思い出の会話を世界に一つだけの漫画」。会話から漫画を生成。</p>
+      <div class="tags"><span>#marketing</span><span>#comic</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #8：aiゲーム 「aiと話すだけで作れる あなただけのゲーム」。 marketing game" data-index="91" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #8：AIゲーム を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_8.jpg" alt="ストア #8：AIゲーム" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #8：AIゲーム</h3>
+      <p>「AIと話すだけで作れる あなただけのゲーム」。</p>
+      <div class="tags"><span>#marketing</span><span>#game</span></div>
+    </div>
+  </article>
+
+  <article class="card" data-app="synclub" data-platform="appstore" data-search="ストア #9：トーク一覧 「推しが寄り添う “私”の全肯定体験」。トーク一覧と未読。 marketing talk" data-index="92" style="--ar:0.4625">
+    <button class="thumb" type="button" aria-label="ストア #9：トーク一覧 を拡大">
+      <img src="evidence/screenshots/appstore/synclub/synclub_9.jpg" alt="ストア #9：トーク一覧" loading="lazy" decoding="async">
+      <span class="badge synclub">SynClub</span>
+      <span class="badge plat">App Store</span>
+    </button>
+    <div class="card-body">
+      <h3>ストア #9：トーク一覧</h3>
+      <p>「推しが寄り添う “私”の全肯定体験」。トーク一覧と未読。</p>
+      <div class="tags"><span>#marketing</span><span>#talk</span></div>
+    </div>
+  </article></div>
+</main>
+
+<dialog id="lb">
+  <div class="modal">
+    <div class="modal-head"><span class="t" id="lbApp"></span><button class="modal-close" id="lbClose" aria-label="閉じる">✕</button></div>
+    <img id="lbImg" alt="">
+    <div class="meta">
+      <div><h2 id="lbTitle"></h2><p id="lbDesc"></p></div>
+      <dl>
+        <dt>path</dt><dd id="lbPath"></dd>
+        <dt>url</dt><dd id="lbUrl"></dd>
+        <dt>size</dt><dd id="lbSize"></dd>
+        <dt>sha256</dt><dd id="lbHash"></dd>
+      </dl>
+    </div>
+  </div>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <div>Method: REA JavaScript application analysis (109 Zeta chunks / 38 SynClub chunks, 2.70M AST nodes), production CSS token extraction, live mobile-viewport capture at 390×844 / DPR2, App Store lookup API, and user-supplied iOS captures.</div>
+    <div>本文・画像はUI構造の分析目的で収録。キャラクター說明やチャット本文などのUGCは公開用に一部レダクト/選定済み。各画像の権利は各社に帰属する。解析対象は未認証で到達できる公開面のみで、認証回避は行っていない。</div>
+  </div>
+</footer>
+
+<script type="application/json" id="data">[{"id":"zeta-z01-app-download-modal","app":"zeta","platform":"web","title":"アプリ誘導インタースティシャル","desc":"初回ロード後に出る全画面モーダル。「アプリで今すぐチャット！」CTAと閉じるボタン。Web版の主要KPIがアプリ遷移であることを示す。","tags":["overlay","acquisition"],"path":"evidence/screenshots/zeta/web/zeta_z01_app_download_modal.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z01_app_download_modal.png","width":780,"height":1688,"mime":"image/png","bytes":667109,"sha256":"aa6173e90c4165b13e4cba6ad85e5fe413999157dcfbae0d81beb493a9e8ba34","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z02-home","app":"zeta","platform":"web","title":"ホーム（フィード）","desc":"上部セグメントナビ、バナーカルーセル、2カラムのプロットカード、下部タブバー。画面幅は440px固定のアプリシェル。","tags":["home","feed","navigation"],"path":"evidence/screenshots/zeta/web/zeta_z02_home.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z02_home.png","width":780,"height":1688,"mime":"image/png","bytes":1163930,"sha256":"b613323ba59d1b084f47d08ed54e19f2eb41a83c3246ccccf041c47c7b2f2c14","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z03-home-full","app":"zeta","platform":"web","title":"ホーム（スクロール全体）","desc":"スクロールコンテナ全体。カードのランキング番号、チャット数バッジ、タグ、作者名まで確認できる。","tags":["home","feed"],"path":"evidence/screenshots/zeta/web/zeta_z03_home_full.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z03_home_full.png","width":780,"height":1354,"mime":"image/png","bytes":1083289,"sha256":"35bb05861d5c4843981b80b17fbf5f0669272f224a31dbd75741f50bd0217585","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z05-ranking","app":"zeta","platform":"web","title":"ランキング","desc":"トレンド/ベスト/新作/グローバルとジャンルチップ。2カラムカードに順位バッジ。","tags":["ranking","discovery"],"path":"evidence/screenshots/zeta/web/zeta_z05_ranking.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z05_ranking.png","width":780,"height":1688,"mime":"image/png","bytes":1149001,"sha256":"41dc025ae21fada4295694a2030b26e6f25553eafa71f4d6df0581a851cc2430","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z07-pixai-collab","app":"zeta","platform":"web","title":"PixAIコラボタブ","desc":"画像生成AI「PixAI」とのコラボ面。限定プロットと生成導線。","tags":["collab","event"],"path":"evidence/screenshots/zeta/web/zeta_z07_pixai_collab.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z07_pixai_collab.png","width":780,"height":1688,"mime":"image/png","bytes":1198085,"sha256":"2d188eb7e4fad54de7914a2f873cd72ae93ab1fda9c77dd0251f99db54604001","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z08-search-empty","app":"zeta","platform":"web","title":"検索（初期状態）","desc":"検索フィールド、トレンド/おすすめタグのピル。ハロウィン仕様のオレンジ枠チップが見える。","tags":["search"],"path":"evidence/screenshots/zeta/web/zeta_z08_search_empty.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z08_search_empty.png","width":780,"height":1688,"mime":"image/png","bytes":53720,"sha256":"4c2d24a8f58871409747a4d321b50f99978f1a1e83ec105eb7bdad579f55938c","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z09-search-results","app":"zeta","platform":"web","title":"検索結果（執事）","desc":"キーワード「執事」の結果。カード＋タグ＋件数。検索はプロット名・タグ・本文を横断。","tags":["search","results"],"path":"evidence/screenshots/zeta/web/zeta_z09_search_results.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z09_search_results.png","width":780,"height":1688,"mime":"image/png","bytes":955443,"sha256":"ec87b522989b2cb7254cc061fb8b62a9423af374618fe4a931ccf9b710dbc6d2","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z11-plot-profile-top","app":"zeta","platform":"web","title":"プロット詳細（ヒーロー）","desc":"フルブリード画像＋グラデーション、タイトル、サブタイトル、タグ、メタ情報ピル、作者行、固定CTA「トークを始める」。","tags":["profile","detail","hero"],"path":"evidence/screenshots/zeta/web/zeta_z11_plot_profile_top.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z11_plot_profile_top.png","width":780,"height":1688,"mime":"image/png","bytes":728019,"sha256":"b9c020b30e0e4c8ad8eb98d20d0a1b1480422aa2e2ba95a3f244e8eeeeb184f2","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z13-plot-profile-scroll","app":"zeta","platform":"web","title":"プロット詳細（スクロール）","desc":"ヒーロー直下の紹介セクションとクリエイター応援CTA。","tags":["profile","intro"],"path":"evidence/screenshots/zeta/web/zeta_z13_plot_profile_scroll.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z13_plot_profile_scroll.png","width":780,"height":1688,"mime":"image/png","bytes":285057,"sha256":"756b86ec9f6d5effb31cec9502f4a977b468a90461f65d0b04df244d36325b4b","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z28-plot-scroll-600","app":"zeta","platform":"web","title":"紹介セクションと作者","desc":"作者プロフィール、特別応援CTA（紫のアウトライン）、「紹介」本文。長文テキストは16px/1.5で可読性重視。","tags":["profile","intro","creator"],"path":"evidence/screenshots/zeta/web/zeta_z28_plot_scroll_600.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z28_plot_scroll_600.png","width":780,"height":1688,"mime":"image/png","bytes":216297,"sha256":"9d108cf1a1a7303db1105af8a7596b2f5b8241c986dbcefb0f68384b3dec5272","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z28-plot-scroll-1200","app":"zeta","platform":"web","title":"プロット（キャラクター定義）","desc":"「プロット」セクション。キャラクターごとのカード（名前・年齢・外見・性格）が縦に並ぶ。","tags":["profile","characters"],"path":"evidence/screenshots/zeta/web/zeta_z28_plot_scroll_1200.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z28_plot_scroll_1200.png","width":780,"height":1688,"mime":"image/png","bytes":415008,"sha256":"41d448bf2922e6713268bd4d4205d620ccf1ecead1027f161804cfcfeb18571b","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z28-plot-scroll-1800","app":"zeta","platform":"web","title":"イントロ","desc":"物語の導入文。チャット開始時にこの文章がナレーションとして流れる。","tags":["profile","intro"],"path":"evidence/screenshots/zeta/web/zeta_z28_plot_scroll_1800.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z28_plot_scroll_1800.png","width":780,"height":1688,"mime":"image/png","bytes":197487,"sha256":"fd7370c6706c8ce4342c7727f70af62a7becb85b3e3d15d2b967d8eac4be939f","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z28-plot-scroll-2400","app":"zeta","platform":"web","title":"クリエイターコメントと関連プロット","desc":"更新日・リリース日、クリエイターコメント、条件付きの関連プロットグリッド。","tags":["profile","related"],"path":"evidence/screenshots/zeta/web/zeta_z28_plot_scroll_2400.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z28_plot_scroll_2400.png","width":780,"height":1688,"mime":"image/png","bytes":559818,"sha256":"fae1a4062a251602812339b4abb8e62f7ac9bbb07f05759f31e1079a65c37dba","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z37-comments-sheet","app":"zeta","platform":"web","title":"別プロットの詳細（コメント導線）","desc":"メタピルの「コメント 34」からコメントセクションへ。プロットごとにメタ情報の構成が変わる。","tags":["profile","comments"],"path":"evidence/screenshots/zeta/web/zeta_z37_comments_sheet.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z37_comments_sheet.png","width":780,"height":1688,"mime":"image/png","bytes":712434,"sha256":"1a9301fd7e679f0e1d1e02640c7dd9b020536b8d87e83f0d32ff6fedf1da47ae","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z40-profile-scroll-3600","app":"zeta","platform":"web","title":"プロット本文（プロンプト形式）","desc":"【描写方針】【絶対原則】など、AIへのシステムプロンプトをそのまま作者が編集・公開している。","tags":["profile","prompt","authoring"],"path":"evidence/screenshots/zeta/web/zeta_z40_profile_scroll_3600.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z40_profile_scroll_3600.png","width":780,"height":1688,"mime":"image/png","bytes":259477,"sha256":"d872c48e00e3a11f55acdb26d6c6936e8c0fa3c4b80f060969e478d263eedb91","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z40-profile-scroll-4200","app":"zeta","platform":"web","title":"関連プロット","desc":"「〜が気に入ったなら？！」のレコメンド。2カラム。","tags":["profile","recommendation"],"path":"evidence/screenshots/zeta/web/zeta_z40_profile_scroll_4200.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z40_profile_scroll_4200.png","width":780,"height":1688,"mime":"image/png","bytes":211054,"sha256":"533aeeb1e25769fe933fce34d0e44a8a9a025ea84e1b7c441c81e575c0a7651a","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z14-talk-gate","app":"zeta","platform":"web","title":"チャット初回（広告あり）","desc":"ゲストでもチャット可能。上部に外部広告バナー、その下にヘッダーと物語。","tags":["chat","ads"],"path":"evidence/screenshots/zeta/web/zeta_z14_talk_gate.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z14_talk_gate.png","width":780,"height":1688,"mime":"image/png","bytes":320685,"sha256":"75501cf9936565e38593efe35779253afbca49df0ff8ff2c747bf979aae21eec","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z31-chat-room","app":"zeta","platform":"web","title":"チャットルーム","desc":"ナレーション、キャラクターの台詞、ユーザーの吹き出し、入力バー。紫グラデーションのユーザーバブルが特徴。","tags":["chat"],"path":"evidence/screenshots/zeta/web/zeta_z31_chat_room.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z31_chat_room.png","width":780,"height":1688,"mime":"image/png","bytes":249555,"sha256":"933f822c88cd3f600099148fc97b5f0e1f3e94a51a27711e207b98f08d90dbfa","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z33-chat-reply","app":"zeta","platform":"web","title":"AI応答","desc":"送信後のAI返信。キャラ名ラベル、zetaウォーターマーク、再生成アイコン。","tags":["chat","ai"],"path":"evidence/screenshots/zeta/web/zeta_z33_chat_reply.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z33_chat_reply.png","width":780,"height":1688,"mime":"image/png","bytes":242057,"sha256":"2a6f9c7796f9f1f4b701ba4dd468e04c9805c38823d102ec163f1026c5277fa7","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z32-chat-composing","app":"zeta","platform":"web","title":"入力中","desc":"テキストエリアに日本語入力。送信ボタンは紫の円形。","tags":["chat","input"],"path":"evidence/screenshots/zeta/web/zeta_z32_chat_composing.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z32_chat_composing.png","width":780,"height":1688,"mime":"image/png","bytes":255815,"sha256":"96af13313c791c02469fa9988f505ba73ef69f92c8afee95f3909923dc43c6e7","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z35-chat-asterisk","app":"zeta","platform":"web","title":"アスタリスク（アクション）","desc":"入力欄左の「*」ボタン。行動・心情の挿入補助。","tags":["chat","composer"],"path":"evidence/screenshots/zeta/web/zeta_z35_chat_asterisk.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z35_chat_asterisk.png","width":780,"height":1688,"mime":"image/png","bytes":240016,"sha256":"3e91274f0d86da8812194666b87c7b6c5d5d0806248b8a93355b13737d58d625","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z15-login","app":"zeta","platform":"web","title":"ログインシート","desc":"LINE/Google/Appleの3択＋「アプリで続ける」。ボトムシート型。","tags":["auth","login"],"path":"evidence/screenshots/zeta/web/zeta_z15_login.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z15_login.png","width":780,"height":1688,"mime":"image/png","bytes":411041,"sha256":"62ea4ec1dfa18d1aec669a5f2010754fd154774016610a48128aedfc6f4fb928","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z23-creator-center","app":"zeta","platform":"web","title":"クリエイターセンター（ログイン壁）","desc":"プロット/設定集/フィードの3タブ。未ログイン時はロゴと社会的ログイン、ハロウィン装飾。","tags":["creator","auth-wall"],"path":"evidence/screenshots/zeta/web/zeta_z23_creator_center.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z23_creator_center.png","width":780,"height":1688,"mime":"image/png","bytes":148206,"sha256":"83554c006375aad71c7b1c39477f0577481e4d170ff888dd1f720aad2d4bc22d","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z24-creator-settings","app":"zeta","platform":"web","title":"クリエイターセンター：設定集タブ","desc":"設定集（Sourcebook）タブ。ログイン壁は共通。","tags":["creator","sourcebook"],"path":"evidence/screenshots/zeta/web/zeta_z24_creator_settings.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z24_creator_settings.png","width":780,"height":1688,"mime":"image/png","bytes":148162,"sha256":"2008351d21b5bd77c927d93255f48b46cd13d6c3abcea13cd503d496ba6033ec","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z25-creator-feed","app":"zeta","platform":"web","title":"クリエイターセンター：フィードタブ","desc":"フィードタブ。","tags":["creator","feed"],"path":"evidence/screenshots/zeta/web/zeta_z25_creator_feed.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z25_creator_feed.png","width":780,"height":1688,"mime":"image/png","bytes":148207,"sha256":"a04629d057854b322b231367c88e57d3cd09b0b9bc3f808277c3bf4cd2008366","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z26-talk-list-empty","app":"zeta","platform":"web","title":"トーク一覧（空・未ログイン）","desc":"検索と設定ギア、保存セクション、降順ソート、空状態。紫のツールチップが吹き出し設定を案内。","tags":["talk","empty-state"],"path":"evidence/screenshots/zeta/web/zeta_z26_talk_list_empty.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z26_talk_list_empty.png","width":780,"height":1688,"mime":"image/png","bytes":142218,"sha256":"bbaa2a83716a0e472a063d731ae86e3db38c52b333842e539df2548857057fd0","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z21-discover","app":"zeta","platform":"web","title":"発見タブ","desc":"ハロウィン特集とプロットフィード。ホームとは別の編集面。","tags":["discover"],"path":"evidence/screenshots/zeta/web/zeta_z21_discover.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z21_discover.png","width":780,"height":1688,"mime":"image/png","bytes":1017223,"sha256":"a8c771a5af2f5bc4a1328eaca95cb25f270f409b61a08cfc238a52834a3f6a0b","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z16-announcement","app":"zeta","platform":"web","title":"お知らせ詳細","desc":"Web決済導入の告知。テキスト中心の記事レイアウト。","tags":["announcement","monetization"],"path":"evidence/screenshots/zeta/web/zeta_z16_announcement.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z16_announcement.png","width":780,"height":1688,"mime":"image/png","bytes":356439,"sha256":"3530f93298c6f811ff6adad2f0da5075563935b1b6e9c09f5d522d41e505e442","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z17-event-veritas","app":"zeta","platform":"web","title":"イベントページ Veritas","desc":"ブランドコラボの没入型ランディング。ダークで金のアクセント。","tags":["event","brand"],"path":"evidence/screenshots/zeta/web/zeta_z17_event_veritas.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z17_event_veritas.png","width":780,"height":1688,"mime":"image/png","bytes":697226,"sha256":"4ada69fc0dd8bf28ce880bc9029fd7eb6484add015d822cb56de07689a45b39f","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z19-event-halloween","app":"zeta","platform":"web","title":"イベントページ Halloween","desc":"ハロウィン特設。ステップ制のインタラクティブ演出。","tags":["event","seasonal"],"path":"evidence/screenshots/zeta/web/zeta_z19_event_halloween.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z19_event_halloween.png","width":780,"height":1688,"mime":"image/png","bytes":1008055,"sha256":"00376d882c9e89bd163c18d8934a0a62718d25a3abfa1802bfd29325177de944","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z38-plot-assistant-gate","app":"zeta","platform":"web","title":"AIプロットアシスタント","desc":"ジャンル選択から始まるウィザード。プログレスステッパーとマスコット。","tags":["ai","authoring","wizard"],"path":"evidence/screenshots/zeta/web/zeta_z38_plot_assistant_gate.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z38_plot_assistant_gate.png","width":780,"height":1688,"mime":"image/png","bytes":49505,"sha256":"c41615194fb017177987dac64ca531552b34300215a2dd7e58385bf7d6798323","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-z20-404","app":"zeta","platform":"web","title":"404","desc":"紫のアウトラインアイコン、日本語コピー、グレーの確認ボタン。","tags":["404"],"path":"evidence/screenshots/zeta/web/zeta_z20_404.png","thumbPath":"evidence/screenshots/zeta/web/zeta_z20_404.png","width":780,"height":1688,"mime":"image/png","bytes":33403,"sha256":"52a529716a3f9ba55da393fbad636f196dafb1fa54a34ce868aeb968548842f9","sourceUrl":"https://zeta-ai.io/ja"},{"id":"synclub-s01-landing-top","app":"synclub","platform":"web","title":"ランディング（ヒーロー）","desc":"ピンクのベタ面、極太の日本語ディスプレイ、黄色のプロモバー、黒ピルCTA、3Dマスコット。","tags":["landing","hero"],"path":"evidence/screenshots/synclub/web/synclub_s01_landing_top.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s01_landing_top.png","width":780,"height":1688,"mime":"image/png","bytes":436028,"sha256":"4d0c869719d8e57453bdb4d4b27103a6c299bea132c6ed254d6159f5b3f816f1","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s02-landing-features","app":"synclub","platform":"web","title":"ランディング（機能）","desc":"「クリエイターのためのオールインワン創作アシスタント」。動画・画像・音声のマルチモーダル訴求。","tags":["landing","features"],"path":"evidence/screenshots/synclub/web/synclub_s02_landing_features.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s02_landing_features.png","width":780,"height":1688,"mime":"image/png","bytes":456514,"sha256":"497f7d57dae1eca16d1cd529390e5270e893bb3e8da34c68aa0e92b32643fe47","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s03-landing-creator","app":"synclub","platform":"web","title":"ランディング（制作フロー）","desc":"01〜04の制作フロー、料金比較、縦長のスクロール演出。","tags":["landing","creator"],"path":"evidence/screenshots/synclub/web/synclub_s03_landing_creator.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s03_landing_creator.png","width":780,"height":1688,"mime":"image/png","bytes":446405,"sha256":"8b4231b1434a96a342eaf209f7aa5058ffb123e87369ce911a5f507f421c7574","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s04-landing-full","app":"synclub","platform":"web","title":"ランディング（全体）","desc":"フルページ。マーキー、色面の切り替え、大きなタイポグラフィ。","tags":["landing","full"],"path":"evidence/screenshots/synclub/web/synclub_s04_landing_full.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s04_landing_full.png","width":780,"height":18666,"mime":"image/png","bytes":2095759,"sha256":"cbb5edfca3d1b73a324ebdf0c155075ade8e66c2f6a3fa82ccab207a6f1c1f7e","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-feed-redacted-top","app":"synclub","platform":"web","title":"キャラクター発見（フィード）","desc":"巨大な2カラムのカテゴリ文字グリッド、画像カード、半透明タグ、説明カード。説明文は公開用にブラー処理。","tags":["feed","discovery"],"path":"evidence/screenshots/synclub/web/synclub_s05_chat_list.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s05_chat_list.png","width":780,"height":1688,"mime":"image/png","bytes":867822,"sha256":"6d3f41e8cf70489bc09a2218386551017a8deb2c25e9bda281336d8d3be94b6b","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-feed-redacted-scroll","app":"synclub","platform":"web","title":"フィード（スクロール）","desc":"カードの積み方とリズム。説明文は公開用にブラー処理。","tags":["feed"],"path":"evidence/screenshots/synclub/web/synclub_s07_chat_list_scrolled.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s07_chat_list_scrolled.png","width":780,"height":1688,"mime":"image/png","bytes":828867,"sha256":"0cac766917262bd24418371aebe07e234c4263697dddc34355625a92df55ced1","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-feed-redacted-category","app":"synclub","platform":"web","title":"カテゴリ切替時のアプリ誘導","desc":"カテゴリをタップするとQR付きの全画面モーダル。「フルサービスはアプリで」というハードゲート。背後の説明文はブラー処理。","tags":["gate","conversion"],"path":"evidence/screenshots/synclub/web/synclub_s30_feed_category.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s30_feed_category.png","width":780,"height":1688,"mime":"image/png","bytes":359411,"sha256":"a76a94f0794b0bd40328a195a5cdd25505b814b6782c785a2a3b1c5edef765a5","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s10-discover-comic","app":"synclub","platform":"web","title":"発見：漫画","desc":"SNS型の投稿フィード。手描き風のタブ下線、いいね/コメント、埋め込み作品カード。","tags":["discover","comic"],"path":"evidence/screenshots/synclub/web/synclub_s10_discover_comic.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s10_discover_comic.png","width":780,"height":1688,"mime":"image/png","bytes":834012,"sha256":"7a4eb6e858e431842b64add02adf31908b93fb30cb771012145a67b18452812c","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s11-discover-game","app":"synclub","platform":"web","title":"発見：ゲーム","desc":"AIゲームの投稿一覧。","tags":["discover","game"],"path":"evidence/screenshots/synclub/web/synclub_s11_discover_game.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s11_discover_game.png","width":780,"height":1688,"mime":"image/png","bytes":686881,"sha256":"2e60ee11d6f605bc3018e3620f3ac5c2e6a5c0ebc56b356f9f1e8567c238aa23","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s12-discover-daily","app":"synclub","platform":"web","title":"発見：日常","desc":"日常投稿のフィード。","tags":["discover","daily"],"path":"evidence/screenshots/synclub/web/synclub_s12_discover_daily.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s12_discover_daily.png","width":780,"height":1688,"mime":"image/png","bytes":391487,"sha256":"56ca5b0544887d15b674c02cf335e5de9e8b9de455b12cfe257d29d43fe39a24","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s13-discover-dynamic","app":"synclub","platform":"web","title":"発見：モーション","desc":"ショット動画のフィード。","tags":["discover","dynamic"],"path":"evidence/screenshots/synclub/web/synclub_s13_discover_dynamic.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s13_discover_dynamic.png","width":780,"height":1688,"mime":"image/png","bytes":551296,"sha256":"0a4f898805f46c618a2cd577135d262918f96dadab6ee59b3f67ace497c206d7","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s14-discover-detail","app":"synclub","platform":"web","title":"発見の詳細","desc":"作者、本文、作品カード、QRダウンロードCTA。SEO/共有の受け皿。","tags":["discover","detail"],"path":"evidence/screenshots/synclub/web/synclub_s14_discover_detail.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s14_discover_detail.png","width":780,"height":1688,"mime":"image/png","bytes":538802,"sha256":"2225f89d290b699e375ed8f8264b4de3da4d50a09e8445b73634098d58a42f69","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s16-creator-guide","app":"synclub","platform":"web","title":"クリエイターガイド","desc":"機能ガイドとコミュニティルール。コーラルの見出しと手描き下線。","tags":["docs","guide"],"path":"evidence/screenshots/synclub/web/synclub_s16_creator_guide.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s16_creator_guide.png","width":780,"height":1688,"mime":"image/png","bytes":292267,"sha256":"b17f15c04c6d0615cec7c90a0e0ae1447ce04bfb7131bc8646f9d101c0a6af41","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s17-faq","app":"synclub","platform":"web","title":"FAQ","desc":"アコーディオン。コーラルの見出し、黒本文、余白多め。","tags":["docs","faq"],"path":"evidence/screenshots/synclub/web/synclub_s17_faq.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s17_faq.png","width":780,"height":1688,"mime":"image/png","bytes":254885,"sha256":"813abdb3a8845dfba3d892dda891dc94c47f0d600c517f20a587a8979af065dd","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s18-company-info","app":"synclub","platform":"web","title":"運営会社情報","desc":"HiClub株式会社の情報。法務・信頼性のページ。","tags":["docs","legal"],"path":"evidence/screenshots/synclub/web/synclub_s18_company_info.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s18_company_info.png","width":780,"height":1688,"mime":"image/png","bytes":91868,"sha256":"9c746f35f8b42594f84e69e6fd24783daa6f0da499705951746ff6ae3304268a","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s19-blog","app":"synclub","platform":"web","title":"ブログ","desc":"記事一覧。","tags":["docs","blog"],"path":"evidence/screenshots/synclub/web/synclub_s19_blog.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s19_blog.png","width":780,"height":1688,"mime":"image/png","bytes":216734,"sha256":"04dc8b9c35d5f19bc26d3deb9a18dd11a06e162ada1fed8ea00a70759efea171","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s24-creator-home","app":"synclub","platform":"web","title":"クリエイタースタジオ（モバイル）","desc":"チャット型コンポーザー、モデル選択、動画/解説マンガ動画/画像生成/ミニ動画の4機能。","tags":["creator","studio"],"path":"evidence/screenshots/synclub/web/synclub_s24_creator_home.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s24_creator_home.png","width":780,"height":1688,"mime":"image/png","bytes":405547,"sha256":"dd30d318b2a3e25203054102b7257d4de1b2e1fbf799c680b74ca5b0382ee247","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s25-creator-home-scroll","app":"synclub","platform":"web","title":"スタジオ（スクロール）","desc":"エージェントハイライト、コミュニティの創造、ユーザーのおすすめ。","tags":["creator","feed"],"path":"evidence/screenshots/synclub/web/synclub_s25_creator_home_scroll.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s25_creator_home_scroll.png","width":780,"height":1688,"mime":"image/png","bytes":1269117,"sha256":"63c2f879d17e3baf3e9a02cc9717a8dacb4bf7a36767fdaf242c7473c71d6f62","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s26-image-creator-entry","app":"synclub","platform":"web","title":"画像生成エントリ（モバイル崩れ）","desc":"デスクトップ前提のレイアウトが390pxで横にはみ出し、見出しが切れている。レスポンシブ不整合の証拠。","tags":["bug","responsive","creator"],"path":"evidence/screenshots/synclub/web/synclub_s26_image_creator_entry.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s26_image_creator_entry.png","width":780,"height":1688,"mime":"image/png","bytes":550056,"sha256":"3f8e034be20ef1a892bde078dae9323886487c1bf7413242bbd0581054ed0c32","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s27-voice-entry","app":"synclub","platform":"web","title":"ボイスラボ入口（モバイル崩れ）","desc":"同じく横方向のオーバーフロー。クリエイター系ページはモバイル非対応。","tags":["bug","responsive","voice"],"path":"evidence/screenshots/synclub/web/synclub_s27_voice_entry.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s27_voice_entry.png","width":780,"height":1688,"mime":"image/png","bytes":486666,"sha256":"ceec06641ba908aa5a6c317329ceae85f2d7bf6f93510f380873c7f381ee77c9","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s32-app-gate","app":"synclub","platform":"web","title":"アプリ誘導ゲート","desc":"「親愛なるユーザー 🧩」QRコード付きモーダル。閉じる×あり。","tags":["gate"],"path":"evidence/screenshots/synclub/web/synclub_s32_app_gate.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s32_app_gate.png","width":780,"height":1688,"mime":"image/png","bytes":359720,"sha256":"057e6ca28563591894d76481e3f7e1d1d653305823735801c192ae759a03ac9c","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s39-login","app":"synclub","platform":"web","title":"アカウント削除ページ","desc":"赤い大見出しのコンプライアンス画面。ログイン導線ではなく、ストア審査用の削除手順。","tags":["legal","account"],"path":"evidence/screenshots/synclub/web/synclub_s39_login.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s39_login.png","width":780,"height":1688,"mime":"image/png","bytes":154214,"sha256":"396d15bb90c3922682cfe57126e7b7bd92aa99525cbd5dbff2198b75af004f84","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s40-shared-chat-redacted","app":"synclub","platform":"web","title":"共有チャット（本文レダクト）","desc":"共有URLのチャット。フルブリード背景、黒の設定バブル、コーラルの音声バブル、下部コンポーザー。本文は公開用にモザイク処理。","tags":["chat","share","redacted"],"path":"evidence/screenshots/synclub/web/synclub_s40_shared_chat_redacted.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s40_shared_chat_redacted.png","width":780,"height":1688,"mime":"image/png","bytes":1141923,"sha256":"510492a40afc49724143eb195060fe7bfc5b87bbf27404bc4885ccff23c42704","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s41-intro-next","app":"synclub","platform":"web","title":"アニショート機能説明書","desc":"監督/シナリオ/デザイナー/絵コンテの4役割、01アクセス方法〜の長尺オンボーディング。","tags":["onboarding","docs","anime"],"path":"evidence/screenshots/synclub/web/synclub_s41_intro_next.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s41_intro_next.png","width":780,"height":1688,"mime":"image/png","bytes":287972,"sha256":"99a7c7acd813e32d7c111e21e609e978bc20f5a0577627fda16a3ea7718f1558","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s42-product","app":"synclub","platform":"web","title":"画像生成プロダクトページ","desc":"作品例、コピー、黒ピル「今すぐ作成」。","tags":["product","image"],"path":"evidence/screenshots/synclub/web/synclub_s42_product.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s42_product.png","width":780,"height":1688,"mime":"image/png","bytes":349744,"sha256":"9e30d890c1f1caa7e95be2571b02796c43d0de3e5d3e1134eb4857de52420800","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s23-404","app":"synclub","platform":"web","title":"404","desc":"キャラクター画像のモザイクで「404」を描く。ブランドらしい遊び。","tags":["404"],"path":"evidence/screenshots/synclub/web/synclub_s23_404.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s23_404.png","width":780,"height":1688,"mime":"image/png","bytes":161396,"sha256":"d1e7d778d42ed4fee9b04e582d1419b34831419103e3f3c9ef5c057034f281ae","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s35-desktop-creator-home","app":"synclub","platform":"web","title":"デスクトップ：スタジオ","desc":"左アイコンレール、黒い告知バー、中央コンポーザー、モデルバッジ（Gemini 3.1 Pro）、4機能、作品ギャラリー。","tags":["desktop","creator"],"path":"evidence/screenshots/synclub/web/synclub_s35_desktop_creator_home.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s35_desktop_creator_home.png","width":1440,"height":900,"mime":"image/png","bytes":589810,"sha256":"74c73cbf142ca433b47baa6263d26b3d860d8c1410100152c071ba50e5b32922","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s36-desktop-image-creator","app":"synclub","platform":"web","title":"デスクトップ：画像生成","desc":"通常画像/AIキャラ画像/Nano Bananaの3カード。","tags":["desktop","image"],"path":"evidence/screenshots/synclub/web/synclub_s36_desktop_image_creator.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s36_desktop_image_creator.png","width":1440,"height":900,"mime":"image/png","bytes":316267,"sha256":"1c9cb751d8f404d1b3d1406582183657c6548b8d0a8338169a283656083c84e6","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s37-desktop-voice-entry","app":"synclub","platform":"web","title":"デスクトップ：ボイス","desc":"ボイスラボ/テキスト読み上げの2カード。","tags":["desktop","voice"],"path":"evidence/screenshots/synclub/web/synclub_s37_desktop_voice_entry.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s37_desktop_voice_entry.png","width":1440,"height":900,"mime":"image/png","bytes":160683,"sha256":"fde1fda3275f51da60e1ab53db155f2bc9db83ff321948a10a67000b2ab89b3f","sourceUrl":"https://www.synclubaichat.com/"},{"id":"synclub-s38-desktop-landing","app":"synclub","platform":"web","title":"デスクトップ：ランディング","desc":"横に広いヒーローと機能セクション。","tags":["desktop","landing"],"path":"evidence/screenshots/synclub/web/synclub_s38_desktop_landing.png","thumbPath":"evidence/screenshots/synclub/web/synclub_s38_desktop_landing.png","width":1440,"height":900,"mime":"image/png","bytes":484259,"sha256":"68da8ac65e71d399bae40150ba149d8c7be00c48e016fe5ce7b80de7c2e751a7","sourceUrl":"https://www.synclubaichat.com/"},{"id":"desktop-synclub-light-feed","app":"synclub","platform":"web","title":"デスクトップ：キャラクター発見","desc":"左サイドバー（発見/チャット）、マイキャラ、作成CTA、4カラムグリッド。モバイルと情報密度がまったく違う。","tags":["desktop","feed"],"path":"evidence/screenshots/synclub/web/desktop_synclub_light_feed.png","thumbPath":"evidence/screenshots/synclub/web/desktop_synclub_light_feed.png","width":1280,"height":900,"mime":"image/png","bytes":908852,"sha256":"1d7ec90d70a39147df05756a8a5114159335dd454de006a7898a2883788ff63f","sourceUrl":"https://www.synclubaichat.com/"},{"id":"desktop-synclub-dark-feed","app":"synclub","platform":"web","title":"デスクトップ：ダーク設定","desc":"prefers-color-scheme: dark でも配色は変わらない。ライトテーマ固定。","tags":["desktop","theming"],"path":"evidence/screenshots/synclub/web/desktop_synclub_dark_feed.png","thumbPath":"evidence/screenshots/synclub/web/desktop_synclub_dark_feed.png","width":1280,"height":900,"mime":"image/png","bytes":879028,"sha256":"38d69a6cbce83503c8cb7597af3d65bf827a3a56976bfcf48ac4b3ae60a59d03","sourceUrl":"https://www.synclubaichat.com/"},{"id":"desktop-synclub-light-landing","app":"synclub","platform":"web","title":"デスクトップ：ランディング（再掲）","desc":"デスクトップ幅でのランディング。","tags":["desktop","landing"],"path":"evidence/screenshots/synclub/web/desktop_synclub_light_landing.png","thumbPath":"evidence/screenshots/synclub/web/desktop_synclub_light_landing.png","width":1280,"height":900,"mime":"image/png","bytes":474333,"sha256":"70fd2c3ff20f5099e542fb9f3f47d14fa93f58451b80f9718e828784255683c4","sourceUrl":"https://www.synclubaichat.com/"},{"id":"desktop-zeta-dark-feed","app":"zeta","platform":"web","title":"デスクトップ：Zetaホーム","desc":"1280pxでも中央440pxのモバイルシェルのまま。左右は黒。デスクトップ最適化をしない戦略。","tags":["desktop","layout"],"path":"evidence/screenshots/zeta/web/desktop_zeta_dark_feed.png","thumbPath":"evidence/screenshots/zeta/web/desktop_zeta_dark_feed.png","width":1280,"height":900,"mime":"image/png","bytes":578339,"sha256":"b15b3f86bcf70f2890fb06e8e9a3b2ab5a41c3172421b2b6a4b18dc19cfc2c45","sourceUrl":"https://zeta-ai.io/ja"},{"id":"screenshot-20261021-212048","app":"zeta","platform":"mobile","title":"発見タブ（実機）","desc":"オススメ/キャラクター/ノベル/漫画の上部タブ、ビジュアル演出フィルタ、2カラムカード、下部ナビ。","tags":["feed","ios"],"path":"evidence/screenshots/zeta/mobile/Screenshot_20261021-212048.png","thumbPath":"evidence/screenshots/zeta/mobile/Screenshot_20261021-212048.png","width":864,"height":1939,"mime":"image/png","bytes":1271307,"sha256":"9943fd28542958722439f6f51c7eabd76fb84352f61588366f4411f732398388","sourceUrl":"https://zeta-ai.io/ja"},{"id":"screenshot-20261021-212206","app":"zeta","platform":"mobile","title":"設定（実機）","desc":"通知トグル、ブロックリスト、フィードバック、画面表示、地域と言語、プライバシー、利用規約、アカウント、キャッシュ、バージョン、ログアウト。","tags":["settings","ios"],"path":"evidence/screenshots/zeta/mobile/Screenshot_20261021-212206.png","thumbPath":"evidence/screenshots/zeta/mobile/Screenshot_20261021-212206.png","width":864,"height":1939,"mime":"image/png","bytes":150830,"sha256":"44daf6d48e33a518d0cc7cd956cb98cba8af0f9d8d8f6b0370db5dc4c16521fc","sourceUrl":"https://zeta-ai.io/ja"},{"id":"screenshot-20261021-212547","app":"zeta","platform":"mobile","title":"漫画タブ（実機）","desc":"公式のおすすめ漫画、ユーザーのおすすめ、注目のクリエイター。","tags":["comics","ios"],"path":"evidence/screenshots/zeta/mobile/Screenshot_20261021-212547.png","thumbPath":"evidence/screenshots/zeta/mobile/Screenshot_20261021-212547.png","width":864,"height":1939,"mime":"image/png","bytes":1501447,"sha256":"6c23688e55218e0ff67a63e497b97f2c6b18a193b95cde8339c0985cf93df6ea","sourceUrl":"https://zeta-ai.io/ja"},{"id":"screenshot-20261022-190158","app":"zeta","platform":"mobile","title":"プロット詳細（実機）","desc":"ヒーロー、タイトル、タグ、メタピル、作者、固定CTA、フローティングの「今すぐチェック」。","tags":["profile","ios"],"path":"evidence/screenshots/zeta/mobile/Screenshot_20261022-190158.png","thumbPath":"evidence/screenshots/zeta/mobile/Screenshot_20261022-190158.png","width":864,"height":1939,"mime":"image/png","bytes":1163199,"sha256":"f20649ce4ae6100889f535820920b3bd4ae0554cea3fa0088ee750323e84cbab","sourceUrl":"https://zeta-ai.io/ja"},{"id":"screenshot-20261022-190202","app":"zeta","platform":"mobile","title":"プロット詳細：紹介（実機）","desc":"「紹介」セクションとキャラクターカード。","tags":["profile","ios"],"path":"evidence/screenshots/zeta/mobile/Screenshot_20261022-190202.png","thumbPath":"evidence/screenshots/zeta/mobile/Screenshot_20261022-190202.png","width":864,"height":1939,"mime":"image/png","bytes":473221,"sha256":"4a078f688684fe7270686d94ed80f931ec263ca380cde476f33d2904da555c58","sourceUrl":"https://zeta-ai.io/ja"},{"id":"screenshot-20261022-190751","app":"zeta","platform":"mobile","title":"イントロ（実機）","desc":"物語の導入。改行とルビ的な演出、日付、本文。","tags":["intro","ios"],"path":"evidence/screenshots/zeta/mobile/Screenshot_20261022-190751.png","thumbPath":"evidence/screenshots/zeta/mobile/Screenshot_20261022-190751.png","width":864,"height":1939,"mime":"image/png","bytes":305711,"sha256":"13511f56eaad554ebf69ab1087526ec07c54677be519b90492c779a8db54b7c4","sourceUrl":"https://zeta-ai.io/ja"},{"id":"screenshot-20261022-190756","app":"zeta","platform":"mobile","title":"コメント（実機）","desc":"コメント一覧、いいね、返信、関連プロット。","tags":["comments","ios"],"path":"evidence/screenshots/zeta/mobile/Screenshot_20261022-190756.png","thumbPath":"evidence/screenshots/zeta/mobile/Screenshot_20261022-190756.png","width":864,"height":1939,"mime":"image/png","bytes":683732,"sha256":"cecd6e25b4cceeddbf0932042a8a9b85c2545b1226fd3f6293e8a00af5bf6c15","sourceUrl":"https://zeta-ai.io/ja"},{"id":"screenshot-20261022-213644","app":"zeta","platform":"mobile","title":"トークプロフィール選択（実機）","desc":"ユーザーが演じるペルソナを選ぶボトムシート。既存プロフィール、追加、選択。","tags":["persona","ios"],"path":"evidence/screenshots/zeta/mobile/Screenshot_20261022-213644.png","thumbPath":"evidence/screenshots/zeta/mobile/Screenshot_20261022-213644.png","width":864,"height":1939,"mime":"image/png","bytes":776501,"sha256":"d98a67073b047703306b116868b046976f484b333b257965c05fa4de162d1557","sourceUrl":"https://zeta-ai.io/ja"},{"id":"zeta-1","app":"zeta","platform":"appstore","title":"ストア #1：キービジュアル","desc":"「日本のNo.1 AIチャット」。130万DL・100万キャラクター。","tags":["marketing"],"path":"evidence/screenshots/appstore/zeta/zeta_1.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_1.jpg","width":392,"height":696,"mime":"image/png","bytes":146605,"sha256":"f5008b6a07335320c9ca8380f81afd86cddfb2f739c7612ce99b8fab9a5a5b9d","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-10","app":"zeta","platform":"appstore","title":"ストア #2：スマート返信","desc":"「なんて話そう…もう悩まない」。返信候補の提案。","tags":["marketing","reply"],"path":"evidence/screenshots/appstore/zeta/zeta_10.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_10.jpg","width":392,"height":696,"mime":"image/png","bytes":304441,"sha256":"d25ad84fc5ea0357027dd30a6108470027c6c0fbce4ed4b463d2bc674f0b61e0","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-2","app":"zeta","platform":"appstore","title":"ストア #3：実績","desc":"「1億5千万時間」の累計会話時間。","tags":["marketing"],"path":"evidence/screenshots/appstore/zeta/zeta_2.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_2.jpg","width":392,"height":696,"mime":"image/png","bytes":302809,"sha256":"472bcdf5f19c3edb7694004939239446508a9442f6ab7e9952be465b4fd657f1","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-3","app":"zeta","platform":"appstore","title":"ストア #4：ホーム画面","desc":"実機モック。ホーム/ランキング/ベスト/製作のタブ、検索、通知。","tags":["marketing","home"],"path":"evidence/screenshots/appstore/zeta/zeta_3.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_3.jpg","width":392,"height":696,"mime":"image/png","bytes":425668,"sha256":"c78357dd642849e08b80a2cbaecb439b9df58dd9d7f50b9f633deddaec28bb55","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-4","app":"zeta","platform":"appstore","title":"ストア #5：フィード","desc":"「推しが多すぎる！好みを選び放題」。カテゴリとカード。","tags":["marketing","feed"],"path":"evidence/screenshots/appstore/zeta/zeta_4.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_4.jpg","width":392,"height":696,"mime":"image/png","bytes":414537,"sha256":"b4d605d33971cf6b44004fde9bf19284d700796e208242c2e9113ad278eef56a","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-5","app":"zeta","platform":"appstore","title":"ストア #6：夜通しチャット","desc":"「無我夢中で、夜通しチャット」。会話の没入感。","tags":["marketing","chat"],"path":"evidence/screenshots/appstore/zeta/zeta_5.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_5.jpg","width":392,"height":696,"mime":"image/png","bytes":380567,"sha256":"e1933539da85feae24ab8a0b90bf6eae420bd08f43f26a35054217af0ab67bf8","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-6","app":"zeta","platform":"appstore","title":"ストア #7：画像生成","desc":"「15秒で想像が現実に」。会話からスナップショット生成。","tags":["marketing","image"],"path":"evidence/screenshots/appstore/zeta/zeta_6.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_6.jpg","width":392,"height":696,"mime":"image/png","bytes":323007,"sha256":"bd67fd07ca8a8cee2e64940c02754ca2b3d6256c92e7ca3169ef981f0d50d322","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-7","app":"zeta","platform":"appstore","title":"ストア #8：音声通話","desc":"「片想いはもうおしまい！」先に声をかけてくれるキャラ。","tags":["marketing","voice"],"path":"evidence/screenshots/appstore/zeta/zeta_7.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_7.jpg","width":392,"height":696,"mime":"image/png","bytes":284859,"sha256":"c5deac95a81591fa033cf3ce81784317a5fe632e40bc8ce242c5ae902ec1fdfd","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-8","app":"zeta","platform":"appstore","title":"ストア #9：物語","desc":"「夢のような物語にダイブ」。ノベル/ストーリーモード。","tags":["marketing","novel"],"path":"evidence/screenshots/appstore/zeta/zeta_8.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_8.jpg","width":392,"height":696,"mime":"image/png","bytes":367673,"sha256":"a09c23fe5997f1a519ac9591dcba538230fe9608e677432be85358e96e6ecf5f","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"zeta-9","app":"zeta","platform":"appstore","title":"ストア #10：誕生日","desc":"「誕生日まで覚えてくれる！」トーク一覧と関係性。","tags":["marketing","memory"],"path":"evidence/screenshots/appstore/zeta/zeta_9.jpg","thumbPath":"evidence/screenshots/appstore/zeta/zeta_9.jpg","width":392,"height":696,"mime":"image/png","bytes":281999,"sha256":"79c64863238ade59f91d6cc7ca51e6eac814748b25942a7d7f7c6c2ff951b4da","sourceUrl":"https://apps.apple.com/jp/app/id1619030760"},{"id":"synclub-1","app":"synclub","platform":"appstore","title":"ストア #1：キービジュアル","desc":"「やさしく寄り添う AIキャラチャット・ノベル」「ユーザー満足度 No.1」。","tags":["marketing"],"path":"evidence/screenshots/appstore/synclub/synclub_1.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_1.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":33742,"sha256":"56561ae9b42769860ccef67bc2471ab1082c0d7bb214106d63713e97f2b4cfa3","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"},{"id":"synclub-2","app":"synclub","platform":"appstore","title":"ストア #2：ノベルモード","desc":"「より濃密になったノベルモードの体験」。地の文と会話が混在。","tags":["marketing","novel"],"path":"evidence/screenshots/appstore/synclub/synclub_2.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_2.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":29890,"sha256":"e07509de2b129186ac744a54967e3210ecb9e0adfcf57a65c8f4541251a7c6c2","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"},{"id":"synclub-3","app":"synclub","platform":"appstore","title":"ストア #3：ノベルメーカー","desc":"「新機能『ノベルメーカー』あなたの手で、妄想を形に」。ストーリー/カスタマイズ/オープニング。","tags":["marketing","creator"],"path":"evidence/screenshots/appstore/synclub/synclub_3.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_3.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":33133,"sha256":"505cbce29576d8fcdd290db13621c3ffce428eb6cd4294610ce6cc3b00ac245f","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"},{"id":"synclub-4","app":"synclub","platform":"appstore","title":"ストア #4：感情表現","desc":"「感情に合わせてキャラの表情が変化」。4表情のバリエーション。","tags":["marketing","expression"],"path":"evidence/screenshots/appstore/synclub/synclub_4.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_4.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":34258,"sha256":"661d0ebfd953a2b6b2e080f71a1850a802bc9b10ff5f6585af6e56d0409c5d53","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"},{"id":"synclub-5","app":"synclub","platform":"appstore","title":"ストア #5：シーン背景","desc":"「シーンに沿って背景が切り替わる」。海岸/教室/住宅街/桜並木。","tags":["marketing","scene"],"path":"evidence/screenshots/appstore/synclub/synclub_5.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_5.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":31715,"sha256":"7635960657ebb40c08ebb208442fd72b0234372e36472f0cd165b673c0480139","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"},{"id":"synclub-6","app":"synclub","platform":"appstore","title":"ストア #6：ボイス","desc":"「声質を思いのまま 全てを自分好みに」。1000+ボイス、年齢・話速・声質。","tags":["marketing","voice"],"path":"evidence/screenshots/appstore/synclub/synclub_6.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_6.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":25832,"sha256":"0cacfa948b834e3f3434fe698c071c61a15697f33a86e5610c3d483bffd81812","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"},{"id":"synclub-7","app":"synclub","platform":"appstore","title":"ストア #7：漫画メモリー","desc":"「思い出の会話を世界に一つだけの漫画」。会話から漫画を生成。","tags":["marketing","comic"],"path":"evidence/screenshots/appstore/synclub/synclub_7.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_7.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":36955,"sha256":"4ac23bc9304c2c018c4a7eae207b9b54ac1927bbff41b710b9dcc6e23d0e177c","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"},{"id":"synclub-8","app":"synclub","platform":"appstore","title":"ストア #8：AIゲーム","desc":"「AIと話すだけで作れる あなただけのゲーム」。","tags":["marketing","game"],"path":"evidence/screenshots/appstore/synclub/synclub_8.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_8.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":34817,"sha256":"3f3efe6470aa2f841bee396af7026a4488c527bf3f0a4f6cc1eee517911a7698","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"},{"id":"synclub-9","app":"synclub","platform":"appstore","title":"ストア #9：トーク一覧","desc":"「推しが寄り添う “私”の全肯定体験」。トーク一覧と未読。","tags":["marketing","talk"],"path":"evidence/screenshots/appstore/synclub/synclub_9.jpg","thumbPath":"evidence/screenshots/appstore/synclub/synclub_9.jpg","width":222,"height":480,"mime":"image/jpeg","bytes":24586,"sha256":"2b2d1fa23946b5d1c178ebccc2faf6c7aa0076761b4e689f588eb5adfd80fdd0","sourceUrl":"https://apps.apple.com/jp/app/id1671537674"}]</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const grid = document.getElementById('grid');
+const cards = [...grid.querySelectorAll('.card')];
+const state = { app: 'all', platform: 'all', q: '' };
+const countEl = document.getElementById('count');
+const empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = '条件に一致する画面がありません。'; empty.hidden = true; grid.appendChild(empty);
+
+function apply(){
+  let n = 0;
+  for (const c of cards) {
+    const okApp = state.app === 'all' || c.dataset.app === state.app;
+    const okPlat = state.platform === 'all' || c.dataset.platform === state.platform;
+    const okQ = !state.q || c.dataset.search.includes(state.q);
+    const show = okApp && okPlat && okQ;
+    c.hidden = !show; if (show) n++;
+  }
+  empty.hidden = n !== 0;
+  countEl.textContent = n + ' / ' + cards.length + ' screens';
+}
+document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+  const group = b.closest('.seg');
+  group.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  if (b.dataset.app) state.app = b.dataset.app;
+  if (b.dataset.platform) state.platform = b.dataset.platform;
+  apply();
+}));
+document.getElementById('q').addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); apply(); });
+apply();
+
+const lb = document.getElementById('lb');
+function open(i){
+  const s = DATA[i];
+  document.getElementById('lbImg').src = s.path;
+  document.getElementById('lbImg').alt = s.title;
+  document.getElementById('lbTitle').textContent = s.title;
+  document.getElementById('lbDesc').textContent = s.desc;
+  document.getElementById('lbPath').textContent = s.path;
+  document.getElementById('lbUrl').textContent = s.sourceUrl;
+  document.getElementById('lbSize').textContent = s.width + '×' + s.height + ' / ' + (s.bytes/1024).toFixed(0) + ' KB';
+  document.getElementById('lbHash').textContent = s.sha256.slice(0,32) + '…';
+  document.getElementById('lbApp').textContent = (s.app === 'zeta' ? 'ZETA' : 'SYNCLUB') + ' · ' + s.platform.toUpperCase();
+  lb.showModal();
+}
+grid.addEventListener('click', e => {
+  const btn = e.target.closest('.thumb'); if (!btn) return;
+  open(Number(btn.closest('.card').dataset.index));
+});
+document.getElementById('lbClose').addEventListener('click', () => lb.close());
+lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+</script>
+</body>
+</html>

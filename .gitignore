@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# local scratch
+*.local
+tmp/
+node_modules/
+
+# The REA evidence bundle is 192MB (over GitHub's 100MB file limit)
+evidence/rea/rea-evidence-bundle.json

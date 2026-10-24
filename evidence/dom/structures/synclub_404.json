@@ -1,0 +1,1434 @@
+{
+ "url": "https://www.synclubaichat.com/does-not-exist",
+ "capturedAt": "2026-10-24T18:17:30.151Z",
+ "viewport": {
+  "w": 390,
+  "h": 844
+ },
+ "nodes": [
+  {
+   "d": 0,
+   "tag": "body",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 22,
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 844
+   }
+  },
+  {
+   "d": 1,
+   "tag": "div",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 22,
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 844
+   }
+  },
+  {
+   "d": 2,
+   "tag": "div",
+   "cls": "app-container",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 22,
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 844
+   }
+  },
+  {
+   "d": 3,
+   "tag": "div",
+   "cls": "mobile-top-bar app-container__mobile-top-bar",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 48
+   }
+  },
+  {
+   "d": 4,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 15,
+    "y": 12,
+    "w": 28,
+    "h": 28
+   }
+  },
+  {
+   "d": 5,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 20,
+    "y": 18,
+    "w": 19,
+    "h": 16
+   }
+  },
+  {
+   "d": 6,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 20,
+    "y": 18,
+    "w": 19,
+    "h": 16
+   }
+  },
+  {
+   "d": 4,
+   "tag": "div",
+   "cls": "mobile-top-bar__right",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 243,
+    "y": 9,
+    "w": 132,
+    "h": 34
+   }
+  },
+  {
+   "d": 5,
+   "tag": "div",
+   "cls": "icon-item btn",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 243,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 6,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 243,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 7,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 243,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 8,
+   "tag": "rect",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 243,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 8,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 252,
+    "y": 17,
+    "w": 15,
+    "h": 19
+   }
+  },
+  {
+   "d": 9,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 252,
+    "y": 17,
+    "w": 15,
+    "h": 19
+   }
+  },
+  {
+   "d": 5,
+   "tag": "div",
+   "cls": "icon-item btn",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 292,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 6,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 292,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 7,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 292,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 8,
+   "tag": "rect",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 292,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 8,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 301,
+    "y": 18,
+    "w": 17,
+    "h": 17
+   }
+  },
+  {
+   "d": 5,
+   "tag": "div",
+   "cls": "icon-item btn",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 341,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 6,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 341,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 7,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 341,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 8,
+   "tag": "rect",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 341,
+    "y": 9,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 8,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 348,
+    "y": 16,
+    "w": 21,
+    "h": 21
+   }
+  },
+  {
+   "d": 3,
+   "tag": "div",
+   "cls": "app-container__content",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 22,
+   "box": {
+    "x": 0,
+    "y": 48,
+    "w": 390,
+    "h": 796
+   }
+  },
+  {
+   "d": 4,
+   "tag": "aside",
+   "cls": "aside-container left-aside",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 4,
+   "box": {
+    "x": -81,
+    "y": 0,
+    "w": 81,
+    "h": 844
+   }
+  },
+  {
+   "d": 5,
+   "tag": "section",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 4,
+   "box": {
+    "x": -81,
+    "y": 0,
+    "w": 81,
+    "h": 844
+   }
+  },
+  {
+   "d": 6,
+   "tag": "section",
+   "cls": "collapse-aside",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 4,
+   "box": {
+    "x": -81,
+    "y": 0,
+    "w": 81,
+    "h": 844
+   }
+  },
+  {
+   "d": 7,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -57,
+    "y": 16,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 8,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -57,
+    "y": 16,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 9,
+   "tag": "circle",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -57,
+    "y": 16,
+    "w": 34,
+    "h": 34
+   }
+  },
+  {
+   "d": 9,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -51,
+    "y": 24,
+    "w": 22,
+    "h": 16
+   }
+  },
+  {
+   "d": 9,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -39,
+    "y": 28,
+    "w": 4,
+    "h": 4
+   }
+  },
+  {
+   "d": 9,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -46,
+    "y": 30,
+    "w": 3,
+    "h": 3
+   }
+  },
+  {
+   "d": 7,
+   "tag": "div",
+   "cls": "menu-list collapse-aside__menu",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 106,
+    "w": 38,
+    "h": 344
+   }
+  },
+  {
+   "d": 8,
+   "tag": "a",
+   "cls": "menu-list__item home el-tooltip__trigger",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 106,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 9,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 106,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 10,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 106,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 11,
+   "tag": "rect",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 106,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -50,
+    "y": 116,
+    "w": 19,
+    "h": 19
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -52,
+    "y": 114,
+    "w": 23,
+    "h": 23
+   }
+  },
+  {
+   "d": 11,
+   "tag": "rect",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -44,
+    "y": 128,
+    "w": 8,
+    "h": 2
+   }
+  },
+  {
+   "d": 8,
+   "tag": "a",
+   "cls": "menu-list__item geimage el-tooltip__trigger",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 155,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 9,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 155,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 10,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -50,
+    "y": 163,
+    "w": 20,
+    "h": 20
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -50,
+    "y": 165,
+    "w": 18,
+    "h": 18
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -41,
+    "y": 167,
+    "w": 6,
+    "h": 6
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -41,
+    "y": 167,
+    "w": 6,
+    "h": 6
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -37,
+    "y": 163,
+    "w": 7,
+    "h": 7
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -37,
+    "y": 163,
+    "w": 7,
+    "h": 7
+   }
+  },
+  {
+   "d": 8,
+   "tag": "a",
+   "cls": "menu-list__item gevoice el-tooltip__trigger",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 204,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 9,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 204,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 10,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -52,
+    "y": 212,
+    "w": 23,
+    "h": 23
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -52,
+    "y": 212,
+    "w": 23,
+    "h": 23
+   }
+  },
+  {
+   "d": 11,
+   "tag": "rect",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -45,
+    "y": 220,
+    "w": 2,
+    "h": 6
+   }
+  },
+  {
+   "d": 11,
+   "tag": "rect",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -38,
+    "y": 220,
+    "w": 2,
+    "h": 6
+   }
+  },
+  {
+   "d": 11,
+   "tag": "rect",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -41,
+    "y": 218,
+    "w": 2,
+    "h": 9
+   }
+  },
+  {
+   "d": 8,
+   "tag": "div",
+   "cls": "menu-list__line",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -55,
+    "y": 253,
+    "w": 28,
+    "h": 1
+   }
+  },
+  {
+   "d": 8,
+   "tag": "a",
+   "cls": "menu-list__item product el-tooltip__trigger",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 266,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 9,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 266,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 10,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -50,
+    "y": 275,
+    "w": 18,
+    "h": 19
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -50,
+    "y": 275,
+    "w": 17,
+    "h": 19
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -44,
+    "y": 282,
+    "w": 12,
+    "h": 11
+   }
+  },
+  {
+   "d": 8,
+   "tag": "a",
+   "cls": "menu-list__item chat el-tooltip__trigger",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 315,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 9,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 315,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 10,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -52,
+    "y": 322,
+    "w": 23,
+    "h": 23
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -52,
+    "y": 322,
+    "w": 23,
+    "h": 23
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -45,
+    "y": 336,
+    "w": 9,
+    "h": 3
+   }
+  },
+  {
+   "d": 8,
+   "tag": "a",
+   "cls": "menu-list__item discover el-tooltip__trigger",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 364,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 9,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 364,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 10,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -51,
+    "y": 374,
+    "w": 20,
+    "h": 16
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -49,
+    "y": 374,
+    "w": 16,
+    "h": 16
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -51,
+    "y": 376,
+    "w": 20,
+    "h": 12
+   }
+  },
+  {
+   "d": 8,
+   "tag": "a",
+   "cls": "menu-list__item guide el-tooltip__trigger",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 413,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 9,
+   "tag": "svg",
+   "cls": "",
+   "role": "img",
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -59,
+    "y": 413,
+    "w": 38,
+    "h": 38
+   }
+  },
+  {
+   "d": 10,
+   "tag": "g",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -49,
+    "y": 424,
+    "w": 17,
+    "h": 15
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -49,
+    "y": 424,
+    "w": 8,
+    "h": 15
+   }
+  },
+  {
+   "d": 11,
+   "tag": "path",
+   "cls": "",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": -41,
+    "y": 424,
+    "w": 8,
+    "h": 15
+   }
+  },
+  {
+   "d": 7,
+   "tag": "div",
+   "cls": "auxiliary-list collapse-aside__auxiliary",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 4,
+   "box": {
+    "x": -73,
+    "y": 771,
+    "w": 66,
+    "h": 36
+   }
+  },
+  {
+   "d": 8,
+   "tag": "div",
+   "cls": "auxiliary-list__login-btn",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 4,
+   "box": {
+    "x": -73,
+    "y": 771,
+    "w": 66,
+    "h": 36
+   }
+  },
+  {
+   "d": 4,
+   "tag": "div",
+   "cls": "drawer-touch-panel",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 844
+   }
+  },
+  {
+   "d": 4,
+   "tag": "div",
+   "cls": "main-wrap",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 16,
+   "box": {
+    "x": 0,
+    "y": 48,
+    "w": 390,
+    "h": 796
+   }
+  },
+  {
+   "d": 5,
+   "tag": "div",
+   "cls": "main-container",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 16,
+   "box": {
+    "x": 0,
+    "y": 48,
+    "w": 390,
+    "h": 796
+   }
+  },
+  {
+   "d": 6,
+   "tag": "main",
+   "cls": "error-page",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 16,
+   "box": {
+    "x": 0,
+    "y": 48,
+    "w": 390,
+    "h": 796
+   }
+  },
+  {
+   "d": 7,
+   "tag": "div",
+   "cls": "error-page__status",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 0,
+    "y": 362,
+    "w": 390,
+    "h": 118
+   }
+  },
+  {
+   "d": 8,
+   "tag": "div",
+   "cls": "error-page__status-one",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 38,
+    "y": 362,
+    "w": 90,
+    "h": 118
+   }
+  },
+  {
+   "d": 8,
+   "tag": "div",
+   "cls": "error-page__status-two",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 150,
+    "y": 362,
+    "w": 90,
+    "h": 118
+   }
+  },
+  {
+   "d": 8,
+   "tag": "div",
+   "cls": "error-page__status-three",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 0,
+   "box": {
+    "x": 263,
+    "y": 362,
+    "w": 90,
+    "h": 118
+   }
+  },
+  {
+   "d": 7,
+   "tag": "p",
+   "cls": "error-page__message",
+   "role": null,
+   "aria": null,
+   "comp": null,
+   "src": null,
+   "textLen": 16,
+   "box": {
+    "x": 74,
+    "y": 508,
+    "w": 241,
+    "h": 23
+   }
+  }
+ ]
+}

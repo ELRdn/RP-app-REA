@@ -1,0 +1,278 @@
+/* ============================================================
+   RP-app-REA — reconstructed design tokens
+   Zeta (dark, functional) + SynClub (light, emotional)
+
+   Values are derived from production CSS + computed styles.
+   Zeta: Tailwind v4 utilities in 3i7j62yn28x07.css
+   SynClub: entry.5Oil0nNP.css + Element Plus + rem scaling
+   ============================================================ */
+
+:root {
+  /* ---------- Zeta: dark ---------- */
+  --z-bg: #151516;
+  --z-surface: #212122;
+  --z-surface-2: #2d2d2d;
+  --z-surface-3: #333333;
+  --z-border: #3e3e41;
+  --z-border-strong: #525457;
+  --z-hairline: rgba(255, 255, 255, 0.05);
+  --z-overlay: rgba(0, 0, 0, 0.6);
+
+  --z-brand: #6728ff;
+  --z-brand-press: #5220cc;
+  --z-brand-soft: #7c67ff;
+  --z-brand-muted: #a799ff;
+  --z-brand-tint: rgba(103, 40, 255, 0.08);
+
+  --z-text: #ffffff;
+  --z-text-2: rgba(255, 255, 255, 0.7);
+  --z-text-3: rgba(255, 255, 255, 0.5);
+  --z-text-disabled: #595b63;
+
+  --z-success: #12b76a;
+  --z-success-dark: #039855;
+  --z-danger: #f04438;
+  --z-info: #2e90fa;
+  --z-orange: #ff8a3d;
+  --z-lime: #d8ff66;
+  --z-gold: #f1d99c;
+
+  --z-radius-xs: 6px;
+  --z-radius-sm: 8px;
+  --z-radius-md: 10px;
+  --z-radius-lg: 12px;
+  --z-radius-xl: 16px;
+  --z-radius-pill: 9999px;
+
+  --z-header-h: 52px;
+  --z-tabbar-h: 60px;
+  --z-gutter: 16px;
+  --z-grid-gap: 8px;
+  --z-shell-max: 440px;
+  --z-card-aspect: 3 / 4;
+
+  --z-font: "Pretendard JP Variable", "Pretendard Variable", -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+  --z-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --z-dur: 150ms;
+
+  /* ---------- SynClub: light ---------- */
+  --s-bg: #ffffff;
+  --s-canvas: #f4f5f6;
+  --s-muted-bg: #f2f2f2;
+  --s-neutral: #ebeff0;
+  --s-overlay: rgba(0, 0, 0, 0.3);
+
+  --s-brand: #ff7870;
+  --s-brand-strong: #ff3459;
+  --s-brand-soft: #ff9472;
+  --s-brand-grad: linear-gradient(135deg, #ff9472 0%, #ff7870 78%);
+  --s-ink: #111111;
+
+  --s-text: #333333;
+  --s-text-2: rgba(17, 17, 17, 0.7);
+  --s-text-3: rgba(17, 17, 17, 0.5);
+  --s-text-on-brand: #111111; /* 7.35:1 — white on coral is only 2.57:1 */
+
+  --s-cream: #faf0e4;
+  --s-peach: #fee0de;
+  --s-periwinkle: #dce2fe;
+  --s-mint: #89ffe9;
+
+  --s-border: rgba(0, 0, 0, 0.06);
+  --s-border-strong: rgba(0, 0, 0, 0.1);
+
+  --s-radius-card: 18.84px;
+  --s-radius-tab: 9.42px;
+  --s-radius-dialog: 20px;
+  --s-radius-pill: 9999px;
+
+  --s-topbar-h: 48px;
+  --s-gutter: 15.07px;
+  --s-gap: 9.42px;
+  --s-section-gap: 37.7px;
+
+  --s-font: "Poppins", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+
+  --s-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --s-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --s-dur: 300ms;
+  --s-dur-fast: 200ms;
+}
+
+/* ---------- Zeta typography scale ---------- */
+.z-title32 { font: 600 32px/1.2 var(--z-font); letter-spacing: -0.03rem; }
+.z-title24 { font: 600 24px/1.2 var(--z-font); letter-spacing: -0.0225rem; }
+.z-title20 { font: 600 20px/1.2 var(--z-font); letter-spacing: -0.01125rem; }
+.z-title18 { font: 600 18px/1.2 var(--z-font); letter-spacing: -0.01125rem; }
+.z-title16 { font: 600 16px/1.2 var(--z-font); letter-spacing: -0.01rem; }
+.z-body16  { font: 400 16px/1.5 var(--z-font); letter-spacing: -0.015rem; }
+.z-body14  { font: 400 14px/1.4 var(--z-font); letter-spacing: -0.013125rem; }
+.z-caption1{ font: 400 12px/1.333 var(--z-font); }
+.z-caption2{ font: 500 10px/1.4 var(--z-font); }
+
+/* ---------- SynClub fluid scale (390px reference) ---------- */
+.s-display40 { font: 600 2.5rem/normal var(--s-font); }
+.s-display30 { font: 600 1.875rem/normal var(--s-font); }
+.s-title24   { font: 600 1.5rem/normal var(--s-font); }
+.s-title20   { font: 600 1.25rem/1.2 var(--s-font); }
+.s-title18   { font: 400 1.125rem/1.111 var(--s-font); }
+.s-body16    { font: 400 1rem/1.375 var(--s-font); }
+.s-body14    { font: 400 0.875rem/1.25 var(--s-font); }
+
+@media (min-width: 501px) {
+  :root { --s-gutter: 20px; --s-gap: 12px; }
+}
+
+/* ---------- Shared component recipes ---------- */
+
+/* Zeta primary button */
+.z-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+  height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--z-radius-xs);
+  background: var(--z-brand);
+  color: #fff;
+  font: 500 16px/1.2 var(--z-font);
+  transition: background-color var(--z-dur) var(--z-ease);
+}
+.z-btn-primary:hover { background: var(--z-brand-press); }
+.z-btn-primary:active { background: var(--z-brand-press); }
+
+/* Zeta ghost button */
+.z-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--z-hairline);
+  border-radius: var(--z-radius-xs);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--z-text);
+}
+
+/* Zeta plot card */
+.z-plot-card {
+  display: flex;
+  flex-direction: column;
+  width: 175px;
+  color: var(--z-text);
+  text-decoration: none;
+}
+.z-plot-card__media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--z-radius-lg) var(--z-radius-lg) 0 0;
+  overflow: hidden;
+  background: var(--z-surface);
+}
+.z-plot-card__count {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 1px 6px;
+  border-radius: var(--z-radius-xs);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font: 500 10px/1.4 var(--z-font);
+}
+.z-plot-card__title {
+  margin: 10px 4px 4px;
+  font: 600 16px/1.2 var(--z-font);
+  letter-spacing: -0.01rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.z-plot-card__tags {
+  margin: 0 4px;
+  color: var(--z-text-3);
+  font: 400 12px/1.333 var(--z-font);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* SynClub character card */
+.s-char-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-gap);
+  color: var(--s-ink);
+  text-decoration: none;
+}
+.s-char-card__media {
+  position: relative;
+  aspect-ratio: 390 / 420;
+  border-radius: var(--s-radius-card);
+  overflow: hidden;
+  background: var(--s-muted-bg);
+}
+.s-char-card__name {
+  position: absolute;
+  left: 19px;
+  bottom: 14px;
+  color: #fff;
+  font: 600 1.25rem/1.2 var(--s-font);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+.s-char-card__tag {
+  display: inline-flex;
+  padding: 0.375rem 1rem;
+  border-radius: var(--s-radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font: 400 1.125rem/1.111 var(--s-font);
+  backdrop-filter: blur(6px);
+}
+.s-char-card__desc {
+  padding: 0 1.25rem;
+  color: var(--s-text);
+  font: 400 1rem/1.375 var(--s-font);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* SynClub primary pill */
+.s-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: var(--s-radius-pill);
+  background: var(--s-ink);
+  color: #fff;
+  font: 500 1rem/1 var(--s-font);
+}
+.s-btn-brand {
+  background: var(--s-brand);
+  color: var(--s-text-on-brand);
+}
+
+/* ---------- Accessibility guardrails ---------- */
+:focus-visible {
+  outline: 2px solid var(--z-brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

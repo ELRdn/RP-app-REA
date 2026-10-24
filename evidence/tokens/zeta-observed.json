@@ -1,0 +1,618 @@
+{
+  "app": "zeta",
+  "screens_analyzed": 42,
+  "screens": [
+    {
+      "file": "zeta_z01_app_download_modal.json",
+      "url": "https://zeta-ai.io/ja",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z02_home.json",
+      "url": "https://zeta-ai.io/ja",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z03_home_full.json",
+      "url": "https://zeta-ai.io/ja",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z04_home_scrolled.json",
+      "url": "https://zeta-ai.io/ja",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z05_ranking.json",
+      "url": "https://zeta-ai.io/ja?tab=ranking",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z06_ranking_full.json",
+      "url": "https://zeta-ai.io/ja?tab=ranking",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z07_pixai_collab.json",
+      "url": "https://zeta-ai.io/ja?tab=pixai",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z08_search_empty.json",
+      "url": "https://zeta-ai.io/ja/search",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z09_search_results.json",
+      "url": "https://zeta-ai.io/ja/search?keyword=%E5%9F%B7%E4%BA%8B",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z10_search_results_full.json",
+      "url": "https://zeta-ai.io/ja/search?keyword=%E5%9F%B7%E4%BA%8B",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z11_plot_profile_top.json",
+      "url": "https://zeta-ai.io/ja/plots/c814e2c6-a772-4670-b5e1-7c122c551370/profile",
+      "title": "新しいお母さんになって - zeta"
+    },
+    {
+      "file": "zeta_z12_plot_profile_full.json",
+      "url": "https://zeta-ai.io/ja/plots/c814e2c6-a772-4670-b5e1-7c122c551370/profile",
+      "title": "新しいお母さんになって - zeta"
+    },
+    {
+      "file": "zeta_z13_plot_profile_scroll.json",
+      "url": "https://zeta-ai.io/ja/plots/c814e2c6-a772-4670-b5e1-7c122c551370/profile",
+      "title": "新しいお母さんになって - zeta"
+    },
+    {
+      "file": "zeta_z14_talk_gate.json",
+      "url": "https://zeta-ai.io/ja/rooms/d91a1dc7-0ab3-4ad5-a2cb-5c3541741deb",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z15_login.json",
+      "url": "https://zeta-ai.io/ja",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z16_announcement.json",
+      "url": "https://zeta-ai.io/ja/announcements/13104",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z17_event_veritas.json",
+      "url": "https://zeta-ai.io/ja/veritas",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z18_event_veritas_full.json",
+      "url": "https://zeta-ai.io/ja/veritas",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z19_event_halloween.json",
+      "url": "https://zeta-ai.io/ja/trick-or-treat?step=home",
+      "title": "毎日iPhone Duo・Switch 2が当たる！ - zeta"
+    },
+    {
+      "file": "zeta_z20_404.json",
+      "url": "https://zeta-ai.io/ja/this-route-does-not-exist",
+      "title": null
+    },
+    {
+      "file": "zeta_z21_discover.json",
+      "url": "https://zeta-ai.io/ja/discover",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z22_discover_scroll.json",
+      "url": "https://zeta-ai.io/ja/discover",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z23_creator_center.json",
+      "url": "https://zeta-ai.io/ja/creator-center",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z24_creator_settings.json",
+      "url": "https://zeta-ai.io/ja/creator-center",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z25_creator_feed.json",
+      "url": "https://zeta-ai.io/ja/creator-center",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z26_talk_list_empty.json",
+      "url": "https://zeta-ai.io/ja/rooms",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z27_talk_list_settings.json",
+      "url": "https://zeta-ai.io/ja/rooms",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z28_plot_scroll_0.json",
+      "url": "https://zeta-ai.io/ja/plots/fa636db0-5bd3-41be-a386-153586557f89/profile",
+      "title": "赤の他人とルームシェア - zeta"
+    },
+    {
+      "file": "zeta_z28_plot_scroll_1200.json",
+      "url": "https://zeta-ai.io/ja/plots/fa636db0-5bd3-41be-a386-153586557f89/profile",
+      "title": "赤の他人とルームシェア - zeta"
+    },
+    {
+      "file": "zeta_z28_plot_scroll_1800.json",
+      "url": "https://zeta-ai.io/ja/plots/fa636db0-5bd3-41be-a386-153586557f89/profile",
+      "title": "赤の他人とルームシェア - zeta"
+    },
+    {
+      "file": "zeta_z28_plot_scroll_2400.json",
+      "url": "https://zeta-ai.io/ja/plots/fa636db0-5bd3-41be-a386-153586557f89/profile",
+      "title": "赤の他人とルームシェア - zeta"
+    },
+    {
+      "file": "zeta_z28_plot_scroll_600.json",
+      "url": "https://zeta-ai.io/ja/plots/fa636db0-5bd3-41be-a386-153586557f89/profile",
+      "title": "赤の他人とルームシェア - zeta"
+    },
+    {
+      "file": "zeta_z31_chat_room.json",
+      "url": "https://zeta-ai.io/ja/rooms/72921a8c-89af-498b-82f1-aeab76dfb549",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z32_chat_composing.json",
+      "url": "https://zeta-ai.io/ja/rooms/72921a8c-89af-498b-82f1-aeab76dfb549",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z33_chat_reply.json",
+      "url": "https://zeta-ai.io/ja/rooms/72921a8c-89af-498b-82f1-aeab76dfb549",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z34_chat_reply_bottom.json",
+      "url": "https://zeta-ai.io/ja/rooms/72921a8c-89af-498b-82f1-aeab76dfb549",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z35_chat_asterisk.json",
+      "url": "https://zeta-ai.io/ja/rooms/72921a8c-89af-498b-82f1-aeab76dfb549",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z37_comments_sheet.json",
+      "url": "https://zeta-ai.io/ja/plots/26f74c38-b758-4a2c-91f0-d49ff96b803a/profile",
+      "title": "踊る大捜査線(？？) - zeta"
+    },
+    {
+      "file": "zeta_z38_plot_assistant_gate.json",
+      "url": "https://zeta-ai.io/ja/plots/assistant",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z44_assistant_genre.json",
+      "url": "https://zeta-ai.io/ja/plots/assistant",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z45_assistant_step2.json",
+      "url": "https://zeta-ai.io/ja/plots/assistant",
+      "title": "zeta"
+    },
+    {
+      "file": "zeta_z46_assistant_step3.json",
+      "url": "https://zeta-ai.io/ja/plots/assistant",
+      "title": "zeta"
+    }
+  ],
+  "colors": [
+    {
+      "value": "fg rgb(255, 255, 255)",
+      "count": 6409
+    },
+    {
+      "value": "fg lab(100 -0.0000298023 0.0000119209 / 0.5)",
+      "count": 2093
+    },
+    {
+      "value": "fg lab(100 -0.0000298023 0.0000119209 / 0.7)",
+      "count": 1022
+    },
+    {
+      "value": "fg rgba(0, 0, 0, 0)",
+      "count": 628
+    },
+    {
+      "value": "bg rgb(33, 33, 34)",
+      "count": 595
+    },
+    {
+      "value": "fg rgb(229, 231, 235)",
+      "count": 385
+    },
+    {
+      "value": "bg lab(26.2903 0.514522 -1.84574 / 0.84)",
+      "count": 245
+    },
+    {
+      "value": "fg rgb(89, 91, 99)",
+      "count": 220
+    },
+    {
+      "value": "fg rgb(239, 227, 200)",
+      "count": 220
+    },
+    {
+      "value": "fg rgb(241, 217, 156)",
+      "count": 104
+    },
+    {
+      "value": "bg rgb(21, 21, 22)",
+      "count": 82
+    },
+    {
+      "value": "fg rgb(103, 40, 255)",
+      "count": 63
+    },
+    {
+      "value": "fg lab(100 -0.0000298023 0.0000119209 / 0.6)",
+      "count": 55
+    },
+    {
+      "value": "fg rgba(241, 217, 156, 0.55)",
+      "count": 48
+    },
+    {
+      "value": "fg rgb(249, 250, 251)",
+      "count": 45
+    },
+    {
+      "value": "bg rgb(62, 62, 65)",
+      "count": 39
+    },
+    {
+      "value": "fg rgb(216, 180, 106)",
+      "count": 38
+    },
+    {
+      "value": "fg rgb(244, 234, 210)",
+      "count": 38
+    },
+    {
+      "value": "fg rgb(209, 213, 219)",
+      "count": 37
+    },
+    {
+      "value": "bg rgba(15, 13, 11, 0.6)",
+      "count": 32
+    },
+    {
+      "value": "fg rgb(156, 163, 175)",
+      "count": 30
+    },
+    {
+      "value": "bg lab(100 -0.0000298023 0.0000119209 / 0.9)",
+      "count": 28
+    },
+    {
+      "value": "bg rgb(103, 40, 255)",
+      "count": 27
+    },
+    {
+      "value": "bg rgb(38, 39, 39)",
+      "count": 25
+    },
+    {
+      "value": "fg rgb(240, 68, 56)",
+      "count": 24
+    },
+    {
+      "value": "bg rgb(100, 77, 214)",
+      "count": 23
+    },
+    {
+      "value": "fg rgb(0, 0, 0)",
+      "count": 20
+    },
+    {
+      "value": "fg rgba(239, 227, 200, 0.7)",
+      "count": 16
+    },
+    {
+      "value": "fg lab(100 -0.0000298023 0.0000119209 / 0.16)",
+      "count": 12
+    },
+    {
+      "value": "bg rgb(217, 45, 32)",
+      "count": 10
+    },
+    {
+      "value": "bg lab(0 0 0 / 0.55)",
+      "count": 10
+    },
+    {
+      "value": "fg rgb(167, 153, 255)",
+      "count": 10
+    },
+    {
+      "value": "fg rgba(241, 217, 156, 0.8)",
+      "count": 10
+    },
+    {
+      "value": "bd rgb(216, 180, 106)",
+      "count": 10
+    },
+    {
+      "value": "fg rgba(239, 227, 200, 0.78)",
+      "count": 10
+    },
+    {
+      "value": "bg lab(100 -0.0000298023 0.0000119209 / 0.16)",
+      "count": 10
+    },
+    {
+      "value": "bg lab(6.8025 0.17909 -0.657016 / 0.7)",
+      "count": 8
+    },
+    {
+      "value": "bg rgb(43, 43, 44)",
+      "count": 8
+    },
+    {
+      "value": "fg rgb(157, 133, 250)",
+      "count": 8
+    },
+    {
+      "value": "fg rgba(239, 227, 200, 0.8)",
+      "count": 8
+    }
+  ],
+  "fonts": [
+    {
+      "value": "\"Pretendard JP Variable\" | 16px | 400 | 19.2px | -0.24px",
+      "count": 3884
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|16px|400|19.2px",
+      "count": 3283
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 12px | 400 | 16px | normal",
+      "count": 1226
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|12px|400|16px",
+      "count": 893
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 12px | 500 | 16px | normal",
+      "count": 485
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|12px|500|16px",
+      "count": 283
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 15.008px | 600 | 22px | normal",
+      "count": 153
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|15.008px|400|19.2px",
+      "count": 146
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|15.008px|600|22px",
+      "count": 99
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|15.008px|400|22px",
+      "count": 81
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 14px | 400 | 16.8px | -0.21px",
+      "count": 60
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|15.008px|400|19.5104px",
+      "count": 59
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 14px | 600 | 20px | normal",
+      "count": 53
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 18px | 600 | 26px | normal",
+      "count": 49
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|20px|600|28px",
+      "count": 43
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 10px | 400 | 14px | normal",
+      "count": 42
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 20px | 600 | 28px | -0.2px",
+      "count": 42
+    },
+    {
+      "value": "\"Pretendard JP Variable\"|14px|400|20px",
+      "count": 40
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 15.008px | 400 | 19.2px | -0.30016px",
+      "count": 33
+    },
+    {
+      "value": "\"Pretendard JP Variable\" | 12px | 600 | 20px | normal",
+      "count": 28
+    }
+  ],
+  "sizes": [
+    {
+      "value": "16",
+      "count": 3939
+    },
+    {
+      "value": "12",
+      "count": 1793
+    },
+    {
+      "value": "15",
+      "count": 250
+    },
+    {
+      "value": "14",
+      "count": 196
+    },
+    {
+      "value": "10",
+      "count": 63
+    },
+    {
+      "value": "18",
+      "count": 49
+    },
+    {
+      "value": "11",
+      "count": 46
+    },
+    {
+      "value": "20",
+      "count": 43
+    },
+    {
+      "value": "13",
+      "count": 24
+    },
+    {
+      "value": "17",
+      "count": 16
+    },
+    {
+      "value": "12.5",
+      "count": 14
+    },
+    {
+      "value": "11.5",
+      "count": 14
+    },
+    {
+      "value": "24",
+      "count": 10
+    },
+    {
+      "value": "36",
+      "count": 6
+    },
+    {
+      "value": "28",
+      "count": 3
+    },
+    {
+      "value": "10.5",
+      "count": 2
+    }
+  ],
+  "radii": [
+    {
+      "value": "12px 12px 0px 0px",
+      "count": 452
+    },
+    {
+      "value": "6px",
+      "count": 355
+    },
+    {
+      "value": "12px",
+      "count": 327
+    },
+    {
+      "value": "9999px",
+      "count": 171
+    },
+    {
+      "value": "11px",
+      "count": 65
+    },
+    {
+      "value": "16px",
+      "count": 58
+    },
+    {
+      "value": "5px",
+      "count": 47
+    },
+    {
+      "value": "999px",
+      "count": 40
+    },
+    {
+      "value": "0px 16px 16px",
+      "count": 35
+    },
+    {
+      "value": "2px",
+      "count": 34
+    },
+    {
+      "value": "16px 0px 16px 16px",
+      "count": 23
+    },
+    {
+      "value": "18px",
+      "count": 21
+    },
+    {
+      "value": "8px",
+      "count": 16
+    },
+    {
+      "value": "4px",
+      "count": 15
+    }
+  ],
+  "shadows": [
+    {
+      "value": "rgba(216, 180, 106, 0.45) 0px 0px 0px 1px inset",
+      "count": 30
+    },
+    {
+      "value": "rgba(216, 180, 106, 0.25) 0px 0px 0px 1px inset",
+      "count": 16
+    },
+    {
+      "value": "rgba(216, 180, 106, 0.3) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.45) 0px 8px 18px 0px",
+      "count": 14
+    },
+    {
+      "value": "rgba(255, 255, 255, 0.35) 0px 0px 0px 1px inset, rgba(216, 180, 106, 0.6) 0px 0px 0px 1px, rgba(0, 0, 0, 0.45) 0px 8px 20px 0px",
+      "count": 4
+    },
+    {
+      "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.14) 0px 8.37974px 40.9676px -1.86217px, rgba(0, 0, 0, 0.12) 0px 3.72433px 13.0352px -2.79325px",
+      "count": 2
+    },
+    {
+      "value": "rgba(0, 0, 0, 0.45) 0px 12px 28px 0px",
+      "count": 2
+    },
+    {
+      "value": "rgba(255, 200, 120, 0.25) 0px 0px 18px 4px",
+      "count": 2
+    },
+    {
+      "value": "rgba(216, 180, 106, 0.3) 0px 0px 0px 1px inset",
+      "count": 2
+    }
+  ]
+}

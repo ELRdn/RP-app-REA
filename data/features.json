@@ -1,0 +1,172 @@
+{
+  "generatedAt": "2026-10-25",
+  "confidenceLegend": {
+    "observed": "confirmed on a live unauthenticated screen or in production CSS/DOM",
+    "inferred": "present in shipped JS/CSS or app-store copy, not exercised end-to-end"
+  },
+  "features": [
+    {
+      "area": "Positioning",
+      "zeta": "「日本のNo.1 AIチャット」。推しキャラとの会話・夢小説・なりきりに特化した消費型ロールプレイアプリ。",
+      "synclub": "「やさしく寄り添う AIキャラチャット・ノベル」。チャット＋ノベル＋音声＋創作ツールのコンパニオン/クリエイター基盤。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Web strategy",
+      "zeta": "Webはアプリと同じUIを440px固定シェルで再現。ゲストチャットまで可能で、アプリ誘導はソフト。",
+      "synclub": "Webは「ブラウザ版」として別プロダクト化。キャラ発見・共有・クリエイタースタジオが中心で、チャットはQRゲートでアプリへ。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Primary content unit",
+      "zeta": "プロット（物語）。1プロットに最大10キャラ、設定集、イントロ、スタイル、トークプロフィールを持つ。",
+      "synclub": "AIキャラクター（エージェント）。キャラ単体＋タグ＋説明。加えて漫画/ゲーム/日常/モーションの投稿。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Discovery",
+      "zeta": "ホーム（トレンド/ランキング/PixAI）、発見、検索、カテゴリタグ、ランキング（トレンド/ベスト/新作/グローバル）。",
+      "synclub": "キャラフィード（おすすめ/新着/ストーリー/学園・青春/ビジュアル演出/異世界/BL・GL/物語/ドS・ドM/ヤンデレ/職業/背徳感）＋発見（漫画/ゲーム/日常/モーション）。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Detail page",
+      "zeta": "フルブリードのヒーロー、タイトル、タグ、メタピル、作者、紹介、プロット（キャラ定義）、イントロ、コメント、関連。",
+      "synclub": "キャラクターカード一覧から遷移するが、Webではアプリ誘導ゲート。発見投稿はSEO用の詳細ページを持つ。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Chat",
+      "zeta": "ゲスト可。ナレーション、キャラ台詞、ユーザーバブル、再生成、アスタリスク（行動挿入）、スマート返信。",
+      "synclub": "アプリのみ。ノベルモード（地の文＋会話）、音声通話、感情による表情変化、シーン背景、音声メッセージ。共有チャットはWebで閲覧可。",
+      "confidence": "observed (Zeta, shared chat) / inferred (app-only features)"
+    },
+    {
+      "area": "Voice",
+      "zeta": "アプリ訴求に「先に声をかけてくれる推しキャラ」。WebバンドルにTTS/通話の痕跡は薄い。",
+      "synclub": "1,000種類以上のボイス、声質/年齢/話速、音声通話、Web-TTS（公式/カスタム、ASMR、試聴30回/日）。",
+      "confidence": "observed (store copy, web CSS/JS)"
+    },
+    {
+      "area": "Image generation",
+      "zeta": "スナップショット。会話から15〜30秒で生成、ピース消費、失敗時返還。",
+      "synclub": "通常画像 / AIキャラ画像 / Nano Banana クリエイティブ生成。Webスタジオの4機能の一つ。",
+      "confidence": "observed (Zeta strings, SynClub pages)"
+    },
+    {
+      "area": "Story / novel",
+      "zeta": "プロット＋イントロ＋スタイル（ライトノベル/心理ホラー等のプリセット）。",
+      "synclub": "ノベルモード、ノベルメーカー（ストーリー/カスタマイズ/オープニング）、劇場。",
+      "confidence": "observed / inferred"
+    },
+    {
+      "area": "Comics",
+      "zeta": "漫画タブ（公式のおすすめ漫画、ユーザーのおすすめ、注目のクリエイター）。",
+      "synclub": "漫画メモリー（会話から漫画生成）、発見：漫画、アニショート（解説マンガ動画）。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Games",
+      "zeta": "バンドルに「game」の語はあるが専用UIは未確認。",
+      "synclub": "AIと話すだけで作れるゲーム、発見：ゲーム。",
+      "confidence": "inferred"
+    },
+    {
+      "area": "Creator tools",
+      "zeta": "クリエイターセンター（プロット/設定集/フィード）。AIプロットアシスタント（ジャンル→…のウィザード）。",
+      "synclub": "クリエイタースタジオ：動画 / 解説マンガ動画 / 画像生成 / ミニ動画、エージェントハイライト、ボイスラボ、TTS、アニショート。",
+      "confidence": "observed"
+    },
+    {
+      "area": "AI models",
+      "zeta": "プロット作者がモデルを選択（free / 課金、koji=記憶力、luca=ディテール）。",
+      "synclub": "スタジオでモデル選択（Gemini 3.1 Pro 表記、ChatGPT Image 2.0 告知、Nano Banana Pro）。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Persona",
+      "zeta": "トークプロフィール（ユーザーが演じるペルソナ）を最大5件。名前・年齢・性格・口調。",
+      "synclub": "ユーザー設定はチャット内で都度指定。専用ペルソナピッカーは未確認。",
+      "confidence": "observed (Zeta) / inferred (SynClub)"
+    },
+    {
+      "area": "Memory / personalization",
+      "zeta": "長期記憶、誕生日、記念日、キャラからの先制メッセージ、関係性。",
+      "synclub": "関係性マップ（Best Friend / Soulmate / Boyfriend / Girlfriend）、会話の記憶、キャラの一貫性。",
+      "confidence": "observed (store copy + strings)"
+    },
+    {
+      "area": "Social",
+      "zeta": "フォロー、いいね、コメント、ランキング、クリエイター応援、シェア。",
+      "synclub": "発見投稿（いいね/コメント）、フォロー、共有チャット、コミュニティ、クリエイター。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Monetization",
+      "zeta": "ピース（従量）＋ zeta pass（7日/サブスク）＋広告除去。ピースは日記閲覧・スマホ覗き見・メッセンジャー送信・スナップショット・有料モデルに使う。",
+      "synclub": "コイン（従量）＋サブスクリプション（プラン変更/解約/支払い方法）＋広告。1コイン続行/サブスク誘導のダイアログ。",
+      "confidence": "observed (banners, CSS, strings)"
+    },
+    {
+      "area": "Ads",
+      "zeta": "チャット上部に外部広告（Google AdSense/Google Publisher Tag）。「広告を消す」導線。",
+      "synclub": "Webのキャラフィード/スタジオには広告枠は目立たない。アプリ側は不明。",
+      "confidence": "observed (Zeta) / inferred (SynClub)"
+    },
+    {
+      "area": "Auth",
+      "zeta": "LINE / Google / Apple / Kakao（バンドル）。ゲストは自動発行TOKENでチャット可。",
+      "synclub": "電話番号＋SMS、地域コード、規約同意、Google OAuth。Webのチャットはアプリ誘導。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Onboarding",
+      "zeta": "初回のアプリ誘導モーダル、ホームの機能トースト、AIプロットアシスタントのステップウィザード。",
+      "synclub": "年齢確認、興味選択（「あなたに合うAIキャラクターを見つけるために」）、アニショート機能説明書、QRゲート。",
+      "confidence": "observed / inferred"
+    },
+    {
+      "area": "Theming",
+      "zeta": "常時ダーク。季節テーマ（ハロウィン）でナビアイコン・装飾・タブ色を差し替えるコンポーネント群。",
+      "synclub": "Webはライト固定（darkスキーム無視）。アプリはダーク。クリエイターUIはパステル/黒ピル。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Responsive",
+      "zeta": "全幅で440px固定。デスクトップでもモバイルシェル。",
+      "synclub": "モバイル（0-500）とデスクトップ（769+）で別レイアウト。クリエイター系ページは390pxで横溢れ。",
+      "confidence": "observed"
+    },
+    {
+      "area": "SEO",
+      "zeta": "プロット詳細をSSR、hreflang 3言語、sitemap 1件、OG画像、JSON-LD。",
+      "synclub": "Nuxt SSR、209件のサイトマップ、発見投稿のSEO詳細、JSON-LD（Organization/Brand/SoftwareApplication/WebSite）。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Tech stack",
+      "zeta": "Next.js (App Router, Turbopack) / React / Tailwind CSS v4 / Zustand / SWR / Sentry / Firebase / Amplitude / Rive / Pretendard。Vercel配信。",
+      "synclub": "Nuxt 3 / Vue 3 / Element Plus / Pinia / Poppins / Iconify / Stripe・決済ダイアログ / Amplitude・GTM / WebSocket。APISIXゲートウェイ。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Localization",
+      "zeta": "ja / ko / en。i18nはメッセージ辞書（ko/ja/en）をバンドル。UIのaria-labelは英語のまま。",
+      "synclub": "ja / en / ko / zh。Nuxt i18n。日本語が主で、法務・ストア向けに英語。",
+      "confidence": "observed"
+    },
+    {
+      "area": "Safety",
+      "zeta": "プロット作成時の著作権・性的表現ガイドライン、通報/ブロック、年齢に応じた制限。",
+      "synclub": "年齢確認モーダル、18+コンテンツはアプリ内課金、コミュニティルール、通報。",
+      "confidence": "observed / inferred"
+    },
+    {
+      "area": "Accessibility",
+      "zeta": "アイコンボタンに英語aria-label（Go back / Send / Insert asterisk）。10pxのキャプション、白50%テキスト。",
+      "synclub": "カテゴリタブはdiv（キーボードフォーカス不可）、カードはsection＋クリックハンドラでリンクセマンティクスなし。",
+      "confidence": "observed"
+    }
+  ]
+}
+
