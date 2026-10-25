@@ -1,0 +1,246 @@
+{
+  "zeta": {
+    "app": "zeta",
+    "taps": 2,
+    "steps": [
+      {
+        "s": "home",
+        "ms": 5815
+      },
+      {
+        "s": "detail",
+        "ms": 9197
+      }
+    ],
+    "home": {
+      "clickables": 116,
+      "small44": 84,
+      "small24": 77,
+      "textNodes": 112,
+      "tiny12": 6,
+      "nav": {
+        "ttfb": 481,
+        "dcl": 1175,
+        "load": 2620
+      },
+      "scrollHeight": 844
+    },
+    "detail": {
+      "clickables": 81,
+      "small44": 47,
+      "small24": 44,
+      "textNodes": 101,
+      "tiny12": 0,
+      "nav": {
+        "ttfb": 481,
+        "dcl": 1175,
+        "load": 2620
+      },
+      "scrollHeight": 844
+    },
+    "error": "TimeoutError: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-sentry-component=\"ChatBubbleContainer\"]').first() to be visible\u001b[22m\n"
+  },
+  "synclub": {
+    "app": "synclub",
+    "taps": 1,
+    "steps": [
+      {
+        "s": "feed",
+        "ms": 4700
+      },
+      {
+        "s": "gate",
+        "ms": 7485
+      }
+    ],
+    "feed": {
+      "clickables": 0,
+      "small44": 0,
+      "small24": 0,
+      "textNodes": 146,
+      "tiny12": 0,
+      "nav": {
+        "ttfb": 688,
+        "dcl": 1617,
+        "load": 2839
+      },
+      "scrollHeight": 844
+    },
+    "gate": {
+      "hasGate": true,
+      "text": "戻る\n発見\nおすすめ\n新着\nストーリー\n学園・青春\nビジュアル演出\n異世界\nBL・GL\n物語\nドS・ドM\nヤンデレ\n職業\n背徳感\n山口拓斗\n22\n👨‍💼バイト先の先輩\n💌優しい\n〜バイトを始めたばかりで、いつも先輩の拓斗に優しく指導をしてもらっている。今日はお客さんが少なくて、2人で店内の時間を過ごす。〜\n山崎真澄\n20\n💢ツンデレ後輩\n💦恥ずかしがり屋\n〜校舎の隅であなたを待つツンデレ"
+    },
+    "gateMs": 7485,
+    "final": {
+      "clickables": 0,
+      "small44": 0,
+      "small24": 0,
+      "textNodes": 151,
+      "tiny12": 0,
+      "nav": {
+        "ttfb": 688,
+        "dcl": 1617,
+        "load": 2839
+      },
+      "scrollHeight": 844
+    }
+  },
+  "miraimind": {
+    "app": "miraimind",
+    "taps": 2,
+    "steps": [
+      {
+        "s": "discover",
+        "ms": 9003
+      },
+      {
+        "s": "chat",
+        "ms": 10104
+      },
+      {
+        "s": "reply",
+        "ms": 10275
+      }
+    ],
+    "home": {
+      "clickables": 7,
+      "small44": 2,
+      "small24": 0,
+      "textNodes": 122,
+      "tiny12": 0,
+      "nav": {
+        "ttfb": 399,
+        "dcl": 1444,
+        "load": 2396
+      },
+      "scrollHeight": 844
+    },
+    "chat": {
+      "clickables": 5,
+      "small44": 2,
+      "small24": 0,
+      "textNodes": 24,
+      "tiny12": 8,
+      "nav": {
+        "ttfb": 399,
+        "dcl": 1444,
+        "load": 2396
+      },
+      "scrollHeight": 844
+    },
+    "sendMs": 10271,
+    "replyMs": 4,
+    "replyCount": 2,
+    "replyTimeout": false,
+    "final": {
+      "clickables": 5,
+      "small44": 2,
+      "small24": 0,
+      "textNodes": 24,
+      "tiny12": 8,
+      "nav": {
+        "ttfb": 399,
+        "dcl": 1444,
+        "load": 2396
+      },
+      "scrollHeight": 844
+    },
+    "requestLimit": "{imageCount: 1, requestPrice: 20, requestCount: 0, vipLevel: 0, requestLimit: 5}"
+  },
+  "crushon": {
+    "app": "crushon",
+    "taps": 4,
+    "steps": [
+      {
+        "s": "welcome",
+        "ms": 7043
+      },
+      {
+        "s": "home",
+        "ms": 9645
+      },
+      {
+        "s": "detail-sheet",
+        "ms": 10083
+      },
+      {
+        "s": "chat",
+        "ms": 12173
+      },
+      {
+        "s": "send-gate",
+        "ms": 15076
+      }
+    ],
+    "welcome": {
+      "clickables": 27,
+      "small44": 10,
+      "small24": 3,
+      "textNodes": 197,
+      "tiny12": 92,
+      "nav": {
+        "ttfb": 553,
+        "dcl": 1501,
+        "load": 1990
+      },
+      "scrollHeight": 3874
+    },
+    "home": {
+      "clickables": 28,
+      "small44": 11,
+      "small24": 4,
+      "textNodes": 202,
+      "tiny12": 94,
+      "nav": {
+        "ttfb": 553,
+        "dcl": 1501,
+        "load": 1990
+      },
+      "scrollHeight": 3874
+    },
+    "detail": {
+      "clickables": 40,
+      "small44": 23,
+      "small24": 6,
+      "textNodes": 238,
+      "tiny12": 94,
+      "nav": {
+        "ttfb": 553,
+        "dcl": 1501,
+        "load": 1990
+      },
+      "scrollHeight": 3874
+    },
+    "chat": {
+      "clickables": 9,
+      "small44": 7,
+      "small24": 3,
+      "textNodes": 16,
+      "tiny12": 2,
+      "nav": {
+        "ttfb": 553,
+        "dcl": 1501,
+        "load": 1990
+      },
+      "scrollHeight": 844
+    },
+    "gate": {
+      "hasLogin": true,
+      "text": "Sasha\nSasha\n\nSasha raises her eyes and looks at you from under her eyelashes, then says quietly, “Hi, you noticed me! I’d already decided I’d turned into an invisible person.”\n\nWhen I was coming home, I twisted my ankle on the stairs. The pain was se"
+    },
+    "gateMs": 15076,
+    "final": {
+      "clickables": 11,
+      "small44": 9,
+      "small24": 4,
+      "textNodes": 17,
+      "tiny12": 1,
+      "nav": {
+        "ttfb": 553,
+        "dcl": 1501,
+        "load": 1990
+      },
+      "scrollHeight": 860
+    }
+  }
+}

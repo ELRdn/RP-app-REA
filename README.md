@@ -28,6 +28,7 @@
 ```
 RP-app-REA/
 ├── index.html                 # 140画面のギャラリー（フィルタ/検索/ライトボックス）
+├── ux.html                    # 4製品のUXフロー比較（タップ/時間/ゲート）
 ├── data/
 │   ├── screens.json           # 各画面のメタデータ + SHA-256
 │   ├── tokens.json            # 4製品のデザイントークン
@@ -35,6 +36,8 @@ RP-app-REA/
 │   ├── components.json        # React/Vueのコンポーネント目録
 │   ├── features.json          # Zeta vs SynClub の27項目比較
 │   ├── features-4apps.json    # 4製品×30項目の比較マトリクス
+│   ├── ux-metrics.json        # UX実測値（タップ/時間/タップ領域/文字サイズ）
+│   ├── ux-flows.json          # 4製品のファネル/フローグラフ
 │   └── app-metadata.json      # ストア/HTTP/バンドルのメタデータ
 ├── docs/
 │   ├── 01-zeta-teardown.md
@@ -46,9 +49,12 @@ RP-app-REA/
 │   ├── 07-evidence-index.md
 │   ├── 08-method-and-limitations.md
 │   ├── 09-miraimind-teardown.md
-│   └── 10-crushon-teardown.md
+│   ├── 10-crushon-teardown.md
+│   ├── 11-ux-reverse-engineering.md
+│   └── 12-ux-patterns.md
 ├── evidence/
 │   ├── screenshots/{zeta,synclub,miraimind,crushon}/{web,mobile}, appstore/*
+│   ├── ux/                   # ファネルのステップ画像＋生ログ
 │   ├── dom/structures/*.json  # テキストを除いたDOM構造アウトライン
 │   ├── tokens/*-observed.json # 実測した色/フォント/角丸の出現頻度
 │   └── rea/README.md          # REA Evidence IDと実行条件
@@ -96,6 +102,33 @@ Zetaは `HalloweenNavigationBar` `HalloweenTabBarIcon` `HalloweenHomeDecoration`
 - SynClub：**0.90**。カテゴリタブが `div`、カードがURLなし
 - MiraiMind：Ant Design依存。画像alt・フォーカスの検証が弱い
 - CrushOn：`rc-dialog` は良好だが、カードがリンクでない箇所、10pxタグ
+
+---
+
+## UX REA — 最初の会話までの距離
+
+UIの形だけでなく、**最初のAI応答に到達するまでのタップ・時間・ゲート**を同一条件（390×844 / 同一プロンプト）で測定しました。詳細は [`docs/11-ux-reverse-engineering.md`](docs/11-ux-reverse-engineering.md)、ビジュアルは [`ux.html`](ux.html)、パターン集は [`docs/12-ux-patterns.md`](docs/12-ux-patterns.md)。
+
+| 指標 | Zeta | SynClub | MiraiMind | CrushOn |
+|---|---|---|---|---|
+| チャットまでのタップ | 2 | 不可 | **1** | 3 |
+| 送信までのタップ | **3** | 不可 | **2** | 4 |
+| カード→チャット | 2.13s | — | **1.05s** | 2.09s |
+| 送信→AI応答 | 3.19s | — | **2.96s** | ログインで停止 |
+| ゲスト送信 | 可（短命） | 不可 | **5回** | 不可 |
+| 44px未満のタップ領域 | **90/122** | 0（要素なし） | 2/7 | 11/28 |
+| 12px未満のテキスト | 6 | 0 | 0 | **94** |
+| ヒューリスティック | 34/50 | 26/50 | **35/50** | 31/50 |
+
+一番大きな発見は、**SynClubのフィードにセマンティックなクリック要素が0個**（カードは `<section>` + JS）であること。次に、**CrushOnは入力してからログインを求める**こと。MiraiMindは最短導線だが、**5回制限を事前に表示していない**。Zetaはゲストで完結するが、**タップ領域の74%が44px未満**です。
+
+### UXの詳細
+
+- [`docs/11-ux-reverse-engineering.md`](docs/11-ux-reverse-engineering.md) — ファネル、ゲート4類型、応答時間、マイクロコピー、ヒューリスティック、推奨アクション
+- [`docs/12-ux-patterns.md`](docs/12-ux-patterns.md) — 15パターンの実例・推奨・仕様
+- [`ux.html`](ux.html) — 4製品のフローを横並びで比較するビジュアルレポート
+- [`data/ux-metrics.json`](data/ux-metrics.json) / [`data/ux-flows.json`](data/ux-flows.json) — 生の測定値とフローグラフ
+- [`evidence/ux/`](evidence/ux/) — ステップごとのスクリーンショットと生ログ
 
 ---
 

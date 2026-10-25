@@ -296,3 +296,7 @@ Webでは**チャージのみ**。VIP/サブスクはアプリ側の可能性が
 - ルート：`data/routes.json`
 - コンポーネント：`data/components.json`
 - REA：`ev_5d2ca88b…`（親）/ `ev_fb8d749c…`（summary）
+
+- UX実測：docs/11-ux-reverse-engineering.md（2タップ、5回制限、応答2.96s）
+- UXパターン：docs/12-ux-patterns.md
+

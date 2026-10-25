@@ -1,0 +1,143 @@
+{
+  "zeta": {
+    "app": "zeta",
+    "taps": 3,
+    "steps": [
+      {
+        "s": "home",
+        "ms": 5966
+      },
+      {
+        "s": "detail",
+        "ms": 9319
+      },
+      {
+        "s": "chat",
+        "ms": 11446
+      },
+      {
+        "s": "reply",
+        "ms": 56590
+      }
+    ],
+    "home": {
+      "clickables": 122,
+      "small44": 90,
+      "small24": 83,
+      "textNodes": 118,
+      "tiny12": 6,
+      "nav": {
+        "ttfb": 718,
+        "dcl": 1365,
+        "load": 3569
+      },
+      "scrollHeight": 844
+    },
+    "detail": {
+      "clickables": 98,
+      "small44": 66,
+      "small24": 62,
+      "textNodes": 138,
+      "tiny12": 0,
+      "nav": {
+        "ttfb": 718,
+        "dcl": 1365,
+        "load": 3569
+      },
+      "scrollHeight": 844
+    },
+    "chat": {
+      "clickables": 8,
+      "small44": 7,
+      "small24": 3,
+      "textNodes": 1,
+      "tiny12": 0,
+      "nav": {
+        "ttfb": 718,
+        "dcl": 1365,
+        "load": 3569
+      },
+      "scrollHeight": 844
+    },
+    "initialBubbles": 0,
+    "sendMs": 11586,
+    "replyMs": 45004,
+    "replyTimeout": true,
+    "final": {
+      "clickables": 9,
+      "small44": 8,
+      "small24": 3,
+      "textNodes": 2,
+      "tiny12": 0,
+      "nav": {
+        "ttfb": 718,
+        "dcl": 1365,
+        "load": 3569
+      },
+      "scrollHeight": 844
+    }
+  },
+  "miraimind": {
+    "app": "miraimind",
+    "taps": 2,
+    "steps": [
+      {
+        "s": "discover",
+        "ms": 9336
+      },
+      {
+        "s": "chat",
+        "ms": 10387
+      },
+      {
+        "s": "reply",
+        "ms": 13466
+      }
+    ],
+    "home": {
+      "clickables": 7,
+      "small44": 2,
+      "small24": 0,
+      "textNodes": 122,
+      "tiny12": 0,
+      "nav": {
+        "ttfb": 913,
+        "dcl": 1781,
+        "load": 3464
+      },
+      "scrollHeight": 844
+    },
+    "chat": {
+      "clickables": 6,
+      "small44": 3,
+      "small24": 0,
+      "textNodes": 24,
+      "tiny12": 8,
+      "nav": {
+        "ttfb": 913,
+        "dcl": 1781,
+        "load": 3464
+      },
+      "scrollHeight": 844
+    },
+    "initialItems": 1,
+    "sendMs": 10509,
+    "replyMs": 2957,
+    "replyText": "(優雅に一礼しながら)お嬢様、本日は特別",
+    "replyTimeout": false,
+    "final": {
+      "clickables": 6,
+      "small44": 3,
+      "small24": 0,
+      "textNodes": 28,
+      "tiny12": 8,
+      "nav": {
+        "ttfb": 913,
+        "dcl": 1781,
+        "load": 3464
+      },
+      "scrollHeight": 844
+    },
+    "requestLimit": "{imageCount: 1, requestPrice: 20, requestCount: 0, vipLevel: 0, requestLimit: 5}"
+  }
+}

@@ -204,6 +204,30 @@
 
 ---
 
+## UX measurement
+
+| ファイル | 内容 |
+|---|---|
+| [docs/11-ux-reverse-engineering.md](../docs/11-ux-reverse-engineering.md) | UXレポート本文（ファネル/ゲート/時間/ヒューリスティック） |
+| [docs/12-ux-patterns.md](../docs/12-ux-patterns.md) | UXパターンカタログ |
+| [ux.html](../ux.html) | 4製品のフロー比較ページ |
+| [data/ux-metrics.json](../data/ux-metrics.json) | タップ数・遷移時間・応答時間・タップ領域・文字サイズ |
+| [data/ux-flows.json](../data/ux-flows.json) | 画面遷移グラフとブロッカー |
+| [evidence/ux/README.md](../evidence/ux/README.md) | 計測方法と生ログの説明 |
+| [raw-measurement-1.json](../evidence/ux/raw-measurement-1.json) | 1回目の生データ（SynClub/CrushOn） |
+| [raw-measurement-2.json](../evidence/ux/raw-measurement-2.json) | 2回目の生データ（Zeta/MiraiMind） |
+
+### UXフローのスクリーンショット
+
+| App | ステップ |
+|---|---|
+| Zeta | [home](../evidence/ux/zeta_step1_home.png) → [detail](../evidence/ux/zeta_step2_detail.png) → [chat](../evidence/ux/zeta_step3_chat.png) → [reply](../evidence/ux/zeta_step4_reply.png) |
+| SynClub | [feed](../evidence/ux/synclub_step1_feed.png) → [gate](../evidence/ux/synclub_step2_gate.png) |
+| MiraiMind | [discover](../evidence/ux/miraimind_step1_discover.png) → [chat](../evidence/ux/miraimind_step2_chat.png) → [reply](../evidence/ux/miraimind_step3_reply.png) |
+| CrushOn | [welcome](../evidence/ux/crushon_step1_welcome.png) → [home](../evidence/ux/crushon_step2_home.png) → [detail](../evidence/ux/crushon_step3_detail.png) → [chat](../evidence/ux/crushon_step4_chat.png) → [gate](../evidence/ux/crushon_step5_gate.png) |
+
+---
+
 ## DOM構造アウトライン
 
 テキストを含まない要素ツリー（tag / class / role / aria / Sentryコンポーネント / 座標）。

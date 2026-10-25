@@ -327,3 +327,7 @@ Zetaの紫グラデ、SynClubのコーラル、MiraiMindの音声バブルとは
 - REA：`ev_2dd12452…`（親）/ `ev_9361af85…`（summary）
 - UGC説明文は公開用にブラー処理。NSFW画像は選定から除外。
 
+
+- UX実測：docs/11-ux-reverse-engineering.md（4タップ、3画面、送信時ログイン）
+- UXパターン：docs/12-ux-patterns.md
+

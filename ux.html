@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UX REA — Zeta / SynClub / MiraiMind / CrushOn</title>
+<style>
+  :root{--bg:#0b0b0d;--panel:#131316;--line:rgba(255,255,255,.09);--text:#f4f4f5;--muted:#a1a1aa;--dim:#71717a;--max:1440px}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  header.hero{border-bottom:1px solid var(--line);background:radial-gradient(900px 420px at 10% -10%,rgba(103,40,255,.25),transparent 60%),radial-gradient(800px 380px at 95% 0%,rgba(255,120,112,.18),transparent 60%)}
+  .hero-inner{padding:64px 0 40px}
+  .kicker{display:flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:clamp(36px,5.6vw,68px);line-height:1;letter-spacing:-.045em;margin:20px 0 16px;font-weight:800}
+  h1 .g{background:linear-gradient(92deg,#fff,#cfc6ff 45%,#ffb9b4);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{max-width:860px;color:#d4d4d8;font-size:16px;line-height:1.75}
+  .lede a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.35)}
+  .top{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .top a{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;text-decoration:none;color:#e4e4e7;background:var(--panel)}
+  .app{padding:52px 0 40px;border-bottom:1px solid var(--line)}
+  .app-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .app .kicker{font-size:13px;letter-spacing:.06em;text-transform:none;color:#fff;font-weight:600}
+  .app h2{font-size:clamp(22px,2.6vw,34px);letter-spacing:-.03em;margin:10px 0 0;max-width:760px;line-height:1.3}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;max-width:660px}
+  .chip{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:9px 12px;min-width:96px}
+  .chip span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim)}
+  .chip b{font-size:16px;letter-spacing:-.02em}
+  .strip{display:flex;gap:16px;overflow-x:auto;padding:26px 0 10px;scroll-snap-type:x mandatory}
+  .step{flex:0 0 auto;width:240px;margin:0;scroll-snap-align:start}
+  .shot{background:#0f0f12;border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:390/844}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .step figcaption{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);padding:8px 2px 0}
+  .step figcaption b{color:#e4e4e7;font-weight:600}
+  .step figcaption span{color:var(--dim);white-space:nowrap}
+  .cols{display:grid;grid-template-columns:1.2fr 1fr .9fr;gap:14px;margin-top:18px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .panel h3{margin:0 0 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .panel ul{margin:0;padding-left:18px;color:#d4d4d8;font-size:13px;line-height:1.7}
+  .panel.bad{border-color:rgba(255,120,112,.25)}
+  .panel.good{border-color:rgba(142,248,226,.22)}
+  .panel.gate{border-color:rgba(255,200,80,.22)}
+  .score{margin:48px 0 20px;overflow:auto}
+  table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}
+  th,td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:center;color:#d4d4d8}
+  th{color:var(--muted);font-weight:500;font-size:11px}
+  td:first-child,th:first-child{text-align:left}
+  tr td:last-child{color:#fff}
+  .note{color:var(--dim);font-size:12px;line-height:1.8;margin:10px 0 0}
+  footer{padding:34px 0 56px;color:var(--dim);font-size:12px;line-height:1.8}
+  @media(max-width:900px){.cols{grid-template-columns:1fr}.step{width:200px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap hero-inner">
+  <div class="kicker"><span>UX REA</span><span>2026-10-25</span><span>390×844 / DPR2</span></div>
+  <h1><span class="g">First-chat funnels</span><br>4 apps, measured</h1>
+  <p class="lede">「UIがどう見えるか」ではなく、「最初の会話にたどり着くまでに何タップ必要か」を測ったUXレポート。ゲートの位置、応答時間、タップ領域、セマンティクス、マイクロコピーを同一条件で比較した。詳細は <a href="docs/11-ux-reverse-engineering.md">UXレポート</a> / <a href="docs/12-ux-patterns.md">パターンカタログ</a> / <a href="index.html">UIギャラリー</a>.</p>
+  <div class="top">
+    <a href="#zeta">Zeta</a><a href="#synclub">SynClub</a><a href="#miraimind">MiraiMind</a><a href="#crushon">CrushOn</a><a href="#heuristics">ヒューリスティック</a>
+  </div>
+</div></header>
+<main class="wrap">
+  <section class="app zeta" id="zeta">
+    <div class="app-head">
+      <div>
+        <div class="kicker">🟣 Zeta</div>
+        <h2>物語を読ませてから入る。ゲスト可。詳細ページが長い。</h2>
+      </div>
+      <div class="chips"><div class="chip"><span>taps to chat</span><b>2</b></div><div class="chip"><span>taps to send</span><b>3</b></div><div class="chip"><span>card→chat</span><b>2.13s</b></div><div class="chip"><span>send→reply</span><b>3.19s</b></div><div class="chip"><span>guest send</span><b>yes</b></div><div class="chip"><span>tap < 44px</span><b>90/122</b></div><div class="chip"><span>text < 12px</span><b>6</b></div></div>
+    </div>
+    <div class="strip"><figure class="step">
+      <div class="shot"><img src="evidence/ux/zeta_step1_home.png" alt="home" loading="lazy"></div>
+      <figcaption><b>1. home</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/zeta_step2_detail.png" alt="plot detail" loading="lazy"></div>
+      <figcaption><b>2. plot detail</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/zeta_step3_chat.png" alt="chat" loading="lazy"></div>
+      <figcaption><b>3. chat</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/zeta_step4_reply.png" alt="first AI reply" loading="lazy"></div>
+      <figcaption><b>4. first AI reply</b></figcaption>
+    </figure></div>
+    <div class="cols">
+      <div class="panel bad"><h3>摩擦</h3><ul><li>90 of 122 home targets are under 44px (74%)</li><li>App-download interstitial on first load</li><li>External ad above the chat</li><li>10px captions and 50% white text</li><li>AI may reply as a narrator block, not a character bubble</li><li>Guest room URLs expire, so the conversation cannot be revisited</li></ul></div>
+      <div class="panel good"><h3>強み</h3><ul><li>Guest can reach an AI reply without login</li><li>Only 3 taps to send</li><li>3.2s reply latency in the sample</li><li>Clear single CTA: トークを始める</li><li>Plot detail gives context before chat</li></ul></div>
+      <div class="panel gate"><h3>ブロッカー</h3><ul><li>ゲストルームはURLが失効する</li><li>購入/保存はログイン</li></ul></div>
+    </div>
+  </section>
+  <section class="app synclub" id="synclub">
+    <div class="app-head">
+      <div>
+        <div class="kicker">🩷 SynClub</div>
+        <h2>1タップでQRゲート。Webでは会話に到達できない。</h2>
+      </div>
+      <div class="chips"><div class="chip"><span>taps to chat</span><b>—</b></div><div class="chip"><span>taps to send</span><b>—</b></div><div class="chip"><span>card→chat</span><b>—</b></div><div class="chip"><span>send→reply</span><b>blocked</b></div><div class="chip"><span>guest send</span><b>no</b></div><div class="chip"><span>tap < 44px</span><b>—</b></div><div class="chip"><span>text < 12px</span><b>0</b></div></div>
+    </div>
+    <div class="strip"><figure class="step">
+      <div class="shot"><img src="evidence/ux/synclub_step1_feed.png" alt="character feed" loading="lazy"></div>
+      <figcaption><b>1. character feed</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/synclub_step2_gate.png" alt="app gate" loading="lazy"></div>
+      <figcaption><b>2. app gate</b></figcaption>
+    </figure></div>
+    <div class="cols">
+      <div class="panel bad"><h3>摩擦</h3><ul><li>One tap from the feed ends in a gate; no chat preview</li><li>0 semantic clickables in the feed (keyboard/screen-reader unusable)</li><li>Gate repeats on category changes</li><li>No guest value beyond browsing</li><li>Creator pages overflow on 390px</li></ul></div>
+      <div class="panel good"><h3>強み</h3><ul><li>Feed content and categories are visible without login</li><li>Gate is explicit and branded</li><li>QR handoff is low-friction on a second device</li><li>Rich editorial/community content around the gate</li></ul></div>
+      <div class="panel gate"><h3>ブロッカー</h3><ul><li>Webでは送信不可</li><li>カテゴリ変更でもゲート</li><li>フィードに0個のセマンティックリンク</li></ul></div>
+    </div>
+  </section>
+  <section class="app miraimind" id="miraimind">
+    <div class="app-head">
+      <div>
+        <div class="kicker">🩵 MiraiMind</div>
+        <h2>最短導線。カード→チャット1タップ、5回無料。</h2>
+      </div>
+      <div class="chips"><div class="chip"><span>taps to chat</span><b>1</b></div><div class="chip"><span>taps to send</span><b>2</b></div><div class="chip"><span>card→chat</span><b>1.05s</b></div><div class="chip"><span>send→reply</span><b>2.96s</b></div><div class="chip"><span>guest send</span><b>5 msgs</b></div><div class="chip"><span>tap < 44px</span><b>2/7</b></div><div class="chip"><span>text < 12px</span><b>0</b></div></div>
+    </div>
+    <div class="strip"><figure class="step">
+      <div class="shot"><img src="evidence/ux/miraimind_step1_discover.png" alt="discover" loading="lazy"></div>
+      <figcaption><b>1. discover</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/miraimind_step2_chat.png" alt="chat" loading="lazy"></div>
+      <figcaption><b>2. chat</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/miraimind_step3_reply.png" alt="first AI reply" loading="lazy"></div>
+      <figcaption><b>3. first AI reply</b></figcaption>
+    </figure></div>
+    <div class="cols">
+      <div class="panel bad"><h3>摩擦</h3><ul><li>5-request cap is not shown up front</li><li>Inner voice / archive / gifts are app-only</li><li>Desktop web renders blank</li><li>Search is reduced to popular terms on web</li><li>Voice/inner-voice features are hard to discover without tapping</li></ul></div>
+      <div class="panel good"><h3>強み</h3><ul><li>Fastest tap-to-chat transition (1.05s)</li><li>2 taps to send; no login required for the first try</li><li>3.0s reply latency in the sample</li><li>Clean tap targets and readable type</li><li>Voice bubble + inner voice + 進む make the story feel alive</li></ul></div>
+      <div class="panel gate"><h3>ブロッカー</h3><ul><li>デスクトップWebは空白</li><li>検索は人気ワードのみ</li><li>高度な機能はアプリのみ</li></ul></div>
+    </div>
+  </section>
+  <section class="app crushon" id="crushon">
+    <div class="app-head">
+      <div>
+        <div class="kicker">💜 CrushOn.AI</div>
+        <h2>性別→ホーム→詳細シート→チャット→ログイン。3画面。</h2>
+      </div>
+      <div class="chips"><div class="chip"><span>taps to chat</span><b>3</b></div><div class="chip"><span>taps to send</span><b>4</b></div><div class="chip"><span>card→chat</span><b>2.09s</b></div><div class="chip"><span>send→reply</span><b>blocked</b></div><div class="chip"><span>guest send</span><b>no</b></div><div class="chip"><span>tap < 44px</span><b>11/28</b></div><div class="chip"><span>text < 12px</span><b>94</b></div></div>
+    </div>
+    <div class="strip"><figure class="step">
+      <div class="shot"><img src="evidence/ux/crushon_step1_welcome.png" alt="gender onboarding" loading="lazy"></div>
+      <figcaption><b>1. gender onboarding</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/crushon_step2_home.png" alt="home" loading="lazy"></div>
+      <figcaption><b>2. home</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/crushon_step3_detail.png" alt="detail sheet" loading="lazy"></div>
+      <figcaption><b>3. detail sheet</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/crushon_step4_chat.png" alt="chat" loading="lazy"></div>
+      <figcaption><b>4. chat</b></figcaption>
+    </figure><figure class="step">
+      <div class="shot"><img src="evidence/ux/crushon_step5_gate.png" alt="login gate" loading="lazy"></div>
+      <figcaption><b>5. login gate</b></figcaption>
+    </figure></div>
+    <div class="cols">
+      <div class="panel bad"><h3>摩擦</h3><ul><li>4 taps and 3 screens before the first send</li><li>Gender onboarding blocks the first view</li><li>Detail sheet inserts an extra step before chat</li><li>Login required to send; banner appears after typing</li><li>94 of 202 text nodes are under 12px (10px tags)</li><li>Japanese UI and English character replies are mixed</li><li>Store/account/pricing are separate auth gates</li></ul></div>
+      <div class="panel good"><h3>強み</h3><ul><li>Detail sheet gives tags, stats, creator, and comments before chat</li><li>2.1s transition from sheet to chat</li><li>Clear login banner with a single ログイン CTA</li><li>Excellent pricing comparison and ranking UX</li><li>Desktop sidebar + 6-column grid is information-rich</li></ul></div>
+      <div class="panel gate"><h3>ブロッカー</h3><ul><li>ストア/アカウントはログイン必須</li><li>7プランの比較が複雑</li><li>日英混在</li></ul></div>
+    </div>
+  </section>
+  <section class="app" id="heuristics">
+    <div class="app-head"><div><div class="kicker">Nielsen 10 heuristics</div><h2>総合スコア（/50）</h2></div></div>
+    <div class="score"><table>
+      <thead><tr><th>App</th><th>可視性</th><th>一致</th><th>制御</th><th>一貫性</th><th>エラー防止</th><th>認識</th><th>柔軟性</th><th>最小限</th><th>回復</th><th>ヘルプ</th><th>合計</th></tr></thead>
+      <tbody><tr><td>Zeta</td><td>4</td><td>4</td><td>3</td><td>4</td><td>3</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td><b>34</b></td></tr><tr><td>SynClub</td><td>3</td><td>4</td><td>2</td><td>3</td><td>2</td><td>3</td><td>2</td><td>3</td><td>2</td><td>2</td><td><b>26</b></td></tr><tr><td>MiraiMind</td><td>4</td><td>4</td><td>4</td><td>3</td><td>3</td><td>4</td><td>3</td><td>4</td><td>3</td><td>3</td><td><b>35</b></td></tr><tr><td>CrushOn.AI</td><td>3</td><td>4</td><td>3</td><td>2</td><td>3</td><td>3</td><td>4</td><td>3</td><td>3</td><td>3</td><td><b>31</b></td></tr></tbody>
+    </table></div>
+    <p class="note">時間はシングルサンプル。SynClubとCrushOnはゲスト送信不可のため応答時間なし。MiraiMindの5回制限はランタイムログとUIからの推定。生データは evidence/ux/ を参照。</p>
+  </section>
+</main>
+<footer><div class="wrap">Method: Playwright + Chrome headful / same prompt / same viewport. Metrics: tap counts, transition deltas, send→reply latency, semantic clickables, tap targets, text sizes, gate text. This page is evidence, not a benchmark.</div></footer>
+</body>
+</html>
