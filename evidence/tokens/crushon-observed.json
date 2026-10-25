@@ -1,0 +1,200 @@
+{
+  "app": "crushon",
+  "source": "production CSS (636KB) + computed styles on crushon.ai/ja",
+  "screens_analyzed": 24,
+  "colors": [
+    {
+      "hex": "#f75ecc",
+      "hits": 39
+    },
+    {
+      "hex": "#923efc",
+      "hits": 23
+    },
+    {
+      "hex": "#7976ff",
+      "hits": 20
+    },
+    {
+      "hex": "#fcfcfc",
+      "hits": 20
+    },
+    {
+      "hex": "#202020",
+      "hits": 20
+    },
+    {
+      "hex": "#b376ff",
+      "hits": 19
+    },
+    {
+      "hex": "#707070",
+      "hits": 18
+    },
+    {
+      "hex": "#202126",
+      "hits": 18
+    },
+    {
+      "hex": "#3ba6f3",
+      "hits": 17
+    },
+    {
+      "hex": "#ff8adc",
+      "hits": 14
+    },
+    {
+      "hex": "#b6b4ff",
+      "hits": 11
+    },
+    {
+      "hex": "#a8ef30",
+      "hits": 11
+    },
+    {
+      "hex": "#9e9e9e",
+      "hits": 10
+    },
+    {
+      "hex": "#6b7280",
+      "hits": 7
+    },
+    {
+      "hex": "#111827",
+      "hits": 7
+    },
+    {
+      "hex": "#f3f3ff",
+      "hits": 7
+    },
+    {
+      "hex": "#3f3f3f",
+      "hits": 7
+    },
+    {
+      "hex": "#e5e7eb",
+      "hits": 6
+    },
+    {
+      "hex": "#1c1917",
+      "hits": 6
+    },
+    {
+      "hex": "#fff1a7",
+      "hits": 6
+    },
+    {
+      "hex": "#c7c7c7",
+      "hits": 6
+    },
+    {
+      "hex": "#9ca3af",
+      "hits": 5
+    },
+    {
+      "hex": "#2563eb",
+      "hits": 5
+    },
+    {
+      "hex": "#374151",
+      "hits": 5
+    },
+    {
+      "hex": "#f5f5f5",
+      "hits": 5
+    },
+    {
+      "hex": "#f7ff88",
+      "hits": 5
+    },
+    {
+      "hex": "#cf2ea2",
+      "hits": 5
+    },
+    {
+      "hex": "#363234",
+      "hits": 5
+    },
+    {
+      "hex": "#4b5563",
+      "hits": 4
+    },
+    {
+      "hex": "#d1d5db",
+      "hits": 4
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Metropolis",
+      "hits": 21
+    },
+    {
+      "family": "__poppins_e68a7e",
+      "hits": 4
+    },
+    {
+      "family": "__montserrat_74026d",
+      "hits": 3
+    },
+    {
+      "family": "__montserrat_Fallback_74026d",
+      "hits": 3
+    },
+    {
+      "family": "__montserrat_74026d,__montserrat_Fallback_74026d",
+      "hits": 3
+    },
+    {
+      "family": "inherit",
+      "hits": 3
+    },
+    {
+      "family": "__robotoVietnamese_3c9454",
+      "hits": 3
+    },
+    {
+      "family": "__exo2Vietnamese_e4f7d3",
+      "hits": 3
+    },
+    {
+      "family": "swiper-icons",
+      "hits": 2
+    },
+    {
+      "family": "__roboto_f23a9b",
+      "hits": 2
+    },
+    {
+      "family": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
+      "hits": 2
+    },
+    {
+      "family": "__exo2_3b8c73",
+      "hits": 2
+    }
+  ],
+  "computed": {
+    "htmlFontSize": "16px",
+    "body": {
+      "bg": "rgb(252, 252, 252)",
+      "font": "__mPlus1_e32bd4, __mPlus1_Fallback_e32bd4, \"Hiragino Kaku Gothic Pro\", Meiryo, \"MS PGothic\", sans-serif",
+      "size": "16px",
+      "lineHeight": "24px"
+    },
+    "card": {
+      "w": 171,
+      "h": 310,
+      "radius": "8px",
+      "bg": "rgb(243, 243, 255)"
+    },
+    "cardName": {
+      "size": "12px",
+      "weight": "700"
+    },
+    "tag": {
+      "size": "10px",
+      "radius": "9999px"
+    }
+  }
+}

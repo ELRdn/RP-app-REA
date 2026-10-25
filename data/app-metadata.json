@@ -11,13 +11,23 @@
       "fileSizeBytes": 281657344,
       "rating": 4.51208,
       "ratingCount": 203122,
-      "genres": ["エンターテインメント"],
-      "languages": ["EN", "JA", "KO"],
+      "genres": [
+        "エンターテインメント"
+      ],
+      "languages": [
+        "EN",
+        "JA",
+        "KO"
+      ],
       "screenshots": 10
     },
     "web": {
       "origin": "https://zeta-ai.io",
-      "locales": ["ja", "ko", "en"],
+      "locales": [
+        "ja",
+        "ko",
+        "en"
+      ],
       "server": "Vercel",
       "framework": "Next.js (App Router, Turbopack)",
       "cacheControl": "no-store, must-revalidate, no-cache, max-age=0, private",
@@ -31,9 +41,25 @@
       "cssFiles": 3,
       "cssBytes": 188052
     },
-    "cookiesObserved": ["NEXT_LOCALE", "TOKEN", "REFRESH_TOKEN", "TIMEZONE", "LANGUAGE", "DEVICE_ID"],
-    "thirdParties": ["Sentry (sentry.luda.ai)", "Google Analytics", "Microsoft Clarity", "Meta Pixel", "Google AdSense/Publisher Tag", "Amplitude"],
-    "apiEndpointsObserved": ["GET https://api.zeta-ai.io/v1/open-stores/ZETA_STORE_GLOBAL/products"]
+    "cookiesObserved": [
+      "NEXT_LOCALE",
+      "TOKEN",
+      "REFRESH_TOKEN",
+      "TIMEZONE",
+      "LANGUAGE",
+      "DEVICE_ID"
+    ],
+    "thirdParties": [
+      "Sentry (sentry.luda.ai)",
+      "Google Analytics",
+      "Microsoft Clarity",
+      "Meta Pixel",
+      "Google AdSense/Publisher Tag",
+      "Amplitude"
+    ],
+    "apiEndpointsObserved": [
+      "GET https://api.zeta-ai.io/v1/open-stores/ZETA_STORE_GLOBAL/products"
+    ]
   },
   "synclub": {
     "appStore": {
@@ -46,13 +72,26 @@
       "fileSizeBytes": 214465536,
       "rating": 4.59286,
       "ratingCount": 27463,
-      "genres": ["エンターテインメント", "仕事効率化"],
-      "languages": ["EN", "JA", "KO", "ZH"],
+      "genres": [
+        "エンターテインメント",
+        "仕事効率化"
+      ],
+      "languages": [
+        "EN",
+        "JA",
+        "KO",
+        "ZH"
+      ],
       "screenshots": 9
     },
     "web": {
       "origin": "https://www.synclubaichat.com",
-      "locales": ["ja", "en", "ko", "zh"],
+      "locales": [
+        "ja",
+        "en",
+        "ko",
+        "zh"
+      ],
       "server": "APISIX/3.8.0",
       "framework": "Nuxt 3 (Vue 3, SSR)",
       "uiLibrary": "Element Plus",
@@ -68,7 +107,101 @@
       "cssFiles": 3,
       "cssBytes": 452490
     },
-    "thirdParties": ["Google Analytics", "Google Tag Manager", "Amplitude", "pingpong.us", "Google Ads conversion"],
-    "apiEndpointsObserved": ["POST https://api.synclubaichat.com/aichat/h5/resourceManage/getResource"]
+    "thirdParties": [
+      "Google Analytics",
+      "Google Tag Manager",
+      "Amplitude",
+      "pingpong.us",
+      "Google Ads conversion"
+    ],
+    "apiEndpointsObserved": [
+      "POST https://api.synclubaichat.com/aichat/h5/resourceManage/getResource"
+    ]
+  },
+  "miraimind": {
+    "identity": {
+      "product": "MiraiMind",
+      "seller": "Hello Group Japan",
+      "webApp": "https://web.miraimind.ai",
+      "officialSite": "https://miraimind.ai/ja/",
+      "android": "com.immomo.miraimind",
+      "ios": "id6502377840"
+    },
+    "scale": {
+      "downloads": "13.6M+",
+      "registeredCharacters": "4.2M+",
+      "claimedCharacters": "10M+"
+    },
+    "web": {
+      "framework": "Vue 3 + Vite",
+      "ui": "Ant Design Vue",
+      "state": "Pinia",
+      "transport": "socket.io WebSocket",
+      "realtime": "wss://cosmos-im-ws-hw-ap.hellogroup.com",
+      "htmlBytes": 0,
+      "jsFiles": 25,
+      "jsBytes": 4390165,
+      "cssBytes": 281057
+    },
+    "marketing": {
+      "framework": "Astro 5.17.1",
+      "static": true
+    },
+    "thirdParties": [
+      "GTM",
+      "Google Analytics",
+      "Google Ads",
+      "Google AdSense",
+      "TikTok Pixel",
+      "Meta Pixel",
+      "AppsFlyer",
+      "Twitter Pixel"
+    ],
+    "guestLimits": {
+      "freeRequests": 5,
+      "note": "inferred from runtime log requestLimit: 5"
+    }
+  },
+  "crushon": {
+    "identity": {
+      "product": "CrushOn.AI",
+      "app": "https://crushon.ai/ja",
+      "marketing": "https://chat.crushon.ai",
+      "android": "ai.crushon.app"
+    },
+    "scale": {
+      "characters": "8M+",
+      "users": "10M+",
+      "ratingClaim": "4.9"
+    },
+    "web": {
+      "framework": "Next.js + React",
+      "ui": "Mantine + Tailwind + custom",
+      "state": "Zustand",
+      "payment": "Stripe",
+      "analytics": "Sentry / Amplitude / GTM",
+      "htmlBytes": 0,
+      "jsFiles": 106,
+      "jsBytes": 7674553,
+      "cssBytes": 636767,
+      "modules": 2100
+    },
+    "marketing": {
+      "framework": "Next.js",
+      "theme": "dark neon"
+    },
+    "thirdParties": [
+      "Sentry",
+      "Amplitude",
+      "GTM",
+      "Stripe",
+      "Intercom",
+      "Sensors Data"
+    ],
+    "content": {
+      "nsfw": true,
+      "ageGate": "18+",
+      "sfwParam": "?sfw=1"
+    }
   }
 }

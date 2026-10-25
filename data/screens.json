@@ -1764,5 +1764,899 @@
     "bytes": 24586,
     "sha256": "2b2d1fa23946b5d1c178ebccc2faf6c7aa0076761b4e689f588eb5adfd80fdd0",
     "sourceUrl": "https://apps.apple.com/jp/app/id1671537674"
+  },
+  {
+    "id": "mm-15-discover-clean",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "Discover（ホーム）",
+    "desc": "白〜ラベンダーの背景、極太の「Discover」、性別タブ、ハッシュタグの横スクロール、2カラムのキャラクターカード、下部5タブ。",
+    "tags": [
+      "home",
+      "discover",
+      "feed"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_01_discover.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_01_discover.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 1318424,
+    "sha256": "595341f7d6163c7c91d5c14f6a33b48b9a3b6bbee5b97b9b6f772296969bd067",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-16-discover-female",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "Discover（女性フィルター）",
+    "desc": "性別タブ「女性」を選択した状態。タグ群とカードが女性キャラクターに切り替わる。",
+    "tags": [
+      "discover",
+      "filter"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_02_discover_female.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_02_discover_female.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 1169171,
+    "sha256": "a2ce1f5c0b483e3ea5b211e01497e7d7e84777b7502a2ac0031762e10cb77ee7",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-search",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "検索（初期状態）",
+    "desc": "検索フィールド、アプリ限定機能の告知バナー、人気の検索チップ、検索のヒント。Webでは結果一覧を出さずアプリへ誘導する。",
+    "tags": [
+      "search"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_03_search.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_03_search.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 102113,
+    "sha256": "52c2f7bbfaed5ebc97dd05510bbf27a8077af79496a9fdaf72ea6f9d24418b52",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-05-chat",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "チャット（イントロ）",
+    "desc": "大きなアバター、名前、統計、折りたたみ可能な紹介カード、シナリオチップ、音声バブル、進むボタン、モード切替チップ、入力バー。",
+    "tags": [
+      "chat",
+      "intro"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_04_chat_intro.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_04_chat_intro.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 186857,
+    "sha256": "60197738ed7acbcfc482022e1c08cde53e5903503429cf371227c6b43aa93f12",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-06-chat-go",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "チャット（「進む」で物語進行）",
+    "desc": "ユーザー入力なしで「進む」を押すと、キャラクターの次の台詞と心の声が追加される。ストーリー進行ボタンがUIの主役。",
+    "tags": [
+      "chat",
+      "story"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_05_chat_progress.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_05_chat_progress.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 168444,
+    "sha256": "25939ee90309740ad837618f563ff970581bc3e19e2747995547db20041a3699",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-07-chat-send",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "チャット（AI応答）",
+    "desc": "ゲストでも5回まで送信可能。ユーザーの吹き出し、音声バブル、心の声、再生成・進む・評価のアクション行。",
+    "tags": [
+      "chat",
+      "reply"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_06_chat_reply.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_06_chat_reply.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 164805,
+    "sha256": "d10da940bbf50de0ca376369236e3b79bc2dc9e806338ef3768148e78da48b3f",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-08-chat-info",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "キャラ情報シート",
+    "desc": "アバター、名前、クリエイター、統計、共有・お気に入り、特性タグ、紹介、キャラ設定をボトムシートで表示。",
+    "tags": [
+      "chat",
+      "profile",
+      "sheet"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_07_chat_info.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_07_chat_info.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 186857,
+    "sha256": "1803dae89be983147f0e67b29d6338707070714dc7db7502662a989b152ef62d",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-09-chat-more",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "チャットの追加アクション",
+    "desc": "ギフト／新シナリオ／アルバム／履歴／共有の5タイル。入力バーの上に展開するパネル。",
+    "tags": [
+      "chat",
+      "actions"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_08_chat_actions.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_08_chat_actions.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 146578,
+    "sha256": "3c713b694d5563697a12bc9b57588e393bbd0ca6e3283099b7f1dd33506462b7",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-10-chat-inner",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "Web限定機能のアプリゲート",
+    "desc": "「心の声」を開くと、アプリ限定機能の案内と「今すぐダウンロード」モーダル。Webの体験境界が明快。",
+    "tags": [
+      "gate",
+      "app-download"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_09_app_gate.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_09_app_gate.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 206845,
+    "sha256": "75c904b435d54f3202dfa648f30e6fe6cf42657312101499ed95e9390679c2a6",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-11-personal",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "ログイン",
+    "desc": "パステルグラデーション、3Dの「M」マスコット、Google／Apple／メールの3択、社会的ログイン、言語切替。",
+    "tags": [
+      "auth",
+      "login"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_10_login.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_10_login.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 267162,
+    "sha256": "1afff6332c68cd1bc9ac51aff57403b52f955d837ed2086c985996097ccdb422",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-12-language",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "言語切替",
+    "desc": "日本語／한국어／繁體中文（台灣・香港）／简体中文の5言語。アプリのグローバル展開を示す。",
+    "tags": [
+      "i18n",
+      "language"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_11_language.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_11_language.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 123381,
+    "sha256": "3ff4324c8d6c694d7797eab743349e83981275ce5355e68a8cf53b21b01613d4",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-22-recharge",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "金平糖チャージ",
+    "desc": "「MiraiMind金平糖チャージ」の2カラム商品グリッド。ハロウィン限定ボーナス、¥160〜¥10,000、36〜37%割引の取り消し線。",
+    "tags": [
+      "monetization",
+      "recharge"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_12_recharge.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_12_recharge.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 444946,
+    "sha256": "68973efdee92a102ab1e98a548abbbddc607dc2acace1b94e66d5c48bce6dd5e",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-14-chatlist",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "チャット一覧",
+    "desc": "ゲストでも直近の会話が残る。アプリ誘導バナー、会話行、タイムスタンプ、下部タブ。",
+    "tags": [
+      "chat-list"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_13_chatlist.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_13_chatlist.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 102776,
+    "sha256": "20eaafacae61b27462c57b3c9245a0f8b4f04e96961b154daad76bf6b36a95f9",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-26-site-landing",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "公式サイト（ヒーロー）",
+    "desc": "Astro製のマーケティングサイト。フルブリードのアニメビジュアル、グラデーション見出し、ストアボタン、カルーセル。",
+    "tags": [
+      "marketing",
+      "landing"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_14_site_landing.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_14_site_landing.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 1194614,
+    "sha256": "8ccceebdb93490bffed2200332a23d288249b37f34db7f93459dfb0cd843f96d",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-27-site-features",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "公式サイト（機能紹介）",
+    "desc": "機能セクション。キャラクター／チャット／音声／画像生成の訴求を、アニメ素材と大きなコピーで構成。",
+    "tags": [
+      "marketing",
+      "features"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_15_site_features.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_15_site_features.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 198996,
+    "sha256": "4f888878e9dd02a37baa6920667ba44377eeeff6e53cb82a26e079c937707bb0",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-28-site-guide",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "公式サイト（ガイド）",
+    "desc": "「MiraiMindの特徴・遊び方」。マンガ風の「3分で完全攻略」バナーと記事カード。",
+    "tags": [
+      "marketing",
+      "guide"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_16_site_guide.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_16_site_guide.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 860624,
+    "sha256": "587853b3c611b3467e16f773c69e847c8a19d5736dec2ce90d6750a482f8c6e3",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-29-site-guide-memory",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "ガイド記事（記憶機能）",
+    "desc": "「記憶機能」の解説記事。AIが何を覚えているかを説明する長文コンテンツ。",
+    "tags": [
+      "marketing",
+      "guide",
+      "memory"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_17_site_memory.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_17_site_memory.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 598912,
+    "sha256": "1687602fe93a4e12d9b7c8c6ccb2f3f722c586549658d05182a21c3d8e2b1c1f",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-30-site-news",
+    "app": "miraimind",
+    "platform": "web",
+    "title": "公式サイト（ニュース）",
+    "desc": "1,360万DL・420万キャラクター達成などのニュース一覧。",
+    "tags": [
+      "marketing",
+      "news"
+    ],
+    "path": "evidence/screenshots/miraimind/web/mm_18_site_news.png",
+    "thumbPath": "evidence/screenshots/miraimind/web/mm_18_site_news.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 162542,
+    "sha256": "141fef1e0c529a35a9581045223f493cc64bbb352ca9bb8e1b4c9695afc5a820",
+    "sourceUrl": "https://web.miraimind.ai/"
+  },
+  {
+    "id": "mm-3",
+    "app": "miraimind",
+    "platform": "appstore",
+    "title": "Play Store #1：キービジュアル",
+    "desc": "「ちゃんと感じる 恋に落ちる瞬間」。フルブリードのアニメキービジュアル。",
+    "tags": [
+      "marketing",
+      "android"
+    ],
+    "path": "evidence/screenshots/appstore/miraimind/mm_play_1.jpg",
+    "thumbPath": "evidence/screenshots/appstore/miraimind/mm_play_1.jpg",
+    "width": 900,
+    "height": 1600,
+    "mime": "image/jpeg",
+    "bytes": 323958,
+    "sha256": "f1ea7f1ef302b1df21a4c9b1ae0feab6ddd3917ec78da357ac4d05ad76ec1134",
+    "sourceUrl": "https://play.google.com/store/apps/details?id=com.immomo.miraimind"
+  },
+  {
+    "id": "mm-4",
+    "app": "miraimind",
+    "platform": "appstore",
+    "title": "Play Store #2：キャラクター発見",
+    "desc": "「推しも恋人も 全部選べる」。アプリのホーム／横スクロールカード／検索のコラージュ。",
+    "tags": [
+      "marketing",
+      "android",
+      "feed"
+    ],
+    "path": "evidence/screenshots/appstore/miraimind/mm_play_2.jpg",
+    "thumbPath": "evidence/screenshots/appstore/miraimind/mm_play_2.jpg",
+    "width": 900,
+    "height": 1600,
+    "mime": "image/jpeg",
+    "bytes": 307040,
+    "sha256": "ac9a4adb42cd8a5557a68dd55eb8e96643cc3d5b0805b7db94bc40ffe82a4a9d",
+    "sourceUrl": "https://play.google.com/store/apps/details?id=com.immomo.miraimind"
+  },
+  {
+    "id": "mm-5",
+    "app": "miraimind",
+    "platform": "appstore",
+    "title": "Play Store #3：チャット",
+    "desc": "「目が合うだけで 心がドキドキ」。音声バブルと心の声を含むチャット画面。",
+    "tags": [
+      "marketing",
+      "android",
+      "chat"
+    ],
+    "path": "evidence/screenshots/appstore/miraimind/mm_play_3.jpg",
+    "thumbPath": "evidence/screenshots/appstore/miraimind/mm_play_3.jpg",
+    "width": 900,
+    "height": 1600,
+    "mime": "image/jpeg",
+    "bytes": 257959,
+    "sha256": "2dbd1e89ce537469593bdc99bbefd4503c6c1305e08f3e57420804efe84e08c9",
+    "sourceUrl": "https://play.google.com/store/apps/details?id=com.immomo.miraimind"
+  },
+  {
+    "id": "mm-6",
+    "app": "miraimind",
+    "platform": "appstore",
+    "title": "Play Store #4：AIアート",
+    "desc": "「AIアートの楽園 君の想像を形に」。画像生成ギャラリー。",
+    "tags": [
+      "marketing",
+      "android",
+      "image"
+    ],
+    "path": "evidence/screenshots/appstore/miraimind/mm_play_4.jpg",
+    "thumbPath": "evidence/screenshots/appstore/miraimind/mm_play_4.jpg",
+    "width": 900,
+    "height": 1600,
+    "mime": "image/jpeg",
+    "bytes": 326700,
+    "sha256": "fc3c4b9aa97cbe032dc7a921ce98824aab8755ac3042cb2140fcf12d5541b133",
+    "sourceUrl": "https://play.google.com/store/apps/details?id=com.immomo.miraimind"
+  },
+  {
+    "id": "mm-7",
+    "app": "miraimind",
+    "platform": "appstore",
+    "title": "Play Store #5：画像生成フロー",
+    "desc": "「一発で作成 極上のAIアート」。投稿／強化／設定適用／作り直しのアクション。",
+    "tags": [
+      "marketing",
+      "android",
+      "image"
+    ],
+    "path": "evidence/screenshots/appstore/miraimind/mm_play_5.jpg",
+    "thumbPath": "evidence/screenshots/appstore/miraimind/mm_play_5.jpg",
+    "width": 900,
+    "height": 1600,
+    "mime": "image/jpeg",
+    "bytes": 209441,
+    "sha256": "6e767b4eaa4b9a71e8490cc4b4e38240fec028d9c54d25f6b1095a85958ada49",
+    "sourceUrl": "https://play.google.com/store/apps/details?id=com.immomo.miraimind"
+  },
+  {
+    "id": "co-01-welcome",
+    "app": "crushon",
+    "platform": "web",
+    "title": "初回オンボーディング",
+    "desc": "「ようこそ！CrushOn.AI どの性別に興味がありますか？」女性／男性／ノンバイナリーの3択。背景はぼかし。",
+    "tags": [
+      "onboarding",
+      "gender"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_01_welcome.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_01_welcome.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 384438,
+    "sha256": "6da38959b7b96be97d121b08706d07d52274e57eadb4ebd3609d8f9e7d79ed66",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-02-home",
+    "app": "crushon",
+    "platform": "web",
+    "title": "ホーム（Googleログインシート）",
+    "desc": "キャラクター／思い出／クリエイターのタブ、フィルタ、2カラムカード。下部にGoogleログインのボトムシート。",
+    "tags": [
+      "home",
+      "login"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_02_home.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_02_home.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 868979,
+    "sha256": "6e3a9851702c937e027913a437ab699939f761690003ec14f2b86a319b40025d",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-03-home-scroll",
+    "app": "crushon",
+    "platform": "web",
+    "title": "ホーム（フィード）",
+    "desc": "カードの名前・説明・タグ・クリエイター・スター数。下部に「Open in App」バナー。説明文は公開用にブラー処理。",
+    "tags": [
+      "feed",
+      "home"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_03_feed.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_03_feed.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 842442,
+    "sha256": "ece17b5ed3d0e5f304ee2118077d0b76ccc3895a0e60441c9b2c558cff9508c6",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-04-ranking",
+    "app": "crushon",
+    "platform": "web",
+    "title": "ランキング",
+    "desc": "クリエイター／キャラクター、週間／月間／上昇中。TOP1〜3をパステル背景の大きなカードで見せる。",
+    "tags": [
+      "ranking"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_04_ranking.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_04_ranking.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 840253,
+    "sha256": "a4219de94718fbf7eb1d7dc8c87431a7e5ea0cfba94e14f54b281d1ced5787c4",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-06-search",
+    "app": "crushon",
+    "platform": "web",
+    "title": "検索結果（fantasy）",
+    "desc": "大きな検索ピル、キャラクター／思い出／ユーザーのタブ、ソート、フィルタ、2カラム結果。説明文はブラー処理。",
+    "tags": [
+      "search"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_05_search.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_05_search.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 729714,
+    "sha256": "eeeff02ddc5b9b22441bb40aa46ea48b76658a2bb59be3fa31ccbec17c7bc5ce",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-07-pricing",
+    "app": "crushon",
+    "platform": "web",
+    "title": "料金プラン（モバイル）",
+    "desc": "7段階のプラン。メッセージクレジット、モデルアクセス、記憶容量、同時チャット数などを比較。紫の支払いボタン。",
+    "tags": [
+      "monetization",
+      "pricing"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_06_pricing.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_06_pricing.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 196083,
+    "sha256": "3120736da69a358f5ce3b175dc97f7e0246f070a612f0e3bd1d62072aac0863d",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-09-store",
+    "app": "crushon",
+    "platform": "web",
+    "title": "ストア（認証ゲート）",
+    "desc": "ストアを開くとログインモーダル。Google／Discord／SubscribeStar／メール、18+同意。",
+    "tags": [
+      "store",
+      "auth-gate"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_07_store_gate.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_07_store_gate.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 150026,
+    "sha256": "f72e8a92f9bd5b4ab16e367afb082af7764e66dbaa9d17a190c9c30f07067f31",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-10-coin",
+    "app": "crushon",
+    "platform": "web",
+    "title": "コイン／ダイヤモンド",
+    "desc": "タスク／実績タブ、CrushOn CoinとDiamondsの説明。デイリーログイン、キャラ作成、招待で獲得。",
+    "tags": [
+      "monetization",
+      "coin"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_08_coin.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_08_coin.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 235230,
+    "sha256": "552e09041e7a70017439d855e734714bbabd971ca893e48ddd22d96b86c787d6",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-11-signin",
+    "app": "crushon",
+    "platform": "web",
+    "title": "ログイン",
+    "desc": "Google／Discord／Subscribe Star／メール。18歳以上と規約・プライバシーへの同意。",
+    "tags": [
+      "auth",
+      "login"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_09_signin.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_09_signin.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 87820,
+    "sha256": "d180379f9a4f70298a744cfc82b9e61308fb69ce52ba8b6562fb676048481007",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-12-account",
+    "app": "crushon",
+    "platform": "web",
+    "title": "アカウント（認証ゲート）",
+    "desc": "アカウントページはログインモーダルでブロック。フォロワー／フォロー中／インタラクション、ウォレット、キャラ管理はログイン後。",
+    "tags": [
+      "account",
+      "auth-gate"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_10_account_gate.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_10_account_gate.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 128125,
+    "sha256": "aa7e1494ae30408ffd419c9f507a8d8071f674da6bcd0ea32710403280c538d5",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-13-inbox",
+    "app": "crushon",
+    "platform": "web",
+    "title": "チャット受信箱（空）",
+    "desc": "ソロ／グループ（VIP）。空状態のマティーニアイコンと「探索するためにホームに戻ろう！」。",
+    "tags": [
+      "inbox",
+      "empty-state"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_11_inbox.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_11_inbox.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 30701,
+    "sha256": "8ea2e0b5f0a10a3efe34b8c4157a282c15ff4ccc09c4ea1f02fa362ff353069f",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-14-chat",
+    "app": "crushon",
+    "platform": "web",
+    "title": "キャラクターチャット",
+    "desc": "ヘッダー、円形アバター、クリエイター、導入カード、最初のメッセージ、ログイン誘導バナー、入力バー、AI免責。",
+    "tags": [
+      "chat"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_12_chat.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_12_chat.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 283765,
+    "sha256": "49d88a0b38b1328e5ffd25e1727f715fea0058309eae3e9c6534370b4c7f5756",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-16-blog",
+    "app": "crushon",
+    "platform": "web",
+    "title": "ブログ",
+    "desc": "エディトリアルなブログ索引。SFWチームによる記事、トピック別ガイド。",
+    "tags": [
+      "blog",
+      "content"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_13_blog.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_13_blog.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 771685,
+    "sha256": "f52bce78a4ae1f714acad2c3be8d1e1778fdea0a2c5aca1d9907e845358269e4",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-17-404",
+    "app": "crushon",
+    "platform": "web",
+    "title": "404",
+    "desc": "「ページが見つかりません。前のページへお戻りください。」とホームへ戻るリンク。",
+    "tags": [
+      "404"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_14_404.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_14_404.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 106699,
+    "sha256": "80d5aea6b2b27a9d43332b5d0df3e1a94be7f5ac322c28e3a82bff740e53efbe",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-18-terms",
+    "app": "crushon",
+    "platform": "web",
+    "title": "利用規約",
+    "desc": "長文の法的ページ。サイドバーとログイン導線を維持したまま、英語の規約を表示。",
+    "tags": [
+      "legal"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_15_terms.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_15_terms.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 213526,
+    "sha256": "14201d78bccb1531e8673d28ece240529fe5359e317ea3a515d0a3a727980518",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-19-desktop-home",
+    "app": "crushon",
+    "platform": "web",
+    "title": "デスクトップ：ホーム",
+    "desc": "左サイドバー（ホーム／最近のチャット／作成／ランキング／プロフィール／料金プラン／ストア／報酬／通知）、上部検索、6カラムグリッド。",
+    "tags": [
+      "desktop",
+      "home"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_16_desktop_home.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_16_desktop_home.png",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 1125884,
+    "sha256": "c20e073cccd991568b77624fd9324e0961967fa611f892db58c30a8784bf1121",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-20-desktop-pricing",
+    "app": "crushon",
+    "platform": "web",
+    "title": "デスクトップ：料金プラン",
+    "desc": "月額／年額／チャットパッケージの切替、47% Off、プランカードの横カルーセル、機能比較。",
+    "tags": [
+      "desktop",
+      "pricing"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_17_desktop_pricing.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_17_desktop_pricing.png",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 401377,
+    "sha256": "b5758b04dd067d52053b2c415a6c7d7bfc7480bd849b9c2fea7f97ad3967ab6d",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-28-desktop-ranking",
+    "app": "crushon",
+    "platform": "web",
+    "title": "デスクトップ：ランキング",
+    "desc": "サイドバー＋ワイドなランキング。クリエイター／キャラクター、期間切替。",
+    "tags": [
+      "desktop",
+      "ranking"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_18_desktop_ranking.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_18_desktop_ranking.png",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 466887,
+    "sha256": "3f8cf1cd7575171604ee6386078e5615c5cb053317fb230f2864b73842d89204",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-32-home-nosheet",
+    "app": "crushon",
+    "platform": "web",
+    "title": "デスクトップ：キャラクター詳細モーダル",
+    "desc": "カードから開く詳細モーダル。画像、統計、タグ、概要、作成者、サポーター、コメント、チャット開始CTA。",
+    "tags": [
+      "desktop",
+      "detail",
+      "modal"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_19_desktop_character_modal.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_19_desktop_character_modal.png",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 805395,
+    "sha256": "a55669fd4cb08f2ea373d32bfdc825a36e3fbc18209145495690090f9db0babc",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-21-m-landing",
+    "app": "crushon",
+    "platform": "web",
+    "title": "マーケティング：ヒーロー",
+    "desc": "ダークな紫グラデーション、ネオンの巨大タイポ、ピンク→紫のCTA、8M+／10M+／4.9★の統計、キャラクターギャラリー。",
+    "tags": [
+      "marketing",
+      "landing"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_20_marketing_landing.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_20_marketing_landing.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 804010,
+    "sha256": "d0714e00e4c7de44316f47225e0174566ac2ac4c34ed71eb7f62c66cfedef040",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-23-m-anime",
+    "app": "crushon",
+    "platform": "web",
+    "title": "マーケティング：Anime AI",
+    "desc": "パンくず、ピル、グラデーション見出し、8,000+／12ジャンル／5アーキタイプ／Freeの統計、Featuredセクション。",
+    "tags": [
+      "marketing",
+      "seo"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_21_marketing_anime.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_21_marketing_anime.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 356456,
+    "sha256": "8eb0d11d0875a834e2dcb6bbb8ea0e0ca2bd3ea5a7360807ea1754d741c45df6",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-24-m-creators",
+    "app": "crushon",
+    "platform": "web",
+    "title": "マーケティング：クリエイター",
+    "desc": "「The writers behind the CrushOn.AI library」。ランキングのスナップショットと方法論を説明するエディトリアル。",
+    "tags": [
+      "marketing",
+      "creators"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_22_marketing_creators.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_22_marketing_creators.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 332187,
+    "sha256": "ceaeba2d344056f3c18275778c14c325eaed7169ba06a884b519de321224fd00",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-25-m-builder",
+    "app": "crushon",
+    "platform": "web",
+    "title": "マーケティング：性格ビルダー",
+    "desc": "「AI Character Personality Builder」。2ステップのウィザード、タイプ選択カード。アカウント不要のブラウザツール。",
+    "tags": [
+      "marketing",
+      "tool"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_23_marketing_builder.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_23_marketing_builder.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 218366,
+    "sha256": "545e81b19e70491af738006db67910003084e283467e61feffeeb196a9bddbfd",
+    "sourceUrl": "https://crushon.ai/ja"
+  },
+  {
+    "id": "co-26-m-blog",
+    "app": "crushon",
+    "platform": "web",
+    "title": "マーケティング：ブログ",
+    "desc": "「The CrushOn.AI Blog」。エディトリアル、トピック別ガイド、最新記事。",
+    "tags": [
+      "marketing",
+      "blog"
+    ],
+    "path": "evidence/screenshots/crushon/web/co_24_marketing_blog.png",
+    "thumbPath": "evidence/screenshots/crushon/web/co_24_marketing_blog.png",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 290786,
+    "sha256": "1405f1ae4a357bc79c9d1da50ab33864324e7a9e4c51d3af72181f4d687d1341",
+    "sourceUrl": "https://crushon.ai/ja"
   }
 ]

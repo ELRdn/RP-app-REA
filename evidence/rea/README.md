@@ -9,6 +9,10 @@ REA（Reverse Engineering Anything）で実行した分析の記録。入力は*
 | `ev_cf67c92998dbb0780870791e3654ad8c62e8ed43ee268915c685a58cb9cee939` | `analyze_javascript_application` | `js/zeta`（109ファイル / 5,881,016 bytes） | `26bdb2d78b0944d433c7e7ff57966f480cefcb67ebb9dd39d0d8bb3713bff259` | 1,702,775 ASTノード / 119 findings / 0 parse failures / semantic partial |
 | `ev_6b7956f45903b4abf84a84525af3fc9fe469172230dac34f5e2678802f452a64` | `inspect_analysis_view`（summary） | 上記の親Evidence | — | 統計・カバレッジ・制約のサマリー |
 | `ev_5a12c697c01da527370c8c07eb28982ac7ef73f183e51adaeca5688593157ffd` | `analyze_javascript_application` | `js/synclub`（38ファイル / 4,591,357 bytes） | — | 997,030 ASTノード / 2,727 findings / 0 parse failures / semantic partial |
+| `ev_5d2ca88b51398d6641a60679adc90729425eb62489fb9287189ac5d7eed9a24f` | `analyze_javascript_application` | `js2/miraimind`（22ファイル / 4,467,831 bytes） | — | 1,203,611 ASTノード / 518 findings / 0 parse failures |
+| `ev_fb8d749c4ec5e8b7736082ff6e7e9dff219729342fcf8e8757f6a90f44328333` | `inspect_analysis_view`（summary） | 上記の親Evidence | — | 統計・カバレッジ |
+| `ev_2dd124526919fcdaf3ab78dc02faa9d553d00b64a29249af680bdd10eaa6f6cd` | `analyze_javascript_application` | `js2/crushon`（106ファイル / 7,674,553 bytes） | — | 1,954,108 ASTノード / 10,221 findings / 2,100 modules / 0 parse failures |
+| `ev_9361af851e189c0dc70dcacc6f89ad068569d9edf4e275aef681454613552e7b` | `inspect_analysis_view`（summary） | 上記の親Evidence | — | 統計・カバレッジ |
 
 ## 実行条件
 

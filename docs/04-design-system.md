@@ -274,7 +274,7 @@ Lighthouse（Chrome, モバイルエミュレーションなし）の実測：
 | SynClub キャラフィード | **0.90** | 1.00 | 1.00 | color-contrast |
 | SynClub ランディング | **1.00** | 1.00 | 1.00 | なし |
 
-レポート：`evidence/lighthouse/`。Zetaの0.76は、アイコンのみボタンとリンク名の欠落、`maximum-scale=1`（ズーム禁止）、タップ領域の小ささが主因です。SynClubの0.90は、ミュートテキストのコントラスト（`rgba(17,17,17,.5)`）によるものです。
+レポート：`evidence/lighthouse/`。Zetaの0.76は、アイコンのみボタンとリンク名の欠落、`maximum-scale=1`（ズーム禁止）、タップ領域の小ささが主因です。SynClubの0.90は、ミュートテキストのコントラスト（`rgba(17,17,17,.5)`）によるものです。MiraiMindとCrushOn.AIは、ヘッドフル/ステルス起動が必要なためLighthouse未計測です。
 
 | 項目 | Zeta | SynClub |
 |---|---|---|
@@ -328,4 +328,24 @@ Lighthouse（Chrome, モバイルエミュレーションなし）の実測：
 ```
 
 完全版は [`../analysis/design-tokens.css`](../analysis/design-tokens.css) を参照。
+
+
+---
+
+## 11. 4製品のトークン比較（2026-10-25 追記）
+
+| 軸 | Zeta | SynClub | MiraiMind | CrushOn.AI |
+|---|---|---|---|---|
+| ベース | ダーク `#151516` | ライト `#FFFFFF` | ホワイト `#F5F5F5` | ライト `#FCFCFC` / マーケは `#202020` |
+| アクセント | 紫 `#6728FF` | コーラル `#FF7870` | ミント→ブルー→パープル | ピンク `#F75ECC` × 紫 `#923EFC` |
+| フォント | Pretendard JP | Poppins | システム（SF Pro / PingFang） | Metropolis + Poppins ほか |
+| 組版 | ネガティブ字間・行間1.2 | remスケール（15.07px基準） | 16px基準・自然な行間 | 16px基準・フォント混在 |
+| 角丸 | 6/8/10/12/16 | 18.8 / 9.4 / ピル | 8 / 20 / ピル | 8 / 20 / ピル |
+| カード | 175×233（3:4） | 390×420 | 183×243（3:4） | 171×310 |
+| レイアウト | 440px固定 | モバイル/デスクトップ別 | モバイル専用 | 2列 / 6列＋サイドバー |
+| モーション | 150ms・静か | 300ms・弾む | 150–200ms・柔らかい | 300ms・Swiper |
+
+**観察**：ZetaとMiraiMindは「3:4の2カラム」で近いのに、色とフォントでまったく別の製品に見えます。SynClubとCrushOnは「ライト」で近いのに、SynClubは余白と大きな文字、CrushOnは情報密度とタグで別物です。**レイアウトの類似より、色・タイポ・密度の差がブランド認知を決めている**ことが分かります。
+
+完全版は [`../analysis/design-tokens.css`](../analysis/design-tokens.css) の `--m-*` / `--c-*` を参照。
 

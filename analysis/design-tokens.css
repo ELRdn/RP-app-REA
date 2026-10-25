@@ -276,3 +276,124 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================================
+   MiraiMind — light, pastel, voice-first
+   Source: production CSS (index-cad3f581.css) + computed styles
+   ============================================================ */
+:root {
+  --m-bg: #f5f5f5;
+  --m-surface: #ffffff;
+  --m-surface-2: #fcfcfc;
+  --m-border: rgba(0, 0, 0, 0.06);
+  --m-text: #000000;
+  --m-text-2: rgba(0, 0, 0, 0.6);
+  --m-text-3: rgba(0, 0, 0, 0.4);
+
+  --m-mint: #8ef8e2;
+  --m-blue: #76bdff;
+  --m-purple: #c685ff;
+  --m-cyan: #09c3ff;
+  --m-periwinkle: #7c96ff;
+  --m-violet: #cb5cff;
+  --m-gold: #ffc300;
+  --m-orange: #ff5c1e;
+  --m-danger: #ff4d4d;
+  --m-gradient: linear-gradient(135deg, #8ef8e2 0%, #76bdff 52%, #c685ff 100%);
+
+  --m-radius-card: 8px;
+  --m-radius-sheet: 20px;
+  --m-radius-pill: 9999px;
+  --m-header: 48px;
+  --m-tabbar: 56px;
+  --m-gutter: 16px;
+  --m-gap: 8px;
+
+  --m-font: "SF Pro", -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
+}
+
+.m-title24 { font: 700 24px/1.2 var(--m-font); }
+.m-body16 { font: 400 16px/1.5 var(--m-font); }
+.m-card14 { font: 700 14px/1.2 var(--m-font); }
+.m-chip13 { font: 590 13px/1.23 var(--m-font); }
+.m-count11 { font: 590 11px/1 var(--m-font); }
+
+.m-card {
+  border-radius: var(--m-radius-card);
+  overflow: hidden;
+  background: #cdcdcd;
+}
+.m-card__name { color: #fff; font: 700 14px/1.2 var(--m-font); }
+.m-card__count { color: #fff; font: 590 11px/1 var(--m-font); }
+
+.m-btn-gradient {
+  background: var(--m-gradient);
+  color: #fff;
+  border: 0;
+  border-radius: var(--m-radius-pill);
+}
+
+/* ============================================================
+   CrushOn.AI — light app, dark neon marketing
+   Source: production CSS (636KB) + computed styles
+   ============================================================ */
+:root {
+  --c-bg: #fcfcfc;
+  --c-surface: #ffffff;
+  --c-card: #f3f3ff;
+  --c-marketing: #202020;
+  --c-marketing-2: #202126;
+  --c-border: rgba(0, 0, 0, 0.06);
+  --c-text: #000000;
+  --c-text-2: rgba(0, 0, 0, 0.6);
+  --c-text-3: #707070;
+
+  --c-pink: #f75ecc;
+  --c-purple: #923efc;
+  --c-periwinkle: #7976ff;
+  --c-violet: #b376ff;
+  --c-soft-pink: #ff8adc;
+  --c-blue: #3ba6f3;
+  --c-lime: #a8ef30;
+  --c-yellow: #fff1a7;
+  --c-gradient: linear-gradient(90deg, #ff5fa2 0%, #a855f7 100%);
+
+  --c-radius-card: 8px;
+  --c-radius-modal: 20px;
+  --c-radius-pill: 9999px;
+  --c-header: 48px;
+  --c-gutter: 20px;
+  --c-gap: 10px;
+
+  --c-font: "Metropolis", "Poppins", "Montserrat", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+.c-title24 { font: 700 24px/1.2 var(--c-font); }
+.c-body16 { font: 400 16px/1.5 var(--c-font); }
+.c-card12 { font: 700 12px/1.33 var(--c-font); }
+.c-tag10 { font: 400 10px/1.5 var(--c-font); }
+
+.c-card {
+  border-radius: var(--c-radius-card);
+  background: var(--c-card);
+  border: 1px solid rgba(121, 118, 255, 0.25);
+  overflow: hidden;
+}
+.c-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 16px;
+  padding: 4px 6px;
+  border-radius: var(--c-radius-pill);
+  background: rgba(59, 166, 243, 0.2);
+  color: #000;
+  font: 400 10px/1.5 var(--c-font);
+}
+.c-btn-primary {
+  background: var(--c-purple);
+  color: #fff;
+  border: 0;
+  border-radius: var(--c-radius-pill);
+  font: 700 14px/1 var(--c-font);
+}

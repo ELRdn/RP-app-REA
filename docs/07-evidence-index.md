@@ -5,7 +5,7 @@
 - 取得日：2026-10-24〜25
 - Webビューポート：390×844 / DPR2 / ja-JP / Asia-Tokyo（デスクトップは1280×900 or 1440×900 / DPR1）
 - ブラウザ：システムChrome（Playwright経由）
-- App Store：iTunes Lookup API（日本ストア、2026-10-25時点）
+- App Store：iTunes Lookup API（日本ストア、2026-10-25時点）＋Google Play（MiraiMind）
 - 実機：ユーザー提供のiOSスクリーンショット（2026-10-21/22）
 
 ---
@@ -128,6 +128,68 @@
 | 8 | ストア #8：AIゲーム | [appstore/synclub/synclub_8.jpg](../evidence/screenshots/appstore/synclub/synclub_8.jpg) | https://apps.apple.com/jp/app/id1671537674 | 222×480 | `3f3efe6470aa2f84…` |
 | 9 | ストア #9：トーク一覧 | [appstore/synclub/synclub_9.jpg](../evidence/screenshots/appstore/synclub/synclub_9.jpg) | https://apps.apple.com/jp/app/id1671537674 | 222×480 | `2b2d1fa23946b5d1…` |
 
+## MiraiMind — Web（390×844 / DPR2）
+
+| # | 画面 | ファイル | 元URL | 寸法 | SHA-256 |
+|---|---|---|---|---|---|
+| 1 | Discover（ホーム） | [miraimind/web/mm_01_discover.png](../evidence/screenshots/miraimind/web/mm_01_discover.png) | https://web.miraimind.ai/ | 780×1688 | `595341f7d6163c7c…` |
+| 2 | Discover（女性フィルター） | [miraimind/web/mm_02_discover_female.png](../evidence/screenshots/miraimind/web/mm_02_discover_female.png) | https://web.miraimind.ai/ | 780×1688 | `a2ce1f5c0b483e3e…` |
+| 3 | 検索（初期状態） | [miraimind/web/mm_03_search.png](../evidence/screenshots/miraimind/web/mm_03_search.png) | https://web.miraimind.ai/ | 780×1688 | `52c2f7bbfaed5ebc…` |
+| 4 | チャット（イントロ） | [miraimind/web/mm_04_chat_intro.png](../evidence/screenshots/miraimind/web/mm_04_chat_intro.png) | https://web.miraimind.ai/ | 780×1688 | `60197738ed7acbcf…` |
+| 5 | チャット（「進む」で物語進行） | [miraimind/web/mm_05_chat_progress.png](../evidence/screenshots/miraimind/web/mm_05_chat_progress.png) | https://web.miraimind.ai/ | 780×1688 | `25939ee90309740a…` |
+| 6 | チャット（AI応答） | [miraimind/web/mm_06_chat_reply.png](../evidence/screenshots/miraimind/web/mm_06_chat_reply.png) | https://web.miraimind.ai/ | 780×1688 | `d10da940bbf50de0…` |
+| 7 | キャラ情報シート | [miraimind/web/mm_07_chat_info.png](../evidence/screenshots/miraimind/web/mm_07_chat_info.png) | https://web.miraimind.ai/ | 780×1688 | `1803dae89be98314…` |
+| 8 | チャットの追加アクション | [miraimind/web/mm_08_chat_actions.png](../evidence/screenshots/miraimind/web/mm_08_chat_actions.png) | https://web.miraimind.ai/ | 780×1688 | `3c713b694d556369…` |
+| 9 | Web限定機能のアプリゲート | [miraimind/web/mm_09_app_gate.png](../evidence/screenshots/miraimind/web/mm_09_app_gate.png) | https://web.miraimind.ai/ | 780×1688 | `75c904b435d54f32…` |
+| 10 | ログイン | [miraimind/web/mm_10_login.png](../evidence/screenshots/miraimind/web/mm_10_login.png) | https://web.miraimind.ai/ | 780×1688 | `1afff6332c68cd1b…` |
+| 11 | 言語切替 | [miraimind/web/mm_11_language.png](../evidence/screenshots/miraimind/web/mm_11_language.png) | https://web.miraimind.ai/ | 780×1688 | `3ff4324c8d6c694d…` |
+| 12 | 金平糖チャージ | [miraimind/web/mm_12_recharge.png](../evidence/screenshots/miraimind/web/mm_12_recharge.png) | https://web.miraimind.ai/ | 780×1688 | `68973efdee92a102…` |
+| 13 | チャット一覧 | [miraimind/web/mm_13_chatlist.png](../evidence/screenshots/miraimind/web/mm_13_chatlist.png) | https://web.miraimind.ai/ | 780×1688 | `20eaafacae61b274…` |
+| 14 | 公式サイト（ヒーロー） | [miraimind/web/mm_14_site_landing.png](../evidence/screenshots/miraimind/web/mm_14_site_landing.png) | https://web.miraimind.ai/ | 780×1688 | `8ccceebdb93490bf…` |
+| 15 | 公式サイト（機能紹介） | [miraimind/web/mm_15_site_features.png](../evidence/screenshots/miraimind/web/mm_15_site_features.png) | https://web.miraimind.ai/ | 780×1688 | `4f888878e9dd02a3…` |
+| 16 | 公式サイト（ガイド） | [miraimind/web/mm_16_site_guide.png](../evidence/screenshots/miraimind/web/mm_16_site_guide.png) | https://web.miraimind.ai/ | 780×1688 | `587853b3c611b346…` |
+| 17 | ガイド記事（記憶機能） | [miraimind/web/mm_17_site_memory.png](../evidence/screenshots/miraimind/web/mm_17_site_memory.png) | https://web.miraimind.ai/ | 780×1688 | `1687602fe93a4e12…` |
+| 18 | 公式サイト（ニュース） | [miraimind/web/mm_18_site_news.png](../evidence/screenshots/miraimind/web/mm_18_site_news.png) | https://web.miraimind.ai/ | 780×1688 | `141fef1e0c529a35…` |
+
+## MiraiMind — Google Play 素材
+
+| # | 画面 | ファイル | 元URL | 寸法 | SHA-256 |
+|---|---|---|---|---|---|
+| 1 | Play Store #1：キービジュアル | [appstore/miraimind/mm_play_1.jpg](../evidence/screenshots/appstore/miraimind/mm_play_1.jpg) | https://play.google.com/store/apps/details?id=com.immomo.miraimind | 900×1600 | `f1ea7f1ef302b1df…` |
+| 2 | Play Store #2：キャラクター発見 | [appstore/miraimind/mm_play_2.jpg](../evidence/screenshots/appstore/miraimind/mm_play_2.jpg) | https://play.google.com/store/apps/details?id=com.immomo.miraimind | 900×1600 | `ac9a4adb42cd8a55…` |
+| 3 | Play Store #3：チャット | [appstore/miraimind/mm_play_3.jpg](../evidence/screenshots/appstore/miraimind/mm_play_3.jpg) | https://play.google.com/store/apps/details?id=com.immomo.miraimind | 900×1600 | `2dbd1e89ce537469…` |
+| 4 | Play Store #4：AIアート | [appstore/miraimind/mm_play_4.jpg](../evidence/screenshots/appstore/miraimind/mm_play_4.jpg) | https://play.google.com/store/apps/details?id=com.immomo.miraimind | 900×1600 | `fc3c4b9aa97cbe03…` |
+| 5 | Play Store #5：画像生成フロー | [appstore/miraimind/mm_play_5.jpg](../evidence/screenshots/appstore/miraimind/mm_play_5.jpg) | https://play.google.com/store/apps/details?id=com.immomo.miraimind | 900×1600 | `6e767b4eaa4b9a71…` |
+
+## CrushOn.AI — Web（モバイル/デスクトップ）
+
+| # | 画面 | ファイル | 元URL | 寸法 | SHA-256 |
+|---|---|---|---|---|---|
+| 1 | 初回オンボーディング | [crushon/web/co_01_welcome.png](../evidence/screenshots/crushon/web/co_01_welcome.png) | https://crushon.ai/ja | 780×1688 | `6da38959b7b96be9…` |
+| 2 | ホーム（Googleログインシート） | [crushon/web/co_02_home.png](../evidence/screenshots/crushon/web/co_02_home.png) | https://crushon.ai/ja | 780×1688 | `6e3a9851702c937e…` |
+| 3 | ホーム（フィード） | [crushon/web/co_03_feed.png](../evidence/screenshots/crushon/web/co_03_feed.png) | https://crushon.ai/ja | 780×1688 | `ece17b5ed3d0e5f3…` |
+| 4 | ランキング | [crushon/web/co_04_ranking.png](../evidence/screenshots/crushon/web/co_04_ranking.png) | https://crushon.ai/ja | 780×1688 | `a4219de94718fbf7…` |
+| 5 | 検索結果（fantasy） | [crushon/web/co_05_search.png](../evidence/screenshots/crushon/web/co_05_search.png) | https://crushon.ai/ja | 780×1688 | `eeeff02ddc5b9b22…` |
+| 6 | 料金プラン（モバイル） | [crushon/web/co_06_pricing.png](../evidence/screenshots/crushon/web/co_06_pricing.png) | https://crushon.ai/ja | 780×1688 | `3120736da69a358f…` |
+| 7 | ストア（認証ゲート） | [crushon/web/co_07_store_gate.png](../evidence/screenshots/crushon/web/co_07_store_gate.png) | https://crushon.ai/ja | 780×1688 | `f72e8a92f9bd5b4a…` |
+| 8 | コイン／ダイヤモンド | [crushon/web/co_08_coin.png](../evidence/screenshots/crushon/web/co_08_coin.png) | https://crushon.ai/ja | 780×1688 | `552e09041e7a7001…` |
+| 9 | ログイン | [crushon/web/co_09_signin.png](../evidence/screenshots/crushon/web/co_09_signin.png) | https://crushon.ai/ja | 780×1688 | `d180379f9a4f7029…` |
+| 10 | アカウント（認証ゲート） | [crushon/web/co_10_account_gate.png](../evidence/screenshots/crushon/web/co_10_account_gate.png) | https://crushon.ai/ja | 780×1688 | `aa7e1494ae30408f…` |
+| 11 | チャット受信箱（空） | [crushon/web/co_11_inbox.png](../evidence/screenshots/crushon/web/co_11_inbox.png) | https://crushon.ai/ja | 780×1688 | `8ea2e0b5f0a10a3e…` |
+| 12 | キャラクターチャット | [crushon/web/co_12_chat.png](../evidence/screenshots/crushon/web/co_12_chat.png) | https://crushon.ai/ja | 780×1688 | `49d88a0b38b1328e…` |
+| 13 | ブログ | [crushon/web/co_13_blog.png](../evidence/screenshots/crushon/web/co_13_blog.png) | https://crushon.ai/ja | 780×1688 | `f52bce78a4ae1f71…` |
+| 14 | 404 | [crushon/web/co_14_404.png](../evidence/screenshots/crushon/web/co_14_404.png) | https://crushon.ai/ja | 780×1688 | `80d5aea6b2b27a9d…` |
+| 15 | 利用規約 | [crushon/web/co_15_terms.png](../evidence/screenshots/crushon/web/co_15_terms.png) | https://crushon.ai/ja | 780×1688 | `14201d78bccb1531…` |
+| 16 | デスクトップ：ホーム | [crushon/web/co_16_desktop_home.png](../evidence/screenshots/crushon/web/co_16_desktop_home.png) | https://crushon.ai/ja | 1440×900 | `c20e073cccd99156…` |
+| 17 | デスクトップ：料金プラン | [crushon/web/co_17_desktop_pricing.png](../evidence/screenshots/crushon/web/co_17_desktop_pricing.png) | https://crushon.ai/ja | 1440×900 | `b5758b04dd067d52…` |
+| 18 | デスクトップ：ランキング | [crushon/web/co_18_desktop_ranking.png](../evidence/screenshots/crushon/web/co_18_desktop_ranking.png) | https://crushon.ai/ja | 1440×900 | `3f8cf1cd75751716…` |
+| 19 | デスクトップ：キャラクター詳細モーダル | [crushon/web/co_19_desktop_character_modal.png](../evidence/screenshots/crushon/web/co_19_desktop_character_modal.png) | https://crushon.ai/ja | 1440×900 | `a55669fd4cb08f2e…` |
+| 20 | マーケティング：ヒーロー | [crushon/web/co_20_marketing_landing.png](../evidence/screenshots/crushon/web/co_20_marketing_landing.png) | https://crushon.ai/ja | 780×1688 | `d0714e00e4c7de44…` |
+| 21 | マーケティング：Anime AI | [crushon/web/co_21_marketing_anime.png](../evidence/screenshots/crushon/web/co_21_marketing_anime.png) | https://crushon.ai/ja | 780×1688 | `8eb0d11d0875a834…` |
+| 22 | マーケティング：クリエイター | [crushon/web/co_22_marketing_creators.png](../evidence/screenshots/crushon/web/co_22_marketing_creators.png) | https://crushon.ai/ja | 780×1688 | `ceaeba2d344056f3…` |
+| 23 | マーケティング：性格ビルダー | [crushon/web/co_23_marketing_builder.png](../evidence/screenshots/crushon/web/co_23_marketing_builder.png) | https://crushon.ai/ja | 780×1688 | `545e81b19e70491a…` |
+| 24 | マーケティング：ブログ | [crushon/web/co_24_marketing_blog.png](../evidence/screenshots/crushon/web/co_24_marketing_blog.png) | https://crushon.ai/ja | 780×1688 | `1405f1ae4a357bc7…` |
+
 ---
 
 ## REA Evidence
@@ -166,6 +228,8 @@
 |---|---|
 | [zeta-observed.json](../evidence/tokens/zeta-observed.json) | Zeta 42画面の色/フォント/サイズ/角丸の出現頻度 |
 | [synclub-observed.json](../evidence/tokens/synclub-observed.json) | SynClub 43画面の同上 |
+| [miraimind-observed.json](../evidence/tokens/miraimind-observed.json) | MiraiMind の本番CSS＋computed style |
+| [crushon-observed.json](../evidence/tokens/crushon-observed.json) | CrushOn の本番CSS＋computed style |
 | [tokens.json](../data/tokens.json) | キュレーション済みトークン（CSS変数化の元） |
 | [design-tokens.css](../analysis/design-tokens.css) | 両社のトークンをCSS変数で再現 |
 
@@ -175,10 +239,10 @@
 
 | ファイル | 内容 |
 |---|---|
-| [screens.json](../data/screens.json) | 93画面のメタデータ + SHA-256 |
+| [screens.json](../data/screens.json) | 94画面のメタデータ + SHA-256 |
 | [routes.json](../data/routes.json) | 観測/ゲート/バンドルルート |
 | [components.json](../data/components.json) | React/Vueコンポーネント目録 |
-| [features.json](../data/features.json) | 27項目の機能比較 |
-| [app-metadata.json](../data/app-metadata.json) | ストア情報、HTTPヘッダ、バンドル/CSSサイズ、観測API |
+| [features.json](../data/features.json) | Zeta vs SynClub の27項目比較 |
+| [features-4apps.json](../data/features-4apps.json) | 4製品×30項目の比較マトリクス |
 | [index.html](../index.html) | フィルタ/検索付きギャラリー |
 

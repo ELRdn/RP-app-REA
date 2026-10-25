@@ -250,7 +250,60 @@ Zetaは**セマンティクスは概ね正しい**が、ラベルが英語。Syn
 
 ---
 
-## 7. 不明な点
+## 7. MiraiMind / CrushOn の実装（追記）
+
+### 7.1 MiraiMind — Vue 3 + Ant Design Vue
+
+| 証拠 | 結論 |
+|---|---|
+| `data-v-app`, `__vitePreload` | Vue 3 + Vite |
+| `ant-layout` `ant-btn` `ant-input` `ant-image` | Ant Design Vue |
+| `pinia` | Pinia |
+| `socket.io` / `wss://cosmos-im-ws-hw-ap.hellogroup.com` | socket.ioによるIM |
+| `RTCPeerConnection` / TTS | 音声通話・読み上げ |
+| `rive` | Riveアニメーション |
+| `appsflyer` / `gtag` / `adsbygoogle` | 広告・計測 |
+| Astro 5.17.1（公式サイト） | マーケティングは静的Astro |
+
+- JS 25ファイル / 4.39MB、CSS 281KB
+- REA：22ファイル / 4.47MB / 1,203,611 ASTノード / 518 findings
+- 匿名セッションを自動発行し、**5リクエスト**までチャット可能（ランタイムログ `requestLimit: 5`）
+- デスクトップWebは**空**。モバイル専用
+
+### 7.2 CrushOn.AI — Next.js + Mantine
+
+| 証拠 | 結論 |
+|---|---|
+| `Minified React error` / `_next` | Next.js + React |
+| `mantine-*` / `rc-dialog-*` | Mantine + rc-dialog |
+| utility classes / `--tw-` | Tailwind |
+| `*-store` localStorage | Zustand |
+| `stripe` | Stripe決済 |
+| `sentry` / `amplitude` / `sensorsdata` | 監視・分析 |
+| `/pricing` `/store` `/account` `/coin` | 課金・アカウント |
+
+- JS 106ファイル / 7.65MB、CSS 636KB、**2,100モジュール**
+- REA：106ファイル / 7.67MB / 1,954,108 ASTノード / **10,221 findings**
+- 7段階のサブスク、Coin/Diamonds、18+ゲート
+- マーケティング（`chat.crushon.ai`）とアプリ（`crushon.ai`）で**別ビルド**
+
+### 7.3 4製品の実装比較
+
+| | Zeta | SynClub | MiraiMind | CrushOn |
+|---|---|---|---|---|
+| フレームワーク | Next.js | Nuxt 3 | Vue 3 + Vite | Next.js |
+| UI | Tailwind v4 | Element Plus | Ant Design Vue | Mantine + Tailwind |
+| 状態 | Zustand / SWR | Pinia | Pinia | Zustand / SWR |
+| リアルタイム | REST中心 | WebSocket | socket.io | REST中心 |
+| 計測 | Sentry/GA/Clarity/Meta/Amplitude | GA/GTM/Amplitude | GTM/GA/AppsFlyer/TikTok/Meta | Sentry/Amplitude/GTM/Sensors |
+| JS（非圧縮） | 5.88MB / 109 | 4.59MB / 38 | 4.39MB / 25 | 7.65MB / 106 |
+| CSS | 188KB | 452KB | 281KB | 636KB |
+
+**観察**：4社とも「チャットUI」なのに、実装の重心が違います。ZetaはSEOとSSR、SynClubは管理画面（Element Plus）と決済、MiraiMindはリアルタイムIM、CrushOnはSEOページ量産と課金。UIの見た目以上に、**バックエンドの都合がフロントに漏れている**のが面白いところです。
+
+---
+
+## 8. 不明な点
 
 - ZetaのReact/Next.jsの正確なバージョン（バンドルからは特定できず）
 - SynClubのWebチャットAPIの詳細（未ログインで叩けない）

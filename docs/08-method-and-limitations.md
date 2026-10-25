@@ -13,6 +13,9 @@
 | 7 | モバイルアプリの全画面 | 一部回答 | ストア素材＋Zeta実機8点。SynClub実機は未取得 |
 | 8 | アクセシビリティの実態 | 回答 | Lighthouse + DOM/aria調査 |
 | 9 | パフォーマンスの実測 | 未回答 | Lighthouseはa11y/BP/SEOのみ。Performanceは未計測 |
+| 10 | MiraiMindの音声・心の声・物語進行はどうUI化されているか | 回答 | チャット画面、Play Store素材、バンドル |
+| 11 | CrushOn.AIの課金・SEO・認証ゲートはどう設計されているか | 一部回答 | 料金プラン、マーケティング、認証モーダル |
+| 12 | 4製品の設計思想はどう違うか | 回答 | 比較マトリクス、画面構造、トークン |
 
 ---
 
@@ -20,8 +23,10 @@
 
 - **Zeta**：`zeta-ai.io`（Scatter Lab, Inc.、iOS `id1619030760`、Android `com.scatterlab.messenger`）。ストア名「zeta - AIキャラ・あなたの推しとロールプレイチャット」。
 - **SynClub**：`synclubaichat.com`（HiClub株式会社、iOS `id1671537674`、Android `com.creativeapp.aichat`）。ストア名「SynClub: AIキャラ・夢小説・ノベル・チャット・物語」。
+- **MiraiMind**：`web.miraimind.ai`（Hello Group Japan、Android `com.immomo.miraimind`、iOS `id6502377840`）。公式サイト `miraimind.ai`。ストア名「MiraiMind：FREE Chat with 10M+ Characters」。
+- **CrushOn.AI**：`crushon.ai`（アプリ）、`chat.crushon.ai`（マーケティング）、Android `ai.crushon.app`。NSFW前提の成人向けプラットフォーム。
 
-同名の類似アプリが多数あるため、**運営会社・Bundle ID・公式ドメイン**で同定しました。ストア素材はiTunes Lookup APIの`sellerName`と`trackId`で照合しています。
+同名の類似アプリが多数あるため、**運営会社・Bundle ID・公式ドメイン**で同定しました。ストア素材はiTunes Lookup API / Google Playの`sellerName`と`trackId`で照合しています。
 
 ---
 
@@ -32,7 +37,7 @@
 | ツール | 用途 | 結果 |
 |---|---|---|
 | `get_navigation_context` | セッション状態の確認 | 初期はターゲット未選択で `target_unavailable` |
-| `analyze_javascript_application` | 本番JSの静的解析 | Zeta 109ファイル / SynClub 38ファイル |
+| `analyze_javascript_application` | 本番JSの静的解析 | Zeta 109ファイル / SynClub 38ファイル / MiraiMind 22ファイル / CrushOn 106ファイル |
 | `inspect_analysis_view` | サマリービュー | 統計・カバレッジ・制約 |
 | `export_evidence_bundle` | 証拠の書き出し | 192MBのため**リポジトリには含めず**（サイズ超過） |
 
@@ -107,6 +112,8 @@ DNSが間欠的に失敗したため、ナビゲーションは最大5回リト�
 
 - Zeta：`/subscription`、`/settings`、`/plots/create` の完了画面、購入フロー
 - SynClub：`/chat`、`/subscription`、`/agent/{id}`、`/payment-*`、`/voice/factory`、`/drama`
+- MiraiMind：`#/create`、`#/settings`、VIP/サブスク、心の声・アーカイブ・ギフトの実機能
+- CrushOn：`/ja/store`、`/ja/account`、送信、グループVIP、クリエイター収益、購入フロー
 
 これらはCSS/バンドル内のクラス名・文字列から**存在と構成**を推定していますが、実際のレイアウト・文言・色は不明です。
 
@@ -114,6 +121,8 @@ DNSが間欠的に失敗したため、ナビゲーションは最大5回リト�
 
 - Zeta：iOS実機8点（提供者）＋ストア10点。**全画面ではない**（オンボーディング、購入、通知、設定のサブ画面など）
 - SynClub：ストア9点のみ。**実機キャプチャなし**。アプリのダークUI、音声通話、表情、背景切替はストア素材の再現イメージであり、実装の詳細は不明
+- MiraiMind：Google Play素材5点＋Webアプリ。iOSはストアページが取得できず（`lookup` 0件）、**iOS実機は未取得**
+- CrushOn：iOSアプリなし（Android `ai.crushon.app` のみ）。**アプリの実機キャプチャは未取得**。Webアプリのモバイル/デスクトップが主証拠
 
 ### 6.4 REAのセマンティック解析
 
@@ -159,5 +168,9 @@ DNSが間欠的に失敗したため、ナビゲーションは最大5回リト�
 6. 両社のレコメンドアルゴリズム（タグ/行動/埋め込み）
 7. Zetaの`creator-center`ログイン後の編集画面
 8. SynClubの`/drama`（アニショート）の編集画面
+9. MiraiMindのデスクトップWebが空白になる理由（UA判定か、単純な未実装か）
+10. MiraiMindのVIP/サブスクの有無と価格
+11. CrushOnの7プランの実際の価格（日本円）と更新頻度
+12. CrushOnのアプリ内チャットの実UI（Webは導入のみ）
 
 これらは、認証済みアカウントや追加の端末がないと確認できません。推測はしていません。

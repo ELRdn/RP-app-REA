@@ -5,13 +5,89 @@
     "synclub": "Vue SFC scoped CSS exposes BEM block names and data-v hashes. Counts are selector occurrences in the production entry CSS."
   },
   "zeta": {
-    "designSystem": ["Button", "Input", "Select", "Modal", "Toaster", "Link", "WrappedImage", "WrappedDiv", "WrappedCarousel", "Rule", "Section", "Cta", "OpenBadge", "TabIcon", "CountTag", "Hashtags", "LinearGradient"],
-    "layout": ["LocaleLayout", "Header", "HeaderRight", "NavigationBar", "HalloweenNavigationBar", "FeedTabNavigator", "BottomActionArea", "GoBackHeader", "KeyboardAvoidingView", "CompositionFocusBridge"],
-    "feed": ["Home", "HomeContents", "FeedTabNavigator", "FrameProfileCard", "FrameProfileCardCols", "ColumnWrapper", "PlotCoverMulti", "HomeSpecialCurationBanner", "CreatorSearchSection", "GenrePlotRanking"],
-    "plotDetail": ["PlotProfile", "PlotDetail", "PlotBasic", "PlotIntro", "PlotCharacter", "PlotProfileCollapseButton", "PlotCreatorTopRow", "PlotCommentSection", "RelatedPlotSection", "PlotLikePill", "ChatProfileTag", "PlotDate", "CreatorSearchCard"],
-    "chat": ["ChatBubbleContainer", "BubbleContainer", "NarratorBubble", "StaticIntroMessage", "BottomActionArea", "CompositionFocusBridge", "KeyboardAvoidingView"],
-    "seasonal": ["HalloweenHomeDecoration", "HalloweenStyles", "HalloweenTabBarIcon", "HalloweenNavigationBar", "VeritasIntroPage"],
-    "infrastructure": ["JsonLdRenderer", "JsonLdSupplier", "MetaPixel", "AppDownloadBanner", "Toaster", "LogRawButton", "ShakeStage"],
+    "designSystem": [
+      "Button",
+      "Input",
+      "Select",
+      "Modal",
+      "Toaster",
+      "Link",
+      "WrappedImage",
+      "WrappedDiv",
+      "WrappedCarousel",
+      "Rule",
+      "Section",
+      "Cta",
+      "OpenBadge",
+      "TabIcon",
+      "CountTag",
+      "Hashtags",
+      "LinearGradient"
+    ],
+    "layout": [
+      "LocaleLayout",
+      "Header",
+      "HeaderRight",
+      "NavigationBar",
+      "HalloweenNavigationBar",
+      "FeedTabNavigator",
+      "BottomActionArea",
+      "GoBackHeader",
+      "KeyboardAvoidingView",
+      "CompositionFocusBridge"
+    ],
+    "feed": [
+      "Home",
+      "HomeContents",
+      "FeedTabNavigator",
+      "FrameProfileCard",
+      "FrameProfileCardCols",
+      "ColumnWrapper",
+      "PlotCoverMulti",
+      "HomeSpecialCurationBanner",
+      "CreatorSearchSection",
+      "GenrePlotRanking"
+    ],
+    "plotDetail": [
+      "PlotProfile",
+      "PlotDetail",
+      "PlotBasic",
+      "PlotIntro",
+      "PlotCharacter",
+      "PlotProfileCollapseButton",
+      "PlotCreatorTopRow",
+      "PlotCommentSection",
+      "RelatedPlotSection",
+      "PlotLikePill",
+      "ChatProfileTag",
+      "PlotDate",
+      "CreatorSearchCard"
+    ],
+    "chat": [
+      "ChatBubbleContainer",
+      "BubbleContainer",
+      "NarratorBubble",
+      "StaticIntroMessage",
+      "BottomActionArea",
+      "CompositionFocusBridge",
+      "KeyboardAvoidingView"
+    ],
+    "seasonal": [
+      "HalloweenHomeDecoration",
+      "HalloweenStyles",
+      "HalloweenTabBarIcon",
+      "HalloweenNavigationBar",
+      "VeritasIntroPage"
+    ],
+    "infrastructure": [
+      "JsonLdRenderer",
+      "JsonLdSupplier",
+      "MetaPixel",
+      "AppDownloadBanner",
+      "Toaster",
+      "LogRawButton",
+      "ShakeStage"
+    ],
     "sourceFiles": {
       "Link.tsx": 1455,
       "index.tsx": 529,
@@ -56,14 +132,93 @@
     }
   },
   "synclub": {
-    "navigation": ["app-container", "mobile-top-bar", "tab-item", "label-title__tabs-item", "icon-item", "sidebar", "rail"],
-    "feed": ["conversation-list", "contacts-list", "content-list", "content-list__placeholder", "scroll-item", "card-item", "picture-wrap", "text-wrap", "title", "tag-wrap", "label", "info-wrap", "introduce-card", "instroduce-card"],
-    "discovery": ["discover", "comic", "game", "daily", "dynamic", "public-info__item"],
-    "creatorStudio": ["oc-agent-entry", "agent-highlight", "model-selector", "composer", "capability-pill", "image-creator-entry", "voice-entry", "manhua-drama"],
-    "commerce": ["subscription-page", "subscription-plan", "subscription-plans", "subscription-modal", "coin-package", "coin-packages", "card-info-dialog", "order-confirm-dialog", "payment-method-dialog", "payment-rules-dialog", "payment-error-dialog", "unpaid-order-dialog", "cancel-subscription-dialog", "consumption-details-dialog"],
-    "auth": ["login-wrap", "user-dialog-content", "verification-code", "region-wrap", "is-agree", "sign-in", "delimiter"],
-    "system": ["message-box", "feedback-dialog", "age-confirm", "app-benefits-tooltip", "error-page", "scan-code", "star-loading", "select-item"],
-    "elementPlusUsage": ["el-dialog", "el-input", "el-checkbox", "el-form-item", "el-dropdown-menu", "el-popper", "el-tooltip"],
+    "navigation": [
+      "app-container",
+      "mobile-top-bar",
+      "tab-item",
+      "label-title__tabs-item",
+      "icon-item",
+      "sidebar",
+      "rail"
+    ],
+    "feed": [
+      "conversation-list",
+      "contacts-list",
+      "content-list",
+      "content-list__placeholder",
+      "scroll-item",
+      "card-item",
+      "picture-wrap",
+      "text-wrap",
+      "title",
+      "tag-wrap",
+      "label",
+      "info-wrap",
+      "introduce-card",
+      "instroduce-card"
+    ],
+    "discovery": [
+      "discover",
+      "comic",
+      "game",
+      "daily",
+      "dynamic",
+      "public-info__item"
+    ],
+    "creatorStudio": [
+      "oc-agent-entry",
+      "agent-highlight",
+      "model-selector",
+      "composer",
+      "capability-pill",
+      "image-creator-entry",
+      "voice-entry",
+      "manhua-drama"
+    ],
+    "commerce": [
+      "subscription-page",
+      "subscription-plan",
+      "subscription-plans",
+      "subscription-modal",
+      "coin-package",
+      "coin-packages",
+      "card-info-dialog",
+      "order-confirm-dialog",
+      "payment-method-dialog",
+      "payment-rules-dialog",
+      "payment-error-dialog",
+      "unpaid-order-dialog",
+      "cancel-subscription-dialog",
+      "consumption-details-dialog"
+    ],
+    "auth": [
+      "login-wrap",
+      "user-dialog-content",
+      "verification-code",
+      "region-wrap",
+      "is-agree",
+      "sign-in",
+      "delimiter"
+    ],
+    "system": [
+      "message-box",
+      "feedback-dialog",
+      "age-confirm",
+      "app-benefits-tooltip",
+      "error-page",
+      "scan-code",
+      "star-loading",
+      "select-item"
+    ],
+    "elementPlusUsage": [
+      "el-dialog",
+      "el-input",
+      "el-checkbox",
+      "el-form-item",
+      "el-dropdown-menu",
+      "el-popper",
+      "el-tooltip"
+    ],
     "counts": {
       "card-info-dialog": 77,
       "consumption-details-dialog": 48,
@@ -84,5 +239,144 @@
       "app-benefits-tooltip": 11,
       "age-confirm": 10
     }
+  },
+  "miraimind": {
+    "method": "Vue SFC classes + Ant Design Vue primitives observed in production DOM",
+    "primitives": [
+      "ant-layout",
+      "ant-btn",
+      "ant-input",
+      "ant-image",
+      "ant-tabs",
+      "ant-dropdown",
+      "ant-modal",
+      "ant-drawer",
+      "ant-spin"
+    ],
+    "layout": [
+      "app-container",
+      "main-layout",
+      "mobile-header",
+      "page-title",
+      "header-actions",
+      "coin-balance",
+      "login-btn",
+      "mobile-tab-bar",
+      "tab-item",
+      "create-tab"
+    ],
+    "discover": [
+      "gender-tabs",
+      "gender-tab",
+      "tag-list",
+      "tag-item-mobile",
+      "card-grid",
+      "mobile-card-grid",
+      "card-item",
+      "card-mask",
+      "card-mask-wrap",
+      "card-info-row",
+      "card-name",
+      "card-count",
+      "card-intro"
+    ],
+    "chat": [
+      "chat-header",
+      "character-avatar",
+      "character-stats",
+      "intro-card",
+      "scenario-chip",
+      "voice-bubble",
+      "message-bubble",
+      "inner-voice",
+      "action-row",
+      "mode-chip",
+      "chat-input",
+      "more-btn",
+      "mobile-panel-area",
+      "toolbar-mobile-panel"
+    ],
+    "sheets": [
+      "character-info-sheet",
+      "language-sheet",
+      "app-download-modal",
+      "login-page",
+      "recharge-grid"
+    ],
+    "sourceNotes": [
+      "show-intro mode on discover cards",
+      "create-tab is a 70px gradient blob",
+      "voice duration chip (e.g. 6″) is part of the bubble"
+    ]
+  },
+  "crushon": {
+    "method": "Mantine + Tailwind + rc-dialog classes observed in production DOM/CSS",
+    "primitives": [
+      "rc-dialog-root",
+      "rc-dialog-content",
+      "rc-dialog-close",
+      "mantine-dropdown",
+      "mantine-target",
+      "swiper"
+    ],
+    "layout": [
+      "sidebar",
+      "top-search",
+      "banner-carousel",
+      "tab-row",
+      "filter-row",
+      "v2-tag-item",
+      "card-grid"
+    ],
+    "cards": [
+      "card-item",
+      "card-image",
+      "card-counts",
+      "card-name",
+      "card-description",
+      "card-tags",
+      "creator-row",
+      "star-button"
+    ],
+    "pricing": [
+      "billing-toggle",
+      "plan-tabs",
+      "plan-card",
+      "plan-badge",
+      "plan-price",
+      "plan-feature-group",
+      "plan-cta",
+      "chat-package-card"
+    ],
+    "chat": [
+      "chat-header",
+      "character-intro-card",
+      "intro-divider",
+      "message-row",
+      "message-bubble",
+      "login-banner",
+      "composer",
+      "disclaimer"
+    ],
+    "modals": [
+      "welcome-gender-dialog",
+      "auth-gate-dialog",
+      "character-detail-dialog",
+      "bottom-sheet"
+    ],
+    "marketing": [
+      "marketing-header",
+      "hero-gradient",
+      "stat-grid",
+      "mosaic-grid",
+      "category-grid",
+      "editorial-article",
+      "builder-stepper"
+    ],
+    "sourceNotes": [
+      "7 subscription tiers (無料/スタンダード/プレミアム/リュクス/デラックス/エリート/インペリアル)",
+      "coin page tasks/achievements",
+      "character detail combines 概要/サポーター/コメント/CTA"
+    ]
   }
 }

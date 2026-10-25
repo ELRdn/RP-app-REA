@@ -1,0 +1,166 @@
+{
+  "app": "miraimind",
+  "source": "production CSS (281KB) + computed styles on web.miraimind.ai/#/discover",
+  "screens_analyzed": 18,
+  "colors": [
+    {
+      "hex": "#f5f5f5",
+      "hits": 47
+    },
+    {
+      "hex": "#8ef8e2",
+      "hits": 35
+    },
+    {
+      "hex": "#c685ff",
+      "hits": 35
+    },
+    {
+      "hex": "#76bdff",
+      "hits": 29
+    },
+    {
+      "hex": "#ffffff",
+      "hits": 20
+    },
+    {
+      "hex": "#09c3ff",
+      "hits": 17
+    },
+    {
+      "hex": "#24b0ff",
+      "hits": 11
+    },
+    {
+      "hex": "#fcfcfc",
+      "hits": 11
+    },
+    {
+      "hex": "#f8f8f8",
+      "hits": 7
+    },
+    {
+      "hex": "#ffc300",
+      "hits": 6
+    },
+    {
+      "hex": "#ff5c1e",
+      "hits": 6
+    },
+    {
+      "hex": "#f4f4f4",
+      "hits": 6
+    },
+    {
+      "hex": "#231a09",
+      "hits": 6
+    },
+    {
+      "hex": "#6cb8ff",
+      "hits": 5
+    },
+    {
+      "hex": "#7c96ff",
+      "hits": 5
+    },
+    {
+      "hex": "#cb5cff",
+      "hits": 5
+    },
+    {
+      "hex": "#ff9900",
+      "hits": 4
+    },
+    {
+      "hex": "#ffdcfa",
+      "hits": 4
+    },
+    {
+      "hex": "#ff4d4d",
+      "hits": 4
+    },
+    {
+      "hex": "#ecfaff",
+      "hits": 4
+    },
+    {
+      "hex": "#5e4aa0",
+      "hits": 4
+    },
+    {
+      "hex": "#fff18b",
+      "hits": 3
+    },
+    {
+      "hex": "#cdcdcd",
+      "hits": 3
+    },
+    {
+      "hex": "#e0f6fd",
+      "hits": 3
+    },
+    {
+      "hex": "#f6fdff",
+      "hits": 3
+    },
+    {
+      "hex": "#00baf9",
+      "hits": 3
+    },
+    {
+      "hex": "#ee6767",
+      "hits": 3
+    },
+    {
+      "hex": "#ff856e",
+      "hits": 3
+    },
+    {
+      "hex": "#ff51b8",
+      "hits": 3
+    },
+    {
+      "hex": "#d868ff",
+      "hits": 3
+    }
+  ],
+  "fonts": [
+    {
+      "family": "SFUI-Regular,PingFang SC,苹方,San Francisco,Helvetica Neue,Helvetica,Arial,sans-serif",
+      "hits": 2
+    },
+    {
+      "family": "SF Pro,SF Pro Display,-apple-system,BlinkMacSystemFont,sans-serif",
+      "hits": 1
+    },
+    {
+      "family": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",
+      "hits": 1
+    }
+  ],
+  "computed": {
+    "htmlFontSize": "16px",
+    "header": {
+      "height": 48,
+      "padding": "12px 12px 12px 16px"
+    },
+    "title": {
+      "size": "24px",
+      "weight": "700",
+      "lineHeight": "29px"
+    },
+    "card": {
+      "w": 183,
+      "h": 243,
+      "radius": "8px"
+    },
+    "cardName": {
+      "size": "14px",
+      "weight": "700"
+    },
+    "cardCount": {
+      "size": "11px",
+      "weight": "590"
+    }
+  }
+}
