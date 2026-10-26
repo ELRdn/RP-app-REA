@@ -1,6 +1,6 @@
 # UX measurement evidence
 
-Same-harness walkthrough of the primary "first chat" flow on 2026-10-25.
+Same-harness walkthrough of the primary "first chat" flow on 2026-10-25〜26.
 
 - Viewport: 390×844 / DPR2 / ja-JP / Asia-Tokyo
 - Browser: system Chrome, headful, Playwright, anti-automation init script
@@ -40,3 +40,19 @@ Curated data: `data/ux-metrics.json`, `data/ux-flows.json`.
 - CrushOn cannot send as a guest, so reply latency is unknown.
 - MiraiMind's 5-request limit is from the runtime log `requestLimit: 5`; the 6th request was not forced.
 - Native app UX (voice calls, notifications, purchase sheets) is not measured.
+
+## OzChat addendum (2026-10-26)
+
+OzChat is login-first: every app route redirects to `/auth/signin`, so the first-chat flow cannot be measured without an account. Instead, the same harness measured:
+
+- Marketing → app handoff (new tab): 2.99s desktop / 2.80s mobile
+- Sign-in auth buttons visible: 3.01s desktop / 2.82s mobile
+- Email modal open: 1.27s
+- Share card → sign-in: 718ms
+- Marketing LCP: 1.62s desktop / 1.35s mobile
+- Login transfer: 1,334KB / 60 req (desktop), 1,386KB / 62 req (mobile)
+
+Step images: `oz_step1_marketing.png` → `oz_step2_signin.png` → `oz_step3_email.png` → `oz_step4_share.png`.
+
+Raw data: `evidence/ozchat/ux-raw.json`. Authenticated chat latency remains **unknown**; no auth bypass was attempted.
+

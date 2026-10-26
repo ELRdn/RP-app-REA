@@ -13,6 +13,8 @@ REA（Reverse Engineering Anything）で実行した分析の記録。入力は*
 | `ev_fb8d749c4ec5e8b7736082ff6e7e9dff219729342fcf8e8757f6a90f44328333` | `inspect_analysis_view`（summary） | 上記の親Evidence | — | 統計・カバレッジ |
 | `ev_2dd124526919fcdaf3ab78dc02faa9d553d00b64a29249af680bdd10eaa6f6cd` | `analyze_javascript_application` | `js2/crushon`（106ファイル / 7,674,553 bytes） | — | 1,954,108 ASTノード / 10,221 findings / 2,100 modules / 0 parse failures |
 | `ev_9361af851e189c0dc70dcacc6f89ad068569d9edf4e275aef681454613552e7b` | `inspect_analysis_view`（summary） | 上記の親Evidence | — | 統計・カバレッジ |
+| `ev_234da7ab8f3eeeed4e04d5d4c96cedd2bda59efa0dfdd084079ee37b5ac708f1` | `analyze_javascript_application` | `oz/js-bundle`（128 JS / 8,892,541 bytes） | `a4e5b22f05d8806779fe6ce9e8f0f51a70bf371584ef2d14c7f821a645478806` | 2,252,274 ASTノード / 9,640 findings / 2,220 modules / 0 parse failures / semantic partial（result budget 0） |
+| `ev_df0dabf07f461a2d9a04dbdf22316aa18eab5249ecc57acd4421014a4021a390` | `inspect_analysis_view`（summary） | 上記の親Evidence | — | 128ファイル / 128 parsed / 132 assets / 9.1MB |
 
 ## 実行条件
 
@@ -24,7 +26,7 @@ REA（Reverse Engineering Anything）で実行した分析の記録。入力は*
 
 ## カバレッジと制約
 
-Zetaのセマンティック解析は、結果バジェット（`javascript_analysis_parent_result_budget_bytes`）の制約により、多くのチャンクで**静的ファクトのみ保持**となりました。SynClubも一部のチャンクで同様です。
+Zetaのセマンティック解析は、結果バジェット（`javascript_analysis_parent_result_budget_bytes`）の制約により、多くのチャンクで**静的ファクトのみ保持**となりました。SynClubも一部のチャンクで同様です。OzChatはさらに制約が強く、セマンティック結果バジェットが **0 bytes** だったため、アプリケーショングラフ（2,220 modules / 9,640 findings）は保持されていますが、セマンティック関係グラフは**部分・省略**です。
 
 したがって本レポートでは、REAのセマンティックグラフ（呼び出し関係・データフロー）を**直接の根拠にしていません**。UIの主張は次の証拠で裏取りしています。
 

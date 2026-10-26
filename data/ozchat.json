@@ -1,0 +1,111 @@
+{
+  "product": "オズチャット -Oz Chat-",
+  "operator": "株式会社Trippy",
+  "genre": "AIキャラクターチャット / 恋愛シミュレーション",
+  "urls": {
+    "marketing": "https://0z.chat/",
+    "app": "https://app.0z.chat/",
+    "appStore": "https://apps.apple.com/jp/app/id6482977162",
+    "googlePlay": "https://play.google.com/store/apps/details?id=com.tr1ppy.ozchat",
+    "officialWiki": "https://0z.chat/wiki",
+    "magazine": "https://0z.chat/magazine"
+  },
+  "platforms": ["Web (browser)", "iOS", "Android"],
+  "store": {
+    "iosVersion": "2.3.48",
+    "iosRating": 4.52623,
+    "iosRatingCount": 1201,
+    "ageRating": "17+",
+    "releaseDate": "2024-04-11",
+    "currentVersionDate": "2026-06-13",
+    "sizeBytes": 126854144,
+    "androidPackage": "com.tr1ppy.ozchat"
+  },
+  "observedAt": "2026-10-26",
+  "stack": {
+    "marketing": ["Next.js (App Router)", "React", "Vercel", "Cloudflare"],
+    "app": ["Next.js Pages Router", "React", "Tailwind CSS", "Radix UI / shadcn-style tokens", "LINE Seed JP"],
+    "auth": ["Supabase Auth", "Google", "Apple", "LINE", "email + password"],
+    "data": ["Supabase (GameUser table, supabase_uid)"],
+    "payments": ["Stripe (web)", "App Store / Google Play IAP", "PayPay", "DMM (chara-talk)"],
+    "observability": ["Sentry (nextjs 10.32.1)", "Google Tag Manager / GA4", "Cloudflare Zaraz", "Cloudflare Insights", "oz-activity-log-ingest worker"],
+    "realtime": ["not directly observed; chat UI is app/web authenticated"],
+    "bundle": {
+      "downloadedFiles": 132,
+      "parsedJavaScriptFiles": 128,
+      "bytes": 8892541,
+      "astNodes": 2252274,
+      "modules": 2220,
+      "findings": 9640,
+      "parseFailures": 0
+    }
+  },
+  "content": {
+    "sitemapUrls": 889,
+    "japaneseUrls": 355,
+    "languages": ["ja", "en", "zh", "zh-tw", "ko", "th", "vi"],
+    "characters": 22,
+    "newsPosts": 271,
+    "magazineArticles": 19,
+    "wikiGuides": 15,
+    "quizQuestions": 30,
+    "marketingPageHeightPx": 7712,
+    "mobileHomeHeightPx": 9335
+  },
+  "routes": {
+    "totalBuildRoutes": 55,
+    "admin": 11,
+    "authAndCallbacks": 7,
+    "publicContent": ["/auth/signin", "/auth/update-password", "/auth/auth-code-error", "/faq", "/terms", "/contact", "/share/card/[cardId]", "/events/2nd-anniversary", "/events/halloween-2026", "/events/wrapped", "/purchase-confirmation", "/collab-payments"],
+    "authenticatedApp": ["/", "/room", "/notifications", "/profile/edit", "/muted-users", "/survey", "/creator/rewards", "/subscription-result", "/user/[publicId]", "/public/live/[publicId]"],
+    "rewrites": ["/app/share/card/:cardId -> /share/card/:cardId", "/app/user/:publicId -> /user/:publicId", "/app/room -> /room", "/app/:screenPath* -> /"]
+  },
+  "features": [
+    "自由文チャット（選択肢なし）",
+    "フルボイス再生",
+    "動くイラスト / 立ち絵",
+    "シチュエーションカード（1,500種類以上と訴求）",
+    "メモリー（名前・呼び方・関係性・約束）",
+    "親愛度（-100%〜100%）",
+    "レベル / 6つの性格パラメーター",
+    "ストーリーモード / 漫画",
+    "AI挿絵生成",
+    "カメラロール（2026-09 beta）",
+    "おへや / 衣装 / バイノーラルASMR",
+    "デイリーログイン（MP 20回分）",
+    "MP（チャットポイント）",
+    "Boost（Web Stripe / アプリ定期購読）",
+    "DMM版 / PayPay",
+    "共有カード / 公開プロフィール",
+    "言語7種"
+  ],
+  "ux": {
+    "entry": "https://0z.chat/",
+    "firstValue": "認証後のみ（ゲスト不可）",
+    "tapsToChat": null,
+    "tapsToSend": null,
+    "gate": "login-first",
+    "authOptions": 4,
+    "marketingToSigninMs": 2996,
+    "signinButtonVisibleMs": 3011,
+    "emailModalOpenMs": 1270,
+    "shareCtaCount": 3,
+    "shareToSigninMs": 718,
+    "homeClickables": 175,
+    "homeSmall44": 42,
+    "homeTiny12": 2,
+    "signinClickables": 5,
+    "signinSmall44": 2,
+    "signinTiny12": 1,
+    "faqClickables": 26,
+    "faqSmall44": 8,
+    "heuristicTotal": 32
+  },
+  "limitations": [
+    "認証後のアプリ画面（ホーム、チャット、ストア、設定）は未認証では到達できず、実画面キャプチャはない。公式App Store素材と公開Wiki/マガジンの記述で補完した。",
+    "共有カードのキャラクター画像は公開用にブラー処理。ハロウィンイベントも画像をブラー。",
+    "購入フローは未実行。MP/Boostの価格・付与数はFAQとバンドル文字列からの推断を含む。",
+    "応答時間・チャット品質は認証が必要なため測定不能。",
+    "年齢確認はWebのログイン画面には見当たらない（App Storeレーティングは17+）。"
+  ]
+}

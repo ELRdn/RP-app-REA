@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-25",
+  "capturedAt": "2026-10-26",
   "zeta": {
     "appStore": {
       "trackId": 1619030760,
@@ -202,6 +202,81 @@
       "nsfw": true,
       "ageGate": "18+",
       "sfwParam": "?sfw=1"
+    }
+  },
+  "ozchat": {
+    "appStore": {
+      "trackId": 6482977162,
+      "name": "オズチャット -Oz Chat- かわいいAIキャラチャット",
+      "seller": "Trippy, Inc.",
+      "version": "2.3.48",
+      "updated": "2026-06-13T18:12:33Z",
+      "minimumOs": "15.1",
+      "fileSizeBytes": 126854144,
+      "rating": 4.52623,
+      "ratingCount": 1201,
+      "genres": [
+        "エンターテインメント",
+        "ゲーム",
+        "アドベンチャー",
+        "単語"
+      ],
+      "languages": [
+        "EN",
+        "JA",
+        "KO",
+        "ZH"
+      ],
+      "screenshots": 8,
+      "ageRating": "17+",
+      "releaseDate": "2024-04-11T07:00:00Z"
+    },
+    "web": {
+      "origin": "https://0z.chat",
+      "appOrigin": "https://app.0z.chat",
+      "locales": [
+        "ja",
+        "en",
+        "zh",
+        "zh-tw",
+        "ko",
+        "th",
+        "vi"
+      ],
+      "server": "Vercel + Cloudflare",
+      "framework": "Next.js (App Router marketing / Pages Router app)",
+      "hsts": "max-age=31536000; includeSubDomains; preload",
+      "poweredBy": "Next.js",
+      "sitemapUrls": 889,
+      "jaUrls": 355,
+      "htmlBytes": 466837,
+      "appHtmlBytes": 205886
+    },
+    "stack": {
+      "auth": "Supabase Auth (Google/Apple/LINE/email)",
+      "data": "Supabase GameUser",
+      "payments": [
+        "Stripe",
+        "App Store IAP",
+        "Google Play IAP",
+        "PayPay",
+        "DMM"
+      ],
+      "analytics": [
+        "GTM",
+        "GA4",
+        "Sentry",
+        "Cloudflare Zaraz",
+        "Cloudflare Insights"
+      ],
+      "bundles": {
+        "files": 132,
+        "js": 128,
+        "bytes": 8892541,
+        "astNodes": 2252274,
+        "modules": 2220,
+        "findings": 9640
+      }
     }
   }
 }

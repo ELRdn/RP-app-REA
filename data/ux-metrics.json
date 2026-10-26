@@ -1,20 +1,26 @@
 {
   "meta": {
-    "capturedAt": "2026-10-25",
+    "capturedAt": "2026-10-26",
     "viewport": "390x844 / DPR2 / ja-JP / Asia-Tokyo",
     "browser": "Chrome headful + stealth init (Playwright)",
-    "method": "Same harness per app: load entry, tap first character card, follow the primary CTA, send a neutral message, wait for the first AI reply or a gate. Times are single-sample wall-clock and include fixed SPA settling waits; use interaction deltas, not absolute load times, for comparison.",
+    "method": "Same harness per app: load the entry point, tap the first character/card, follow the primary CTA, send a neutral message, and wait for the first AI reply or a gate. For login-only apps (OzChat), measure the marketing → sign-in handoff, auth UI, share card, and content surfaces instead; authenticated chat is not observed. Times are single-sample wall-clock and include fixed SPA settling waits; use interaction deltas, not absolute load times.",
     "caveats": [
       "Times vary with network and A/B assignment; treat as order-of-magnitude.",
       "CrushOn.AI is NSFW and requires 18+; only UI structure is measured.",
       "MiraiMind's desktop web renders blank; measured on mobile viewport.",
-      "SynClub and CrushOn do not allow a guest to send a message, so no reply latency exists."
+      "SynClub and CrushOn do not allow a guest to send a message, so no reply latency exists.",
+      "OzChatはWebがログイン必須のため、認証後のチャット応答時間・タップ数は測定不能。認証回避は行っていない。"
     ]
   },
   "apps": {
     "zeta": {
       "entry": "https://zeta-ai.io/ja",
-      "flow": ["home", "plot detail", "chat", "first AI reply"],
+      "flow": [
+        "home",
+        "plot detail",
+        "chat",
+        "first AI reply"
+      ],
       "tapsToChat": 2,
       "tapsToSend": 3,
       "screensBeforeChat": 2,
@@ -24,13 +30,24 @@
         "chatDeltaMs": 2127,
         "sendToReplyMs": 3187
       },
-      "guest": { "canChat": true, "limit": null, "note": "guest JWT; room URL is ephemeral" },
+      "guest": {
+        "canChat": true,
+        "limit": null,
+        "note": "guest JWT; room URL is ephemeral"
+      },
       "gate": {
         "type": "soft modal + login sheet",
         "step": "on load / on save or pay",
         "copy": "アプリをダウンロードしてより快適にトークしましょう"
       },
-      "semantics": { "homeClickables": 122, "homeSmall44": 90, "homeTiny12": 6, "chatClickables": 8, "chatSmall44": 7, "chatTiny12": 0 },
+      "semantics": {
+        "homeClickables": 122,
+        "homeSmall44": 90,
+        "homeTiny12": 6,
+        "chatClickables": 8,
+        "chatSmall44": 7,
+        "chatTiny12": 0
+      },
       "friction": [
         "90 of 122 home targets are under 44px (74%)",
         "App-download interstitial on first load",
@@ -46,11 +63,20 @@
         "Clear single CTA: トークを始める",
         "Plot detail gives context before chat"
       ],
-      "evidence": ["zeta_step1_home.png", "zeta_step2_detail.png", "zeta_step3_chat.png", "zeta_step4_reply.png"]
+      "evidence": [
+        "zeta_step1_home.png",
+        "zeta_step2_detail.png",
+        "zeta_step3_chat.png",
+        "zeta_step4_reply.png"
+      ]
     },
     "synclub": {
       "entry": "https://www.synclubaichat.com/chat-list",
-      "flow": ["character feed", "app gate", "blocked"],
+      "flow": [
+        "character feed",
+        "app gate",
+        "blocked"
+      ],
       "tapsToChat": null,
       "tapsToSend": null,
       "screensBeforeChat": 0,
@@ -58,13 +84,21 @@
         "feedObservedMs": 4700,
         "gateDeltaMs": 2785
       },
-      "guest": { "canChat": false, "limit": 0, "note": "character chat is app-only" },
+      "guest": {
+        "canChat": false,
+        "limit": 0,
+        "note": "character chat is app-only"
+      },
       "gate": {
         "type": "hard QR modal",
         "step": "first card tap / category switch",
         "copy": "フルサービスを体験するには、モバイルアプリをダウンロードする必要があります。"
       },
-      "semantics": { "feedClickables": 0, "feedTextNodes": 146, "note": "cards are <section> with click handlers; no links or buttons" },
+      "semantics": {
+        "feedClickables": 0,
+        "feedTextNodes": 146,
+        "note": "cards are <section> with click handlers; no links or buttons"
+      },
       "friction": [
         "One tap from the feed ends in a gate; no chat preview",
         "0 semantic clickables in the feed (keyboard/screen-reader unusable)",
@@ -78,11 +112,18 @@
         "QR handoff is low-friction on a second device",
         "Rich editorial/community content around the gate"
       ],
-      "evidence": ["synclub_step1_feed.png", "synclub_step2_gate.png"]
+      "evidence": [
+        "synclub_step1_feed.png",
+        "synclub_step2_gate.png"
+      ]
     },
     "miraimind": {
       "entry": "https://web.miraimind.ai/#/discover",
-      "flow": ["discover", "chat", "first AI reply"],
+      "flow": [
+        "discover",
+        "chat",
+        "first AI reply"
+      ],
       "tapsToChat": 1,
       "tapsToSend": 2,
       "screensBeforeChat": 1,
@@ -91,13 +132,24 @@
         "chatDeltaMs": 1051,
         "sendToReplyMs": 2957
       },
-      "guest": { "canChat": true, "limit": 5, "note": "runtime log requestLimit: 5" },
+      "guest": {
+        "canChat": true,
+        "limit": 5,
+        "note": "runtime log requestLimit: 5"
+      },
       "gate": {
         "type": "limit + feature gate",
         "step": "6th request / advanced feature",
         "copy": "アプリをダウンロードして、限定の金平糖を受け取り、高度なチャット機能を体験しよう。"
       },
-      "semantics": { "homeClickables": 7, "homeSmall44": 2, "homeTiny12": 0, "chatClickables": 6, "chatSmall44": 3, "chatTiny12": 8 },
+      "semantics": {
+        "homeClickables": 7,
+        "homeSmall44": 2,
+        "homeTiny12": 0,
+        "chatClickables": 6,
+        "chatSmall44": 3,
+        "chatTiny12": 8
+      },
       "friction": [
         "5-request cap is not shown up front",
         "Inner voice / archive / gifts are app-only",
@@ -112,11 +164,21 @@
         "Clean tap targets and readable type",
         "Voice bubble + inner voice + 進む make the story feel alive"
       ],
-      "evidence": ["miraimind_step1_discover.png", "miraimind_step2_chat.png", "miraimind_step3_reply.png"]
+      "evidence": [
+        "miraimind_step1_discover.png",
+        "miraimind_step2_chat.png",
+        "miraimind_step3_reply.png"
+      ]
     },
     "crushon": {
       "entry": "https://crushon.ai/ja?sfw=1",
-      "flow": ["gender onboarding", "home", "detail sheet", "chat", "login gate"],
+      "flow": [
+        "gender onboarding",
+        "home",
+        "detail sheet",
+        "chat",
+        "login gate"
+      ],
       "tapsToChat": 3,
       "tapsToSend": 4,
       "screensBeforeChat": 3,
@@ -127,13 +189,24 @@
         "chatDeltaMs": 2090,
         "sendToGateMs": 2903
       },
-      "guest": { "canChat": false, "limit": 0, "note": "can read the intro; cannot send" },
+      "guest": {
+        "canChat": false,
+        "limit": 0,
+        "note": "can read the intro; cannot send"
+      },
       "gate": {
         "type": "login banner + auth modal",
         "step": "on send / store / account",
         "copy": "ログインしてメッセージを送信し、チャット履歴を安全に保ちましょう。"
       },
-      "semantics": { "homeClickables": 28, "homeSmall44": 11, "homeTiny12": 94, "chatClickables": 9, "chatSmall44": 7, "chatTiny12": 2 },
+      "semantics": {
+        "homeClickables": 28,
+        "homeSmall44": 11,
+        "homeTiny12": 94,
+        "chatClickables": 9,
+        "chatSmall44": 7,
+        "chatTiny12": 2
+      },
       "friction": [
         "4 taps and 3 screens before the first send",
         "Gender onboarding blocks the first view",
@@ -150,16 +223,149 @@
         "Excellent pricing comparison and ranking UX",
         "Desktop sidebar + 6-column grid is information-rich"
       ],
-      "evidence": ["crushon_step1_welcome.png", "crushon_step2_home.png", "crushon_step3_detail.png", "crushon_step4_chat.png", "crushon_step5_gate.png"]
+      "evidence": [
+        "crushon_step1_welcome.png",
+        "crushon_step2_home.png",
+        "crushon_step3_detail.png",
+        "crushon_step4_chat.png",
+        "crushon_step5_gate.png"
+      ]
+    },
+    "ozchat": {
+      "entry": "https://0z.chat/",
+      "flow": [
+        "公式サイト",
+        "ログイン",
+        "メール認証",
+        "共有カード"
+      ],
+      "tapsToChat": null,
+      "tapsToSend": null,
+      "screensBeforeChat": 1,
+      "timings": {
+        "marketingObservedMs": 1616,
+        "marketingToSigninMs": 2996,
+        "signinButtonVisibleMs": 3011,
+        "emailModalOpenMs": 1270,
+        "shareToSigninMs": 718
+      },
+      "guest": {
+        "canChat": false,
+        "limit": 0,
+        "note": "Webはログイン必須。ゲスト閲覧・デモ・チャットプレビューはない。"
+      },
+      "gate": {
+        "type": "hard login-first",
+        "step": "アプリの全ルート（/app/*, /room, /notifications 等）の前",
+        "copy": "初めての方もこちらからログインしてください"
+      },
+      "semantics": {
+        "signinClickables": 5,
+        "signinSmall44": 2,
+        "signinTiny12": 1,
+        "homeClickables": 175,
+        "homeSmall44": 42,
+        "homeTiny12": 2,
+        "shareClickables": 3,
+        "shareSmall44": 3,
+        "faqClickables": 26,
+        "faqSmall44": 8
+      },
+      "friction": [
+        "マーケティングサイトは豊富だが、アプリはログインしないと1画面も見られない",
+        "「プレイする」が新しいタブで開き、認証後に元のページへ戻れない",
+        "共有カード・キャラ詳細・イベントのCTAも全てログインへ",
+        "メールログインはモーダルで2フィールド。規約同意がモーダル内に見えない",
+        "購入確認の不正リクエスト画面が未スタイル（CSS崩れ）",
+        "公式サイトの404がNext.js既定の英語のみ",
+        "モバイルLPの固定ストアバーが下部約200pxを占有",
+        "デスクトップでも中央500pxのモバイルカードのみ"
+      ],
+      "strengths": [
+        "ログイン画面にキャラクターのキービジュアルと世界観があり、ブランド体験として強い",
+        "Google／Apple／LINE／メールの4択で、国内ユーザーの認証手段が揃う",
+        "マーケティングサイトが889 URL・22キャラ・271ニュース・19記事のコンテンツ資産",
+        "30問のキャラ診断が独立した遊びとして機能し、診断結果から共有・プレイへつながる",
+        "FAQ・規約・サポート・プレスキット・二次創作ガイドラインが揃っている",
+        "共有カードは3 CTA（ブラウザ/App Store/Google Play）で受け皿が明確",
+        "認証画面のタップ領域は48px、本文16pxで読みやすい"
+      ],
+      "evidence": [
+        "oz_step1_marketing.png",
+        "oz_step2_signin.png",
+        "oz_step3_email.png",
+        "oz_step4_share.png"
+      ]
     }
   },
   "heuristics": {
     "framework": "Nielsen 10 heuristics, 1-5 (5 = best), plus mobile friction",
     "scores": {
-      "zeta": { "visibility": 4, "match": 4, "control": 3, "consistency": 4, "errorPrevention": 3, "recognition": 4, "flexibility": 3, "minimalism": 3, "recovery": 3, "help": 3, "total": 34 },
-      "synclub": { "visibility": 3, "match": 4, "control": 2, "consistency": 3, "errorPrevention": 2, "recognition": 3, "flexibility": 2, "minimalism": 3, "recovery": 2, "help": 2, "total": 26 },
-      "miraimind": { "visibility": 4, "match": 4, "control": 4, "consistency": 3, "errorPrevention": 3, "recognition": 4, "flexibility": 3, "minimalism": 4, "recovery": 3, "help": 3, "total": 35 },
-      "crushon": { "visibility": 3, "match": 4, "control": 3, "consistency": 2, "errorPrevention": 3, "recognition": 3, "flexibility": 4, "minimalism": 3, "recovery": 3, "help": 3, "total": 31 }
+      "zeta": {
+        "visibility": 4,
+        "match": 4,
+        "control": 3,
+        "consistency": 4,
+        "errorPrevention": 3,
+        "recognition": 4,
+        "flexibility": 3,
+        "minimalism": 3,
+        "recovery": 3,
+        "help": 3,
+        "total": 34
+      },
+      "synclub": {
+        "visibility": 3,
+        "match": 4,
+        "control": 2,
+        "consistency": 3,
+        "errorPrevention": 2,
+        "recognition": 3,
+        "flexibility": 2,
+        "minimalism": 3,
+        "recovery": 2,
+        "help": 2,
+        "total": 26
+      },
+      "miraimind": {
+        "visibility": 4,
+        "match": 4,
+        "control": 4,
+        "consistency": 3,
+        "errorPrevention": 3,
+        "recognition": 4,
+        "flexibility": 3,
+        "minimalism": 4,
+        "recovery": 3,
+        "help": 3,
+        "total": 35
+      },
+      "crushon": {
+        "visibility": 3,
+        "match": 4,
+        "control": 3,
+        "consistency": 2,
+        "errorPrevention": 3,
+        "recognition": 3,
+        "flexibility": 4,
+        "minimalism": 3,
+        "recovery": 3,
+        "help": 3,
+        "total": 31
+      },
+      "ozchat": {
+        "visibility": 3,
+        "match": 3,
+        "control": 2,
+        "consistency": 4,
+        "errorPrevention": 3,
+        "recognition": 4,
+        "flexibility": 2,
+        "minimalism": 4,
+        "recovery": 3,
+        "help": 4,
+        "total": 32
+      }
     }
   }
 }

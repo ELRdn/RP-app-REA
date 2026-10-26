@@ -397,3 +397,44 @@
   border-radius: var(--c-radius-pill);
   font: 700 14px/1 var(--c-font);
 }
+
+/* ============================================================
+   OzChat (2026-10-26)
+   App: production CSS variables (HSL) + LINE Seed JP
+   Marketing: computed styles, Noto Sans JP + plum palette
+   ============================================================ */
+:root {
+  --oz-bg: hsl(330 6% 6.5%);
+  --oz-fg: #ffffff;
+  --oz-card: hsl(330 5% 10.5%);
+  --oz-border: hsl(330 5% 19%);
+  --oz-muted: hsl(330 4% 66%);
+  --oz-primary: hsl(334 85% 52%);
+  --oz-primary-light: hsl(334 80% 46%);
+  --oz-brand-from: hsl(340 88% 58%);
+  --oz-brand-to: hsl(318 80% 54%);
+  --oz-accent: hsl(330 95% 76%);
+  --oz-bubble-character: hsl(332 72% 45%);
+  --oz-bubble-user: hsl(0 0% 24%);
+  --oz-plum: #48142e;
+  --oz-plum-2: #2a2140;
+  --oz-dusty: #cea9bc;
+  --oz-radius: 0.625rem;
+  --oz-font: "LINE Seed JP", "Inter", sans-serif;
+  --oz-font-marketing: "Noto Sans JP", sans-serif;
+}
+.oz-btn-primary {
+  background: linear-gradient(92deg, var(--oz-brand-from), var(--oz-brand-to));
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  font: 700 14px/1 var(--oz-font);
+}
+.oz-card {
+  background: var(--oz-card);
+  border: 1px solid var(--oz-border);
+  border-radius: var(--oz-radius);
+  color: var(--oz-fg);
+}
+.oz-bubble-character { background: var(--oz-bubble-character); color: #fff; border-radius: 12px 12px 12px 4px; }
+.oz-bubble-user { background: var(--oz-bubble-user); color: #fff; border-radius: 12px 12px 4px 12px; }

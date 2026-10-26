@@ -5,7 +5,7 @@
 - 取得日：2026-10-24〜25
 - Webビューポート：390×844 / DPR2 / ja-JP / Asia-Tokyo（デスクトップは1280×900 or 1440×900 / DPR1）
 - ブラウザ：システムChrome（Playwright経由）
-- App Store：iTunes Lookup API（日本ストア、2026-10-25時点）＋Google Play（MiraiMind）
+- App Store：iTunes Lookup API（日本ストア、2026-10-26時点）＋Google Play（MiraiMind）
 - 実機：ユーザー提供のiOSスクリーンショット（2026-10-21/22）
 
 ---
@@ -192,6 +192,59 @@
 
 ---
 
+## オズチャット — Web（390×844 / DPR2）+ 公式サイト + App Store
+
+未認証で到達できる範囲のみ。認証後は未収録（[13-ozchat-teardown.md](13-ozchat-teardown.md)）。
+
+### アプリ（ログイン／認証／サポート／共有／エラー）
+
+| ファイル | 内容 |
+|---|---|
+| [oz_a01_signin.png](../evidence/screenshots/ozchat/app/oz_a01_signin.png) | ログイン（4種の認証） |
+| [oz_a04_signin_email_login.png](../evidence/screenshots/ozchat/app/oz_a04_signin_email_login.png) | メールログイン |
+| [oz_a05_signin_email_signup.png](../evidence/screenshots/ozchat/app/oz_a05_signin_email_signup.png) | 新規登録 |
+| [oz_a07_auth_error.png](../evidence/screenshots/ozchat/app/oz_a07_auth_error.png) | 認証エラー |
+| [oz_a09_faq.png](../evidence/screenshots/ozchat/app/oz_a09_faq.png) | FAQ |
+| [oz_a11_terms.png](../evidence/screenshots/ozchat/app/oz_a11_terms.png) | 利用規約 |
+| [oz_a12_contact.png](../evidence/screenshots/ozchat/app/oz_a12_contact.png) | サポート |
+| [oz_a14_share_card_kohaku_blur.png](../evidence/screenshots/ozchat/app/oz_a14_share_card_kohaku_blur.png) | 共有カード（ブラー） |
+| [oz_a16_event_anniversary.png](../evidence/screenshots/ozchat/app/oz_a16_event_anniversary.png) | 2周年ゲート |
+| [oz_a18_event_halloween_top.png](../evidence/screenshots/ozchat/app/oz_a18_event_halloween_top.png) | ハロウィン（ブラー） |
+| [oz_a20_purchase_invalid.png](../evidence/screenshots/ozchat/app/oz_a20_purchase_invalid.png) | 購入確認の未スタイル画面 |
+
+### 公式サイト（desktop / mobile）
+
+| ファイル | 内容 |
+|---|---|
+| [oz_m01_home_full.png](../evidence/screenshots/ozchat/marketing/oz_m01_home_full.png) | トップ全体（7,712px） |
+| [oz_m01b_home_top.png](../evidence/screenshots/ozchat/marketing/oz_m01b_home_top.png) | トップ ヒーロー |
+| [oz_mm01b_home_top.png](../evidence/screenshots/ozchat/marketing/oz_mm01b_home_top.png) | モバイル ヒーロー |
+| [oz_m06_wiki.png](../evidence/screenshots/ozchat/marketing/oz_m06_wiki.png) | Wiki |
+| [oz_m24_magazine.png](../evidence/screenshots/ozchat/marketing/oz_m24_magazine.png) | マガジン |
+| [oz_mm10_shindan_result.png](../evidence/screenshots/ozchat/marketing/oz_mm10_shindan_result.png) | 診断結果 |
+| [oz_m34_404.png](../evidence/screenshots/ozchat/marketing/oz_m34_404.png) | 404（英語・ブランドなし） |
+
+### キャラクター（22人＋誕生日）
+
+| ファイル | 内容 |
+|---|---|
+| [oz_c_kohaku.png](../evidence/screenshots/ozchat/characters/oz_c_kohaku.png) | 猫音コハク |
+| [oz_c_setsuho.png](../evidence/screenshots/ozchat/characters/oz_c_setsuho.png) | 狩部雪歩 |
+| [oz_c_sui.png](../evidence/screenshots/ozchat/characters/oz_c_sui.png) | 酒匂翠 |
+| [oz_c_birthday.png](../evidence/screenshots/ozchat/characters/oz_c_birthday.png) | 誕生日一覧 |
+
+全22人は `evidence/screenshots/ozchat/characters/` に収録。
+
+### App Store（公式素材）
+
+`evidence/screenshots/ozchat/appstore/oz_appstore_01.jpg` 〜 `08.jpg`。認証後のUI（ホーム、カード、チャット、親愛度、ストーリー）を公式素材で補完。
+
+### 生データ
+
+`evidence/ozchat/` に `ux-raw.json`、`routes.txt`、`sitemap-urls.txt`、`itunes.json`、`signin-showcase.json`、`js-bundle-index.json`、`tokens/` を収録。
+
+---
+
 ## REA Evidence
 
 | Evidence | 操作 | 対象 | 結果 |
@@ -210,7 +263,8 @@
 |---|---|
 | [docs/11-ux-reverse-engineering.md](../docs/11-ux-reverse-engineering.md) | UXレポート本文（ファネル/ゲート/時間/ヒューリスティック） |
 | [docs/12-ux-patterns.md](../docs/12-ux-patterns.md) | UXパターンカタログ |
-| [ux.html](../ux.html) | 4製品のフロー比較ページ |
+| [ux.html](../ux.html) | 5製品のフロー比較ページ |
+| [docs/14-ozchat-ux.md](../docs/14-ozchat-ux.md) | OzChatのログインfirst UX |
 | [data/ux-metrics.json](../data/ux-metrics.json) | タップ数・遷移時間・応答時間・タップ領域・文字サイズ |
 | [data/ux-flows.json](../data/ux-flows.json) | 画面遷移グラフとブロッカー |
 | [evidence/ux/README.md](../evidence/ux/README.md) | 計測方法と生ログの説明 |
@@ -225,6 +279,7 @@
 | SynClub | [feed](../evidence/ux/synclub_step1_feed.png) → [gate](../evidence/ux/synclub_step2_gate.png) |
 | MiraiMind | [discover](../evidence/ux/miraimind_step1_discover.png) → [chat](../evidence/ux/miraimind_step2_chat.png) → [reply](../evidence/ux/miraimind_step3_reply.png) |
 | CrushOn | [welcome](../evidence/ux/crushon_step1_welcome.png) → [home](../evidence/ux/crushon_step2_home.png) → [detail](../evidence/ux/crushon_step3_detail.png) → [chat](../evidence/ux/crushon_step4_chat.png) → [gate](../evidence/ux/crushon_step5_gate.png) |
+| OzChat | [marketing](../evidence/ux/oz_step1_marketing.png) → [login](../evidence/ux/oz_step2_signin.png) → [email](../evidence/ux/oz_step3_email.png) → [share card](../evidence/ux/oz_step4_share.png) |
 
 ---
 
@@ -254,6 +309,8 @@
 | [synclub-observed.json](../evidence/tokens/synclub-observed.json) | SynClub 43画面の同上 |
 | [miraimind-observed.json](../evidence/tokens/miraimind-observed.json) | MiraiMind の本番CSS＋computed style |
 | [crushon-observed.json](../evidence/tokens/crushon-observed.json) | CrushOn の本番CSS＋computed style |
+| [app-signin.json](../evidence/ozchat/tokens/app-signin.json) | OzChat ログインの色/フォント/サイズ/角丸 |
+| [marketing-home.json](../evidence/ozchat/tokens/marketing-home.json) | OzChat LPの同上 |
 | [tokens.json](../data/tokens.json) | キュレーション済みトークン（CSS変数化の元） |
 | [design-tokens.css](../analysis/design-tokens.css) | 両社のトークンをCSS変数で再現 |
 
@@ -263,10 +320,14 @@
 
 | ファイル | 内容 |
 |---|---|
-| [screens.json](../data/screens.json) | 94画面のメタデータ + SHA-256 |
-| [routes.json](../data/routes.json) | 観測/ゲート/バンドルルート |
+| [screens.json](../data/screens.json) | 244画面のメタデータ + SHA-256 |
+| [routes.json](../data/routes.json) | 観測/ゲート/バンドルルート（5製品） |
+| [ozchat.json](../data/ozchat.json) | OzChatのスタック/コンテンツ/ルート/UX |
 | [components.json](../data/components.json) | React/Vueコンポーネント目録 |
 | [features.json](../data/features.json) | Zeta vs SynClub の27項目比較 |
-| [features-4apps.json](../data/features-4apps.json) | 4製品×30項目の比較マトリクス |
+| [features-4apps.json](../data/features-4apps.json) | 4製品（OzChat以前）×30項目の比較マトリクス |\n| [features-5apps.json](../data/features-5apps.json) | 5製品×31項目の比較マトリクス |
 | [index.html](../index.html) | フィルタ/検索付きギャラリー |
+
+
+
 

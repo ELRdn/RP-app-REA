@@ -1,0 +1,420 @@
+{
+  "marketingDesktop": {
+    "title": "オズチャット -Oz Chat-｜AIキャラクターチャットアプリ公式サイト",
+    "url": "https://0z.chat/",
+    "clickables": 175,
+    "small44": 42,
+    "small24": 30,
+    "textNodes": 177,
+    "tiny12": 2,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 925,
+      "dcl": 1394,
+      "load": 2575
+    },
+    "lcp": 1616,
+    "cls": 0.0004,
+    "requests": 152,
+    "transferKB": 2043,
+    "scrollHeight": 7712,
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    }
+  },
+  "cta": {
+    "count": 175,
+    "first": [
+      {
+        "t": "",
+        "y": 22,
+        "h": 40,
+        "w": 129,
+        "target": "_blank"
+      },
+      {
+        "t": "プレイする",
+        "y": 0,
+        "h": 0,
+        "w": 0,
+        "target": "_blank"
+      },
+      {
+        "t": "翠",
+        "y": -353,
+        "h": 236,
+        "w": 196,
+        "target": "_blank"
+      },
+      {
+        "t": "翠",
+        "y": -132,
+        "h": 236,
+        "w": 196,
+        "target": "_blank"
+      },
+      {
+        "t": "ユウ",
+        "y": 89,
+        "h": 236,
+        "w": 196,
+        "target": "_blank"
+      },
+      {
+        "t": "翠",
+        "y": 310,
+        "h": 236,
+        "w": 196,
+        "target": "_blank"
+      }
+    ]
+  },
+  "handoffUrlMs": 2208,
+  "handoffNewTab": true,
+  "signinDesktop": {
+    "title": "ログイン | オズチャット",
+    "url": "https://app.0z.chat/auth/signin?redirect_to=%2F%3Flang%3Dja%26utm_source%3D0z.chat%26utm_medium%3Dwebsite%26utm_campaign%3Dhero_web",
+    "clickables": 5,
+    "small44": 2,
+    "small24": 0,
+    "textNodes": 9,
+    "tiny12": 1,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 917,
+      "dcl": 1919,
+      "load": 2130
+    },
+    "lcp": 0,
+    "cls": 0,
+    "requests": 60,
+    "transferKB": 1334,
+    "scrollHeight": 900,
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    }
+  },
+  "handoffReadyMs": 6208,
+  "signinButtons": [
+    {
+      "t": "",
+      "y": 12,
+      "bottom": 52,
+      "h": 40
+    },
+    {
+      "t": "Googleでログイン",
+      "y": 676,
+      "bottom": 724,
+      "h": 48
+    },
+    {
+      "t": "Appleでログイン",
+      "y": 732,
+      "bottom": 780,
+      "h": 48
+    },
+    {
+      "t": "LINEでログイン",
+      "y": 788,
+      "bottom": 836,
+      "h": 48
+    },
+    {
+      "t": "メールアドレスでログイン",
+      "y": 844,
+      "bottom": 884,
+      "h": 40
+    }
+  ],
+  "emailModalOpenMs": 1270,
+  "emailModal": {
+    "fields": [
+      {
+        "type": "email",
+        "ph": "メールアドレス"
+      },
+      {
+        "type": "password",
+        "ph": "パスワード"
+      }
+    ],
+    "buttons": [
+      "Googleでログイン",
+      "Appleでログイン",
+      "LINEでログイン",
+      "メールアドレスでログイン",
+      "ログイン",
+      "新規登録",
+      "パスワードをお忘れですか？",
+      "ログイン",
+      "Close"
+    ]
+  },
+  "marketingMobile": {
+    "title": "オズチャット -Oz Chat-｜AIキャラクターチャットアプリ公式サイト",
+    "url": "https://0z.chat/",
+    "clickables": 169,
+    "small44": 34,
+    "small24": 23,
+    "textNodes": 178,
+    "tiny12": 2,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 835,
+      "dcl": 1326,
+      "load": 2154
+    },
+    "lcp": 1352,
+    "cls": 0,
+    "requests": 119,
+    "transferKB": 1816,
+    "scrollHeight": 9335,
+    "viewport": {
+      "w": 390,
+      "h": 844
+    }
+  },
+  "mobileCta": {
+    "count": 174,
+    "visible": 44,
+    "first": [
+      {
+        "t": "ブラウザ版で遊ぶ",
+        "y": 0,
+        "h": 0
+      },
+      {
+        "t": "翠",
+        "y": -277,
+        "h": 158
+      },
+      {
+        "t": "翠",
+        "y": -129,
+        "h": 158
+      },
+      {
+        "t": "ユウ",
+        "y": 18,
+        "h": 158
+      }
+    ]
+  },
+  "mobileHandoffUrlMs": 2887,
+  "mobileHandoffNewTab": true,
+  "signinMobile": {
+    "title": "ログイン | オズチャット",
+    "url": "https://app.0z.chat/auth/signin?redirect_to=%2F%3Flang%3Dja%26utm_source%3D0z.chat%26utm_medium%3Dwebsite%26utm_campaign%3Dhero_web",
+    "clickables": 5,
+    "small44": 2,
+    "small24": 0,
+    "textNodes": 9,
+    "tiny12": 1,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 898,
+      "dcl": 1855,
+      "load": 2816
+    },
+    "lcp": 0,
+    "cls": 0,
+    "requests": 62,
+    "transferKB": 1386,
+    "scrollHeight": 844,
+    "viewport": {
+      "w": 390,
+      "h": 844
+    }
+  },
+  "mobileHandoffReadyMs": 6887,
+  "shareCard": {
+    "title": "コハク、お仕事中! | オズチャット",
+    "url": "https://app.0z.chat/share/card/kohaku-maid",
+    "clickables": 3,
+    "small44": 3,
+    "small24": 0,
+    "textNodes": 6,
+    "tiny12": 0,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 2046,
+      "dcl": 2272,
+      "load": 2418
+    },
+    "lcp": 2324,
+    "cls": 0,
+    "requests": 46,
+    "transferKB": 237,
+    "scrollHeight": 844,
+    "viewport": {
+      "w": 390,
+      "h": 844
+    }
+  },
+  "shareCtas": [
+    {
+      "t": "ブラウザで開く",
+      "y": 540,
+      "h": 40
+    },
+    {
+      "t": "App Storeで入手",
+      "y": 596,
+      "h": 40
+    },
+    {
+      "t": "Google Playで入手",
+      "y": 648,
+      "h": 40
+    }
+  ],
+  "shareToSigninMs": 718,
+  "shareSignin": {
+    "title": "ログイン | オズチャット",
+    "url": "https://app.0z.chat/auth/signin?redirect_to=%2Fapp%2Fhome%2Fdetail%2Fkohaku-maid%3FscreenPath%3Dhome%26screenPath%3Ddetail%26screenPath%3Dkohaku-maid",
+    "clickables": 5,
+    "small44": 2,
+    "small24": 0,
+    "textNodes": 10,
+    "tiny12": 1,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 2046,
+      "dcl": 2272,
+      "load": 2418
+    },
+    "lcp": 2324,
+    "cls": 0.026,
+    "requests": 81,
+    "transferKB": 240,
+    "scrollHeight": 844,
+    "viewport": {
+      "w": 390,
+      "h": 844
+    }
+  },
+  "faq": {
+    "title": "",
+    "url": "https://app.0z.chat/faq",
+    "clickables": 26,
+    "small44": 8,
+    "small24": 0,
+    "textNodes": 45,
+    "tiny12": 0,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 366,
+      "dcl": 605,
+      "load": 757
+    },
+    "lcp": 496,
+    "cls": 0,
+    "requests": 56,
+    "transferKB": 152,
+    "scrollHeight": 2441,
+    "viewport": {
+      "w": 390,
+      "h": 844
+    }
+  },
+  "faqCount": 22,
+  "terms": {
+    "title": "利用規約 | オズチャット -Oz Chat-",
+    "url": "https://app.0z.chat/terms",
+    "clickables": 5,
+    "small44": 5,
+    "small24": 0,
+    "textNodes": 389,
+    "tiny12": 0,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 316,
+      "dcl": 597,
+      "load": 806
+    },
+    "lcp": 616,
+    "cls": 0,
+    "requests": 149,
+    "transferKB": 1195,
+    "scrollHeight": 31694,
+    "viewport": {
+      "w": 390,
+      "h": 844
+    }
+  },
+  "wikiChat": {
+    "title": "思い通りのチャットをしよう | オズチャット -Oz Chat- 公式Wiki",
+    "url": "https://0z.chat/wiki/chat",
+    "clickables": 93,
+    "small44": 89,
+    "small24": 18,
+    "textNodes": 113,
+    "tiny12": 0,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 388,
+      "dcl": 559,
+      "load": 726
+    },
+    "lcp": 668,
+    "cls": 0,
+    "requests": 129,
+    "transferKB": 206,
+    "scrollHeight": 5016,
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    }
+  },
+  "character": {
+    "title": "猫音コハク｜猫耳メイドの美少女と話せるAIキャラ | オズチャット -Oz Chat- 公式Wiki",
+    "url": "https://0z.chat/wiki/characters/kohaku",
+    "clickables": 96,
+    "small44": 89,
+    "small24": 18,
+    "textNodes": 129,
+    "tiny12": 3,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 346,
+      "dcl": 449,
+      "load": 629
+    },
+    "lcp": 580,
+    "cls": 0,
+    "requests": 124,
+    "transferKB": 247,
+    "scrollHeight": 4434,
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    }
+  },
+  "magazine": {
+    "title": "AIチャットの「記憶」とは？会話を覚えてくれるメモリー機能を解説｜オズチャットマガジン",
+    "url": "https://0z.chat/magazine/ai-chat-memory",
+    "clickables": 97,
+    "small44": 73,
+    "small24": 44,
+    "textNodes": 152,
+    "tiny12": 0,
+    "tiny10": 0,
+    "nav": {
+      "ttfb": 403,
+      "dcl": 647,
+      "load": 834
+    },
+    "lcp": 716,
+    "cls": 0,
+    "requests": 139,
+    "transferKB": 295,
+    "scrollHeight": 11864,
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    }
+  }
+}

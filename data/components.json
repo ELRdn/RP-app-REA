@@ -378,5 +378,61 @@
       "coin page tasks/achievements",
       "character detail combines 概要/サポーター/コメント/CTA"
     ]
+  },
+  "ozchat": {
+    "marketing": [
+      "SiteHeader",
+      "HeroReel",
+      "HeroSlide",
+      "EncounterDemo",
+      "NewsList",
+      "CharacterRail",
+      "CharacterSelect",
+      "AboutSection",
+      "SystemCards",
+      "SpecialCards",
+      "MagazineGrid",
+      "FaqAccordion",
+      "AiConsultLinks",
+      "DownloadBar",
+      "CurtainIntro",
+      "PressKit",
+      "WikiSidebar",
+      "WikiToc",
+      "ShindanQuiz",
+      "ShindanResult",
+      "ShareButtons"
+    ],
+    "app": [
+      "SigninPage",
+      "CharacterShowcase",
+      "AuthButton",
+      "EmailAuthModal",
+      "LanguageMenu",
+      "FaqSearch",
+      "FaqCategoryChips",
+      "FaqAccordion",
+      "TermsPage",
+      "SupportForm",
+      "SupportCategorySelect",
+      "ShareCard",
+      "StoreCtaGroup",
+      "EventGate",
+      "PurchaseError",
+      "CollabPasswordGate"
+    ],
+    "inferredAuthenticated": [
+      "HomeFeed",
+      "CharacterDetailSheet",
+      "ChatRoom",
+      "VoiceBubble",
+      "SituationCard",
+      "AffinityPanel",
+      "MemoryPanel",
+      "MpBalance",
+      "BoostPaywall",
+      "StoryViewer"
+    ],
+    "notes": "Observed names are stable CSS/class or DOM semantics; inferredAuthenticated items come from App Store assets, wiki, and bundle strings, not live auth capture."
   }
 }

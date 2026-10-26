@@ -345,5 +345,121 @@
       "/ai-sex-chat",
       "/2257"
     ]
+  },
+  "ozchat": {
+    "locales": [
+      "ja",
+      "en",
+      "zh",
+      "zh-tw",
+      "ko",
+      "th",
+      "vi"
+    ],
+    "webShell": "/",
+    "observed": [
+      {
+        "path": "/auth/signin",
+        "screen": "Login (Google/Apple/LINE/email)"
+      },
+      {
+        "path": "/auth/update-password",
+        "screen": "Password update (invalid link state)"
+      },
+      {
+        "path": "/auth/auth-code-error",
+        "screen": "Auth error"
+      },
+      {
+        "path": "/faq",
+        "screen": "FAQ (18 items)"
+      },
+      {
+        "path": "/terms",
+        "screen": "Terms (4 languages)"
+      },
+      {
+        "path": "/contact",
+        "screen": "Support form"
+      },
+      {
+        "path": "/share/card/kohaku-maid",
+        "screen": "Shared situation card"
+      },
+      {
+        "path": "/events/2nd-anniversary",
+        "screen": "2nd anniversary login gate"
+      },
+      {
+        "path": "/events/halloween-2026",
+        "screen": "Halloween card catalog (63)"
+      },
+      {
+        "path": "/events/wrapped",
+        "screen": "Wrapped login gate"
+      },
+      {
+        "path": "/purchase-confirmation",
+        "screen": "Invalid payment request (unstyled)"
+      },
+      {
+        "path": "/collab-payments",
+        "screen": "Collab dashboard password gate"
+      }
+    ],
+    "gated": [
+      {
+        "path": "/",
+        "reason": "login"
+      },
+      {
+        "path": "/room",
+        "reason": "login"
+      },
+      {
+        "path": "/notifications",
+        "reason": "login"
+      },
+      {
+        "path": "/profile/edit",
+        "reason": "login"
+      },
+      {
+        "path": "/muted-users",
+        "reason": "login"
+      },
+      {
+        "path": "/survey",
+        "reason": "login"
+      },
+      {
+        "path": "/creator/rewards",
+        "reason": "login"
+      },
+      {
+        "path": "/subscription-result",
+        "reason": "login"
+      },
+      {
+        "path": "/user/[publicId]",
+        "reason": "login"
+      },
+      {
+        "path": "/public/live/[publicId]",
+        "reason": "login"
+      },
+      {
+        "path": "/app/*",
+        "reason": "login + redirect_to"
+      }
+    ],
+    "bundle": {
+      "totalRoutes": 55,
+      "admin": 11,
+      "authAndCallbacks": 7,
+      "events": 4,
+      "public": 12,
+      "devPreview": 3
+    }
   }
 }

@@ -1,5 +1,2014 @@
 [
   {
+    "id": "oz-a01-signin",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "ログイン（入口）",
+    "desc": "アプリの最初の画面。キャラクターのキービジュアル、コピー、Google／Apple／LINE／メールの4択。ゲスト閲覧はなく、ここで全導線が止まる。",
+    "tags": [
+      "auth",
+      "gate",
+      "login"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a01_signin.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a01_signin.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 1084214,
+    "sha256": "863044ba72ef9d29f93997a04afc4fc8a8b66279d0156ba94886ffde063175a3",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-a01b-signin-full",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "ログイン（全体）",
+    "desc": "390×844の全体。キャラクター画像の上にh1と認証ボタンが重なり、メールボタンは画面下端から16pxの位置。",
+    "tags": [
+      "auth",
+      "layout"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a01b_signin_full.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a01b_signin_full.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 1052790,
+    "sha256": "90e3a6cd8c70c637b18316a4b20cf3ccad7be7bc0f6c2be24bb38fb671b76c2c",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-a03-signin-lang",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "言語切替（7言語）",
+    "desc": "右上の言語ボタンから、日本語／English／簡体中文／繁體中文／한국어／ไทย／Tiếng Việtを選択。",
+    "tags": [
+      "i18n",
+      "language"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a03_signin_lang.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a03_signin_lang.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 875313,
+    "sha256": "2be4a3111963622556910cc7a03cb837eb298509b539cd42edc697b85ac69814",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-a04-signin-email-login",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "メールログイン",
+    "desc": "メール＋パスワードのモーダル。ログイン／新規登録のタブ、パスワードリセット。ソーシャル4択の後に開く。",
+    "tags": [
+      "auth",
+      "email"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a04_signin_email_login.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a04_signin_email_login.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 224018,
+    "sha256": "c98cae670b2eca55ede44b8e607b1eb0d97797a319031ee2c57ad1e19275defb",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-a05-signin-email-signup",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "メール新規登録",
+    "desc": "新規登録タブ。メールとパスワードのみで、規約同意のチェックボックスはモーダル内に見えない。",
+    "tags": [
+      "auth",
+      "signup"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a05_signin_email_signup.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a05_signin_email_signup.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 209306,
+    "sha256": "1f015114073318e7419ab9d0663f2f365c104e838c0f78069cac5a779819fdbe",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-a06-signin-validation",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "メール入力のバリデーション",
+    "desc": "空のまま送信した状態。ブラウザ標準の必須エラーが出て、カスタムの説明はない。",
+    "tags": [
+      "auth",
+      "validation",
+      "error"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a06_signin_validation.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a06_signin_validation.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 246868,
+    "sha256": "e1ffd5b3a0c6df88a82fcc92b44ac7f6b18bc1b646b3bcc0573721acf1b68da1",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-a07-auth-error",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "認証エラー",
+    "desc": "「認証プロセス中に問題が発生しました」。サインイン／ホームへの2つの戻り導線。",
+    "tags": [
+      "auth",
+      "error"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a07_auth_error.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a07_auth_error.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 59455,
+    "sha256": "40a3c65fb89d19d6199b6c2bccce59dfd7a55c3d77be100c26f50fa915bf5f55",
+    "sourceUrl": "https://app.0z.chat/auth/auth-code-error"
+  },
+  {
+    "id": "oz-a08-update-password",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "パスワード更新（無効リンク）",
+    "desc": "トークンなしで開いた場合。「無効なリンクです。パスワードリセットを再度お試しください。」のみ。",
+    "tags": [
+      "auth",
+      "error",
+      "password"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a08_update_password.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a08_update_password.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 41822,
+    "sha256": "445649246a0daeef051b714cf54284479ccf0ad2126d0ff218876f5d3e39115b",
+    "sourceUrl": "https://app.0z.chat/auth/update-password"
+  },
+  {
+    "id": "oz-a09-faq",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "FAQ",
+    "desc": "検索、4カテゴリ、18件。黒地にピンクのグロー。課金・アカウント・動作・データの4分類。",
+    "tags": [
+      "faq",
+      "support"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a09_faq.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a09_faq.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 186972,
+    "sha256": "365dfa6e1520a75700578ebd8a6f3fc947ac2e3f288aa4122a989fb0f48ff164",
+    "sourceUrl": "https://app.0z.chat/faq"
+  },
+  {
+    "id": "oz-a10-faq-open",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "FAQ（回答展開）",
+    "desc": "アコーディオンを開いた状態。装飾図形が本文の背後に重なるが、可読性は維持。",
+    "tags": [
+      "faq",
+      "accordion"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a10_faq_open.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a10_faq_open.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 212876,
+    "sha256": "7a68b259bdd725e52cdd0eadefab2427731e7bac19ba293775bfb27dc03ef90d",
+    "sourceUrl": "https://app.0z.chat/faq"
+  },
+  {
+    "id": "oz-a11-terms",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "利用規約",
+    "desc": "日本語・English・簡体中文・한국어の4言語。1ページ31,694pxの長文で、目次や検索はない。",
+    "tags": [
+      "legal",
+      "terms"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a11_terms.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a11_terms.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 242602,
+    "sha256": "722bc7ce212a5ff9ab84b0d4323061f50db482bb5881004a908ebf6a19bb138e",
+    "sourceUrl": "https://app.0z.chat/terms"
+  },
+  {
+    "id": "oz-a12-contact",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "アプリ内サポート",
+    "desc": "休業告知、新規相談／履歴、ジャンル選択、本文、画像添付（4MB）。「ゲームに戻る」でアプリへ。",
+    "tags": [
+      "support",
+      "form"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a12_contact.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a12_contact.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 178064,
+    "sha256": "0e9f8cf538880f5609fe5f85e6c10ab649890c98d6c50bdb701f6181276b294b",
+    "sourceUrl": "https://app.0z.chat/contact"
+  },
+  {
+    "id": "oz-a13-contact-category",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "サポート分類の選択",
+    "desc": "課金・サブスク／MP補填／不具合報告／アカウント／要望／フィードバック／その他。ネイティブのセレクトではなく独自リスト。",
+    "tags": [
+      "support",
+      "form",
+      "select"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a13_contact_category.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a13_contact_category.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 182634,
+    "sha256": "9364e7679fb200ea56f9414607d99bfe2cc6b8dfbc77d282936f421a84f5a652",
+    "sourceUrl": "https://app.0z.chat/contact"
+  },
+  {
+    "id": "oz-a14-share-card-kohaku-blur",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "共有カード（画像ブラー）",
+    "desc": "カード名・説明・「AIキャラクターとの会話を始めよう」・ブラウザ／App Store／Google Playの3 CTA。キャラ画像は公開用にブラー。",
+    "tags": [
+      "share",
+      "card",
+      "gate"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a14_share_card_kohaku_blur.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a14_share_card_kohaku_blur.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 186908,
+    "sha256": "261d424f0ba4911bdb85757b7d07c0e5088903fe382556567c2338a34c2faeb1",
+    "sourceUrl": "https://app.0z.chat/share/card/kohaku-maid"
+  },
+  {
+    "id": "oz-a15-share-card-sui-blur",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "共有カード（別カード）",
+    "desc": "別のシチュエーションカード。レイアウトは同一で、タイトルと説明だけが変わる。画像はブラー。",
+    "tags": [
+      "share",
+      "card"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a15_share_card_sui_blur.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a15_share_card_sui_blur.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 226417,
+    "sha256": "6a6f8d8e1272ac7eecd7478d3294389c03c8af50a467d24812d125d989fe8101",
+    "sourceUrl": "https://app.0z.chat/share/card/sakou-sui-02-behind-school"
+  },
+  {
+    "id": "oz-a15b-share-card-saki-blur",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "共有カード（3枚目）",
+    "desc": "3枚目も同じテンプレート。共有カードは全てログイン前の静的ページで、会話プレビューはない。画像はブラー。",
+    "tags": [
+      "share",
+      "card"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a15b_share_card_saki_blur.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a15b_share_card_saki_blur.jpg",
+    "width": 780,
+    "height": 1730,
+    "mime": "image/png",
+    "bytes": 289080,
+    "sha256": "3d80b90a9d7f715c32123fb86c5ca5a455e32daa810235b3c865a0447ff2cfdf",
+    "sourceUrl": "https://app.0z.chat/share/card/saki-202606-birthday-01"
+  },
+  {
+    "id": "oz-a16-event-anniversary",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "2周年ログインゲート",
+    "desc": "紫一色の画面に「振り返りを見るにはログインが必要です」と白ピル。イベント固有のビジュアルはログイン後。",
+    "tags": [
+      "event",
+      "gate"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a16_event_anniversary.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a16_event_anniversary.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 60488,
+    "sha256": "74f04be7ca93e55e5fa77558bd0b2ac45818d4e270e9763eec58c2e344d4cc59",
+    "sourceUrl": "https://app.0z.chat/events/2nd-anniversary"
+  },
+  {
+    "id": "oz-a17-event-wrapped",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "Wrappedログインゲート",
+    "desc": "2025年のまとめ。ログイン／ホームへ戻るの2択で、ティザーはない。",
+    "tags": [
+      "event",
+      "gate"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a17_event_wrapped.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a17_event_wrapped.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 365393,
+    "sha256": "beb1a34779755f98d2bdd4a203c9b65dbea3f6812703709ddbcbec925a12fe00",
+    "sourceUrl": "https://app.0z.chat/events/wrapped"
+  },
+  {
+    "id": "oz-a18-event-halloween-top",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "ハロウィンイベント（画像ブラー）",
+    "desc": "全63種（無料21／プレミアム42）。公開のカード一覧ページ。画像は公開用にブラーし、レイアウトだけを示す。",
+    "tags": [
+      "event",
+      "cards",
+      "seasonal"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a18_event_halloween_top.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a18_event_halloween_top.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 497578,
+    "sha256": "65c17030b8228b3f3b4bc60e7d609279d033b6318490893ee034a979dceead58",
+    "sourceUrl": "https://app.0z.chat/events/halloween-2026"
+  },
+  {
+    "id": "oz-a20-purchase-invalid",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "購入確認（不正リクエスト）",
+    "desc": "CSSが適用されていない素のHTML。「お支払い確認画面／不正なリクエスト／Back to Home」だけが黒地に表示される。",
+    "tags": [
+      "payment",
+      "error",
+      "broken-ui"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a20_purchase_invalid.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a20_purchase_invalid.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 23212,
+    "sha256": "882c3dc70fc8b76150ec1ca1a19f5baba748927bea9961dc6249c564a5bd0c34",
+    "sourceUrl": "https://app.0z.chat/purchase-confirmation"
+  },
+  {
+    "id": "oz-a21-collab-gate",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "コラボダッシュボード",
+    "desc": "専用パスワードのログイン。アプリのピンクではなく、青緑の管理画面テーマ。",
+    "tags": [
+      "b2b",
+      "gate"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a21_collab_gate.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a21_collab_gate.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 32500,
+    "sha256": "fe3ba77cc0b2bbe28c37ea0320160a1281accfdcddcb725ff2882cba1bde2895",
+    "sourceUrl": "https://app.0z.chat/collab-payments"
+  },
+  {
+    "id": "oz-a23-signin-en",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "ログイン（English）",
+    "desc": "英語ロケール。認証ボタンとキャラクターのセリフは英語だが、h1「あなただけの物語で…」は日本語のまま。",
+    "tags": [
+      "i18n",
+      "auth"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a23_signin_en.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a23_signin_en.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 1218407,
+    "sha256": "e62245b6d6371f054e17020ded63a294d181a977eed30fa9dde009bf43f317d1",
+    "sourceUrl": "https://app.0z.chat/auth/signin?lang=en"
+  },
+  {
+    "id": "oz-a25-signin-small",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "ログイン（320×568）",
+    "desc": "小型端末での確認。認証ボタンは収まるが、キービジュアルとコピーの密度が上がる。",
+    "tags": [
+      "auth",
+      "responsive"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_a25_signin_small.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_a25_signin_small.jpg",
+    "width": 640,
+    "height": 1136,
+    "mime": "image/png",
+    "bytes": 606422,
+    "sha256": "57dada9f799eb962295a226fc23d40da3c53cad2725a8522c60f9577c62724eb",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-ad01-signin",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "デスクトップ：ログイン",
+    "desc": "1440×900。中央に幅約500pxのモバイルカードを置くだけで、デスクトップ専用の分割レイアウトはない。",
+    "tags": [
+      "desktop",
+      "auth",
+      "layout"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_ad01_signin.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_ad01_signin.jpg",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 788000,
+    "sha256": "8c6897c81e47f698d16a975b792d2f693d5ab5ad560d6244e6725b5449db0c2e",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-ad02-email-login",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "デスクトップ：メールログイン",
+    "desc": "デスクトップでも同じモーダル。背景はブラーされ、入力欄は中央に収まる。",
+    "tags": [
+      "desktop",
+      "auth",
+      "email"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_ad02_email_login.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_ad02_email_login.jpg",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 261242,
+    "sha256": "86ea713604cce1281ccbc460bc4a4e2f80417045011576e0080f9e51c4fa1837",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-ad03-email-signup",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "デスクトップ：新規登録",
+    "desc": "新規登録タブ。ログインと同じ2フィールドで、規約同意はモーダル外の暗黙扱い。",
+    "tags": [
+      "desktop",
+      "auth",
+      "signup"
+    ],
+    "path": "evidence/screenshots/ozchat/app/oz_ad03_email_signup.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_ad03_email_signup.jpg",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 270281,
+    "sha256": "59d8c08cd75105f72fbc84f79304c72ea12876e60147e45c3601b1c1eaf7ba1e",
+    "sourceUrl": "https://app.0z.chat/auth/signin"
+  },
+  {
+    "id": "oz-m01-home-full",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "公式サイト：ホーム（全体）",
+    "desc": "ヒーロー、会話デモ、最新情報、22キャラ、遊び方、診断、マガジン、FAQ、AI相談、ダウンロード。7,712pxの長尺LP。",
+    "tags": [
+      "marketing",
+      "landing",
+      "seo"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m01_home_full.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m01_home_full.jpg",
+    "width": 1425,
+    "height": 7712,
+    "mime": "image/png",
+    "bytes": 4340093,
+    "sha256": "425a9feced76eb16029741106fe8a3e096c5959b71775f21f1b07a0fec7d2171",
+    "sourceUrl": "https://0z.chat/"
+  },
+  {
+    "id": "oz-m01b-home-top",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "公式サイト：ホーム（ヒーロー）",
+    "desc": "キャラクターのモザイク、ロゴ、コピー「ありふれた日常に、ひとさじの魔法を。」。右上にプレイ、下部にストアの固定バー。",
+    "tags": [
+      "marketing",
+      "hero"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m01b_home_top.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m01b_home_top.jpg",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 1740930,
+    "sha256": "41a44a3f3fb3fd8955f172e314ad8d2b8b39709c6a4d81e309779bce1be85f5f",
+    "sourceUrl": "https://0z.chat/"
+  },
+  {
+    "id": "oz-m02-ai-character-chat",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "AIキャラクターチャットとは",
+    "desc": "SEO用の解説ページ。会話例、キャラ一覧、選び方、FAQ、内部リンク。8,727px。",
+    "tags": [
+      "marketing",
+      "seo",
+      "article"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m02_ai_character_chat.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m02_ai_character_chat.jpg",
+    "width": 1425,
+    "height": 8727,
+    "mime": "image/png",
+    "bytes": 3261871,
+    "sha256": "f63853361539d37070fcbb865c01bf623692d40e6e1918281f5cc9dc4930be7c",
+    "sourceUrl": "https://0z.chat/ai-character-chat"
+  },
+  {
+    "id": "oz-m03-bishoujo-ai-chat",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "美少女AIチャット特集",
+    "desc": "タイプ別のキャラクター導線。カード、比較、CTAを多数配置。6,873px。",
+    "tags": [
+      "marketing",
+      "seo",
+      "characters"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m03_bishoujo_ai_chat.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m03_bishoujo_ai_chat.jpg",
+    "width": 1425,
+    "height": 6873,
+    "mime": "image/png",
+    "bytes": 2039522,
+    "sha256": "ca36987d8ee2b12731bdd1fcdfba31179b979a6d2d4ee6afce5d4b3d8ec1e77b",
+    "sourceUrl": "https://0z.chat/bishoujo-ai-chat"
+  },
+  {
+    "id": "oz-m04-ozchacha",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "#ozchacha（二次創作）",
+    "desc": "ファンアート／二次創作のハブ。投稿ルール、公式素材、Xへの導線。5,590px。",
+    "tags": [
+      "marketing",
+      "ugc",
+      "community"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m04_ozchacha.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m04_ozchacha.jpg",
+    "width": 1425,
+    "height": 5590,
+    "mime": "image/png",
+    "bytes": 1672764,
+    "sha256": "bd7d3e581cdd5e9a77540fa714062faabd7f8302d98f4db65332a86e93a3bfd9",
+    "sourceUrl": "https://0z.chat/ozchacha"
+  },
+  {
+    "id": "oz-m05-press",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "プレスキット",
+    "desc": "ロゴ、キービジュアル、ファクトシート、実績、使用ガイド。報道向けの8,689pxページ。",
+    "tags": [
+      "marketing",
+      "press"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m05_press.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m05_press.jpg",
+    "width": 1425,
+    "height": 8689,
+    "mime": "image/png",
+    "bytes": 2619418,
+    "sha256": "951145afe667aba4f67f0aec082583171d789328f9a0351a36e6abe4ac4c8d7d",
+    "sourceUrl": "https://0z.chat/press"
+  },
+  {
+    "id": "oz-m06-wiki",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "公式Wiki",
+    "desc": "攻略、キャラクター、ニュース、コミュニティ、二次創作のハブ。検索（Ctrl+K）付き。",
+    "tags": [
+      "wiki",
+      "hub"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m06_wiki.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m06_wiki.jpg",
+    "width": 1425,
+    "height": 5038,
+    "mime": "image/png",
+    "bytes": 1613253,
+    "sha256": "68a6ae0f0c5efd1f434028ee8401eae8b86af89bafe48bf4ac3d70c36ceaef49",
+    "sourceUrl": "https://0z.chat/wiki"
+  },
+  {
+    "id": "oz-m07-wiki-chat",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：チャットのコツ",
+    "desc": "括弧書き、メモリー、シチュエーションカード、ボイス再生の使い方。検索と目次。",
+    "tags": [
+      "wiki",
+      "guide",
+      "chat"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m07_wiki_chat.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m07_wiki_chat.jpg",
+    "width": 1425,
+    "height": 5016,
+    "mime": "image/png",
+    "bytes": 963995,
+    "sha256": "7409a24e48f67acaa889b0c5927b9164d0bb68bfe71066687cf26123c902ea2e",
+    "sourceUrl": "https://0z.chat/wiki/chat"
+  },
+  {
+    "id": "oz-m08-wiki-affinity",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：親愛度",
+    "desc": "親愛度の仕組み、会話・ギフトでの上げ方、反応への影響。",
+    "tags": [
+      "wiki",
+      "guide",
+      "affinity"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m08_wiki_affinity.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m08_wiki_affinity.jpg",
+    "width": 1425,
+    "height": 3767,
+    "mime": "image/png",
+    "bytes": 745418,
+    "sha256": "b96599348c611440aa72fec520a0156b5ce58061bbb6923ea8c70f3f3611bf81",
+    "sourceUrl": "https://0z.chat/wiki/affinity"
+  },
+  {
+    "id": "oz-m09-wiki-leveling",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：レベル",
+    "desc": "レベルと親愛度の違い、上げ方、解放要素。",
+    "tags": [
+      "wiki",
+      "guide",
+      "leveling"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m09_wiki_leveling.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m09_wiki_leveling.jpg",
+    "width": 1425,
+    "height": 3466,
+    "mime": "image/png",
+    "bytes": 693059,
+    "sha256": "dce64c0a44e70e150d1c46e1f3c68f34dbe628126f37ac3e403f9d8b4d56cfc9",
+    "sourceUrl": "https://0z.chat/wiki/leveling"
+  },
+  {
+    "id": "oz-m10-wiki-memory",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：メモリー",
+    "desc": "名前・呼び方・関係性・約束を覚えさせるメモリー。登録例、ロック、優先順位。",
+    "tags": [
+      "wiki",
+      "guide",
+      "memory"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m10_wiki_memory.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m10_wiki_memory.jpg",
+    "width": 1425,
+    "height": 4517,
+    "mime": "image/png",
+    "bytes": 710058,
+    "sha256": "5bd6f199f51c2fd7a38d3c36b429d1acb4e7aaff4e80d2d791aaad093dd65480",
+    "sourceUrl": "https://0z.chat/wiki/memory"
+  },
+  {
+    "id": "oz-m11-wiki-parameters",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：性格パラメーター",
+    "desc": "6つの性格値と、会話・育成による変化。",
+    "tags": [
+      "wiki",
+      "guide",
+      "parameters"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m11_wiki_parameters.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m11_wiki_parameters.jpg",
+    "width": 1425,
+    "height": 3627,
+    "mime": "image/png",
+    "bytes": 609700,
+    "sha256": "9fc4f886800f054cd77f6c2abac03ca069e226162f28e2ee6decb58b54e5480c",
+    "sourceUrl": "https://0z.chat/wiki/parameters"
+  },
+  {
+    "id": "oz-m12-wiki-situation-cards",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：シチュエーションカード",
+    "desc": "カードで舞台・服装・話題を変える仕組み。入手方法と活用例。",
+    "tags": [
+      "wiki",
+      "guide",
+      "cards"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m12_wiki_situation_cards.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m12_wiki_situation_cards.jpg",
+    "width": 1425,
+    "height": 3971,
+    "mime": "image/png",
+    "bytes": 683960,
+    "sha256": "9590f3d04d55685c8205e69a7de2ced2b782ca9154b41030ac3428e8594f0101",
+    "sourceUrl": "https://0z.chat/wiki/situation-cards"
+  },
+  {
+    "id": "oz-m13-wiki-aikotoba",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：あいことば",
+    "desc": "キャンペーンコードの入力方法と注意点。",
+    "tags": [
+      "wiki",
+      "guide",
+      "promo"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m13_wiki_aikotoba.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m13_wiki_aikotoba.jpg",
+    "width": 1425,
+    "height": 3057,
+    "mime": "image/png",
+    "bytes": 524257,
+    "sha256": "0a7e424e99a2439d43021bfca6c50999571753c2aeed04c7f91533720d594372",
+    "sourceUrl": "https://0z.chat/wiki/aikotoba"
+  },
+  {
+    "id": "oz-m14-wiki-history",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：オズチャットの歴史",
+    "desc": "2024年のベータから2026年までの年表。14,045pxと最長。",
+    "tags": [
+      "wiki",
+      "history"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m14_wiki_history.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m14_wiki_history.jpg",
+    "width": 1425,
+    "height": 14045,
+    "mime": "image/png",
+    "bytes": 1767361,
+    "sha256": "4f081ccab29f6b2107174e222bf6b4ca5a685756acd98ec5d3e0b1bd6af849ec",
+    "sourceUrl": "https://0z.chat/wiki/history"
+  },
+  {
+    "id": "oz-m15-wiki-events",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：イベント",
+    "desc": "季節イベント、コラボ、キャンペーンの一覧。",
+    "tags": [
+      "wiki",
+      "events"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m15_wiki_events.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m15_wiki_events.jpg",
+    "width": 1425,
+    "height": 2805,
+    "mime": "image/png",
+    "bytes": 430036,
+    "sha256": "b5f969fa9ba00586cc28463c5a18194dbdf8c342216d4c891f300b804314ed45",
+    "sourceUrl": "https://0z.chat/wiki/events"
+  },
+  {
+    "id": "oz-m16-wiki-community",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：コミュニティ",
+    "desc": "X、Discord、LINEオープンチャット、Fanz、Boothへの導線。",
+    "tags": [
+      "wiki",
+      "community"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m16_wiki_community.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m16_wiki_community.jpg",
+    "width": 1425,
+    "height": 2965,
+    "mime": "image/png",
+    "bytes": 591270,
+    "sha256": "f6500876c477514722ac35dea5ac7176d2762a4ea39a6fc836508a874b78bd0d",
+    "sourceUrl": "https://0z.chat/wiki/community"
+  },
+  {
+    "id": "oz-m17-wiki-fan-creations",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：二次創作の紹介",
+    "desc": "ファンアート、漫画、小説、動画の紹介ギャラリー。",
+    "tags": [
+      "wiki",
+      "ugc"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m17_wiki_fan_creations.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m17_wiki_fan_creations.jpg",
+    "width": 1425,
+    "height": 1538,
+    "mime": "image/png",
+    "bytes": 773906,
+    "sha256": "95ac7df91428ad5a2e992c48cb904639030eec524f630c330322e365535959d0",
+    "sourceUrl": "https://0z.chat/wiki/fan_creations"
+  },
+  {
+    "id": "oz-m18-wiki-fan-guidelines",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：二次創作ガイドライン",
+    "desc": "許諾範囲、禁止事項、収益化、AI生成物の扱い。",
+    "tags": [
+      "wiki",
+      "legal",
+      "ugc"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m18_wiki_fan_guidelines.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m18_wiki_fan_guidelines.jpg",
+    "width": 1425,
+    "height": 6480,
+    "mime": "image/png",
+    "bytes": 1228410,
+    "sha256": "6b085e6c121c6f528acd32c2859353a168ca12ed1f611fa94f5a901f0b4fe649",
+    "sourceUrl": "https://0z.chat/wiki/fan_guidelines"
+  },
+  {
+    "id": "oz-m19-wiki-fankit",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：ファンキット",
+    "desc": "ロゴ、立ち絵、アイコン、配信素材の配布。",
+    "tags": [
+      "wiki",
+      "assets"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m19_wiki_fankit.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m19_wiki_fankit.jpg",
+    "width": 1425,
+    "height": 5283,
+    "mime": "image/png",
+    "bytes": 1267073,
+    "sha256": "3e891de1a26e574f9115f9b836580aa6fbc32b64cc505b883d7f43a4d8f895a1",
+    "sourceUrl": "https://0z.chat/wiki/fankit"
+  },
+  {
+    "id": "oz-m20-wiki-promotion",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：PR企画",
+    "desc": "YouTube、TikTok、VTuber、コラボ事例。",
+    "tags": [
+      "wiki",
+      "promotion"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m20_wiki_promotion.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m20_wiki_promotion.jpg",
+    "width": 1425,
+    "height": 5151,
+    "mime": "image/png",
+    "bytes": 799973,
+    "sha256": "1586e18fd727308efb751165034ef32e8104ff52315333c0a1a9491792072ec7",
+    "sourceUrl": "https://0z.chat/wiki/promotion"
+  },
+  {
+    "id": "oz-m21-wiki-faq",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "Wiki：FAQ",
+    "desc": "料金、アカウント、動作、データのFAQ。アプリ内FAQへの導線。",
+    "tags": [
+      "wiki",
+      "faq"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m21_wiki_faq.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m21_wiki_faq.jpg",
+    "width": 1425,
+    "height": 3004,
+    "mime": "image/png",
+    "bytes": 401626,
+    "sha256": "00e8e9d53c41406699cd22453f8ecebd8a90adeaa5d87204bc4c3c240d79ce8f",
+    "sourceUrl": "https://0z.chat/wiki/faq"
+  },
+  {
+    "id": "oz-m22-characters",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター一覧",
+    "desc": "22人の公式キャラクター。名前、英語名、紹介、カードへの導線。",
+    "tags": [
+      "characters",
+      "index"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m22_characters.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m22_characters.jpg",
+    "width": 1425,
+    "height": 3938,
+    "mime": "image/png",
+    "bytes": 762689,
+    "sha256": "14569bc263bc48235f1d4abcac31654ac89e1afdb0981a73ac580251f7c6ed35",
+    "sourceUrl": "https://0z.chat/wiki/characters"
+  },
+  {
+    "id": "oz-m23-news",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "ニュース一覧",
+    "desc": "271件のニュース。新モデル、カード、イベント、不具合、コラボ。",
+    "tags": [
+      "news",
+      "index"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m23_news.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m23_news.jpg",
+    "width": 1425,
+    "height": 6263,
+    "mime": "image/png",
+    "bytes": 4036202,
+    "sha256": "e5b77841b78a9161c4eb4f99bd371d0b254f079a8021b268834c970718a072c8",
+    "sourceUrl": "https://0z.chat/wiki/news"
+  },
+  {
+    "id": "oz-m24-magazine",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "マガジン",
+    "desc": "AIチャット、恋愛、キャラ文化のオウンドメディア。カテゴリ、特集、 supervising editor。",
+    "tags": [
+      "magazine",
+      "content"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m24_magazine.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m24_magazine.jpg",
+    "width": 1425,
+    "height": 6923,
+    "mime": "image/png",
+    "bytes": 3183661,
+    "sha256": "c7c33be959eb5b7aa121a3a56ee7d835023335fb3393af3f598c36e3cba34dc0",
+    "sourceUrl": "https://0z.chat/magazine"
+  },
+  {
+    "id": "oz-m25-magazine-category",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "マガジン：カテゴリ",
+    "desc": "basics／romance／characters／lifestyle／cultureの5分類。",
+    "tags": [
+      "magazine",
+      "category"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m25_magazine_category.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m25_magazine_category.jpg",
+    "width": 1425,
+    "height": 3000,
+    "mime": "image/png",
+    "bytes": 1148461,
+    "sha256": "4fe7bf5662caecf34366ccfe07f711972bdd3841412482482955a969d07063e9",
+    "sourceUrl": "https://0z.chat/magazine/category/basics"
+  },
+  {
+    "id": "oz-m26-magazine-supervisor",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "マガジン：監修",
+    "desc": "監修者プロフィールと編集方針。E-E-A-T向けの情報。",
+    "tags": [
+      "magazine",
+      "editorial"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m26_magazine_supervisor.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m26_magazine_supervisor.jpg",
+    "width": 1425,
+    "height": 4651,
+    "mime": "image/png",
+    "bytes": 2611422,
+    "sha256": "1493f0bd064aea583ac096d908f3c588971ac93f575327ff4c6a8a0bbb6167d6",
+    "sourceUrl": "https://0z.chat/magazine/supervisor"
+  },
+  {
+    "id": "oz-m27-magazine-article",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "マガジン記事：アプリ選び方",
+    "desc": "美少女AIチャットの選び方。比較表、会話例、内部リンク。11,722px。",
+    "tags": [
+      "magazine",
+      "article",
+      "seo"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m27_magazine_article.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m27_magazine_article.jpg",
+    "width": 1425,
+    "height": 11722,
+    "mime": "image/png",
+    "bytes": 2737348,
+    "sha256": "56bb3808a46106ad88dc2b4016badd5aa4944c1c2ee15ababc98c4a6ca9e1c02",
+    "sourceUrl": "https://0z.chat/magazine/bishoujo-ai-chat-app"
+  },
+  {
+    "id": "oz-m28-magazine-article",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "マガジン記事：日本語対応",
+    "desc": "Character.AIの日本語利用と国産勢の比較。",
+    "tags": [
+      "magazine",
+      "article",
+      "seo"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m28_magazine_article.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m28_magazine_article.jpg",
+    "width": 1425,
+    "height": 11742,
+    "mime": "image/png",
+    "bytes": 2809104,
+    "sha256": "79af31d1852225721b7e9e073b145696022b73d7ac8aa14a471e5d11040ec7aa",
+    "sourceUrl": "https://0z.chat/magazine/character-ai-nihongo"
+  },
+  {
+    "id": "oz-m29-magazine-article",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "マガジン記事：記憶機能",
+    "desc": "AIチャットのメモリーの仕組みと選び方。",
+    "tags": [
+      "magazine",
+      "article",
+      "memory"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m29_magazine_article.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m29_magazine_article.jpg",
+    "width": 1425,
+    "height": 11864,
+    "mime": "image/png",
+    "bytes": 2967592,
+    "sha256": "f4fb266da80d6c581e3fdf9f32fb26e8e83dc45a4763927eba1927bbe771f48b",
+    "sourceUrl": "https://0z.chat/magazine/ai-chat-memory"
+  },
+  {
+    "id": "oz-m30-news-detail",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "ニュース：モデル選択の刷新",
+    "desc": "2026-10-25のアップデート。モデルピッカーと「極」の変更。",
+    "tags": [
+      "news",
+      "update"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m30_news_detail.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m30_news_detail.jpg",
+    "width": 1425,
+    "height": 2864,
+    "mime": "image/png",
+    "bytes": 1044356,
+    "sha256": "886b3ffb28be7a0651fb85b32faf94e8799de0869cffcea6b73d06ee436b4c24",
+    "sourceUrl": "https://0z.chat/wiki/news/20261025-model-picker-renewal-kiwami"
+  },
+  {
+    "id": "oz-m31-news-detail",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "ニュース：新キャラ登場",
+    "desc": "酒匂翠の追加。カード、プロフィール、イベント。",
+    "tags": [
+      "news",
+      "character"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m31_news_detail.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m31_news_detail.jpg",
+    "width": 1425,
+    "height": 2292,
+    "mime": "image/png",
+    "bytes": 886575,
+    "sha256": "0870b91c17646b2b5e516d3e7da9a84b202270701b804f213de1efca7f082b7a",
+    "sourceUrl": "https://0z.chat/wiki/news/20261018-sakou-sui-debut"
+  },
+  {
+    "id": "oz-m32-news-detail",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "ニュース：ハロウィンカード",
+    "desc": "全63種のハロウィンカードと提供期間。",
+    "tags": [
+      "news",
+      "event"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m32_news_detail.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m32_news_detail.jpg",
+    "width": 1425,
+    "height": 2397,
+    "mime": "image/png",
+    "bytes": 890945,
+    "sha256": "5e6db70e4e943e4ca562b0b9a8e0b8b3056258b2970b808510963a957f3e3c38",
+    "sourceUrl": "https://0z.chat/wiki/news/20261006-halloween-2026-cards"
+  },
+  {
+    "id": "oz-m33-en-home",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "公式サイト（English）",
+    "desc": "英語トップ。レイアウトは同じで、コピーとナビだけ英語化。",
+    "tags": [
+      "i18n",
+      "marketing"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m33_en_home.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m33_en_home.jpg",
+    "width": 1425,
+    "height": 7721,
+    "mime": "image/png",
+    "bytes": 2465060,
+    "sha256": "88e2966f3430fbac72cc293c45433d9d8bdadc26132a9c3f3b6a8b976c22fa1a",
+    "sourceUrl": "https://0z.chat/en"
+  },
+  {
+    "id": "oz-m34-404",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "404（公式サイト）",
+    "desc": "「404 This page could not be found.」のみ。ブランド要素も戻り導線もない、Next.jsの既定404。",
+    "tags": [
+      "404",
+      "error"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m34_404.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m34_404.jpg",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 9311,
+    "sha256": "7ee1297a78535c5e4bf6033f2a261c425f0d5a72e2be542939e52d3e68e8cfd6",
+    "sourceUrl": "https://0z.chat/this-page-does-not-exist"
+  },
+  {
+    "id": "oz-m36-faq-open",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "FAQ（回答展開）",
+    "desc": "トップページのFAQアコーディオンを開いた状態。",
+    "tags": [
+      "faq",
+      "accordion"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_m36_faq_open.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_m36_faq_open.jpg",
+    "width": 1440,
+    "height": 900,
+    "mime": "image/png",
+    "bytes": 159865,
+    "sha256": "768dda3e956564f46e0cc0a030af1a6aaff19418ad9054efaa9358798a272e45",
+    "sourceUrl": "https://0z.chat/wiki/faq"
+  },
+  {
+    "id": "oz-mm01-home-full",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "モバイル：ホーム（全体）",
+    "desc": "390×844の全長9,335px。固定のストアバーが下部約200pxを常時占有する。",
+    "tags": [
+      "mobile",
+      "landing"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm01_home_full.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm01_home_full.jpg",
+    "width": 780,
+    "height": 18670,
+    "mime": "image/png",
+    "bytes": 6479359,
+    "sha256": "4b00c029b2c69d3ecae49c34ce23d719e2bea27bfd1f10fd3fd4ebd14776fc03",
+    "sourceUrl": "https://0z.chat/"
+  },
+  {
+    "id": "oz-mm01b-home-top",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "モバイル：ホーム（ヒーロー）",
+    "desc": "キャラクターのモザイクと大コピー。下部に「App Store／Google Play／ブラウザでプレイ」の固定バー。",
+    "tags": [
+      "mobile",
+      "hero"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm01b_home_top.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm01b_home_top.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 1642762,
+    "sha256": "988659a66301a4f8fe3a06fc743a824a76a6ada120a32bc7bcf3b71a05dcf318",
+    "sourceUrl": "https://0z.chat/"
+  },
+  {
+    "id": "oz-mm02-character",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "モバイル：キャラクター詳細",
+    "desc": "猫音コハクのプロフィール。関係性、性格、セリフ、カード、CV、関連キャラ。6,131px。",
+    "tags": [
+      "mobile",
+      "character"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm02_character.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm02_character.jpg",
+    "width": 780,
+    "height": 12262,
+    "mime": "image/png",
+    "bytes": 1690878,
+    "sha256": "051bed029f24304441bbc7ccaab5012c19379b4a3c147edcea0aece44f5636f5",
+    "sourceUrl": "https://0z.chat/wiki/characters/kohaku"
+  },
+  {
+    "id": "oz-mm03-wiki-article",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "モバイル：Wiki記事",
+    "desc": "検索、目次、本文、関連リンク。読み物としてのWiki。",
+    "tags": [
+      "mobile",
+      "wiki"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm03_wiki_article.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm03_wiki_article.jpg",
+    "width": 780,
+    "height": 11324,
+    "mime": "image/png",
+    "bytes": 1239268,
+    "sha256": "2e8ca10530fd8b96066feb14973d122fed97fc242760117a66f7c73afd6469b5",
+    "sourceUrl": "https://0z.chat/wiki/memory"
+  },
+  {
+    "id": "oz-mm04-magazine-article",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "モバイル：マガジン記事",
+    "desc": "記事本文、目次、著者、関連記事。17,050pxの長尺。",
+    "tags": [
+      "mobile",
+      "magazine"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm04_magazine_article.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm04_magazine_article.jpg",
+    "width": 780,
+    "height": 34100,
+    "mime": "image/png",
+    "bytes": 5234676,
+    "sha256": "7d3fddf4bdbfa5e7a0cd2b93fb9864e39a0fde5a66a9711ae5bcc0ab6363ae8d",
+    "sourceUrl": "https://0z.chat/magazine/ai-chat-memory"
+  },
+  {
+    "id": "oz-mm05-faq",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "モバイル：FAQ",
+    "desc": "カテゴリとアコーディオン。アプリ内FAQより簡素。",
+    "tags": [
+      "mobile",
+      "faq"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm05_faq.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm05_faq.jpg",
+    "width": 780,
+    "height": 7858,
+    "mime": "image/png",
+    "bytes": 729610,
+    "sha256": "bc5c37f570d170addbd073584f5238c845a472987dd5d4386af4ee23e90ddff2",
+    "sourceUrl": "https://0z.chat/wiki/faq"
+  },
+  {
+    "id": "oz-mm06-press",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "モバイル：プレスキット",
+    "desc": "ロゴ、実績、素材のダウンロード。",
+    "tags": [
+      "mobile",
+      "press"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm06_press.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm06_press.jpg",
+    "width": 780,
+    "height": 29898,
+    "mime": "image/png",
+    "bytes": 3866916,
+    "sha256": "649eb456c6080492ba18a957635c65fdc9b42da25b289f91c7a1c7842ff01895",
+    "sourceUrl": "https://0z.chat/press"
+  },
+  {
+    "id": "oz-mm08-shindan-intro",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "キャラクター診断：導入",
+    "desc": "30問・約3分・22人。6軸の性格診断で、似ているキャラを出す。",
+    "tags": [
+      "shindan",
+      "quiz"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm08_shindan_intro.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm08_shindan_intro.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 474069,
+    "sha256": "1c794c0ed491efbe27cb57fb91da2e39eb57cd2711b2caff2c6fa5b684ef8d50",
+    "sourceUrl": "https://0z.chat/shindan"
+  },
+  {
+    "id": "oz-mm09-shindan-q1",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "キャラクター診断：Q1",
+    "desc": "5件法（まったくそう思わない〜とてもそう思う）。回答すると次へ自動スクロール。",
+    "tags": [
+      "shindan",
+      "quiz"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm09_shindan_q1.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm09_shindan_q1.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 156012,
+    "sha256": "0fd02007fec74523cfe00bf722ae97651e13245be2247ff7bd2c33c757d82a23",
+    "sourceUrl": "https://0z.chat/shindan"
+  },
+  {
+    "id": "oz-mm10-shindan-result",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "キャラクター診断：結果",
+    "desc": "一致率、タイプ名、6軸のバー、推薦キャラ3人、シェア、プレイCTA。",
+    "tags": [
+      "shindan",
+      "result"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm10_shindan_result.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm10_shindan_result.jpg",
+    "width": 780,
+    "height": 5790,
+    "mime": "image/png",
+    "bytes": 911047,
+    "sha256": "6adb50f5996db7b4adba9fbbb4fc7d5a1adadd6a6db1aea41fa5026b8d128449",
+    "sourceUrl": "https://0z.chat/shindan"
+  },
+  {
+    "id": "oz-mm11-shindan-result-top",
+    "app": "ozchat",
+    "platform": "mobile",
+    "title": "キャラクター診断：結果（画面）",
+    "desc": "結果セクションを画面サイズで表示。",
+    "tags": [
+      "shindan",
+      "result"
+    ],
+    "path": "evidence/screenshots/ozchat/marketing/oz_mm11_shindan_result_top.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_mm11_shindan_result_top.jpg",
+    "width": 780,
+    "height": 1688,
+    "mime": "image/png",
+    "bytes": 148102,
+    "sha256": "a6a1844f79f267b59a3ecb43da42066c7c6cf904c1985b6730b76c0f508a985c",
+    "sourceUrl": "https://0z.chat/shindan"
+  },
+  {
+    "id": "oz-c-alisa",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：久栖ありさ",
+    "desc": "久栖ありさの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_alisa.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_alisa.jpg",
+    "width": 1425,
+    "height": 4225,
+    "mime": "image/png",
+    "bytes": 792175,
+    "sha256": "dfd0c823e2080c7c0ac95a811da1b9acb2482f0c74e4314d05a0a049de13126e",
+    "sourceUrl": "https://0z.chat/wiki/characters/alisa"
+  },
+  {
+    "id": "oz-c-fuu",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：南雲風羽",
+    "desc": "南雲風羽の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_fuu.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_fuu.jpg",
+    "width": 1425,
+    "height": 3797,
+    "mime": "image/png",
+    "bytes": 722744,
+    "sha256": "ffdc18bf7ab1effae9c443571b1994b5adc01ac8476a89be1b04ced965acb636",
+    "sourceUrl": "https://0z.chat/wiki/characters/fuu"
+  },
+  {
+    "id": "oz-c-haruka",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：空乃遥",
+    "desc": "空乃遥の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_haruka.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_haruka.jpg",
+    "width": 1425,
+    "height": 3616,
+    "mime": "image/png",
+    "bytes": 673076,
+    "sha256": "30ddc5942a82d67e2b2a1c4daedbcf787126322004f996fae1aee18c341582d6",
+    "sourceUrl": "https://0z.chat/wiki/characters/haruka"
+  },
+  {
+    "id": "oz-c-kohaku",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：猫音コハク",
+    "desc": "猫音コハクの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_kohaku.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_kohaku.jpg",
+    "width": 1425,
+    "height": 4434,
+    "mime": "image/png",
+    "bytes": 799676,
+    "sha256": "76bc6991facb2194c1d0455bc369ec08b36a437001bb92ebca9a83c3d49468a5",
+    "sourceUrl": "https://0z.chat/wiki/characters/kohaku"
+  },
+  {
+    "id": "oz-c-mao",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：卯畑まお",
+    "desc": "卯畑まおの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_mao.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_mao.jpg",
+    "width": 1425,
+    "height": 3849,
+    "mime": "image/png",
+    "bytes": 773335,
+    "sha256": "db002af012ef473e6324d98c7ca1ee26efabeb6e070cebb66a9e878fca2158c6",
+    "sourceUrl": "https://0z.chat/wiki/characters/mao"
+  },
+  {
+    "id": "oz-c-misato",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：新みさと",
+    "desc": "新みさとの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_misato.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_misato.jpg",
+    "width": 1425,
+    "height": 3681,
+    "mime": "image/png",
+    "bytes": 697388,
+    "sha256": "0a382919756ba0189883e86c2f9816a90e8d80da084445ae57cbb42f27a971d2",
+    "sourceUrl": "https://0z.chat/wiki/characters/misato"
+  },
+  {
+    "id": "oz-c-neno",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：平知ねの",
+    "desc": "平知ねのの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_neno.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_neno.jpg",
+    "width": 1425,
+    "height": 3860,
+    "mime": "image/png",
+    "bytes": 738241,
+    "sha256": "3cac9112fbe92ad6f8df209c77be86c31ec6bf02ae81d9c12bd30e59fbe0f1f2",
+    "sourceUrl": "https://0z.chat/wiki/characters/neno"
+  },
+  {
+    "id": "oz-c-nephyl",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：ネフィル",
+    "desc": "ネフィルの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_nephyl.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_nephyl.jpg",
+    "width": 1425,
+    "height": 3516,
+    "mime": "image/png",
+    "bytes": 641919,
+    "sha256": "bd936486a5dce9549732105f6a13ac73dcb1f80b3ef41a9fea7bef34f1e706b6",
+    "sourceUrl": "https://0z.chat/wiki/characters/nephyl"
+  },
+  {
+    "id": "oz-c-reika",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：深谷令華",
+    "desc": "深谷令華の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_reika.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_reika.jpg",
+    "width": 1425,
+    "height": 3556,
+    "mime": "image/png",
+    "bytes": 695532,
+    "sha256": "f5e1349bd0e2d81594908cfc4352a3b8b3e084381fb330a25ed6453ef9c26467",
+    "sourceUrl": "https://0z.chat/wiki/characters/reika"
+  },
+  {
+    "id": "oz-c-saki",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：揺蓮サキ",
+    "desc": "揺蓮サキの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_saki.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_saki.jpg",
+    "width": 1425,
+    "height": 3809,
+    "mime": "image/png",
+    "bytes": 751067,
+    "sha256": "ff9cbcd4b3f776f948a77a77e845e1db086c339285dc824c90bc52d7f6f75eff",
+    "sourceUrl": "https://0z.chat/wiki/characters/saki"
+  },
+  {
+    "id": "oz-c-setsuho",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：狩部雪歩",
+    "desc": "狩部雪歩の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_setsuho.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_setsuho.jpg",
+    "width": 1425,
+    "height": 4425,
+    "mime": "image/png",
+    "bytes": 834666,
+    "sha256": "014bb96c91704905d8722b1e9f264d3dd5a6deaa8cdcfd62bc00a79241d4fdf8",
+    "sourceUrl": "https://0z.chat/wiki/characters/setsuho"
+  },
+  {
+    "id": "oz-c-setsuna",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：狩部雪奈",
+    "desc": "狩部雪奈の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_setsuna.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_setsuna.jpg",
+    "width": 1425,
+    "height": 3998,
+    "mime": "image/png",
+    "bytes": 763111,
+    "sha256": "1f4ffb951d999cf8ff3f7e185ff0adc783d0e1c86ee22b82f90f10560c1691f2",
+    "sourceUrl": "https://0z.chat/wiki/characters/setsuna"
+  },
+  {
+    "id": "oz-c-shinon",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：篠崎紫暖",
+    "desc": "篠崎紫暖の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_shinon.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_shinon.jpg",
+    "width": 1425,
+    "height": 4186,
+    "mime": "image/png",
+    "bytes": 796922,
+    "sha256": "26216b8901f8d1ea1deaf0b402dbf142443686a0ab783c9d29127344b74b3b09",
+    "sourceUrl": "https://0z.chat/wiki/characters/shinon"
+  },
+  {
+    "id": "oz-c-shizune",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：羽舞閑音",
+    "desc": "羽舞閑音の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_shizune.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_shizune.jpg",
+    "width": 1425,
+    "height": 3577,
+    "mime": "image/png",
+    "bytes": 721338,
+    "sha256": "b276142582c4c74abf5ffd0b7f2f6de43053a9a370ec2baa4751ce62223a8094",
+    "sourceUrl": "https://0z.chat/wiki/characters/shizune"
+  },
+  {
+    "id": "oz-c-sora",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：ソラ",
+    "desc": "ソラの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_sora.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_sora.jpg",
+    "width": 1425,
+    "height": 3556,
+    "mime": "image/png",
+    "bytes": 651367,
+    "sha256": "bc7d991ce92a205e35e9865771e51cd745bfc158730a264a526672720f4e70b4",
+    "sourceUrl": "https://0z.chat/wiki/characters/sora"
+  },
+  {
+    "id": "oz-c-sui",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：酒匂翠",
+    "desc": "酒匂翠の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_sui.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_sui.jpg",
+    "width": 1425,
+    "height": 3897,
+    "mime": "image/png",
+    "bytes": 755760,
+    "sha256": "f9ecbc3fdf65e3e8464790b0e70b519afbc565dd5f2edc1a49bdd346e8d2c00b",
+    "sourceUrl": "https://0z.chat/wiki/characters/sui"
+  },
+  {
+    "id": "oz-c-suzuha",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：星名すずは",
+    "desc": "星名すずはの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_suzuha.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_suzuha.jpg",
+    "width": 1425,
+    "height": 3637,
+    "mime": "image/png",
+    "bytes": 669333,
+    "sha256": "9fb87e35659ec004fb80752ac9339ea4db56f126204bd2d044c68cbc0eaec573",
+    "sourceUrl": "https://0z.chat/wiki/characters/suzuha"
+  },
+  {
+    "id": "oz-c-toa",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：寺居とあ",
+    "desc": "寺居とあの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_toa.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_toa.jpg",
+    "width": 1425,
+    "height": 3968,
+    "mime": "image/png",
+    "bytes": 776143,
+    "sha256": "d0dac979207ad2c59619d2bf8f76c39c6ef8b3a8466e55767bf9802261fe307a",
+    "sourceUrl": "https://0z.chat/wiki/characters/toa"
+  },
+  {
+    "id": "oz-c-wanko",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：乾一子",
+    "desc": "乾一子の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_wanko.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_wanko.jpg",
+    "width": 1425,
+    "height": 3776,
+    "mime": "image/png",
+    "bytes": 690708,
+    "sha256": "a78b0828cb7f1fe77b04d03c72bdb400fa81a709213c1a893a8fb35add192ee1",
+    "sourceUrl": "https://0z.chat/wiki/characters/wanko"
+  },
+  {
+    "id": "oz-c-yui",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：天縫結衣",
+    "desc": "天縫結衣の公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_yui.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_yui.jpg",
+    "width": 1425,
+    "height": 3953,
+    "mime": "image/png",
+    "bytes": 794648,
+    "sha256": "659de4ddda7d9a9609479efb0ec8e90fe1147a227a7cca7a6a5f868ed7187ce5",
+    "sourceUrl": "https://0z.chat/wiki/characters/yui"
+  },
+  {
+    "id": "oz-c-yuna",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：皆月ユナ",
+    "desc": "皆月ユナの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_yuna.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_yuna.jpg",
+    "width": 1425,
+    "height": 3959,
+    "mime": "image/png",
+    "bytes": 724079,
+    "sha256": "75aa2b532dd113532cfb12d36915165962bd68b7c93d2d5f04ce022bdd378cbb",
+    "sourceUrl": "https://0z.chat/wiki/characters/yuna"
+  },
+  {
+    "id": "oz-c-yuu",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：岩瀬ユウ",
+    "desc": "岩瀬ユウの公式プロフィール。関係性、性格、セリフ、シチュエーションカード、CV、関連キャラを1ページに集約。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_yuu.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_yuu.jpg",
+    "width": 1425,
+    "height": 3649,
+    "mime": "image/png",
+    "bytes": 703440,
+    "sha256": "aa8f1cfaa335ad68adba6051d6241bb556d07072fd8940d21886621ffb1e97e4",
+    "sourceUrl": "https://0z.chat/wiki/characters/yuu"
+  },
+  {
+    "id": "oz-c-birthday",
+    "app": "ozchat",
+    "platform": "web",
+    "title": "キャラクター：誕生日キャラ一覧",
+    "desc": "誕生日を持つキャラクターの一覧。誕生日カード、記念日の導線。",
+    "tags": [
+      "character",
+      "profile"
+    ],
+    "path": "evidence/screenshots/ozchat/characters/oz_c_birthday.png",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_c_birthday.jpg",
+    "width": 1425,
+    "height": 3045,
+    "mime": "image/png",
+    "bytes": 451838,
+    "sha256": "a12f58f88f5a18085992edd3fffb00988f47f5588b4523332ef3bfd93f34b7e7",
+    "sourceUrl": "https://0z.chat/wiki/characters/birthday"
+  },
+  {
+    "id": "oz-appstore-01",
+    "app": "ozchat",
+    "platform": "appstore",
+    "title": "App Store #1",
+    "desc": "「国産だから、自然!!」3人のキャラクターとアプリ画面。",
+    "tags": [
+      "marketing",
+      "appstore",
+      "official-asset"
+    ],
+    "path": "evidence/screenshots/ozchat/appstore/oz_appstore_01.jpg",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_appstore_01.jpg",
+    "width": 1290,
+    "height": 2796,
+    "mime": "image/jpeg",
+    "bytes": 726955,
+    "sha256": "b5bdc144c24506c0a65d3911ce8832298125ce455781b3f9276b8208d7ca1fb9",
+    "sourceUrl": "https://apps.apple.com/jp/app/id6482977162"
+  },
+  {
+    "id": "oz-appstore-02",
+    "app": "ozchat",
+    "platform": "appstore",
+    "title": "App Store #2",
+    "desc": "「動くイラストと自由にフルボイスでお喋り!!」チャット画面とカード。",
+    "tags": [
+      "marketing",
+      "appstore",
+      "official-asset"
+    ],
+    "path": "evidence/screenshots/ozchat/appstore/oz_appstore_02.jpg",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_appstore_02.jpg",
+    "width": 1290,
+    "height": 2796,
+    "mime": "image/jpeg",
+    "bytes": 704162,
+    "sha256": "f3664ee51962beae1bbbb0be305486371b122d59c8214020466f2c212db33f31",
+    "sourceUrl": "https://apps.apple.com/jp/app/id6482977162"
+  },
+  {
+    "id": "oz-appstore-03",
+    "app": "ozchat",
+    "platform": "appstore",
+    "title": "App Store #3",
+    "desc": "「親密度・性格値を上げるとドキドキな恋愛関係に…?」6つの性格パラメータ。",
+    "tags": [
+      "marketing",
+      "appstore",
+      "official-asset"
+    ],
+    "path": "evidence/screenshots/ozchat/appstore/oz_appstore_03.jpg",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_appstore_03.jpg",
+    "width": 1290,
+    "height": 2796,
+    "mime": "image/jpeg",
+    "bytes": 754768,
+    "sha256": "ede9663b2625f9b6bd21e46e80ffaa5c6337bd00a9a647a17fc7326fd1c8b027",
+    "sourceUrl": "https://apps.apple.com/jp/app/id6482977162"
+  },
+  {
+    "id": "oz-appstore-04",
+    "app": "ozchat",
+    "platform": "appstore",
+    "title": "App Store #4",
+    "desc": "「推しのバックグラウンドを漫画で読める!好きになる!!」ストーリー漫画。",
+    "tags": [
+      "marketing",
+      "appstore",
+      "official-asset"
+    ],
+    "path": "evidence/screenshots/ozchat/appstore/oz_appstore_04.jpg",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_appstore_04.jpg",
+    "width": 1290,
+    "height": 2796,
+    "mime": "image/jpeg",
+    "bytes": 700473,
+    "sha256": "8c89f03b458127f09564b315b1750b1b8accda7891987fc613191a3b9cb59942",
+    "sourceUrl": "https://apps.apple.com/jp/app/id6482977162"
+  },
+  {
+    "id": "oz-appstore-05",
+    "app": "ozchat",
+    "platform": "appstore",
+    "title": "App Store #5",
+    "desc": "「季節感あるシチュカードを毎月全キャラ追加中!!」",
+    "tags": [
+      "marketing",
+      "appstore",
+      "official-asset"
+    ],
+    "path": "evidence/screenshots/ozchat/appstore/oz_appstore_05.jpg",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_appstore_05.jpg",
+    "width": 1290,
+    "height": 2796,
+    "mime": "image/jpeg",
+    "bytes": 737171,
+    "sha256": "2333031407300af4c22bba1266d152a1d3362a44b30aa6725d02a295d6c53230",
+    "sourceUrl": "https://apps.apple.com/jp/app/id6482977162"
+  },
+  {
+    "id": "oz-appstore-06",
+    "app": "ozchat",
+    "platform": "appstore",
+    "title": "App Store #6",
+    "desc": "「更新頻度高いから愛せる!」クリスマスのわんこ。",
+    "tags": [
+      "marketing",
+      "appstore",
+      "official-asset"
+    ],
+    "path": "evidence/screenshots/ozchat/appstore/oz_appstore_06.jpg",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_appstore_06.jpg",
+    "width": 1290,
+    "height": 2796,
+    "mime": "image/jpeg",
+    "bytes": 745382,
+    "sha256": "ce2cc57284bf5a7fab2565227628e135985a61148f4ca46b2af6ee287c216537",
+    "sourceUrl": "https://apps.apple.com/jp/app/id6482977162"
+  },
+  {
+    "id": "oz-appstore-07",
+    "app": "ozchat",
+    "platform": "appstore",
+    "title": "App Store #7",
+    "desc": "「深く知れるから、ハマる!」配信シーンのストーリー。",
+    "tags": [
+      "marketing",
+      "appstore",
+      "official-asset"
+    ],
+    "path": "evidence/screenshots/ozchat/appstore/oz_appstore_07.jpg",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_appstore_07.jpg",
+    "width": 1290,
+    "height": 2796,
+    "mime": "image/jpeg",
+    "bytes": 764614,
+    "sha256": "dfbe4bd195ad2f3cc9e48bc3cd98897e8b102c5bc86936ba37724836353c91a5",
+    "sourceUrl": "https://apps.apple.com/jp/app/id6482977162"
+  },
+  {
+    "id": "oz-appstore-08",
+    "app": "ozchat",
+    "platform": "appstore",
+    "title": "App Store #8",
+    "desc": "「国産だから、自然!!」シチュエーションカードの一覧。",
+    "tags": [
+      "marketing",
+      "appstore",
+      "official-asset"
+    ],
+    "path": "evidence/screenshots/ozchat/appstore/oz_appstore_08.jpg",
+    "thumbPath": "evidence/screenshots/ozchat/thumbs/oz_appstore_08.jpg",
+    "width": 1290,
+    "height": 2796,
+    "mime": "image/jpeg",
+    "bytes": 675217,
+    "sha256": "813fff9d5d18c667f67afff2fa0c3408ee98ddef8cdae875e7d1e945a4ed066d",
+    "sourceUrl": "https://apps.apple.com/jp/app/id6482977162"
+  },
+  {
     "id": "zeta-z01-app-download-modal",
     "app": "zeta",
     "platform": "web",

@@ -8,65 +8,327 @@
   "apps": {
     "zeta": {
       "nodes": [
-        { "id": "home", "label": "ホーム", "ms": 5966, "taps": 0, "kind": "screen" },
-        { "id": "detail", "label": "プロット詳細", "ms": 9319, "taps": 1, "kind": "screen" },
-        { "id": "chat", "label": "チャット", "ms": 11446, "taps": 2, "kind": "screen" },
-        { "id": "reply", "label": "AI応答", "ms": 14633, "taps": 3, "kind": "screen" },
-        { "id": "login", "label": "ログインシート", "ms": null, "taps": 3, "kind": "gate" }
+        {
+          "id": "home",
+          "label": "ホーム",
+          "ms": 5966,
+          "taps": 0,
+          "kind": "screen"
+        },
+        {
+          "id": "detail",
+          "label": "プロット詳細",
+          "ms": 9319,
+          "taps": 1,
+          "kind": "screen"
+        },
+        {
+          "id": "chat",
+          "label": "チャット",
+          "ms": 11446,
+          "taps": 2,
+          "kind": "screen"
+        },
+        {
+          "id": "reply",
+          "label": "AI応答",
+          "ms": 14633,
+          "taps": 3,
+          "kind": "screen"
+        },
+        {
+          "id": "login",
+          "label": "ログインシート",
+          "ms": null,
+          "taps": 3,
+          "kind": "gate"
+        }
       ],
       "edges": [
-        { "from": "home", "to": "detail", "action": "カードをタップ", "friction": "アプリ誘導モーダルを閉じる" },
-        { "from": "detail", "to": "chat", "action": "トークを始める", "friction": "固定CTAのみ" },
-        { "from": "chat", "to": "reply", "action": "メッセージ送信", "friction": "上部に外部広告" },
-        { "from": "chat", "to": "login", "action": "保存・購入・フォロー", "friction": "ソフトなログイン要求" }
+        {
+          "from": "home",
+          "to": "detail",
+          "action": "カードをタップ",
+          "friction": "アプリ誘導モーダルを閉じる"
+        },
+        {
+          "from": "detail",
+          "to": "chat",
+          "action": "トークを始める",
+          "friction": "固定CTAのみ"
+        },
+        {
+          "from": "chat",
+          "to": "reply",
+          "action": "メッセージ送信",
+          "friction": "上部に外部広告"
+        },
+        {
+          "from": "chat",
+          "to": "login",
+          "action": "保存・購入・フォロー",
+          "friction": "ソフトなログイン要求"
+        }
       ],
-      "blockers": ["ゲストルームはURLが失効する", "購入/保存はログイン"]
+      "blockers": [
+        "ゲストルームはURLが失効する",
+        "購入/保存はログイン"
+      ]
     },
     "synclub": {
       "nodes": [
-        { "id": "feed", "label": "キャラフィード", "ms": 4700, "taps": 0, "kind": "screen" },
-        { "id": "gate", "label": "QRゲート", "ms": 7485, "taps": 1, "kind": "gate" },
-        { "id": "app", "label": "アプリ（外）", "ms": null, "taps": 1, "kind": "deadEnd" }
+        {
+          "id": "feed",
+          "label": "キャラフィード",
+          "ms": 4700,
+          "taps": 0,
+          "kind": "screen"
+        },
+        {
+          "id": "gate",
+          "label": "QRゲート",
+          "ms": 7485,
+          "taps": 1,
+          "kind": "gate"
+        },
+        {
+          "id": "app",
+          "label": "アプリ（外）",
+          "ms": null,
+          "taps": 1,
+          "kind": "deadEnd"
+        }
       ],
       "edges": [
-        { "from": "feed", "to": "gate", "action": "カードをタップ", "friction": "チャットのプレビューなし" },
-        { "from": "gate", "to": "app", "action": "QRを読む", "friction": "別デバイスが必要" }
+        {
+          "from": "feed",
+          "to": "gate",
+          "action": "カードをタップ",
+          "friction": "チャットのプレビューなし"
+        },
+        {
+          "from": "gate",
+          "to": "app",
+          "action": "QRを読む",
+          "friction": "別デバイスが必要"
+        }
       ],
-      "blockers": ["Webでは送信不可", "カテゴリ変更でもゲート", "フィードに0個のセマンティックリンク"]
+      "blockers": [
+        "Webでは送信不可",
+        "カテゴリ変更でもゲート",
+        "フィードに0個のセマンティックリンク"
+      ]
     },
     "miraimind": {
       "nodes": [
-        { "id": "discover", "label": "Discover", "ms": 9336, "taps": 0, "kind": "screen" },
-        { "id": "chat", "label": "チャット", "ms": 10387, "taps": 1, "kind": "screen" },
-        { "id": "reply", "label": "AI応答", "ms": 13344, "taps": 2, "kind": "screen" },
-        { "id": "limit", "label": "5回制限", "ms": null, "taps": 2, "kind": "gate" },
-        { "id": "app", "label": "アプリゲート", "ms": null, "taps": 2, "kind": "gate" }
+        {
+          "id": "discover",
+          "label": "Discover",
+          "ms": 9336,
+          "taps": 0,
+          "kind": "screen"
+        },
+        {
+          "id": "chat",
+          "label": "チャット",
+          "ms": 10387,
+          "taps": 1,
+          "kind": "screen"
+        },
+        {
+          "id": "reply",
+          "label": "AI応答",
+          "ms": 13344,
+          "taps": 2,
+          "kind": "screen"
+        },
+        {
+          "id": "limit",
+          "label": "5回制限",
+          "ms": null,
+          "taps": 2,
+          "kind": "gate"
+        },
+        {
+          "id": "app",
+          "label": "アプリゲート",
+          "ms": null,
+          "taps": 2,
+          "kind": "gate"
+        }
       ],
       "edges": [
-        { "from": "discover", "to": "chat", "action": "カードをタップ", "friction": "詳細画面を挟まない" },
-        { "from": "chat", "to": "reply", "action": "メッセージ送信", "friction": "音声/心の声はタップで発見" },
-        { "from": "chat", "to": "limit", "action": "6回目の送信", "friction": "制限が事前に明示されない" },
-        { "from": "chat", "to": "app", "action": "心の声/アーカイブ", "friction": "主要機能がアプリ限定" }
+        {
+          "from": "discover",
+          "to": "chat",
+          "action": "カードをタップ",
+          "friction": "詳細画面を挟まない"
+        },
+        {
+          "from": "chat",
+          "to": "reply",
+          "action": "メッセージ送信",
+          "friction": "音声/心の声はタップで発見"
+        },
+        {
+          "from": "chat",
+          "to": "limit",
+          "action": "6回目の送信",
+          "friction": "制限が事前に明示されない"
+        },
+        {
+          "from": "chat",
+          "to": "app",
+          "action": "心の声/アーカイブ",
+          "friction": "主要機能がアプリ限定"
+        }
       ],
-      "blockers": ["デスクトップWebは空白", "検索は人気ワードのみ", "高度な機能はアプリのみ"]
+      "blockers": [
+        "デスクトップWebは空白",
+        "検索は人気ワードのみ",
+        "高度な機能はアプリのみ"
+      ]
     },
     "crushon": {
       "nodes": [
-        { "id": "welcome", "label": "性別オンボーディング", "ms": 7043, "taps": 0, "kind": "gate" },
-        { "id": "home", "label": "ホーム", "ms": 9645, "taps": 1, "kind": "screen" },
-        { "id": "detail", "label": "詳細シート", "ms": 10083, "taps": 2, "kind": "screen" },
-        { "id": "chat", "label": "チャット", "ms": 12173, "taps": 3, "kind": "screen" },
-        { "id": "login", "label": "ログインバナー", "ms": 15076, "taps": 4, "kind": "gate" },
-        { "id": "auth", "label": "認証モーダル", "ms": null, "taps": 4, "kind": "gate" }
+        {
+          "id": "welcome",
+          "label": "性別オンボーディング",
+          "ms": 7043,
+          "taps": 0,
+          "kind": "gate"
+        },
+        {
+          "id": "home",
+          "label": "ホーム",
+          "ms": 9645,
+          "taps": 1,
+          "kind": "screen"
+        },
+        {
+          "id": "detail",
+          "label": "詳細シート",
+          "ms": 10083,
+          "taps": 2,
+          "kind": "screen"
+        },
+        {
+          "id": "chat",
+          "label": "チャット",
+          "ms": 12173,
+          "taps": 3,
+          "kind": "screen"
+        },
+        {
+          "id": "login",
+          "label": "ログインバナー",
+          "ms": 15076,
+          "taps": 4,
+          "kind": "gate"
+        },
+        {
+          "id": "auth",
+          "label": "認証モーダル",
+          "ms": null,
+          "taps": 4,
+          "kind": "gate"
+        }
       ],
       "edges": [
-        { "from": "welcome", "to": "home", "action": "性別を選択", "friction": "初回の必須選択" },
-        { "from": "home", "to": "detail", "action": "カードをタップ", "friction": "シートが全画面近くを覆う" },
-        { "from": "detail", "to": "chat", "action": "チャットを始める", "friction": "CTAは下部固定" },
-        { "from": "chat", "to": "login", "action": "送信", "friction": "入力後にログイン要求" },
-        { "from": "login", "to": "auth", "action": "ログイン", "friction": "Google/Discord/SubscribeStar/メール" }
+        {
+          "from": "welcome",
+          "to": "home",
+          "action": "性別を選択",
+          "friction": "初回の必須選択"
+        },
+        {
+          "from": "home",
+          "to": "detail",
+          "action": "カードをタップ",
+          "friction": "シートが全画面近くを覆う"
+        },
+        {
+          "from": "detail",
+          "to": "chat",
+          "action": "チャットを始める",
+          "friction": "CTAは下部固定"
+        },
+        {
+          "from": "chat",
+          "to": "login",
+          "action": "送信",
+          "friction": "入力後にログイン要求"
+        },
+        {
+          "from": "login",
+          "to": "auth",
+          "action": "ログイン",
+          "friction": "Google/Discord/SubscribeStar/メール"
+        }
       ],
-      "blockers": ["ストア/アカウントはログイン必須", "7プランの比較が複雑", "日英混在"]
+      "blockers": [
+        "ストア/アカウントはログイン必須",
+        "7プランの比較が複雑",
+        "日英混在"
+      ]
+    },
+    "ozchat": {
+      "nodes": [
+        {
+          "id": "marketing",
+          "label": "公式サイト",
+          "ms": 1616,
+          "taps": 0,
+          "kind": "screen"
+        },
+        {
+          "id": "signin",
+          "label": "ログイン",
+          "ms": 2996,
+          "taps": 1,
+          "kind": "gate"
+        },
+        {
+          "id": "email",
+          "label": "メール認証",
+          "ms": 1270,
+          "taps": 2,
+          "kind": "gate"
+        },
+        {
+          "id": "share",
+          "label": "共有カード",
+          "ms": null,
+          "taps": null,
+          "kind": "gate"
+        }
+      ],
+      "edges": [
+        {
+          "from": "marketing",
+          "to": "signin",
+          "action": "プレイする（新規タブ）",
+          "friction": "ログイン前にアプリの画面なし"
+        },
+        {
+          "from": "signin",
+          "to": "email",
+          "action": "メールアドレスでログイン",
+          "friction": "2フィールド"
+        },
+        {
+          "from": "signin",
+          "to": "share",
+          "action": "共有カード経由",
+          "friction": "会話プレビューなし"
+        }
+      ],
+      "blockers": [
+        "ログイン前にアプリの1画面も見られない",
+        "共有カード・キャラ詳細・イベントもログインへ",
+        "購入確認の不正リクエスト画面が未スタイル",
+        "公式サイト404が英語のみ"
+      ]
     }
   }
 }

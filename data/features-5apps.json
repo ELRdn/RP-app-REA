@@ -1,0 +1,260 @@
+{
+  "generatedAt": "2026-10-26",
+  "apps": [
+    "zeta",
+    "synclub",
+    "miraimind",
+    "crushon",
+    "ozchat"
+  ],
+  "rows": [
+    {
+      "area": "Positioning",
+      "zeta": "日本のNo.1 AIチャット。推しとの会話・夢小説・なりきり",
+      "synclub": "やさしく寄り添う AIキャラチャット・ノベル。会話＋創作基盤",
+      "miraimind": "「話す」から「通じ合う」へ。1,000万＋の推し、音声通話、永久記憶",
+      "crushon": "AI girlfriend / character AI chat。8M+キャラ、NSFW前提",
+      "ozchat": "国産AIキャラチャット。22人の公式IP、フルボイス、親愛度・メモリー"
+    },
+    {
+      "area": "Primary content unit",
+      "zeta": "プロット（物語）。最大10キャラ＋設定集＋イントロ",
+      "synclub": "AIキャラクター（エージェント）＋発見投稿",
+      "miraimind": "キャラクター＋シナリオ＋心の声",
+      "crushon": "キャラクター＋クリエイター＋NSFWタグ",
+      "ozchat": "キャラクターIP＋シチュエーションカード＋関係性（親愛度）"
+    },
+    {
+      "area": "Discovery",
+      "zeta": "ホーム／ランキング／検索／発見／タグ",
+      "synclub": "おすすめ／新着／ストーリー／感情カテゴリ＋発見フィード",
+      "miraimind": "Discover＋性別タブ＋ハッシュタグ横スクロール",
+      "crushon": "キャラクター／思い出／クリエイター＋ランキング＋検索",
+      "ozchat": "公式サイト/Wiki/マガジン/診断。アプリ内はおすすめ/推し中/ランキング"
+    },
+    {
+      "area": "Detail",
+      "zeta": "ヒーロー→紹介→プロット→イントロ→コメント→関連",
+      "synclub": "キャラカード→アプリゲート（Web）",
+      "miraimind": "チャット内のキャラ情報シート（紹介・設定）",
+      "crushon": "チャット上部の導入カード＋デスクトップ詳細モーダル",
+      "ozchat": "ログイン必須。公開のキャラページはプロフィール・カード・CV"
+    },
+    {
+      "area": "Chat",
+      "zeta": "ナレーション＋キャラ＋ユーザー＋*アクション。紫グラデのユーザーバブル",
+      "synclub": "背景イラスト＋コーラルバブル＋音声メッセージ",
+      "miraimind": "音声バブル＋心の声＋「進む」で物語進行",
+      "crushon": "ライトなメッセージUI。ゲストは送信時にログイン",
+      "ozchat": "ログイン必須。フルボイス、立ち絵、ナレーション、カード"
+    },
+    {
+      "area": "Voice",
+      "zeta": "アプリ訴求のみ（Webはテキスト中心）",
+      "synclub": "1,000+ボイス、音声通話、Web-TTS",
+      "miraimind": "ボイスメッセージ（6″/20″）、音声通話、TTS",
+      "crushon": "TTS/WebRTCの痕跡。UIはテキスト中心",
+      "ozchat": "フルボイス（対応キャラ）、バイノーラルASMR（おへや）"
+    },
+    {
+      "area": "Image generation",
+      "zeta": "スナップショット（ピース消費）",
+      "synclub": "画像生成／Nano Banana／AIキャラ画像",
+      "miraimind": "AIアート（投稿・強化・設定適用・作り直し）",
+      "crushon": "画像付きキャラクター／ギャラリー",
+      "ozchat": "AI挿絵生成、カメラロール（2026-09 beta）"
+    },
+    {
+      "area": "Story / novel",
+      "zeta": "プロット＋イントロ＋スタイルプリセット",
+      "synclub": "ノベルモード／ノベルメーカー／劇場",
+      "miraimind": "シナリオ＋「進む」＋心の声",
+      "crushon": "長文ロールプレイ／紹介文",
+      "ozchat": "ストーリーモード、バックグラウンド漫画"
+    },
+    {
+      "area": "Comics / games",
+      "zeta": "漫画タブ（公式・ユーザー）",
+      "synclub": "漫画メモリー／AIゲーム／アニショート",
+      "miraimind": "なし（画像生成中心）",
+      "crushon": "なし（キャラチャット中心）",
+      "ozchat": "キャラの背景漫画、ミニゲーム的要素は未確認"
+    },
+    {
+      "area": "Creator tools",
+      "zeta": "クリエイターセンター＋AIプロットアシスタント",
+      "synclub": "動画／解説マンガ動画／画像／ミニ動画／ボイス／TTS",
+      "miraimind": "キャラ作成（アプリ）／画像生成",
+      "crushon": "キャラ作成／性格ビルダー／クリエイター収益",
+      "ozchat": "シチュエーションカード作成、二次創作ガイドライン、ファンキット"
+    },
+    {
+      "area": "AI models",
+      "zeta": "koji（記憶）／luca（ディテール）、無料/有料",
+      "synclub": "Gemini 3.1 Pro / ChatGPT Image 2.0 / Nano Banana",
+      "miraimind": "独自モデル（詳細不明）",
+      "crushon": "無料/Pro/Ultraのモデル階層",
+      "ozchat": "モデルピッカー（2026-10-25刷新）、「極」、軽量モデル"
+    },
+    {
+      "area": "Persona",
+      "zeta": "トークプロフィール最大5件",
+      "synclub": "チャット内で都度指定",
+      "miraimind": "ユーザー像は会話で指定",
+      "crushon": "ユーザー像は会話で指定",
+      "ozchat": "ユーザーの名前・呼び方をメモリーに保存"
+    },
+    {
+      "area": "Memory",
+      "zeta": "長期記憶・誕生日・記念日・先制メッセージ",
+      "synclub": "関係性マップ（Friend/Soulmate/Boyfriend/Girlfriend）",
+      "miraimind": "永久記憶・記憶機能ガイド",
+      "crushon": "8K/16Kメモリ、過去メッセージ閲覧、自動要約",
+      "ozchat": "メモリー（名前/関係/約束/優先順位/ロック）"
+    },
+    {
+      "area": "Social",
+      "zeta": "フォロー／いいね／コメント／ランキング／応援",
+      "synclub": "発見投稿／いいね／コメント／共有チャット",
+      "miraimind": "共有／アルバム／ギフト",
+      "crushon": "フォロー／スター／コメント／サポーター／ランキング",
+      "ozchat": "共有カード、公開プロフィール、フォロー、ランキング、#ozchacha"
+    },
+    {
+      "area": "Monetization",
+      "zeta": "ピース＋zeta pass＋広告除去",
+      "synclub": "コイン＋サブスク＋18+",
+      "miraimind": "金平糖＋アプリ限定機能",
+      "crushon": "CrushOn Coin＋Diamonds＋7段階サブスク",
+      "ozchat": "MP（チャットポイント）＋Boost（サブスク）"
+    },
+    {
+      "area": "Currency",
+      "zeta": "ピース",
+      "synclub": "コイン",
+      "miraimind": "金平糖（こんぺいとう）",
+      "crushon": "Coin／Diamonds",
+      "ozchat": "MP"
+    },
+    {
+      "area": "Subscription",
+      "zeta": "zeta pass（7日/月）",
+      "synclub": "プラン変更・解約・支払い方法",
+      "miraimind": "アプリ内VIP（Webはチャージのみ）",
+      "crushon": "無料/スタンダード/プレミアム/リュクス/デラックス/エリート/インペリアル",
+      "ozchat": "Boost（Web Stripe / アプリIAP）"
+    },
+    {
+      "area": "Ads",
+      "zeta": "チャット上部に外部広告",
+      "synclub": "Webは目立たない",
+      "miraimind": "マーケティングサイトにAdSense",
+      "crushon": "Webは目立たない",
+      "ozchat": "基本無料は広告あり（非サブスク）"
+    },
+    {
+      "area": "Auth",
+      "zeta": "LINE/Google/Apple/Kakao＋ゲストJWT",
+      "synclub": "電話＋SMS／Google",
+      "miraimind": "Google/Apple/メール",
+      "crushon": "Google/Discord/SubscribeStar/メール＋18+",
+      "ozchat": "Supabase。Google/Apple/LINE/メール。全画面ログイン必須"
+    },
+    {
+      "area": "Guest access",
+      "zeta": "ゲストチャット可（短命ルーム）",
+      "synclub": "不可（QRゲート）",
+      "miraimind": "5リクエストまで",
+      "crushon": "導入は閲覧可、送信はログイン",
+      "ozchat": "不可（Webはログイン前に何も見せない）"
+    },
+    {
+      "area": "Onboarding",
+      "zeta": "アプリ誘導モーダル＋機能トースト",
+      "synclub": "年齢確認＋QRゲート",
+      "miraimind": "言語＋ログイン（Web）",
+      "crushon": "性別選択モーダル（女性/男性/ノンバイナリー）",
+      "ozchat": "ログイン画面のキャラクターショーケースのみ。診断はログイン不要"
+    },
+    {
+      "area": "Theming",
+      "zeta": "常時ダーク＋季節スキン",
+      "synclub": "Webライト／アプリダーク",
+      "miraimind": "ホワイト＋パステルグラデーション",
+      "crushon": "マーケティングはダーク、アプリはライト",
+      "ozchat": "ダーク＋ピンク。女性向けは紫（Prizm共通）"
+    },
+    {
+      "area": "Responsive",
+      "zeta": "440px固定シェル",
+      "synclub": "モバイル/デスクトップ別レイアウト。クリエイター画面は390pxで破綻",
+      "miraimind": "モバイル専用。デスクトップWebは空白",
+      "crushon": "モバイル2カラム／デスクトップ6カラム＋サイドバー",
+      "ozchat": "LPは1440px最適化。アプリは中央500pxのモバイルカード"
+    },
+    {
+      "area": "SEO",
+      "zeta": "プロット詳細SSR、3言語、1サイトマップ",
+      "synclub": "209サイトマップ、投稿詳細、JSON-LD",
+      "miraimind": "Astroの公式サイト＋ガイド記事",
+      "crushon": "8M+キャラのSEOページ、カテゴリ、ブログ、クリエイター記事",
+      "ozchat": "889 URL・7言語・22キャラ・271ニュース・19記事・15 Wiki"
+    },
+    {
+      "area": "Tech",
+      "zeta": "Next.js + React + Tailwind v4 + Zustand + Sentry",
+      "synclub": "Nuxt 3 + Vue + Element Plus + Pinia + APISIX",
+      "miraimind": "Vue 3 + Vite + Ant Design Vue + Pinia + socket.io",
+      "crushon": "Next.js + React + Mantine + Tailwind + Zustand + Stripe",
+      "ozchat": "Next.js（LP App Router/アプリ Pages Router）、React、Tailwind、Radix、Supabase"
+    },
+    {
+      "area": "Localization",
+      "zeta": "ja/ko/en",
+      "synclub": "アプリ ja/en/ko/zh、Webはja",
+      "miraimind": "ja/ko/zh-tw/zh-hk/zh-cn",
+      "crushon": "ja/en/ko/zh（ページにより）",
+      "ozchat": "7言語（ja/en/zh/zh-tw/ko/th/vi）"
+    },
+    {
+      "area": "Safety",
+      "zeta": "プロット作成ガイドライン、通報/ブロック",
+      "synclub": "年齢確認、18+はアプリ内課金",
+      "miraimind": "アプリストア審査向けの年齢表現",
+      "crushon": "18+同意、2257、削除ポリシー",
+      "ozchat": "17+。規約・二次創作ガイドライン・通報・モデレーション"
+    },
+    {
+      "area": "Accessibility",
+      "zeta": "Lighthouse a11y 0.76。英語aria-label",
+      "synclub": "0.90。タブがdiv",
+      "miraimind": "Ant Designの基盤。画像altは弱い",
+      "crushon": "rc-dialogは良好。カードがリンクでない箇所あり",
+      "ozchat": "ログイン48px、本文16px。共有CTA40px、Wikiの96%は44px未満"
+    },
+    {
+      "area": "Density",
+      "zeta": "高（バナー・チップ・広告）",
+      "synclub": "低（余白・大文字）",
+      "miraimind": "中（白基調・カード2列）",
+      "crushon": "高（2列カード＋タグ＋統計）",
+      "ozchat": "中〜高。LPは長尺、アプリはキャラクター中心"
+    },
+    {
+      "area": "Web role",
+      "zeta": "アプリ代替＋SEO＋ゲスト",
+      "synclub": "発見＋共有＋創作スタジオ",
+      "miraimind": "獲得＋限定チャット体験",
+      "crushon": "SEO＋マーケティング＋限定チャット",
+      "ozchat": "メディア＋Wiki＋診断＋共有。アプリはログイン必須"
+    },
+    {
+      "area": "Gate type",
+      "zeta": "soft app/login",
+      "synclub": "QR hard gate",
+      "miraimind": "5-request limit",
+      "crushon": "login on send",
+      "ozchat": "login first (all app routes)"
+    }
+  ]
+}

@@ -287,19 +287,29 @@ Zetaは**セマンティクスは概ね正しい**が、ラベルが英語。Syn
 - 7段階のサブスク、Coin/Diamonds、18+ゲート
 - マーケティング（`chat.crushon.ai`）とアプリ（`crushon.ai`）で**別ビルド**
 
-### 7.3 4製品の実装比較
+### 7.3 5製品の実装比較
 
-| | Zeta | SynClub | MiraiMind | CrushOn |
-|---|---|---|---|---|
-| フレームワーク | Next.js | Nuxt 3 | Vue 3 + Vite | Next.js |
-| UI | Tailwind v4 | Element Plus | Ant Design Vue | Mantine + Tailwind |
-| 状態 | Zustand / SWR | Pinia | Pinia | Zustand / SWR |
-| リアルタイム | REST中心 | WebSocket | socket.io | REST中心 |
-| 計測 | Sentry/GA/Clarity/Meta/Amplitude | GA/GTM/Amplitude | GTM/GA/AppsFlyer/TikTok/Meta | Sentry/Amplitude/GTM/Sensors |
-| JS（非圧縮） | 5.88MB / 109 | 4.59MB / 38 | 4.39MB / 25 | 7.65MB / 106 |
-| CSS | 188KB | 452KB | 281KB | 636KB |
+| | Zeta | SynClub | MiraiMind | CrushOn | OzChat |
+|---|---|---|---|---|---|
+| フレームワーク | Next.js | Nuxt 3 | Vue 3 + Vite | Next.js | Next.js（LP App Router / アプリ Pages Router） |
+| UI | Tailwind v4 | Element Plus | Ant Design Vue | Mantine + Tailwind | Tailwind + Radix/shadcn系 |
+| 状態 | Zustand / SWR | Pinia | Pinia | Zustand / SWR | 未確認（React hooks） |
+| リアルタイム | REST中心 | WebSocket | socket.io | REST中心 | 未確認（認証後） |
+| 認証 | 独自/Google | 独自 | 独自 | Google/Discord/メール | **Supabase**（Google/Apple/LINE/メール） |
+| 計測 | Sentry/GA/Clarity/Meta/Amplitude | GA/GTM/Amplitude | GTM/GA/AppsFlyer/TikTok/Meta | Sentry/Amplitude/GTM/Sensors | Sentry/GTM/GA4/Zaraz/Cloudflare |
+| JS（非圧縮） | 5.88MB / 109 | 4.59MB / 38 | 4.39MB / 25 | 7.65MB / 106 | **8.89MB / 128** |
+| CSS | 188KB | 452KB | 281KB | 636KB | 589KB（4ファイル） |
 
-**観察**：4社とも「チャットUI」なのに、実装の重心が違います。ZetaはSEOとSSR、SynClubは管理画面（Element Plus）と決済、MiraiMindはリアルタイムIM、CrushOnはSEOページ量産と課金。UIの見た目以上に、**バックエンドの都合がフロントに漏れている**のが面白いところです。
+**観察**：5社とも「チャットUI」なのに、実装の重心が違います。ZetaはSEOとSSR、SynClubは管理画面（Element Plus）と決済、MiraiMindはリアルタイムIM、CrushOnはSEOページ量産と課金、OzChatは**メディア（Next.js App Router）とアプリ（Pages Router）の分離＋Supabase**。UIの見た目以上に、**バックエンドの都合がフロントに漏れている**のが面白いところです。
+
+### 7.4 オズチャットの実装メモ
+
+- アプリは `/auth/callback` で Supabase の `GameUser` を `supabase_uid` で照合。`isPrizm` でPrizm Chatと共通認証
+- Web決済はStripe、アプリはIAP、ほかにPayPayとDMM（`api.chara-talk.dmm.com`）
+- `oz-activity-log-ingest.sa1p.workers.dev` へ行動ログをPOST
+- Sentry Next.js 10.32.1、GTM/GA4、Cloudflare Zaraz/Insights
+- 管理画面（`/admin/*`）と開発用プレビュー（`/dev/*`）のチャンクも本番ビルドに含まれる
+- 55ルート、132アセット、9.1MB。セマンティック解析はresult budget 0で部分
 
 ---
 
